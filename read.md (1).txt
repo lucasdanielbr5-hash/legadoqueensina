@@ -1,0 +1,11 @@
+# Turma do Clubinho
+
+Landing page institucional para serviços de educação infantil.
+
+## Tecnologias
+- HTML5
+- CSS3
+- Responsivo
+
+## Como usar
+Abra o arquivo index.html no navegador.
