@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
-    /* ===== RESET & BASE ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
@@ -20,7 +19,6 @@
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* ===== WHATSAPP FLUTUANTE ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
@@ -38,12 +36,10 @@
       z-index: 999;
       transition: 0.2s;
       font-size: 0.95rem;
-      border: none;
     }
     .whatsapp-float i { font-size: 1.5rem; }
-    .whatsapp-float:hover { transform: scale(1.05); background: #1ebe5c; }
+    .whatsapp-float:hover { transform: scale(1.04); background: #1ebe5c; }
 
-    /* ===== TOPBAR ===== */
     .topbar {
       background: #1a2634;
       color: #bcc9db;
@@ -62,7 +58,6 @@
     .topbar a:hover { color: white; }
     .topbar i { margin-right: 6px; }
 
-    /* ===== NAVBAR ===== */
     .navbar {
       background: white;
       box-shadow: 0 2px 20px rgba(0,0,0,0.04);
@@ -79,10 +74,7 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-
-    /* LOGO SVG */
-    .logo-svg { height: 52px; width: auto; display: block; }
-
+    .logo-menu { height: 60px; width: auto; display: block; }
     .nav-links {
       display: flex;
       gap: 32px;
@@ -107,18 +99,12 @@
       border-bottom: none !important;
       transition: 0.2s;
     }
-    .nav-cta:hover {
-      background: #3a7e72;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(74, 158, 143, 0.25);
-    }
+    .nav-cta:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 158, 143, 0.25); }
 
-    /* ===== SISTEMA DE PÁGINAS ===== */
     .page { display: none; animation: fadeIn 0.4s ease; }
     .page.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* ===== HERO ===== */
     .hero {
       padding: 60px 0 80px;
       background: linear-gradient(165deg, #f5f7fc 0%, #e8edf8 100%);
@@ -206,7 +192,6 @@
       display: block;
     }
 
-    /* ===== SOBRE ===== */
     .about {
       padding: 80px 0;
       background: white;
@@ -252,7 +237,6 @@
       display: block;
     }
 
-    /* ===== SERVIÇOS ===== */
     .services {
       padding: 80px 0;
       background: #f5f7fc;
@@ -290,7 +274,6 @@
     .service-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #0e1a26; }
     .service-card p { color: #3a4a5e; line-height: 1.7; }
 
-    /* ===== BLOG ===== */
     .blog {
       padding: 80px 0;
       background: white;
@@ -354,7 +337,6 @@
     }
     .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
 
-    /* ===== DEPOIMENTO ===== */
     .testimonial {
       padding: 80px 0;
       background: #f5f7fc;
@@ -371,7 +353,6 @@
     .testimonial-box p { font-size: 1.2rem; font-weight: 400; line-height: 1.7; color: #1a2634; margin: 16px 0; }
     .testimonial-box cite { font-style: normal; font-weight: 600; color: #4a9e8f; }
 
-    /* ===== CTA ===== */
     .cta-section {
       padding: 80px 0;
       background: white;
@@ -467,7 +448,6 @@
     .cta-form .whatsapp-link i { color: #25d366; font-size: 1.4rem; }
     .cta-form .whatsapp-link:hover { background: #f0f2f5; border-color: #e8edf4; }
 
-    /* ===== FOOTER ===== */
     .footer {
       background: #0f1722;
       padding: 48px 0 32px;
@@ -498,7 +478,6 @@
       color: #6a7a8e;
     }
 
-    /* ===== PÁGINAS INTERNAS ===== */
     .pagina-interna {
       padding: 60px 0 80px;
       background: white;
@@ -549,7 +528,6 @@
     .pagina-interna .artigo-body p { margin-bottom: 18px; }
     .pagina-interna .artigo-body strong { color: #4a9e8f; }
 
-    /* ===== COMENTÁRIOS ===== */
     .comentarios {
       margin-top: 48px;
       padding-top: 32px;
@@ -605,7 +583,6 @@
     }
     .comentarios form .btn-comentar:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(74, 158, 143, 0.2); }
 
-    /* ===== RESPONSIVO ===== */
     @media (max-width: 992px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .hero-content { align-items: center; }
@@ -615,7 +592,6 @@
       .hero-image img { max-width: 340px; }
       .about-grid { grid-template-columns: 1fr; }
       .about-image { order: -1; }
-      .about-image img { max-width: 400px; margin: 0 auto; }
     }
     @media (max-width: 768px) {
       .navbar .container { flex-direction: column; gap: 12px; }
@@ -624,7 +600,7 @@
       .topbar a { margin: 0 8px; }
       .hero { padding: 40px 0 60px; }
       .hero-image img { max-width: 280px; }
-      .logo-svg { height: 42px; }
+      .logo-menu { height: 50px; }
       .cta-form { padding: 30px 20px; }
       .cta-form .form-row { grid-template-columns: 1fr; }
       .cta-form .form-actions { flex-direction: column; align-items: stretch; }
@@ -638,13 +614,12 @@
       .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
       .whatsapp-float i { font-size: 1.2rem; }
       .hero-image img { max-width: 220px; }
-      .logo-svg { height: 36px; }
+      .logo-menu { height: 42px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== TOPBAR ===== -->
   <div class="topbar">
     <div class="container">
       <span><i class="fas fa-phone-alt"></i> (11) 91234-5678</span>
@@ -656,19 +631,10 @@
     </div>
   </div>
 
-  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
     <div class="container">
-      <!-- LOGO SVG NITIDA -->
       <a href="#" onclick="mostrarPagina('inicial')">
-        <svg class="logo-svg" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="240" height="60" rx="12" fill="#1a2634" />
-          <text x="16" y="40" font-family="Inter, sans-serif" font-weight="700" font-size="24" fill="#4a9e8f">Legado</text>
-          <text x="96" y="40" font-family="Inter, sans-serif" font-weight="300" font-size="24" fill="white">que</text>
-          <text x="140" y="40" font-family="Inter, sans-serif" font-weight="700" font-size="24" fill="#4a9e8f">Ensina</text>
-          <circle cx="222" cy="30" r="8" fill="#4a9e8f" opacity="0.3" />
-          <circle cx="222" cy="30" r="4" fill="#4a9e8f" />
-        </svg>
+        <img src="https://i.imgur.com/W8Z47VR.png" alt="Legado que Ensina" class="logo-menu" />
       </a>
       <div class="nav-links">
         <a href="#" onclick="mostrarPagina('inicial')">Início</a>
@@ -683,7 +649,6 @@
   <!-- ============================================= -->
   <div id="pagina-inicial" class="page active">
 
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -701,7 +666,6 @@
       </div>
     </section>
 
-    <!-- SOBRE -->
     <section class="about" id="sobre">
       <div class="container about-grid">
         <div class="about-text">
@@ -718,7 +682,6 @@
       </div>
     </section>
 
-    <!-- SERVIÇOS -->
     <section class="services" id="servicos">
       <div class="container">
         <h2 class="section-title">Nossos <span>serviços</span></h2>
@@ -748,7 +711,6 @@
       </div>
     </section>
 
-    <!-- BLOG -->
     <section class="blog" id="blog">
       <div class="container">
         <h2 class="section-title">Artigos <span>recentes</span></h2>
@@ -788,7 +750,6 @@
       </div>
     </section>
 
-    <!-- DEPOIMENTO -->
     <section class="testimonial">
       <div class="container">
         <div class="testimonial-box">
@@ -799,7 +760,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section" id="contato">
       <div class="container">
         <h2>Vamos <span>conversar</span>?</h2>
@@ -829,7 +789,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-grid">
         <div>
@@ -1020,12 +979,10 @@
     </section>
   </div>
 
-  <!-- ===== WHATSAPP FLUTUANTE ===== -->
   <a href="https://wa.me/5511912345678" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i> Atendimento
   </a>
 
-  <!-- ===== JAVASCRIPT ===== -->
   <script>
     function mostrarPagina(pagina) {
       document.querySelectorAll('.page').forEach(function(el) {
