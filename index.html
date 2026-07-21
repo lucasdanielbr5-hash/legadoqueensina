@@ -19,6 +19,7 @@
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+    /* ===== WHATSAPP FLUTUANTE ===== */
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
@@ -40,6 +41,7 @@
     .whatsapp-float i { font-size: 1.5rem; }
     .whatsapp-float:hover { transform: scale(1.04); background: #1ebe5c; }
 
+    /* ===== TOPBAR ===== */
     .topbar {
       background: #1a2634;
       color: #bcc9db;
@@ -58,6 +60,7 @@
     .topbar a:hover { color: white; }
     .topbar i { margin-right: 6px; }
 
+    /* ===== NAVBAR ===== */
     .navbar {
       background: white;
       box-shadow: 0 2px 20px rgba(0,0,0,0.04);
@@ -74,7 +77,7 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-    .logo-menu { height: 60px; width: auto; display: block; }
+    .logo-menu { height: 64px; width: auto; display: block; }
     .nav-links {
       display: flex;
       gap: 32px;
@@ -101,10 +104,12 @@
     }
     .nav-cta:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 158, 143, 0.25); }
 
+    /* ===== SISTEMA DE PÁGINAS ===== */
     .page { display: none; animation: fadeIn 0.4s ease; }
     .page.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
+    /* ===== HERO ===== */
     .hero {
       padding: 60px 0 80px;
       background: linear-gradient(165deg, #f5f7fc 0%, #e8edf8 100%);
@@ -133,7 +138,7 @@
       border: 1px solid rgba(74, 158, 143, 0.15);
     }
     .hero h1 {
-      font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
       font-weight: 700;
       line-height: 1.15;
       letter-spacing: -0.02em;
@@ -179,11 +184,7 @@
       cursor: pointer;
     }
     .btn-outline:hover { border-color: #4a9e8f; background: rgba(74, 158, 143, 0.03); }
-    .hero-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    .hero-image { display: flex; justify-content: center; align-items: center; }
     .hero-image img {
       width: 100%;
       max-width: 480px;
@@ -192,6 +193,7 @@
       display: block;
     }
 
+    /* ===== SOBRE ===== */
     .about {
       padding: 80px 0;
       background: white;
@@ -230,13 +232,9 @@
       transition: 0.2s;
     }
     .btn-historia:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 158, 143, 0.2); }
-    .about-image img {
-      width: 100%;
-      border-radius: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-      display: block;
-    }
+    .about-image img { width: 100%; border-radius: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); display: block; }
 
+    /* ===== SERVIÇOS ===== */
     .services {
       padding: 80px 0;
       background: #f5f7fc;
@@ -274,6 +272,7 @@
     .service-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #0e1a26; }
     .service-card p { color: #3a4a5e; line-height: 1.7; }
 
+    /* ===== BLOG ===== */
     .blog {
       padding: 80px 0;
       background: white;
@@ -337,6 +336,7 @@
     }
     .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
 
+    /* ===== DEPOIMENTO ===== */
     .testimonial {
       padding: 80px 0;
       background: #f5f7fc;
@@ -353,6 +353,7 @@
     .testimonial-box p { font-size: 1.2rem; font-weight: 400; line-height: 1.7; color: #1a2634; margin: 16px 0; }
     .testimonial-box cite { font-style: normal; font-weight: 600; color: #4a9e8f; }
 
+    /* ===== CTA ===== */
     .cta-section {
       padding: 80px 0;
       background: white;
@@ -448,6 +449,7 @@
     .cta-form .whatsapp-link i { color: #25d366; font-size: 1.4rem; }
     .cta-form .whatsapp-link:hover { background: #f0f2f5; border-color: #e8edf4; }
 
+    /* ===== FOOTER ===== */
     .footer {
       background: #0f1722;
       padding: 48px 0 32px;
@@ -478,6 +480,7 @@
       color: #6a7a8e;
     }
 
+    /* ===== PÁGINAS INTERNAS ===== */
     .pagina-interna {
       padding: 60px 0 80px;
       background: white;
@@ -528,6 +531,7 @@
     .pagina-interna .artigo-body p { margin-bottom: 18px; }
     .pagina-interna .artigo-body strong { color: #4a9e8f; }
 
+    /* ===== COMENTÁRIOS ===== */
     .comentarios {
       margin-top: 48px;
       padding-top: 32px;
@@ -583,6 +587,7 @@
     }
     .comentarios form .btn-comentar:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(74, 158, 143, 0.2); }
 
+    /* ===== RESPONSIVO ===== */
     @media (max-width: 992px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .hero-content { align-items: center; }
@@ -600,7 +605,7 @@
       .topbar a { margin: 0 8px; }
       .hero { padding: 40px 0 60px; }
       .hero-image img { max-width: 280px; }
-      .logo-menu { height: 50px; }
+      .logo-menu { height: 52px; }
       .cta-form { padding: 30px 20px; }
       .cta-form .form-row { grid-template-columns: 1fr; }
       .cta-form .form-actions { flex-direction: column; align-items: stretch; }
@@ -614,7 +619,7 @@
       .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
       .whatsapp-float i { font-size: 1.2rem; }
       .hero-image img { max-width: 220px; }
-      .logo-menu { height: 42px; }
+      .logo-menu { height: 44px; }
     }
   </style>
 </head>
@@ -634,7 +639,7 @@
   <nav class="navbar">
     <div class="container">
       <a href="#" onclick="mostrarPagina('inicial')">
-        <img src="https://i.imgur.com/W8Z47VR.png" alt="Legado que Ensina" class="logo-menu" />
+        <img src="https://i.imgur.com/xNLgM8X.png" alt="Legado que Ensina" class="logo-menu" />
       </a>
       <div class="nav-links">
         <a href="#" onclick="mostrarPagina('inicial')">Início</a>
