@@ -243,7 +243,7 @@ body {
 }
 .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
 
-/* CTA / CONTATO */
+/* CTA */
 .cta-section {
   padding: 80px 0;
   background: white;
@@ -436,18 +436,31 @@ body {
 .pagina-interna .artigo-body { font-size: 1.05rem; color: #3a4a5e; line-height: 1.8; }
 .pagina-interna .artigo-body p { margin-bottom: 18px; }
 .pagina-interna .artigo-body strong { color: #4a9e8f; }
+.pagina-interna .artigo-body ul { margin-bottom: 18px; padding-left: 24px; }
+.pagina-interna .artigo-body li { margin-bottom: 6px; }
 
 /* RESPONSIVO */
 @media (max-width: 992px) {
-  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-  .hero-content { align-items: center; }
+  .hero-grid { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    gap: 30px; 
+  }
+  .hero-content { 
+    align-items: center; 
+    order: 2;
+  }
   .hero p { max-width: 100%; }
   .btn-group { justify-content: center; }
-  .hero-logo { padding: 0; }
+  .hero-logo { 
+    padding: 0; 
+    order: 1;
+  }
   .hero-logo img { max-width: 340px; }
   .about-grid { grid-template-columns: 1fr; }
   .about-image { order: -1; }
 }
+
 @media (max-width: 768px) {
   .hero { padding: 40px 0 60px; }
   .hero-logo img { max-width: 280px; }
@@ -455,6 +468,7 @@ body {
   .cta-card .btn-whatsapp { padding: 14px 32px; font-size: 1rem; }
   .blog-grid { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 480px) {
   .hero-logo img { max-width: 220px; }
   .cta-card .cta-contato-rapido { flex-direction: column; gap: 12px; }
