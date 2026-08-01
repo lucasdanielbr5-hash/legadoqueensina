@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legado que Ensina · Psicopedagogia Online</title>
   
-  <!-- ========================================================= -->
-  <!-- FAVICON E THEME-COLOR (ADICIONADO - ALTERAÇÃO 1) -->
-  <!-- ========================================================= -->
+  <!-- FAVICON E THEME-COLOR -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <!-- ========================================================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -68,48 +65,9 @@
     .topbar a:hover { color: white; }
     .topbar i { margin-right: 6px; }
 
-    .navbar {
-      background: white;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 12px 0;
-      border-bottom: 1px solid #e8edf4;
-    }
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .logo-menu { height: 60px; width: auto; display: block; }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      font-weight: 500;
-      align-items: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #1a2634;
-      font-size: 0.95rem;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-    .nav-links a:hover { color: #4a9e8f; border-bottom-color: #4a9e8f; }
-    .nav-cta {
-      background: #4a9e8f;
-      color: white !important;
-      padding: 10px 28px;
-      border-radius: 40px;
-      border-bottom: none !important;
-      transition: 0.2s;
-    }
-    .nav-cta:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 158, 143, 0.25); }
+    /* ========================================================= */
+    /* NAVBAR REMOVIDA - NÃO TEM MAIS "Início História Agenda"  */
+    /* ========================================================= */
 
     .page { display: none; animation: fadeIn 0.4s ease; }
     .page.active { display: block; }
@@ -598,13 +556,10 @@
       .about-image { order: -1; }
     }
     @media (max-width: 768px) {
-      .navbar .container { flex-direction: column; gap: 12px; }
-      .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
       .topbar .container { flex-direction: column; text-align: center; }
       .topbar a { margin: 0 8px; }
       .hero { padding: 40px 0 60px; }
       .hero-logo img { max-width: 280px; }
-      .logo-menu { height: 50px; }
       .cta-form { padding: 30px 20px; }
       .cta-form .form-row { grid-template-columns: 1fr; }
       .cta-form .form-actions { flex-direction: column; align-items: stretch; }
@@ -617,7 +572,6 @@
       .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
       .whatsapp-float i { font-size: 1.2rem; }
       .hero-logo img { max-width: 220px; }
-      .logo-menu { height: 42px; }
     }
   </style>
 </head>
@@ -634,18 +588,9 @@
     </div>
   </div>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" onclick="mostrarPagina('inicial')">
-        <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" class="logo-menu" />
-      </a>
-      <div class="nav-links">
-        <a href="#" onclick="mostrarPagina('inicial')">Início</a>
-        <a href="#" onclick="mostrarPagina('historia')">História</a>
-        <a href="#contato" class="nav-cta" onclick="mostrarPagina('inicial')">Agendar</a>
-      </div>
-    </div>
-  </nav>
+  <!-- ========================================================= -->
+  <!-- NAVBAR REMOVIDA COMPLETAMENTE - SEM "Início História Agenda" -->
+  <!-- ========================================================= -->
 
   <!-- ============================================= -->
   <!-- PÁGINA INICIAL -->
@@ -760,9 +705,7 @@
         <h2>Vamos <span>conversar</span>?</h2>
         <p class="cta-sub">Agende uma avaliação inicial online sem compromisso. Conheça nosso espaço virtual e descubra como podemos ajudar.</p>
         
-        <!-- ========================================================= -->
-        <!-- FORMULÁRIO ALTERADO PARA ENVIAR POR E-MAIL (ALTERAÇÃO 2) -->
-        <!-- ========================================================= -->
+        <!-- FORMULÁRIO ENVIA POR E-MAIL -->
         <form class="cta-form" action="mailto:contato@legadoqueensina.com.br" method="post" enctype="text/plain">
           <div class="form-row">
             <div>
@@ -785,7 +728,6 @@
             </a>
           </div>
         </form>
-        <!-- ========================================================= -->
         
       </div>
     </section>
