@@ -26,23 +26,7 @@
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    .topbar {
-      background: #1a2634;
-      color: #bcc9db;
-      padding: 8px 0;
-      font-size: 0.8rem;
-      border-bottom: 3px solid #4a9e8f;
-    }
-    .topbar .container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-    .topbar a { color: #9aadc4; text-decoration: none; margin-left: 18px; transition: 0.2s; }
-    .topbar a:hover { color: white; }
-    .topbar i { margin-right: 6px; }
+    /* TOPBAR REMOVIDA COMPLETAMENTE */
 
     .page { display: none; animation: fadeIn 0.4s ease; }
     .page.active { display: block; }
@@ -110,18 +94,6 @@
       display: inline-block;
     }
     .btn-primary:hover { background: #3a7e72; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74, 158, 143, 0.35); }
-    .btn-outline {
-      background: transparent;
-      color: #1a2634;
-      padding: 14px 32px;
-      border-radius: 60px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 2px solid #ccd7e6;
-      transition: 0.25s;
-      cursor: pointer;
-    }
-    .btn-outline:hover { border-color: #4a9e8f; background: rgba(74, 158, 143, 0.03); }
 
     .hero-logo {
       display: flex;
@@ -285,9 +257,7 @@
 
     .testimonial { display: none; }
 
-    /* ========================================================= */
-    /* SEÇÃO CONTATO MELHORADA - SEM CAMPO DE MENSAGEM          */
-    /* ========================================================= */
+    /* SEÇÃO CONTATO */
     .cta-section {
       padding: 80px 0;
       background: white;
@@ -398,7 +368,6 @@
       color: #4a9e8f;
       font-size: 1rem;
     }
-    /* ========================================================= */
 
     .footer {
       background: #0f1722;
@@ -547,8 +516,6 @@
       .about-image { order: -1; }
     }
     @media (max-width: 768px) {
-      .topbar .container { flex-direction: column; text-align: center; }
-      .topbar a { margin: 0 8px; }
       .hero { padding: 40px 0 60px; }
       .hero-logo img { max-width: 280px; }
       .cta-card { padding: 32px 24px; }
@@ -564,16 +531,9 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="container">
-      <span><i class="fas fa-phone-alt"></i> (43) 92003-6581</span>
-      <span>
-        <i class="fas fa-video"></i> Atendimento online para todo o Brasil
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </span>
-    </div>
-  </div>
+  <!-- ============================================= -->
+  <!-- TOPBAR REMOVIDA COMPLETAMENTE                -->
+  <!-- ============================================= -->
 
   <!-- ============================================= -->
   <!-- PÁGINA INICIAL -->
@@ -588,7 +548,6 @@
           <p>Transformando desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento e estratégias personalizadas.</p>
           <div class="btn-group">
             <a href="#contato" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
-            <button class="btn-outline" onclick="mostrarPagina('historia')">Conhecer nossa história</button>
           </div>
         </div>
         <div class="hero-logo">
@@ -683,9 +642,7 @@
 
     <section class="testimonial"></section>
 
-    <!-- ========================================================= -->
-    <!-- SEÇÃO CONTATO MELHORADA - SEM CAMPO DE MENSAGEM          -->
-    <!-- ========================================================= -->
+    <!-- SEÇÃO CONTATO -->
     <section class="cta-section" id="contato">
       <div class="container">
         <h2>Vamos <span>conversar</span>?</h2>
@@ -712,7 +669,6 @@
         
       </div>
     </section>
-    <!-- ========================================================= -->
 
     <footer class="footer">
       <div class="container footer-grid">
@@ -724,7 +680,7 @@
           <h4>Contato</h4>
           <a href="#"><i class="fas fa-phone"></i> (43) 92003-6581</a>
           <a href="#"><i class="fas fa-envelope"></i> contato@legadoqueensina.com</a>
-          <a href="#"><i class="fas fa-video"></i>Agende sua primeira conversa.</a>
+          <a href="#"><i class="fas fa-calendar-check"></i> Agende sua primeira conversa</a>
         </div>
         <div>
           <h4>Links</h4>
