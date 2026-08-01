@@ -286,89 +286,6 @@ body {
 }
 .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
 
-/* CTA / CONTATO - MELHORADO */
-.cta-section {
-  padding: 80px 0;
-  background: white;
-  text-align: center;
-}
-.cta-section .container { max-width: 720px; }
-.cta-section h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: #0e1a26;
-  margin-bottom: 8px;
-}
-.cta-section h2 span { color: #4a9e8f; }
-.cta-section .cta-sub {
-  color: #3a4a5e;
-  font-size: 1.05rem;
-  margin-bottom: 40px;
-}
-.cta-form {
-  background: #f5f7fc;
-  padding: 40px 48px;
-  border-radius: 32px;
-  border: 1px solid #e8edf4;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  text-align: left;
-}
-.cta-form .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-.cta-form label {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #1a2634;
-  margin-bottom: 2px;
-  display: block;
-}
-.cta-form input,
-.cta-form textarea {
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 60px;
-  border: 1px solid #ccd7e6;
-  background: white;
-  font-family: inherit;
-  font-size: 0.95rem;
-  outline: none;
-  transition: 0.2s;
-  color: #1a2634;
-}
-.cta-form input:focus,
-.cta-form textarea:focus { border-color: #4a9e8f; box-shadow: 0 0 0 3px rgba(74, 158, 143, 0.08); }
-.cta-form textarea { border-radius: 24px; resize: vertical; min-height: 120px; }
-.cta-form .form-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-  margin-top: 8px;
-}
-.cta-form .btn-enviar {
-  background: #25d366;
-  color: white;
-  border: none;
-  padding: 14px 40px;
-  border-radius: 60px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
-}
-.cta-form .btn-enviar:hover { background: #1ebe5c; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(37, 211, 102, 0.35); }
-
 /* FOOTER */
 .footer {
   background: #0f1722;
@@ -524,13 +441,12 @@ body {
   .topbar a { margin: 0 8px; }
   .hero { padding: 40px 0 60px; }
   .hero-logo img { max-width: 280px; }
-  .cta-form { padding: 30px 20px; }
-  .cta-form .form-row { grid-template-columns: 1fr; }
-  .cta-form .form-actions { flex-direction: column; align-items: stretch; }
-  .cta-form .btn-enviar { justify-content: center; }
+  .cta-card { padding: 32px 24px; }
+  .cta-card .btn-whatsapp { padding: 14px 32px; font-size: 1rem; }
   .blog-grid { grid-template-columns: 1fr; }
   .comentarios form .row { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .hero-logo img { max-width: 220px; }
+  .cta-card .cta-contato-rapido { flex-direction: column; gap: 12px; }
 }
