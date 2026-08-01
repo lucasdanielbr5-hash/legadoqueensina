@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legado que Ensina · Psicopedagogia Online</title>
+  <title>Legado que Ensina - Aprender hoje, transformar sempre</title>
   
   <!-- FAVICON E THEME-COLOR -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
@@ -26,8 +26,6 @@
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* TOPBAR REMOVIDA COMPLETAMENTE */
-
     .page { display: none; animation: fadeIn 0.4s ease; }
     .page.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -46,18 +44,6 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(74, 158, 143, 0.12);
-      padding: 6px 18px;
-      border-radius: 60px;
-      color: #3a7e72;
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.5px;
-      width: fit-content;
-      border: 1px solid rgba(74, 158, 143, 0.15);
     }
     .hero h1 {
       font-size: clamp(2rem, 4.5vw, 3.6rem);
@@ -449,66 +435,10 @@
     .pagina-interna .artigo-body p { margin-bottom: 18px; }
     .pagina-interna .artigo-body strong { color: #4a9e8f; }
 
-    .comentarios {
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid #e8edf4;
-    }
-    .comentarios h3 {
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: #0e1a26;
-      margin-bottom: 8px;
-    }
-    .comentarios .comentario-sub {
-      color: #6a7a8e;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-    }
-    .comentarios form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      max-width: 600px;
-    }
-    .comentarios form .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .comentarios form input,
-    .comentarios form textarea {
-      padding: 12px 18px;
-      border-radius: 60px;
-      border: 1px solid #ccd7e6;
-      background: #f5f7fc;
-      font-family: inherit;
-      font-size: 0.95rem;
-      outline: none;
-      transition: 0.2s;
-    }
-    .comentarios form input:focus,
-    .comentarios form textarea:focus { border-color: #4a9e8f; background: white; box-shadow: 0 0 0 3px rgba(74, 158, 143, 0.08); }
-    .comentarios form textarea { border-radius: 24px; resize: vertical; min-height: 100px; }
-    .comentarios form .btn-comentar {
-      background: #4a9e8f;
-      color: white;
-      border: none;
-      padding: 12px 32px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: 0.2s;
-      width: fit-content;
-    }
-    .comentarios form .btn-comentar:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(74, 158, 143, 0.2); }
-
     @media (max-width: 992px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
       .hero-content { align-items: center; }
       .hero p { max-width: 100%; }
-      .hero-badge { align-self: center; }
       .btn-group { justify-content: center; }
       .hero-logo { padding: 0; }
       .hero-logo img { max-width: 340px; }
@@ -521,7 +451,6 @@
       .cta-card { padding: 32px 24px; }
       .cta-card .btn-whatsapp { padding: 14px 32px; font-size: 1rem; }
       .blog-grid { grid-template-columns: 1fr; }
-      .comentarios form .row { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .hero-logo img { max-width: 220px; }
@@ -532,10 +461,6 @@
 <body>
 
   <!-- ============================================= -->
-  <!-- TOPBAR REMOVIDA COMPLETAMENTE                -->
-  <!-- ============================================= -->
-
-  <!-- ============================================= -->
   <!-- PÁGINA INICIAL -->
   <!-- ============================================= -->
   <div id="pagina-inicial" class="page active">
@@ -543,8 +468,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="hero-badge"><i class="fas fa-video"></i> Psicopedagogia online</span>
-          <h1>Construindo <span>pontes</span> para o <br />aprendizado <br /></h1>
+          <h1>Construindo <span>pontes</span> para o <br />aprendizado</h1>
           <p>Transformando desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento e estratégias personalizadas.</p>
           <div class="btn-group">
             <a href="#contato" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
@@ -744,7 +668,7 @@
   </div>
 
   <!-- ============================================= -->
-  <!-- ARTIGOS -->
+  <!-- ARTIGOS (SEM SEÇÃO DE COMENTÁRIOS)            -->
   <!-- ============================================= -->
 
   <!-- ARTIGO 1 -->
@@ -771,18 +695,6 @@
           </ul>
           <p>Esses sinais não significam necessariamente um transtorno, mas indicam que é importante buscar uma avaliação psicopedagógica para entender as reais necessidades da criança.</p>
           <p>No <strong>Legado que Ensina</strong>, realizamos uma avaliação completa online que identifica as potencialidades e os pontos de atenção, para que possamos construir um plano de intervenção personalizado e eficaz.</p>
-          <div class="comentarios">
-            <h3><i class="fas fa-comment-dots" style="color:#4a9e8f;"></i> Deixe seu comentário</h3>
-            <p class="comentario-sub">Sua opinião é importante para nós. Compartilhe sua experiência ou dúvida.</p>
-            <form onsubmit="event.preventDefault(); alert('Comentário enviado! Obrigado por participar.');">
-              <div class="row">
-                <input type="text" placeholder="Seu nome" required />
-                <input type="email" placeholder="Seu e-mail" required />
-              </div>
-              <textarea placeholder="Escreva seu comentário..." rows="4" required></textarea>
-              <button type="submit" class="btn-comentar">Enviar comentário</button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
@@ -809,18 +721,6 @@
           <p><strong>Use jogos e materiais lúdicos:</strong> Transformar o aprendizado em algo divertido torna o processo mais leve e prazeroso.</p>
           <p><strong>Mantenha uma comunicação aberta:</strong> Pergunte sobre o que está sendo estudado e demonstre interesse genuíno.</p>
           <p>No <strong>Legado que Ensina</strong>, trabalhamos a motivação como parte essencial do processo de aprendizagem, ajudando cada criança a encontrar seu próprio ritmo e prazer em aprender.</p>
-          <div class="comentarios">
-            <h3><i class="fas fa-comment-dots" style="color:#4a9e8f;"></i> Deixe seu comentário</h3>
-            <p class="comentario-sub">Sua opinião é importante para nós. Compartilhe sua experiência ou dúvida.</p>
-            <form onsubmit="event.preventDefault(); alert('Comentário enviado! Obrigado por participar.');">
-              <div class="row">
-                <input type="text" placeholder="Seu nome" required />
-                <input type="email" placeholder="Seu e-mail" required />
-              </div>
-              <textarea placeholder="Escreva seu comentário..." rows="4" required></textarea>
-              <button type="submit" class="btn-comentar">Enviar comentário</button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
@@ -851,18 +751,6 @@
             <li><strong>Narrativas interativas</strong> onde a criança é a protagonista de sua própria história de aprendizado.</li>
           </ul>
           <p>No <strong>Legado que Ensina</strong>, a gamificação é uma ferramenta central. Ela torna o aprendizado mais leve, significativo e conectado com o universo lúdico da criança, potencializando os resultados do acompanhamento psicopedagógico.</p>
-          <div class="comentarios">
-            <h3><i class="fas fa-comment-dots" style="color:#4a9e8f;"></i> Deixe seu comentário</h3>
-            <p class="comentario-sub">Sua opinião é importante para nós. Compartilhe sua experiência ou dúvida.</p>
-            <form onsubmit="event.preventDefault(); alert('Comentário enviado! Obrigado por participar.');">
-              <div class="row">
-                <input type="text" placeholder="Seu nome" required />
-                <input type="email" placeholder="Seu e-mail" required />
-              </div>
-              <textarea placeholder="Escreva seu comentário..." rows="4" required></textarea>
-              <button type="submit" class="btn-comentar">Enviar comentário</button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
