@@ -283,12 +283,11 @@
     }
     .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
 
-    .testimonial {
-      padding: 80px 0;
-      background: #f5f7fc;
-    }
     .testimonial { display: none; }
 
+    /* ========================================================= */
+    /* SEÇÃO CONTATO MELHORADA - SEM CAMPO DE MENSAGEM          */
+    /* ========================================================= */
     .cta-section {
       padding: 80px 0;
       background: white;
@@ -308,67 +307,98 @@
       font-size: 1.05rem;
       margin-bottom: 40px;
     }
-    .cta-form {
+
+    .cta-card {
       background: #f5f7fc;
-      padding: 40px 48px;
+      padding: 48px 40px;
       border-radius: 32px;
       border: 1px solid #e8edf4;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      text-align: left;
+      text-align: center;
+      transition: 0.3s;
     }
-    .cta-form .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
+    .cta-card:hover {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+      border-color: #4a9e8f;
     }
-    .cta-form label {
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: #1a2634;
-      margin-bottom: 2px;
-      display: block;
+    .cta-card .cta-icon {
+      font-size: 3.5rem;
+      color: #25d366;
+      margin-bottom: 16px;
     }
-    .cta-form input,
-    .cta-form textarea {
-      width: 100%;
-      padding: 14px 18px;
-      border-radius: 60px;
-      border: 1px solid #ccd7e6;
-      background: white;
-      font-family: inherit;
-      font-size: 0.95rem;
-      outline: none;
-      transition: 0.2s;
-      color: #1a2634;
-    }
-    .cta-form input:focus,
-    .cta-form textarea:focus { border-color: #4a9e8f; box-shadow: 0 0 0 3px rgba(74, 158, 143, 0.08); }
-    .cta-form textarea { border-radius: 24px; resize: vertical; min-height: 120px; }
-    .cta-form .form-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 16px;
-      margin-top: 8px;
-    }
-    .cta-form .btn-enviar {
-      background: #4a9e8f;
-      color: white;
-      border: none;
-      padding: 14px 40px;
-      border-radius: 60px;
+    .cta-card h3 {
+      font-size: 1.4rem;
       font-weight: 600;
+      color: #0e1a26;
+      margin-bottom: 8px;
+    }
+    .cta-card p {
+      color: #6a7a8e;
       font-size: 1rem;
-      cursor: pointer;
-      transition: 0.2s;
+      margin-bottom: 28px;
+    }
+    .cta-card .btn-whatsapp {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 8px 24px rgba(74, 158, 143, 0.15);
+      gap: 12px;
+      background: #25d366;
+      color: white;
+      padding: 16px 48px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.25s;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
     }
-    .cta-form .btn-enviar:hover { background: #3a7e72; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74, 158, 143, 0.25); }
+    .cta-card .btn-whatsapp:hover {
+      background: #1ebe5c;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.4);
+    }
+    .cta-card .btn-whatsapp i {
+      font-size: 1.6rem;
+    }
+
+    .cta-card .cta-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 24px 0 20px;
+      color: #bcc9db;
+      font-size: 0.85rem;
+    }
+    .cta-card .cta-divider::before,
+    .cta-card .cta-divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e8edf4;
+    }
+
+    .cta-card .cta-contato-rapido {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: 0.9rem;
+      color: #6a7a8e;
+    }
+    .cta-card .cta-contato-rapido a {
+      color: #1a2634;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+    .cta-card .cta-contato-rapido a:hover {
+      color: #4a9e8f;
+    }
+    .cta-card .cta-contato-rapido i {
+      color: #4a9e8f;
+      font-size: 1rem;
+    }
+    /* ========================================================= */
 
     .footer {
       background: #0f1722;
@@ -521,15 +551,14 @@
       .topbar a { margin: 0 8px; }
       .hero { padding: 40px 0 60px; }
       .hero-logo img { max-width: 280px; }
-      .cta-form { padding: 30px 20px; }
-      .cta-form .form-row { grid-template-columns: 1fr; }
-      .cta-form .form-actions { flex-direction: column; align-items: stretch; }
-      .cta-form .btn-enviar { justify-content: center; }
+      .cta-card { padding: 32px 24px; }
+      .cta-card .btn-whatsapp { padding: 14px 32px; font-size: 1rem; }
       .blog-grid { grid-template-columns: 1fr; }
       .comentarios form .row { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .hero-logo img { max-width: 220px; }
+      .cta-card .cta-contato-rapido { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
@@ -652,31 +681,32 @@
       </div>
     </section>
 
-    <section class="testimonial" style="display: none;"></section>
+    <section class="testimonial"></section>
 
     <!-- ========================================================= -->
-    <!-- SEÇÃO CONTATO - FORMULÁRIO MELHORADO                     -->
+    <!-- SEÇÃO CONTATO MELHORADA - SEM CAMPO DE MENSAGEM          -->
     <!-- ========================================================= -->
     <section class="cta-section" id="contato">
       <div class="container">
         <h2>Vamos <span>conversar</span>?</h2>
         <p class="cta-sub">Agende uma avaliação inicial online sem compromisso. Conheça nosso espaço virtual e descubra como podemos ajudar.</p>
         
-        <div class="cta-form">
-          <div class="form-row">
-            <div>
-              <label for="nome">Seu nome</label>
-              <input type="text" id="nome" placeholder="Nome completo" />
-            </div>
+        <div class="cta-card">
+          <div class="cta-icon">
+            <i class="fab fa-whatsapp"></i>
           </div>
-          <div>
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" placeholder="Conte um pouco sobre o que está buscando..." rows="3"></textarea>
-          </div>
-          <div class="form-actions">
-            <a href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20inicial." class="btn-enviar" target="_blank">
-              <i class="fab fa-whatsapp"></i> Falar no WhatsApp
-            </a>
+          <h3>Fale com a gente pelo WhatsApp</h3>
+          <p>Clique no botão abaixo e inicie uma conversa agora mesmo.</p>
+          
+          <a href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedagógico%20online." class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+          </a>
+          
+          <div class="cta-divider">ou</div>
+          
+          <div class="cta-contato-rapido">
+            <span><i class="fas fa-phone"></i> (43) 92003-6581</span>
+            <span><i class="fas fa-envelope"></i> contato@legadoqueensina.com</span>
           </div>
         </div>
         
