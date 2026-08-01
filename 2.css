@@ -23,28 +23,6 @@ body {
   padding: 0 24px;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  background: #25d366;
-  color: white;
-  border-radius: 60px;
-  padding: 14px 22px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
-  text-decoration: none;
-  z-index: 999;
-  transition: 0.2s;
-  font-size: 0.95rem;
-}
-.whatsapp-float i { font-size: 1.5rem; }
-.whatsapp-float:hover { transform: scale(1.04); background: #1ebe5c; }
-
 /* TOPBAR */
 .topbar {
   background: #1a2634;
@@ -308,7 +286,7 @@ body {
 }
 .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
 
-/* CTA / CONTATO */
+/* CTA / CONTATO - MELHORADO */
 .cta-section {
   padding: 80px 0;
   background: white;
@@ -374,7 +352,7 @@ body {
   margin-top: 8px;
 }
 .cta-form .btn-enviar {
-  background: #4a9e8f;
+  background: #25d366;
   color: white;
   border: none;
   padding: 14px 40px;
@@ -386,23 +364,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 8px 24px rgba(74, 158, 143, 0.15);
-}
-.cta-form .btn-enviar:hover { background: #3a7e72; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74, 158, 143, 0.25); }
-.cta-form .whatsapp-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #1a2634;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.2s;
-  padding: 10px 16px;
-  border-radius: 60px;
-  border: 1px solid transparent;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
 }
-.cta-form .whatsapp-link i { color: #25d366; font-size: 1.4rem; }
-.cta-form .whatsapp-link:hover { background: #f0f2f5; border-color: #e8edf4; }
+.cta-form .btn-enviar:hover { background: #1ebe5c; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(37, 211, 102, 0.35); }
 
 /* FOOTER */
 .footer {
@@ -563,12 +528,9 @@ body {
   .cta-form .form-row { grid-template-columns: 1fr; }
   .cta-form .form-actions { flex-direction: column; align-items: stretch; }
   .cta-form .btn-enviar { justify-content: center; }
-  .cta-form .whatsapp-link { justify-content: center; }
   .blog-grid { grid-template-columns: 1fr; }
   .comentarios form .row { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
-  .whatsapp-float i { font-size: 1.2rem; }
   .hero-logo img { max-width: 220px; }
 }
