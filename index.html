@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legado que Ensina · Psicopedagogia Online</title>
   
-  <!-- ===== FAVICON E THEME-COLOR (ADICIONADO) ===== -->
+  <!-- FAVICON E THEME-COLOR -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <!-- ============================================= -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,27 +25,6 @@
       overflow-x: hidden;
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: #25d366;
-      color: white;
-      border-radius: 60px;
-      padding: 14px 22px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 600;
-      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
-      text-decoration: none;
-      z-index: 999;
-      transition: 0.2s;
-      font-size: 0.95rem;
-    }
-    .whatsapp-float i { font-size: 1.5rem; }
-    .whatsapp-float:hover { transform: scale(1.04); background: #1ebe5c; }
 
     .topbar {
       background: #1a2634;
@@ -65,55 +43,6 @@
     .topbar a { color: #9aadc4; text-decoration: none; margin-left: 18px; transition: 0.2s; }
     .topbar a:hover { color: white; }
     .topbar i { margin-right: 6px; }
-
-    /* ========================================================= */
-    /* NAVBAR REMOVIDA - SÓ COMENTEI PRA VC VER ONDE FOI        */
-    /* ========================================================= */
-    <!--
-    .navbar {
-      background: white;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 12px 0;
-      border-bottom: 1px solid #e8edf4;
-    }
-    .navbar .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .logo-menu { height: 60px; width: auto; display: block; }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      font-weight: 500;
-      align-items: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #1a2634;
-      font-size: 0.95rem;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 4px;
-      transition: 0.2s;
-      cursor: pointer;
-    }
-    .nav-links a:hover { color: #4a9e8f; border-bottom-color: #4a9e8f; }
-    .nav-cta {
-      background: #4a9e8f;
-      color: white !important;
-      padding: 10px 28px;
-      border-radius: 40px;
-      border-bottom: none !important;
-      transition: 0.2s;
-    }
-    .nav-cta:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 158, 143, 0.25); }
-    -->
-    /* ========================================================= */
 
     .page { display: none; animation: fadeIn 0.4s ease; }
     .page.active { display: block; }
@@ -440,20 +369,6 @@
       box-shadow: 0 8px 24px rgba(74, 158, 143, 0.15);
     }
     .cta-form .btn-enviar:hover { background: #3a7e72; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74, 158, 143, 0.25); }
-    .cta-form .whatsapp-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #1a2634;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.2s;
-      padding: 10px 16px;
-      border-radius: 60px;
-      border: 1px solid transparent;
-    }
-    .cta-form .whatsapp-link i { color: #25d366; font-size: 1.4rem; }
-    .cta-form .whatsapp-link:hover { background: #f0f2f5; border-color: #e8edf4; }
 
     .footer {
       background: #0f1722;
@@ -602,26 +517,19 @@
       .about-image { order: -1; }
     }
     @media (max-width: 768px) {
-      .navbar .container { flex-direction: column; gap: 12px; }
-      .nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
       .topbar .container { flex-direction: column; text-align: center; }
       .topbar a { margin: 0 8px; }
       .hero { padding: 40px 0 60px; }
       .hero-logo img { max-width: 280px; }
-      .logo-menu { height: 50px; }
       .cta-form { padding: 30px 20px; }
       .cta-form .form-row { grid-template-columns: 1fr; }
       .cta-form .form-actions { flex-direction: column; align-items: stretch; }
       .cta-form .btn-enviar { justify-content: center; }
-      .cta-form .whatsapp-link { justify-content: center; }
       .blog-grid { grid-template-columns: 1fr; }
       .comentarios form .row { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
-      .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
-      .whatsapp-float i { font-size: 1.2rem; }
       .hero-logo img { max-width: 220px; }
-      .logo-menu { height: 42px; }
     }
   </style>
 </head>
@@ -638,24 +546,6 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- NAVBAR REMOVIDA - COMENTEI FORA PRA NÃO APARECER        -->
-  <!-- ========================================================= -->
-  <!--
-  <nav class="navbar">
-    <div class="container">
-      <a href="#" onclick="mostrarPagina('inicial')">
-        <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" class="logo-menu" />
-      </a>
-      <div class="nav-links">
-        <a href="#" onclick="mostrarPagina('inicial')">Início</a>
-        <a href="#" onclick="mostrarPagina('historia')">História</a>
-        <a href="#contato" class="nav-cta" onclick="mostrarPagina('inicial')">Agendar</a>
-      </div>
-    </div>
-  </nav>
-  -->
-
   <!-- ============================================= -->
   <!-- PÁGINA INICIAL -->
   <!-- ============================================= -->
@@ -668,7 +558,7 @@
           <h1>Construindo <span>pontes</span> para o <br />aprendizado <br /></h1>
           <p>Transformando desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento e estratégias personalizadas.</p>
           <div class="btn-group">
-            <a href="#contato" class="btn-primary" onclick="mostrarPagina('inicial')"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
+            <a href="#contato" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
             <button class="btn-outline" onclick="mostrarPagina('historia')">Conhecer nossa história</button>
           </div>
         </div>
@@ -764,40 +654,35 @@
 
     <section class="testimonial" style="display: none;"></section>
 
+    <!-- ========================================================= -->
+    <!-- SEÇÃO CONTATO - FORMULÁRIO MELHORADO                     -->
+    <!-- ========================================================= -->
     <section class="cta-section" id="contato">
       <div class="container">
         <h2>Vamos <span>conversar</span>?</h2>
         <p class="cta-sub">Agende uma avaliação inicial online sem compromisso. Conheça nosso espaço virtual e descubra como podemos ajudar.</p>
         
-        <!-- ========================================================= -->
-        <!-- FORMULÁRIO ALTERADO PARA ENVIAR POR E-MAIL (ALTERAÇÃO)    -->
-        <!-- ========================================================= -->
-        <form class="cta-form" action="mailto:contato@legadoqueensina.com.br" method="post" enctype="text/plain">
+        <div class="cta-form">
           <div class="form-row">
             <div>
               <label for="nome">Seu nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Nome completo" required />
-            </div>
-            <div>
-              <label for="email">Seu e-mail</label>
-              <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
+              <input type="text" id="nome" placeholder="Nome completo" />
             </div>
           </div>
           <div>
             <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco sobre o que está buscando..." rows="3"></textarea>
+            <textarea id="mensagem" placeholder="Conte um pouco sobre o que está buscando..." rows="3"></textarea>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn-enviar"><i class="fas fa-paper-plane"></i> Enviar mensagem</button>
-            <a href="https://wa.me/5543920036581" class="whatsapp-link" target="_blank">
-              <i class="fab fa-whatsapp"></i> ou fale pelo WhatsApp
+            <a href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20inicial." class="btn-enviar" target="_blank">
+              <i class="fab fa-whatsapp"></i> Falar no WhatsApp
             </a>
           </div>
-        </form>
-        <!-- ========================================================= -->
+        </div>
         
       </div>
     </section>
+    <!-- ========================================================= -->
 
     <footer class="footer">
       <div class="container footer-grid">
@@ -955,7 +840,7 @@
     </section>
   </div>
 
-  <!-- ARTIGO 3 - GAMIFICAÇÃO -->
+  <!-- ARTIGO 3 -->
   <div id="pagina-artigo3" class="page">
     <section class="pagina-interna">
       <div class="container">
@@ -996,10 +881,6 @@
       </div>
     </section>
   </div>
-
-  <a href="https://wa.me/5543920036581" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i> Atendimento
-  </a>
 
   <script>
     function mostrarPagina(pagina) {
