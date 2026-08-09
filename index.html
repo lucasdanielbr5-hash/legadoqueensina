@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legado que Ensina · Psicopedagogia Online</title>
   
-  <!-- FAVICON -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
@@ -20,19 +19,38 @@
 <body>
 
   <!-- ============================================= -->
-  <!-- HEADER / NAVBAR                              -->
+  <!-- TOP BAR - BANDA CORPORATIVA                  -->
+  <!-- ============================================= -->
+  <div class="top-band">
+    <div class="container">
+      <div class="band-left">
+        <span><i class="fas fa-phone-alt"></i> (43) 92003-6581</span>
+        <span><i class="fas fa-envelope"></i> contato@legadoqueensina.com</span>
+      </div>
+      <div class="band-right">
+        <span><i class="fas fa-video"></i> Atendimento online - Brasil</span>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- HEADER - NAVBAR IMPONENTE                   -->
   <!-- ============================================= -->
   <header class="header">
     <div class="container">
       <a href="#" onclick="mostrarPagina('inicial')" class="logo">
         <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
+        <span class="logo-text">Legado<span>que Ensina</span></span>
       </a>
       <nav class="nav">
         <a href="#" onclick="mostrarPagina('inicial')" class="active">Início</a>
-        <a href="#" onclick="mostrarPagina('historia')">História</a>
-        <a href="#contato" onclick="mostrarPagina('inicial')" class="btn-nav">Agendar</a>
+        <a href="#" onclick="mostrarPagina('historia')">Nossa História</a>
+        <a href="#contato" onclick="mostrarPagina('inicial')" class="btn-nav">Agendar <i class="fas fa-arrow-right"></i></a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <button class="menu-toggle" id="menuToggle">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -43,32 +61,43 @@
   <!-- ============================================= -->
   <div id="pagina-inicial" class="page active">
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== HERO - IMPONENTE ===== -->
     <section class="hero">
+      <div class="hero-bg-shape"></div>
+      <div class="hero-bg-shape-2"></div>
       <div class="container">
-        <div class="hero-wrapper">
-          <div class="hero-text">
-            <span class="hero-tag">✦ Psicopedagogia Online</span>
-            <h1>
-              Construindo <br />
-              <span class="gradient-text">pontes</span> para o <br />
-              aprendizado
-            </h1>
-            <p>Transformamos desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento, escuta e estratégias personalizadas.</p>
-            <div class="hero-actions">
-              <a href="#contato" class="btn-primary">Agendar atendimento <i class="fas fa-arrow-right"></i></a>
-              <button class="btn-outline" onclick="mostrarPagina('historia')">Nossa história</button>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="pulse-dot"></span>
+              Atendimento online
             </div>
-            <div class="hero-metrics">
-              <div class="metric">
+            <h1>
+              Construindo<br />
+              <span class="highlight">pontes</span> para o<br />
+              <span class="highlight-alt">aprendizado</span>
+            </h1>
+            <p>Transformamos desafios em oportunidades. Com acolhimento, escuta ativa e estratégias personalizadas, cada criança encontra seu próprio caminho para aprender.</p>
+            <div class="hero-actions">
+              <a href="#contato" class="btn-primary">
+                <i class="fas fa-calendar-check"></i> Agendar atendimento
+              </a>
+              <button class="btn-secondary" onclick="mostrarPagina('historia')">
+                Conhecer história
+              </button>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
                 <span class="number">200+</span>
-                <span class="label">Atendimentos</span>
+                <span class="label">Crianças atendidas</span>
               </div>
-              <div class="metric">
+              <div class="stat-divider"></div>
+              <div class="stat">
                 <span class="number">98%</span>
                 <span class="label">Satisfação</span>
               </div>
-              <div class="metric">
+              <div class="stat-divider"></div>
+              <div class="stat">
                 <span class="number">5+</span>
                 <span class="label">Anos de experiência</span>
               </div>
@@ -77,13 +106,26 @@
           <div class="hero-visual">
             <div class="hero-image-wrapper">
               <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
-              <div class="floating-card card-1">
+              <div class="floating-card fc-1">
                 <i class="fas fa-user-graduate"></i>
-                <span>+200 alunos</span>
+                <div>
+                  <strong>+200</strong>
+                  <span>alunos</span>
+                </div>
               </div>
-              <div class="floating-card card-2">
+              <div class="floating-card fc-2">
                 <i class="fas fa-star"></i>
-                <span>4.9/5</span>
+                <div>
+                  <strong>4.9</strong>
+                  <span>avaliação</span>
+                </div>
+              </div>
+              <div class="floating-card fc-3">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong>5+</strong>
+                  <span>anos</span>
+                </div>
               </div>
             </div>
           </div>
@@ -91,35 +133,35 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
+    <!-- ===== ABOUT - INSTITUCIONAL ===== -->
     <section class="about" id="sobre">
       <div class="container">
         <div class="about-grid">
           <div class="about-image">
             <div class="image-frame">
               <img src="https://i.imgur.com/TGq1ae3.png" alt="Sobre o Legado que Ensina" />
-              <div class="experience-badge">
-                <span>5+</span>
-                <span>Anos</span>
+              <div class="experience-card">
+                <span class="exp-number">5+</span>
+                <span class="exp-label">Anos de<br />trajetória</span>
               </div>
             </div>
           </div>
           <div class="about-content">
-            <span class="section-tag">Sobre nós</span>
-            <h2>Uma história de <span class="gradient-text">acolhimento</span> e <span class="gradient-text">aprendizado</span></h2>
+            <div class="section-label">Sobre nós</div>
+            <h2>Uma história de <span class="gradient">acolhimento</span> e <span class="gradient">aprendizado</span></h2>
             <p>O <strong>Legado que Ensina</strong> nasce do reconhecimento às crianças e profissionais que construíram uma prática de alfabetização mais sensível, consciente e acessível.</p>
             <p>Mais que um método, é uma forma de enxergar a educação com presença, escuta e significado. Agora também no ambiente online, ampliamos o alcance e o acolhimento.</p>
             <div class="about-features">
               <div class="feature">
-                <i class="fas fa-check-circle"></i>
+                <span class="icon"><i class="fas fa-check"></i></span>
                 <span>Atendimento humanizado</span>
               </div>
               <div class="feature">
-                <i class="fas fa-check-circle"></i>
+                <span class="icon"><i class="fas fa-check"></i></span>
                 <span>Estratégias personalizadas</span>
               </div>
               <div class="feature">
-                <i class="fas fa-check-circle"></i>
+                <span class="icon"><i class="fas fa-check"></i></span>
                 <span>Acompanhamento contínuo</span>
               </div>
             </div>
@@ -131,25 +173,27 @@
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
+    <!-- ===== SERVICES - CARDS DESTAQUE ===== -->
     <section class="services" id="servicos">
+      <div class="services-bg-shape"></div>
       <div class="container">
         <div class="services-header">
-          <span class="section-tag">Serviços</span>
-          <h2>O que <span class="gradient-text">oferecemos</span></h2>
+          <div class="section-label">Nossos serviços</div>
+          <h2>O que <span class="gradient">oferecemos</span></h2>
           <p>Atendimento online com foco na construção da autonomia e da relação saudável com o conhecimento.</p>
         </div>
         <div class="services-grid">
           <div class="service-card">
-            <div class="icon">
+            <div class="card-icon">
               <i class="fas fa-user-graduate"></i>
             </div>
             <h3>Acompanhamento psicopedagógico</h3>
             <p>Sessões individuais voltadas ao desenvolvimento das habilidades cognitivas, emocionais e estratégias de aprendizagem.</p>
             <a href="#contato" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="service-card">
-            <div class="icon">
+          <div class="service-card featured">
+            <div class="card-badge">Destaque</div>
+            <div class="card-icon">
               <i class="fas fa-clipboard-list"></i>
             </div>
             <h3>Avaliação psicopedagógica</h3>
@@ -157,7 +201,7 @@
             <a href="#contato" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="service-card">
-            <div class="icon">
+            <div class="card-icon">
               <i class="fas fa-puzzle-piece"></i>
             </div>
             <h3>Intervenção personalizada</h3>
@@ -165,7 +209,7 @@
             <a href="#contato" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="service-card">
-            <div class="icon">
+            <div class="card-icon">
               <i class="fas fa-chalkboard-teacher"></i>
             </div>
             <h3>Orientação à família e escola</h3>
@@ -176,12 +220,12 @@
       </div>
     </section>
 
-    <!-- ===== BLOG ===== -->
+    <!-- ===== BLOG - DESTAQUE ===== -->
     <section class="blog" id="blog">
       <div class="container">
         <div class="blog-header">
-          <span class="section-tag">Conteúdos</span>
-          <h2>Artigos <span class="gradient-text">recentes</span></h2>
+          <div class="section-label">Conteúdos</div>
+          <h2>Artigos <span class="gradient">recentes</span></h2>
           <p>Dicas, reflexões e conteúdos para apoiar o desenvolvimento e a aprendizagem.</p>
         </div>
         <div class="blog-grid">
@@ -192,7 +236,7 @@
             </div>
             <div class="blog-content">
               <h3>Como identificar dificuldades de aprendizagem cedo</h3>
-              <p>Sinais de alerta e estratégias para pais e educadores ajudarem as crianças a superarem desafios escolares.</p>
+              <p>Sinais de alerta e estratégias para pais e educadores.</p>
               <span class="btn-read">Leia mais →</span>
             </div>
           </article>
@@ -203,7 +247,7 @@
             </div>
             <div class="blog-content">
               <h3>Como manter a motivação nos estudos em casa</h3>
-              <p>Dicas práticas para criar uma rotina de estudos que estimule a autonomia e o prazer de aprender.</p>
+              <p>Dicas práticas para criar uma rotina de estudos.</p>
               <span class="btn-read">Leia mais →</span>
             </div>
           </article>
@@ -214,7 +258,7 @@
             </div>
             <div class="blog-content">
               <h3>Gamificação: como jogos ajudam no aprendizado</h3>
-              <p>Entenda como elementos de jogos podem transformar o processo de aprendizagem, tornando-o mais engajador.</p>
+              <p>Entenda como elementos de jogos transformam o aprendizado.</p>
               <span class="btn-read">Leia mais →</span>
             </div>
           </article>
@@ -222,14 +266,20 @@
       </div>
     </section>
 
-    <!-- ===== CTA ===== -->
+    <!-- ===== CTA - IMPONENTE ===== -->
     <section class="cta-section" id="contato">
+      <div class="cta-bg-shape"></div>
       <div class="container">
-        <div class="cta-wrapper">
+        <div class="cta-grid">
           <div class="cta-content">
-            <span class="cta-tag">Vamos conversar</span>
-            <h2>Agende sua <span class="gradient-text-light">avaliação</span> inicial</h2>
+            <div class="section-label light">Vamos conversar</div>
+            <h2>Agende sua <span class="gradient-light">avaliação</span> inicial</h2>
             <p>Sem compromisso. Conheça nosso espaço virtual e descubra como podemos ajudar no desenvolvimento do seu filho.</p>
+            <div class="cta-features">
+              <span><i class="fas fa-check-circle"></i> Atendimento humanizado</span>
+              <span><i class="fas fa-check-circle"></i> Online e presencial</span>
+              <span><i class="fas fa-check-circle"></i> Primeira conversa gratuita</span>
+            </div>
           </div>
           <div class="cta-card">
             <div class="cta-icon">
@@ -250,42 +300,43 @@
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER - INSTITUCIONAL ===== -->
     <footer class="footer">
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
             <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" class="footer-logo" />
             <p>Acompanhamento, avaliação e intervenção psicopedagógica para crianças, adolescentes e adultos.</p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
           </div>
           <div class="footer-links">
             <h4>Navegação</h4>
             <a href="#" onclick="mostrarPagina('inicial')">Início</a>
-            <a href="#" onclick="mostrarPagina('historia')">História</a>
+            <a href="#" onclick="mostrarPagina('historia')">Nossa História</a>
             <a href="#contato" onclick="mostrarPagina('inicial')">Agendamento</a>
           </div>
           <div class="footer-links">
-            <h4>Contato</h4>
-            <a href="#"><i class="fas fa-phone"></i> (43) 92003-6581</a>
-            <a href="#"><i class="fas fa-envelope"></i> contato@legadoqueensina.com</a>
-            <a href="#"><i class="fas fa-calendar-check"></i> Agende sua primeira conversa</a>
+            <h4>Serviços</h4>
+            <a href="#servicos">Acompanhamento</a>
+            <a href="#servicos">Avaliação</a>
+            <a href="#servicos">Intervenção</a>
+            <a href="#servicos">Orientação</a>
           </div>
           <div class="footer-newsletter">
             <h4>Newsletter</h4>
             <p>Receba conteúdos exclusivos sobre aprendizagem.</p>
             <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');">
-              <input type="email" placeholder="Seu e-mail" required />
+              <input type="email" placeholder="Seu melhor e-mail" required />
               <button type="submit"><i class="fas fa-arrow-right"></i></button>
             </form>
           </div>
         </div>
         <div class="footer-bottom">
           <p>&copy; 2026 Legado que Ensina. Todos os direitos reservados.</p>
-          <div class="footer-social">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
         </div>
       </div>
     </footer>
@@ -301,7 +352,8 @@
           <i class="fas fa-arrow-left"></i> Voltar
         </button>
         <div class="page-header">
-          <h1>Nossa <span class="gradient-text">história</span> completa</h1>
+          <span class="page-tag">Nossa história</span>
+          <h1>Uma trajetória de <span class="gradient">acolhimento</span></h1>
         </div>
         <div class="page-content">
           <p>Antes de qualquer método, planejamento ou proposta pedagógica, existem experiências que transformam a forma como a educação passa a ser enxergada.</p>
@@ -314,22 +366,22 @@
           <p>O Legado que Ensina representa exatamente isso: a continuidade dessas vivências e a base que sustenta uma prática construída com presença, escuta e significado — em qualquer lugar.</p>
 
           <div class="honor-list">
-            <h4><i class="fas fa-heart"></i> Em homenagem à nossa história:</h4>
+            <h4><i class="fas fa-heart"></i> Em homenagem à nossa história</h4>
             <div class="honor-tags">
               <span>Benício</span>
               <span>Maicon</span>
               <span>Pedro</span>
               <span>Marcos</span>
               <span>Maria</span>
-              <span>Professora Vanessa</span>
-              <span>Professora Cirleia</span>
-              <span>Professora Joceli</span>
+              <span>Profª Vanessa</span>
+              <span>Profª Cirleia</span>
+              <span>Profª Joceli</span>
             </div>
           </div>
 
           <div class="quote-block">
             <i class="fas fa-quote-left"></i>
-            <p>Porque algumas experiências na educação não passam com o tempo — elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo.</p>
+            <p>"Porque algumas experiências na educação não passam com o tempo — elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo."</p>
           </div>
         </div>
       </div>
@@ -342,9 +394,7 @@
   <div id="pagina-artigo1" class="page">
     <section class="page-inner">
       <div class="container">
-        <button class="btn-back" onclick="mostrarPagina('inicial')">
-          <i class="fas fa-arrow-left"></i> Voltar
-        </button>
+        <button class="btn-back" onclick="mostrarPagina('inicial')"><i class="fas fa-arrow-left"></i> Voltar</button>
         <div class="page-header">
           <span class="page-tag">Aprendizagem</span>
           <h1>Como identificar dificuldades de aprendizagem cedo</h1>
@@ -356,13 +406,13 @@
           <p>Pais e educadores devem estar atentos a comportamentos que podem indicar que algo não vai bem no processo de aprendizagem. Muitas vezes, esses sinais são sutis e podem ser confundidos com preguiça ou desinteresse, mas é fundamental observar com atenção.</p>
           <p><strong>Principais sinais de alerta:</strong></p>
           <ul>
-            <li><strong>Dificuldade persistente em ler, escrever ou realizar cálculos básicos:</strong> A criança pode trocar letras, inverter sílabas, ter dificuldade para acompanhar a leitura em voz alta ou apresentar erros recorrentes em operações matemáticas simples.</li>
-            <li><strong>Baixa concentração durante as atividades escolares:</strong> A criança se distrai com facilidade, não consegue terminar as tarefas ou parece estar sempre "viajando" durante as explicações.</li>
-            <li><strong>Frustração ou choro ao fazer lição de casa:</strong> Quando a tarefa se torna um momento de tensão e sofrimento, é um sinal de que algo precisa ser investigado.</li>
-            <li><strong>Esquecimento frequente de conteúdos já trabalhados:</strong> A criança estuda, mas no dia seguinte parece ter esquecido tudo o que aprendeu, como se o conteúdo não tivesse sido consolidado.</li>
-            <li><strong>Comparação negativa com os colegas de classe:</strong> A criança começa a se perceber como "menos capaz" e isso afeta sua autoestima e motivação.</li>
-            <li><strong>Dificuldade para seguir instruções:</strong> A criança tem problemas para entender e executar comandos simples, mesmo quando são repetidos várias vezes.</li>
-            <li><strong>Comportamento de esquiva:</strong> A criança inventa desculpas para não ir à escola ou para não fazer as atividades escolares.</li>
+            <li><strong>Dificuldade persistente em ler, escrever ou realizar cálculos básicos</strong> — a criança pode trocar letras, inverter sílabas, ter dificuldade para acompanhar a leitura em voz alta ou apresentar erros recorrentes em operações matemáticas simples.</li>
+            <li><strong>Baixa concentração durante as atividades escolares</strong> — a criança se distrai com facilidade, não consegue terminar as tarefas ou parece estar sempre "viajando" durante as explicações.</li>
+            <li><strong>Frustração ou choro ao fazer lição de casa</strong> — quando a tarefa se torna um momento de tensão e sofrimento, é um sinal de que algo precisa ser investigado.</li>
+            <li><strong>Esquecimento frequente de conteúdos já trabalhados</strong> — a criança estuda, mas no dia seguinte parece ter esquecido tudo o que aprendeu, como se o conteúdo não tivesse sido consolidado.</li>
+            <li><strong>Comparação negativa com os colegas de classe</strong> — a criança começa a se perceber como "menos capaz" e isso afeta sua autoestima e motivação.</li>
+            <li><strong>Dificuldade para seguir instruções</strong> — a criança tem problemas para entender e executar comandos simples, mesmo quando são repetidos várias vezes.</li>
+            <li><strong>Comportamento de esquiva</strong> — a criança inventa desculpas para não ir à escola ou para não fazer as atividades escolares.</li>
           </ul>
           <p><strong>O que fazer ao identificar esses sinais?</strong></p>
           <p>O primeiro passo é conversar com os professores e com a equipe pedagógica da escola para entender como a criança está se comportando em sala de aula. Em seguida, é fundamental buscar uma avaliação psicopedagógica completa.</p>
@@ -384,9 +434,7 @@
   <div id="pagina-artigo2" class="page">
     <section class="page-inner">
       <div class="container">
-        <button class="btn-back" onclick="mostrarPagina('inicial')">
-          <i class="fas fa-arrow-left"></i> Voltar
-        </button>
+        <button class="btn-back" onclick="mostrarPagina('inicial')"><i class="fas fa-arrow-left"></i> Voltar</button>
         <div class="page-header">
           <span class="page-tag">Motivação</span>
           <h1>Como manter a motivação nos estudos em casa</h1>
@@ -396,21 +444,14 @@
         <div class="page-content">
           <p>Manter a motivação nos estudos é um dos maiores desafios enfrentados por famílias e educadores, especialmente em um mundo cheio de distrações como celulares, videogames e redes sociais. A falta de motivação pode levar à queda no desempenho escolar, ao desinteresse e até mesmo à evasão escolar.</p>
           <p>No entanto, existem estratégias eficazes que podem ajudar a transformar o momento de estudo em uma experiência mais leve, prazerosa e produtiva. Aqui estão algumas dicas práticas:</p>
-          <p><strong>1. Crie uma rotina consistente</strong></p>
-          <p>Horários fixos para estudar ajudam a criar o hábito e reduzem a resistência inicial. O cérebro se acostuma com a rotina e, com o tempo, o estudo se torna uma atividade natural do dia a dia. Defina um horário específico para cada matéria e respeite-o.</p>
-          <p><strong>2. Ofereça escolhas</strong></p>
-          <p>Permitir que a criança escolha a ordem das tarefas ou o local de estudo aumenta o senso de autonomia e controle sobre o próprio aprendizado. Quando a criança sente que tem voz ativa no processo, a motivação tende a aumentar.</p>
-          <p><strong>3. Valorize o esforço, não apenas o resultado</strong></p>
-          <p>Reconhecer o empenho, mesmo quando o resultado não é perfeito, fortalece a autoestima e incentiva a criança a continuar tentando. Frases como "Percebi o quanto você se dedicou" são mais eficazes do que "Você tirou nota baixa".</p>
-          <p><strong>4. Use jogos e materiais lúdicos</strong></p>
-          <p>Transformar o aprendizado em algo divertido torna o processo mais leve e prazeroso. Jogos de tabuleiro, aplicativos educativos, brincadeiras e atividades interativas podem ser grandes aliados no processo de aprendizagem.</p>
-          <p><strong>5. Mantenha uma comunicação aberta</strong></p>
-          <p>Pergunte sobre o que está sendo estudado e demonstre interesse genuíno. Mostre curiosidade sobre os temas e converse sobre como aqueles conteúdos se aplicam no dia a dia. Isso ajuda a criança a ver sentido no que está aprendendo.</p>
-          <p><strong>6. Crie um ambiente adequado para estudar</strong></p>
-          <p>Um espaço organizado, silencioso e com boa iluminação faz toda a diferença. Evite distrações como televisão ligada ou celular por perto. Tenha todo o material necessário à mão antes de começar.</p>
-          <p><strong>7. Estabeleça metas realistas e celebre as conquistas</strong></p>
-          <p>Defina objetivos pequenos e alcançáveis a curto prazo. Quando a criança atinge uma meta, comemore com ela. Isso cria um ciclo positivo de motivação e recompensa.</p>
-          <p>No <strong>Legado que Ensina</strong>, trabalhamos a motivação como parte essencial do processo de aprendizagem, ajudando cada criança a encontrar seu próprio ritmo e prazer em aprender. Acreditamos que quando a criança se sente motivada, o aprendizado acontece de forma natural e significativa.</p>
+          <p><strong>1. Crie uma rotina consistente</strong> — horários fixos para estudar ajudam a criar o hábito e reduzem a resistência inicial. O cérebro se acostuma com a rotina e, com o tempo, o estudo se torna uma atividade natural do dia a dia.</p>
+          <p><strong>2. Ofereça escolhas</strong> — permitir que a criança escolha a ordem das tarefas ou o local de estudo aumenta o senso de autonomia e controle sobre o próprio aprendizado.</p>
+          <p><strong>3. Valorize o esforço, não apenas o resultado</strong> — reconhecer o empenho, mesmo quando o resultado não é perfeito, fortalece a autoestima e incentiva a criança a continuar tentando.</p>
+          <p><strong>4. Use jogos e materiais lúdicos</strong> — transformar o aprendizado em algo divertido torna o processo mais leve e prazeroso.</p>
+          <p><strong>5. Mantenha uma comunicação aberta</strong> — pergunte sobre o que está sendo estudado e demonstre interesse genuíno.</p>
+          <p><strong>6. Crie um ambiente adequado para estudar</strong> — um espaço organizado, silencioso e com boa iluminação faz toda a diferença.</p>
+          <p><strong>7. Estabeleça metas realistas e celebre as conquistas</strong> — defina objetivos pequenos e alcançáveis a curto prazo e comemore quando a criança atinge uma meta.</p>
+          <p>No <strong>Legado que Ensina</strong>, trabalhamos a motivação como parte essencial do processo de aprendizagem, ajudando cada criança a encontrar seu próprio ritmo e prazer em aprender.</p>
         </div>
       </div>
     </section>
@@ -419,9 +460,7 @@
   <div id="pagina-artigo3" class="page">
     <section class="page-inner">
       <div class="container">
-        <button class="btn-back" onclick="mostrarPagina('inicial')">
-          <i class="fas fa-arrow-left"></i> Voltar
-        </button>
+        <button class="btn-back" onclick="mostrarPagina('inicial')"><i class="fas fa-arrow-left"></i> Voltar</button>
         <div class="page-header">
           <span class="page-tag">Gamificação</span>
           <h1>Gamificação: como jogos ajudam no aprendizado</h1>
@@ -430,35 +469,17 @@
         </div>
         <div class="page-content">
           <p>A gamificação é uma das abordagens mais promissoras no campo da educação e da psicopedagogia. Ela utiliza elementos de jogos — como pontos, níveis, desafios, recompensas e narrativas — para engajar os alunos no processo de aprendizagem, tornando-o mais dinâmico, interativo e significativo.</p>
-          <p><strong>O que é gamificação?</strong></p>
-          <p>Gamificação não é simplesmente jogar por jogar. É a aplicação de mecânicas e dinâmicas de jogos em contextos que não são jogos, com objetivos claros e educacionais. A ideia é aproveitar o poder motivacional dos jogos para estimular a participação, o engajamento e a persistência dos alunos.</p>
+          <p><strong>O que é gamificação?</strong> Gamificação não é simplesmente jogar por jogar. É a aplicação de mecânicas e dinâmicas de jogos em contextos que não são jogos, com objetivos claros e educacionais.</p>
           <p><strong>Por que a gamificação funciona?</strong></p>
           <ul>
-            <li><strong>Engajamento:</strong> Jogos são naturalmente envolventes. Eles despertam curiosidade, desafiam e recompensam, criando um ciclo positivo de motivação.</li>
-            <li><strong>Feedback imediato:</strong> Nos jogos, o jogador sabe na hora se acertou ou errou, o que permite ajustes rápidos e aprendizado contínuo.</li>
-            <li><strong>Senso de progresso:</strong> Níveis, pontos e conquistas mostram ao aluno que ele está avançando, o que aumenta a autoestima e a confiança.</li>
-            <li><strong>Autonomia:</strong> O aluno tem mais controle sobre seu próprio aprendizado, escolhendo caminhos e estratégias.</li>
-            <li><strong>Desafio na medida certa:</strong> Jogos bem projetados oferecem desafios que não são nem muito fáceis (que entediam) nem muito difíceis (que frustram).</li>
+            <li><strong>Engajamento:</strong> Jogos são naturalmente envolventes. Eles despertam curiosidade, desafiam e recompensam.</li>
+            <li><strong>Feedback imediato:</strong> Nos jogos, o jogador sabe na hora se acertou ou errou, o que permite ajustes rápidos.</li>
+            <li><strong>Senso de progresso:</strong> Níveis, pontos e conquistas mostram ao aluno que ele está avançando.</li>
+            <li><strong>Autonomia:</strong> O aluno tem mais controle sobre seu próprio aprendizado.</li>
+            <li><strong>Desafio na medida certa:</strong> Jogos bem projetados oferecem desafios equilibrados.</li>
           </ul>
-          <p><strong>Exemplos práticos de gamificação na educação:</strong></p>
-          <ul>
-            <li><strong>Jogos de tabuleiro adaptados:</strong> Utilizados para trabalhar raciocínio lógico, leitura, interpretação de texto e habilidades sociais. Jogos como Scrabble, Banco Imobiliário e jogos de cartas podem ser adaptados para objetivos educacionais.</li>
-            <li><strong>Aplicativos educativos:</strong> Plataformas como Duolingo, Khan Academy e outras transformam o aprendizado em uma experiência gamificada, com pontos, níveis e recompensas.</li>
-            <li><strong>Sistemas de recompensas:</strong> Criar um sistema de pontos, medalhas ou estrelas que incentivam a conclusão de tarefas e a superação de desafios.</li>
-            <li><strong>Narrativas interativas:</strong> Criar histórias onde a criança é a protagonista de sua própria jornada de aprendizado, com missões e desafios a serem superados.</li>
-            <li><strong>Quizzes e competições:</strong> Transformar revisões de conteúdo em jogos de perguntas e respostas, com pontuação e ranking.</li>
-          </ul>
-          <p><strong>Benefícios da gamificação para o aprendizado:</strong></p>
-          <ul>
-            <li>Aumento do engajamento e da participação</li>
-            <li>Desenvolvimento da persistência e da resiliência</li>
-            <li>Melhora na retenção de conteúdo</li>
-            <li>Estímulo à criatividade e ao pensamento crítico</li>
-            <li>Desenvolvimento de habilidades socioemocionais</li>
-            <li>Redução da ansiedade em relação ao aprendizado</li>
-          </ul>
-          <p>No <strong>Legado que Ensina</strong>, a gamificação é uma ferramenta central em nosso trabalho. Acreditamos que quando o aprendizado é divertido e desafiador, a criança se engaja de forma mais profunda e significativa. Utilizamos jogos, atividades lúdicas e estratégias gamificadas para potencializar os resultados do acompanhamento psicopedagógico, respeitando sempre o ritmo e as necessidades de cada criança.</p>
-          <p>Se você quer saber mais sobre como a gamificação pode ajudar seu filho ou aluno, entre em contato conosco. Teremos prazer em conversar sobre as possibilidades e benefícios dessa abordagem inovadora.</p>
+          <p><strong>Exemplos práticos:</strong> jogos de tabuleiro adaptados, aplicativos educativos, sistemas de recompensas, narrativas interativas e quizzes.</p>
+          <p>No <strong>Legado que Ensina</strong>, a gamificação é uma ferramenta central em nosso trabalho. Acreditamos que quando o aprendizado é divertido e desafiador, a criança se engaja de forma mais profunda e significativa.</p>
         </div>
       </div>
     </section>
@@ -471,7 +492,6 @@
   </a>
 
   <script>
-    // Menu mobile toggle
     const menuToggle = document.getElementById('menuToggle');
     const nav = document.querySelector('.nav');
 
@@ -498,7 +518,6 @@
         document.getElementById('pagina-artigo3').classList.add('active');
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Fecha menu mobile
       if (nav) nav.classList.remove('open');
       if (menuToggle) menuToggle.classList.remove('active');
     }
