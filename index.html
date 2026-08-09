@@ -1,1015 +1,1362 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Legado que Ensina — Em breve</title>
+    <title>Legado que Ensina — Em breve</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="description"
+        content="Legado que Ensina — um novo espaço está chegando. Conheça nossa história."
+    >
 
-<link
-  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
-  rel="stylesheet"
->
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet"
+    >
 
-<style>
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-:root {
-    --verde: #2d7a6b;
-    --verde-escuro: #1f5d51;
-    --azul: #102033;
-    --cinza: #687582;
-    --creme: #f7f6f1;
-    --branco: #ffffff;
-    --linha: rgba(16, 32, 51, .10);
 
-    --serif: "Playfair Display", Georgia, serif;
-    --sans: "DM Sans", Arial, sans-serif;
-}
+    <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    /* ==========================================================
+       VARIÁVEIS
+    ========================================================== */
 
-html {
-    scroll-behavior: smooth;
-}
+    :root {
 
-body {
-    margin: 0;
-    background: var(--creme);
-    color: var(--azul);
-    font-family: var(--sans);
-}
+        --verde: #2d7a6b;
+        --verde-escuro: #205c50;
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+        --azul: #102033;
+        --azul-escuro: #0a1726;
 
-img {
-    max-width: 100%;
-    display: block;
-}
+        --cinza: #687582;
+        --cinza-claro: #f5f7f6;
 
+        --creme: #f8f7f2;
+        --branco: #ffffff;
 
-/* ==========================================================
-   HERO — PRIMEIRA TELA
-========================================================== */
+        --linha: rgba(16, 32, 51, .10);
 
-.hero {
-    min-height: 100vh;
-    min-height: 100svh;
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "DM Sans", Arial, sans-serif;
+    }
 
-    position: relative;
-    overflow: hidden;
 
-    display: flex;
-    align-items: center;
+    /* ==========================================================
+       RESET
+    ========================================================== */
 
-    background:
-        radial-gradient(
-            circle at 78% 45%,
-            rgba(45,122,107,.12),
-            transparent 30%
-        ),
-        var(--creme);
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
 
-/* decoração */
+    html {
+        scroll-behavior: smooth;
+    }
 
-.hero::before {
-    content: "";
 
-    position: absolute;
+    body {
 
-    width: 650px;
-    height: 650px;
+        margin: 0;
 
-    right: -300px;
-    top: -300px;
+        background: var(--creme);
 
-    border-radius: 50%;
+        color: var(--azul);
 
-    border: 1px solid rgba(45,122,107,.10);
-}
+        font-family: var(--sans);
 
-.hero::after {
-    content: "";
+        overflow-x: hidden;
+    }
 
-    position: absolute;
 
-    width: 420px;
-    height: 420px;
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-    left: -260px;
-    bottom: -240px;
 
-    border-radius: 50%;
+    img {
+        max-width: 100%;
+        display: block;
+    }
 
-    background: rgba(16,32,51,.035);
-}
 
+    button,
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
 
-/* ==========================================================
-   CONTAINER
-========================================================== */
 
-.hero-container {
-    width: min(1180px, calc(100% - 70px));
+    /* ==========================================================
+       HERO
+    ========================================================== */
 
-    margin: auto;
+    .hero {
 
-    position: relative;
-    z-index: 2;
-}
+        min-height: 100vh;
+        min-height: 100svh;
 
+        position: relative;
 
-/* ==========================================================
-   LOGO NO TOPO — NÃO OCUPA ESPAÇO
-========================================================== */
+        display: flex;
+        align-items: center;
 
-.logo-topo {
-    position: absolute;
+        overflow: hidden;
 
-    top: 30px;
-    left: 0;
+        background:
 
-    z-index: 10;
-}
+            radial-gradient(
+                circle at 82% 48%,
+                rgba(45, 122, 107, .11),
+                transparent 30%
+            ),
 
-.logo-topo img {
-    width: 145px;
-}
+            var(--creme);
+    }
 
 
-/* ==========================================================
-   STATUS
-========================================================== */
+    /* círculo decorativo superior */
 
-.status {
-    position: absolute;
+    .hero::before {
 
-    top: 38px;
-    right: 0;
+        content: "";
 
-    display: flex;
-    align-items: center;
-    gap: 9px;
+        position: absolute;
 
-    padding: 9px 15px;
+        width: 650px;
+        height: 650px;
 
-    border: 1px solid var(--linha);
-    border-radius: 50px;
+        right: -320px;
+        top: -320px;
 
-    background: rgba(255,255,255,.55);
+        border-radius: 50%;
 
-    font-size: 10px;
-    font-weight: 700;
+        border: 1px solid rgba(45, 122, 107, .10);
 
-    letter-spacing: .14em;
-    text-transform: uppercase;
+        pointer-events: none;
+    }
 
-    backdrop-filter: blur(10px);
-}
 
-.status-dot {
-    width: 7px;
-    height: 7px;
+    /* círculo decorativo inferior */
 
-    background: var(--verde);
+    .hero::after {
 
-    border-radius: 50%;
+        content: "";
 
-    box-shadow:
-        0 0 0 5px rgba(45,122,107,.08);
-}
+        position: absolute;
 
+        width: 430px;
+        height: 430px;
 
-/* ==========================================================
-   GRID
-========================================================== */
+        left: -280px;
+        bottom: -260px;
 
-.hero-grid {
-    min-height: 100vh;
-    min-height: 100svh;
+        border-radius: 50%;
 
-    display: grid;
+        background: rgba(16, 32, 51, .025);
 
-    grid-template-columns: 1fr 1fr;
+        pointer-events: none;
+    }
 
-    align-items: center;
 
-    gap: 80px;
-}
-
-
-/* ==========================================================
-   TEXTO
-========================================================== */
-
-.hero-texto {
-    padding-top: 30px;
-}
-
-.eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    margin-bottom: 23px;
-
-    color: var(--verde);
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: .22em;
-    text-transform: uppercase;
-}
-
-.eyebrow::before {
-    content: "";
-
-    width: 35px;
-    height: 1px;
-
-    background: var(--verde);
-}
-
-
-h1 {
-    margin: 0;
-
-    font-family: var(--serif);
-
-    font-size: clamp(55px, 6.3vw, 88px);
-
-    line-height: .98;
-
-    font-weight: 500;
-
-    letter-spacing: -.055em;
-
-    color: var(--azul);
-}
-
-h1 span {
-    color: var(--verde);
-    font-style: italic;
-}
-
-
-.descricao {
-    max-width: 560px;
-
-    margin-top: 28px;
-
-    color: var(--cinza);
-
-    font-size: 16px;
-
-    line-height: 1.8;
-}
-
-.descricao strong {
-    color: var(--azul);
-}
-
-
-/* ==========================================================
-   BOTÃO
-========================================================== */
-
-.acoes {
-    display: flex;
-
-    gap: 12px;
-
-    margin-top: 33px;
-}
-
-.btn {
-    min-height: 50px;
-
-    padding: 0 21px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 10px;
-
-    border-radius: 6px;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    transition: .25s ease;
-}
-
-.btn-principal {
-    color: #fff;
-
-    background: var(--verde);
-
-    box-shadow:
-        0 12px 25px rgba(45,122,107,.18);
-}
-
-.btn-principal:hover {
-    background: var(--verde-escuro);
-
-    transform: translateY(-2px);
-}
-
-.btn-secundario {
-    border: 1px solid var(--linha);
-
-    background: #fff;
-
-    color: var(--azul);
-}
-
-.btn-secundario:hover {
-    color: var(--verde);
-
-    border-color: var(--verde);
-
-    transform: translateY(-2px);
-}
-
-
-/* ==========================================================
-   VISUAL DA LOGO
-========================================================== */
-
-.visual {
-    height: 100%;
-
-    min-height: 620px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-}
-
-
-/* círculo */
-
-.visual-circulo {
-    position: absolute;
-
-    width: 480px;
-    height: 480px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fff 0%,
-            #f1eee6 55%,
-            transparent 72%
-        );
-}
-
-
-/* órbita */
-
-.visual-orbita {
-    position: absolute;
-
-    width: 430px;
-    height: 430px;
-
-    border: 1px solid rgba(45,122,107,.13);
-
-    border-radius: 50%;
-}
-
-.visual-orbita::before {
-    content: "";
-
-    position: absolute;
-
-    width: 10px;
-    height: 10px;
-
-    right: 50px;
-    top: 48px;
-
-    border-radius: 50%;
-
-    background: var(--verde);
-
-    box-shadow:
-        0 0 0 7px rgba(45,122,107,.08);
-}
-
-
-/* cartão */
-
-.logo-card {
-    width: 355px;
-    height: 355px;
-
-    position: relative;
-    z-index: 2;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255,255,255,.96);
-
-    border: 1px solid rgba(16,32,51,.09);
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 35px 90px rgba(16,32,51,.12);
-
-    transform: rotate(-2deg);
-
-    transition: .4s ease;
-}
-
-.logo-card:hover {
-    transform: rotate(0) translateY(-6px);
-}
-
-.logo-card::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 14px;
-
-    border: 1px solid rgba(45,122,107,.12);
-
-    border-radius: 20px;
-}
-
-.logo-card img {
-    position: relative;
-    z-index: 2;
-
-    width: 72%;
-}
-
-
-/* ==========================================================
-   ETIQUETA
-========================================================== */
-
-.card-status {
-    position: absolute;
-
-    z-index: 5;
-
-    left: 0;
-    bottom: 65px;
-
-    padding: 15px 18px;
-
-    background: var(--azul);
-
-    color: #fff;
-
-    border-radius: 7px;
-
-    box-shadow:
-        0 20px 40px rgba(16,32,51,.20);
-}
-
-.card-status small {
-    display: block;
-
-    color: #86c7b8;
-
-    font-size: 8px;
-    font-weight: 700;
-
-    letter-spacing: .15em;
-
-    text-transform: uppercase;
-}
-
-.card-status strong {
-    display: block;
-
-    margin-top: 5px;
-
-    font-family: var(--serif);
-
-    font-size: 17px;
-
-    font-weight: 500;
-}
-
-
-/* ==========================================================
-   INDICADOR
-========================================================== */
-
-.scroll {
-    position: absolute;
-
-    bottom: 22px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    z-index: 5;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 8px;
-
-    color: #9ba3a8;
-
-    font-size: 8px;
-
-    letter-spacing: .2em;
-
-    text-transform: uppercase;
-}
-
-.scroll span {
-    width: 1px;
-    height: 30px;
-
-    background:
-        linear-gradient(
-            var(--verde),
-            transparent
-        );
-}
-
-
-/* ==========================================================
-   HISTÓRIA
-========================================================== */
-
-.historia {
-    padding: 120px 0;
-
-    background: #fff;
-
-    border-top: 1px solid var(--linha);
-}
-
-.historia-container {
-    width: min(1100px, calc(100% - 48px));
-
-    margin: auto;
-}
-
-.historia-grid {
-    display: grid;
-
-    grid-template-columns: .65fr 1.35fr;
-
-    gap: 90px;
-}
-
-.label {
-    color: var(--verde);
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: .2em;
-
-    text-transform: uppercase;
-}
-
-.historia h2 {
-    margin-top: 20px;
-
-    font-family: var(--serif);
-
-    font-size: 47px;
-
-    line-height: 1.05;
-
-    font-weight: 500;
-
-    letter-spacing: -.035em;
-}
-
-.historia h2 em {
-    color: var(--verde);
-}
-
-.lead {
-    color: var(--azul);
-
-    font-size: 21px;
-
-    line-height: 1.55;
-}
-
-.texto {
-    margin-top: 22px;
-
-    color: var(--cinza);
-
-    font-size: 14px;
-
-    line-height: 1.85;
-}
-
-
-/* ==========================================================
-   HOMENAGEM
-========================================================== */
-
-.homenagem {
-    margin-top: 40px;
-
-    padding: 24px;
-
-    background: #f5f7f6;
-
-    border: 1px solid #e1e7e4;
-
-    border-radius: 11px;
-}
-
-.homenagem h4 {
-    font-size: 12px;
-}
-
-.homenagem h4 i {
-    color: var(--verde);
-
-    margin-right: 7px;
-}
-
-.nomes {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 7px;
-
-    margin-top: 14px;
-}
-
-.nome {
-    padding: 6px 12px;
-
-    background: #fff;
-
-    border: 1px solid #dfe5e2;
-
-    border-radius: 50px;
-
-    color: #64717b;
-
-    font-size: 10px;
-}
-
-
-/* ==========================================================
-   FRASE
-========================================================== */
-
-.frase {
-    margin-top: 18px;
-
-    padding: 24px;
-
-    background: rgba(45,122,107,.055);
-
-    border-left: 3px solid var(--verde);
-
-    border-radius: 0 9px 9px 0;
-}
-
-.frase i {
-    color: var(--verde);
-}
-
-.frase p {
-    margin-top: 8px;
-
-    font-family: var(--serif);
-
-    font-size: 17px;
-
-    line-height: 1.6;
-}
-
-
-/* ==========================================================
-   FINAL
-========================================================== */
-
-.final {
-    padding: 120px 0;
-
-    background: var(--azul);
-
-    color: #fff;
-
-    text-align: center;
-}
-
-.final-inner {
-    max-width: 800px;
-
-    margin: auto;
-}
-
-.final small {
-    color: #83c3b4;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: .2em;
-
-    text-transform: uppercase;
-}
-
-.final h2 {
-    margin-top: 17px;
-
-    font-family: var(--serif);
-
-    font-size: clamp(40px, 5vw, 62px);
-
-    line-height: 1.05;
-
-    font-weight: 500;
-}
-
-.final h2 em {
-    color: #86c8b9;
-}
-
-.final p {
-    max-width: 590px;
-
-    margin: 22px auto 0;
-
-    color: rgba(255,255,255,.60);
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-.final .btn {
-    margin-top: 30px;
-
-    background: #fff;
-
-    color: var(--azul);
-}
-
-.final .btn:hover {
-    background: var(--verde);
-
-    color: #fff;
-}
-
-
-/* ==========================================================
-   FOOTER
-========================================================== */
-
-footer {
-    padding: 25px 0;
-
-    background: #0b1725;
-
-    color: rgba(255,255,255,.5);
-}
-
-.footer-inner {
-    width: min(1100px, calc(100% - 48px));
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-}
-
-.footer-brand {
-    color: #fff;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: .1em;
-
-    text-transform: uppercase;
-}
-
-.footer-copy {
-    margin-top: 5px;
-
-    font-size: 9px;
-}
-
-.social {
-    display: flex;
-    gap: 7px;
-}
-
-.social a {
-    width: 32px;
-    height: 32px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid rgba(255,255,255,.12);
-
-    border-radius: 50%;
-
-    font-size: 11px;
-
-    transition: .2s;
-}
-
-.social a:hover {
-    background: var(--verde);
-
-    border-color: var(--verde);
-
-    color: #fff;
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media(max-width: 850px) {
+    /* ==========================================================
+       CONTAINER
+    ========================================================== */
 
     .hero-container {
-        width: calc(100% - 36px);
+
+        width: min(1160px, calc(100% - 70px));
+
+        margin: 0 auto;
+
+        position: relative;
+
+        z-index: 2;
     }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
 
-        text-align: center;
-
-        gap: 30px;
-    }
+    /* ==========================================================
+       LOGO DO TOPO
+    ========================================================== */
 
     .logo-topo {
+
+        position: absolute;
+
+        top: 24px;
         left: 0;
+
+        z-index: 20;
+
+        display: block;
     }
 
-    .status {
-        right: 0;
-    }
-
-    .hero-texto {
-        padding-top: 110px;
-    }
-
-    .eyebrow {
-        justify-content: center;
-    }
-
-    .descricao {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .acoes {
-        justify-content: center;
-    }
-
-    .visual {
-        min-height: 390px;
-    }
-
-    .historia-grid {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-    }
-
-}
-
-
-@media(max-width: 600px) {
 
     .logo-topo img {
-        width: 120px;
+
+        width: 125px;
+
+        height: auto;
     }
+
+
+    /* ==========================================================
+       STATUS
+    ========================================================== */
 
     .status {
-        font-size: 8px;
 
-        padding: 7px 9px;
+        position: absolute;
+
+        top: 31px;
+        right: 0;
+
+        display: flex;
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 9px 15px;
+
+        border: 1px solid var(--linha);
+
+        border-radius: 50px;
+
+        background: rgba(255,255,255,.55);
+
+        color: var(--azul);
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        letter-spacing: .15em;
+
+        text-transform: uppercase;
+
+        backdrop-filter: blur(10px);
     }
+
+
+    .status-dot {
+
+        width: 7px;
+        height: 7px;
+
+        flex: 0 0 7px;
+
+        border-radius: 50%;
+
+        background: var(--verde);
+
+        box-shadow:
+
+            0 0 0 5px rgba(45,122,107,.08);
+    }
+
+
+    /* ==========================================================
+       GRID PRINCIPAL
+    ========================================================== */
+
+    .hero-grid {
+
+        min-height: 100vh;
+        min-height: 100svh;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        align-items: center;
+
+        gap: 70px;
+    }
+
+
+    /* ==========================================================
+       TEXTO
+    ========================================================== */
 
     .hero-texto {
-        padding-top: 90px;
+
+        /*
+         * Espaço reservado para que a logo do topo
+         * nunca fique sobre o conteúdo.
+         */
+
+        padding-top: 105px;
+
+        padding-bottom: 30px;
     }
 
-    h1 {
-        font-size: 51px;
+
+    .eyebrow {
+
+        display: flex;
+        align-items: center;
+
+        gap: 12px;
+
+        margin-bottom: 22px;
+
+        color: var(--verde);
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: .21em;
+
+        text-transform: uppercase;
     }
+
+
+    .eyebrow::before {
+
+        content: "";
+
+        width: 36px;
+        height: 1px;
+
+        background: var(--verde);
+    }
+
+
+    .hero h1 {
+
+        margin: 0;
+
+        color: var(--azul);
+
+        font-family: var(--serif);
+
+        font-size: clamp(55px, 6vw, 84px);
+
+        line-height: .98;
+
+        font-weight: 500;
+
+        letter-spacing: -.055em;
+    }
+
+
+    .hero h1 span {
+
+        color: var(--verde);
+
+        font-style: italic;
+    }
+
 
     .descricao {
-        font-size: 14px;
+
+        max-width: 530px;
+
+        margin-top: 28px;
+
+        color: var(--cinza);
+
+        font-size: 15px;
+
+        line-height: 1.85;
     }
+
+
+    .descricao strong {
+
+        color: var(--azul);
+
+        font-weight: 700;
+    }
+
+
+    /* ==========================================================
+       BOTÃO
+    ========================================================== */
 
     .acoes {
-        flex-direction: column;
+
+        display: flex;
+
+        margin-top: 32px;
     }
+
 
     .btn {
-        width: 100%;
+
+        min-height: 50px;
+
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 11px;
+
+        padding: 0 21px;
+
+        border-radius: 6px;
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+        transition:
+
+            transform .25s ease,
+            background .25s ease,
+            border-color .25s ease,
+            color .25s ease;
     }
 
-    .hero-visual {
-        min-height: 330px;
+
+    .btn-principal {
+
+        background: var(--verde);
+
+        color: #fff;
+
+        box-shadow:
+
+            0 12px 26px rgba(45,122,107,.18);
     }
 
-    .visual-orbita {
-        width: 285px;
-        height: 285px;
+
+    .btn-principal:hover {
+
+        background: var(--verde-escuro);
+
+        transform: translateY(-2px);
     }
+
+
+    /* ==========================================================
+       VISUAL DA DIREITA
+    ========================================================== */
+
+    .visual {
+
+        min-height: 620px;
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* círculo atrás da logo */
 
     .visual-circulo {
-        width: 300px;
-        height: 300px;
+
+        position: absolute;
+
+        width: 485px;
+        height: 485px;
+
+        border-radius: 50%;
+
+        background:
+
+            radial-gradient(
+                circle,
+                #ffffff 0%,
+                #f0eee7 55%,
+                transparent 73%
+            );
     }
 
+
+    /* órbita */
+
+    .visual-orbita {
+
+        position: absolute;
+
+        width: 440px;
+        height: 440px;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(45,122,107,.14);
+    }
+
+
+    .visual-orbita::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 9px;
+        height: 9px;
+
+        right: 47px;
+        top: 50px;
+
+        border-radius: 50%;
+
+        background: var(--verde);
+
+        box-shadow:
+
+            0 0 0 7px rgba(45,122,107,.08);
+    }
+
+
+    /* ==========================================================
+       CARTÃO COM LOGO
+    ========================================================== */
+
     .logo-card {
-        width: 245px;
-        height: 245px;
+
+        width: 350px;
+        height: 350px;
+
+        position: relative;
+
+        z-index: 4;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(255,255,255,.97);
+
+        border: 1px solid rgba(16,32,51,.09);
+
+        border-radius: 28px;
+
+        box-shadow:
+
+            0 35px 90px rgba(16,32,51,.12);
+
+        transform: rotate(-2deg);
+
+        transition: transform .4s ease;
+    }
+
+
+    .logo-card:hover {
+
+        transform: rotate(0deg) translateY(-6px);
+    }
+
+
+    .logo-card::before {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 14px;
+
+        border: 1px solid rgba(45,122,107,.12);
 
         border-radius: 20px;
     }
 
-    .card-status {
-        bottom: 10px;
-        left: 0;
+
+    .logo-card img {
+
+        position: relative;
+
+        z-index: 2;
+
+        width: 72%;
+
+        height: auto;
     }
+
+
+    /* ==========================================================
+       ETIQUETA SOBRE O VISUAL
+    ========================================================== */
+
+    .card-status {
+
+        position: absolute;
+
+        z-index: 8;
+
+        left: 12px;
+        bottom: 63px;
+
+        padding: 14px 17px;
+
+        border-radius: 7px;
+
+        background: var(--azul);
+
+        color: #fff;
+
+        box-shadow:
+
+            0 20px 40px rgba(16,32,51,.18);
+    }
+
+
+    .card-status small {
+
+        display: block;
+
+        color: #83c4b5;
+
+        font-size: 8px;
+
+        font-weight: 700;
+
+        letter-spacing: .14em;
+
+        text-transform: uppercase;
+    }
+
+
+    .card-status strong {
+
+        display: block;
+
+        margin-top: 5px;
+
+        font-family: var(--serif);
+
+        font-size: 16px;
+
+        font-weight: 500;
+    }
+
+
+    /* ==========================================================
+       SCROLL
+    ========================================================== */
 
     .scroll {
-        display: none;
-    }
 
-    .historia {
-        padding: 80px 0;
-    }
+        position: absolute;
 
-    .historia h2 {
-        font-size: 39px;
-    }
+        bottom: 22px;
+        left: 50%;
 
-    .lead {
-        font-size: 18px;
-    }
+        z-index: 5;
 
-    .final {
-        padding: 85px 0;
-    }
+        transform: translateX(-50%);
 
-    .footer-inner {
+        display: flex;
+
         flex-direction: column;
 
-        gap: 20px;
+        align-items: center;
+
+        gap: 8px;
+
+        color: #98a0a5;
+
+        font-size: 8px;
+
+        letter-spacing: .20em;
+
+        text-transform: uppercase;
+    }
+
+
+    .scroll span {
+
+        width: 1px;
+        height: 28px;
+
+        background:
+
+            linear-gradient(
+                var(--verde),
+                transparent
+            );
+    }
+
+
+    /* ==========================================================
+       HISTÓRIA
+    ========================================================== */
+
+    .historia {
+
+        padding: 120px 0;
+
+        background: #fff;
+
+        border-top: 1px solid var(--linha);
+    }
+
+
+    .historia-container {
+
+        width: min(1080px, calc(100% - 48px));
+
+        margin: 0 auto;
+    }
+
+
+    .historia-grid {
+
+        display: grid;
+
+        grid-template-columns: .65fr 1.35fr;
+
+        gap: 90px;
+    }
+
+
+    .label {
+
+        color: var(--verde);
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: .20em;
+
+        text-transform: uppercase;
+    }
+
+
+    .historia h2 {
+
+        margin-top: 20px;
+
+        color: var(--azul);
+
+        font-family: var(--serif);
+
+        font-size: 47px;
+
+        line-height: 1.05;
+
+        font-weight: 500;
+
+        letter-spacing: -.035em;
+    }
+
+
+    .historia h2 em {
+
+        color: var(--verde);
+
+        font-style: italic;
+    }
+
+
+    .lead {
+
+        color: var(--azul);
+
+        font-size: 20px;
+
+        line-height: 1.6;
+    }
+
+
+    .texto {
+
+        margin-top: 22px;
+
+        color: var(--cinza);
+
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .texto strong {
+
+        color: var(--azul);
+    }
+
+
+    /* ==========================================================
+       HOMENAGEM
+    ========================================================== */
+
+    .homenagem {
+
+        margin-top: 38px;
+
+        padding: 23px 24px;
+
+        background: #f5f7f6;
+
+        border: 1px solid #e1e7e4;
+
+        border-radius: 11px;
+    }
+
+
+    .homenagem h4 {
+
+        color: var(--azul);
+
+        font-size: 12px;
+    }
+
+
+    .homenagem h4 i {
+
+        margin-right: 7px;
+
+        color: var(--verde);
+    }
+
+
+    .nomes {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 7px;
+
+        margin-top: 14px;
+    }
+
+
+    .nome {
+
+        padding: 6px 12px;
+
+        border: 1px solid #dfe5e2;
+
+        border-radius: 50px;
+
+        background: #fff;
+
+        color: #64717b;
+
+        font-size: 10px;
+    }
+
+
+    /* ==========================================================
+       FRASE
+    ========================================================== */
+
+    .frase {
+
+        margin-top: 18px;
+
+        padding: 24px;
+
+        border-left: 3px solid var(--verde);
+
+        border-radius: 0 9px 9px 0;
+
+        background: rgba(45,122,107,.055);
+    }
+
+
+    .frase i {
+
+        color: var(--verde);
+
+        font-size: 14px;
+    }
+
+
+    .frase p {
+
+        margin-top: 9px;
+
+        color: var(--azul);
+
+        font-family: var(--serif);
+
+        font-size: 17px;
+
+        line-height: 1.6;
+    }
+
+
+    /* ==========================================================
+       BLOCO FINAL
+    ========================================================== */
+
+    .final {
+
+        padding: 120px 0;
+
+        background: var(--azul);
+
+        color: #fff;
 
         text-align: center;
     }
 
-}
 
-</style>
+    .final-inner {
+
+        width: min(800px, calc(100% - 48px));
+
+        margin: 0 auto;
+    }
+
+
+    .final small {
+
+        color: #83c3b4;
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        letter-spacing: .20em;
+
+        text-transform: uppercase;
+    }
+
+
+    .final h2 {
+
+        margin-top: 17px;
+
+        font-family: var(--serif);
+
+        font-size: clamp(40px, 5vw, 62px);
+
+        line-height: 1.07;
+
+        font-weight: 500;
+
+        letter-spacing: -.03em;
+    }
+
+
+    .final h2 em {
+
+        color: #86c8b9;
+
+        font-style: italic;
+    }
+
+
+    .final p {
+
+        max-width: 590px;
+
+        margin: 23px auto 0;
+
+        color: rgba(255,255,255,.60);
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .final .btn {
+
+        margin-top: 30px;
+
+        background: #fff;
+
+        color: var(--azul);
+    }
+
+
+    .final .btn:hover {
+
+        background: var(--verde);
+
+        color: #fff;
+
+        transform: translateY(-2px);
+    }
+
+
+    /* ==========================================================
+       FOOTER
+    ========================================================== */
+
+    footer {
+
+        padding: 24px 0;
+
+        background: var(--azul-escuro);
+
+        color: rgba(255,255,255,.5);
+    }
+
+
+    .footer-inner {
+
+        width: min(1080px, calc(100% - 48px));
+
+        margin: 0 auto;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 30px;
+    }
+
+
+    .footer-brand {
+
+        color: #fff;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: .10em;
+
+        text-transform: uppercase;
+    }
+
+
+    .footer-copy {
+
+        margin-top: 5px;
+
+        font-size: 9px;
+    }
+
+
+    .social {
+
+        display: flex;
+
+        gap: 7px;
+    }
+
+
+    .social a {
+
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(255,255,255,.12);
+
+        border-radius: 50%;
+
+        font-size: 11px;
+
+        transition: .2s ease;
+    }
+
+
+    .social a:hover {
+
+        background: var(--verde);
+
+        border-color: var(--verde);
+
+        color: #fff;
+    }
+
+
+    /* ==========================================================
+       TABLET
+    ========================================================== */
+
+    @media (max-width: 900px) {
+
+        .hero-container {
+
+            width: calc(100% - 50px);
+        }
+
+
+        .hero-grid {
+
+            grid-template-columns: 1fr;
+
+            gap: 20px;
+
+            padding-top: 30px;
+        }
+
+
+        .hero-texto {
+
+            padding-top: 150px;
+
+            text-align: center;
+        }
+
+
+        .eyebrow {
+
+            justify-content: center;
+        }
+
+
+        .descricao {
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        .acoes {
+
+            justify-content: center;
+        }
+
+
+        .visual {
+
+            min-height: 430px;
+        }
+
+
+        .historia-grid {
+
+            grid-template-columns: 1fr;
+
+            gap: 45px;
+        }
+
+    }
+
+
+    /* ==========================================================
+       CELULAR
+    ========================================================== */
+
+    @media (max-width: 600px) {
+
+        .hero-container {
+
+            width: calc(100% - 32px);
+        }
+
+
+        .logo-topo {
+
+            top: 18px;
+        }
+
+
+        .logo-topo img {
+
+            width: 105px;
+        }
+
+
+        .status {
+
+            top: 20px;
+
+            padding: 7px 10px;
+
+            font-size: 7px;
+
+            letter-spacing: .10em;
+        }
+
+
+        .hero-grid {
+
+            padding-top: 20px;
+        }
+
+
+        .hero-texto {
+
+            padding-top: 145px;
+
+            padding-bottom: 10px;
+        }
+
+
+        .eyebrow {
+
+            font-size: 8px;
+
+            letter-spacing: .16em;
+        }
+
+
+        .hero h1 {
+
+            font-size: 50px;
+
+            line-height: 1;
+        }
+
+
+        .descricao {
+
+            margin-top: 22px;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        .acoes {
+
+            margin-top: 27px;
+        }
+
+
+        .btn {
+
+            width: 100%;
+
+            min-height: 48px;
+        }
+
+
+        .visual {
+
+            min-height: 340px;
+        }
+
+
+        .visual-circulo {
+
+            width: 310px;
+            height: 310px;
+        }
+
+
+        .visual-orbita {
+
+            width: 290px;
+            height: 290px;
+        }
+
+
+        .logo-card {
+
+            width: 245px;
+            height: 245px;
+
+            border-radius: 20px;
+        }
+
+
+        .logo-card::before {
+
+            inset: 10px;
+
+            border-radius: 14px;
+        }
+
+
+        .card-status {
+
+            left: 0;
+
+            bottom: 8px;
+
+            padding: 11px 13px;
+        }
+
+
+        .card-status small {
+
+            font-size: 7px;
+        }
+
+
+        .card-status strong {
+
+            font-size: 13px;
+        }
+
+
+        .scroll {
+
+            display: none;
+        }
+
+
+        /* HISTÓRIA */
+
+        .historia {
+
+            padding: 80px 0;
+        }
+
+
+        .historia h2 {
+
+            font-size: 38px;
+        }
+
+
+        .lead {
+
+            font-size: 18px;
+        }
+
+
+        .texto {
+
+            font-size: 13px;
+        }
+
+
+        /* FINAL */
+
+        .final {
+
+            padding: 85px 0;
+        }
+
+
+        .final h2 {
+
+            font-size: 40px;
+        }
+
+
+        /* FOOTER */
+
+        .footer-inner {
+
+            flex-direction: column;
+
+            text-align: center;
+
+            gap: 20px;
+        }
+
+    }
+
+    </style>
+
 </head>
 
 
@@ -1017,7 +1364,7 @@ footer {
 
 
 <!-- ==========================================================
-     PRIMEIRA TELA
+     HERO / LANÇAMENTO
 ========================================================== -->
 
 <section class="hero">
@@ -1025,7 +1372,7 @@ footer {
     <div class="hero-container">
 
 
-        <!-- LOGO FIXADA NO TOPO DA PRIMEIRA TELA -->
+        <!-- LOGO -->
 
         <a
             href="#"
@@ -1061,6 +1408,7 @@ footer {
 
             <div class="hero-texto">
 
+
                 <div class="eyebrow">
 
                     Um novo capítulo começa
@@ -1093,6 +1441,8 @@ footer {
                 </p>
 
 
+                <!-- ÚNICA CTA -->
+
                 <div class="acoes">
 
                     <a
@@ -1106,27 +1456,17 @@ footer {
 
                     </a>
 
-
-                    <a
-                        href="#marca"
-                        class="btn btn-secundario"
-                    >
-
-                        Conheça a marca
-
-                        <i class="fas fa-arrow-right"></i>
-
-                    </a>
-
                 </div>
+
 
             </div>
 
 
 
-            <!-- LOGO GRANDE -->
+            <!-- VISUAL -->
 
             <div class="visual">
+
 
                 <div class="visual-circulo"></div>
 
@@ -1153,6 +1493,7 @@ footer {
 
                     </small>
 
+
                     <strong>
 
                         Algo especial está chegando.
@@ -1161,6 +1502,7 @@ footer {
 
                 </div>
 
+
             </div>
 
 
@@ -1168,6 +1510,8 @@ footer {
 
     </div>
 
+
+    <!-- INDICADOR -->
 
     <div class="scroll">
 
@@ -1192,8 +1536,11 @@ footer {
 
     <div class="historia-container">
 
+
         <div class="historia-grid">
 
+
+            <!-- TÍTULO -->
 
             <div>
 
@@ -1215,7 +1562,10 @@ footer {
             </div>
 
 
-            <div id="marca">
+            <!-- TEXTO -->
+
+            <div>
+
 
                 <p class="lead">
 
@@ -1245,7 +1595,10 @@ footer {
                 </p>
 
 
+                <!-- HOMENAGEM -->
+
                 <div class="homenagem">
+
 
                     <h4>
 
@@ -1258,23 +1611,49 @@ footer {
 
                     <div class="nomes">
 
-                        <span class="nome">Benício</span>
-                        <span class="nome">Maicon</span>
-                        <span class="nome">Pedro</span>
-                        <span class="nome">Marcos</span>
-                        <span class="nome">Maria</span>
-                        <span class="nome">Profª Vanessa</span>
-                        <span class="nome">Profª Cirleia</span>
-                        <span class="nome">Profª Joceli</span>
+                        <span class="nome">
+                            Benício
+                        </span>
+
+                        <span class="nome">
+                            Maicon
+                        </span>
+
+                        <span class="nome">
+                            Pedro
+                        </span>
+
+                        <span class="nome">
+                            Marcos
+                        </span>
+
+                        <span class="nome">
+                            Maria
+                        </span>
+
+                        <span class="nome">
+                            Profª Vanessa
+                        </span>
+
+                        <span class="nome">
+                            Profª Cirleia
+                        </span>
+
+                        <span class="nome">
+                            Profª Joceli
+                        </span>
 
                     </div>
 
                 </div>
 
 
+                <!-- FRASE -->
+
                 <div class="frase">
 
                     <i class="fas fa-quote-left"></i>
+
 
                     <p>
 
@@ -1288,6 +1667,7 @@ footer {
 
                 </div>
 
+
             </div>
 
         </div>
@@ -1299,55 +1679,53 @@ footer {
 
 
 <!-- ==========================================================
-     FINAL
+     ENCERRAMENTO
 ========================================================== -->
 
 <section class="final">
 
-    <div class="container">
-
-        <div class="final-inner">
-
-            <small>
-
-                Lançamento oficial
-
-            </small>
+    <div class="final-inner">
 
 
-            <h2>
+        <small>
 
-                Um novo espaço.<br>
+            Lançamento oficial
 
-                O mesmo propósito.<br>
-
-                <em>Um legado que continua.</em>
-
-            </h2>
+        </small>
 
 
-            <p>
+        <h2>
 
-                O site oficial do Legado que Ensina está sendo
-                preparado. Em breve, você poderá conhecer nossa
-                história, nossos projetos, conteúdos e tudo o que
-                estamos construindo.
+            Um novo espaço.<br>
 
-            </p>
+            O mesmo propósito.<br>
+
+            <em>Um legado que continua.</em>
+
+        </h2>
 
 
-            <a
-                href="#historia"
-                class="btn"
-            >
+        <p>
 
-                Conhecer o Legado
+            O site oficial do Legado que Ensina está sendo
+            preparado. Em breve, você poderá conhecer nossa
+            história, nossos projetos, conteúdos e tudo o que
+            estamos construindo.
 
-                <i class="fas fa-arrow-up"></i>
+        </p>
 
-            </a>
 
-        </div>
+        <a
+            href="#historia"
+            class="btn"
+        >
+
+            Conhecer o Legado
+
+            <i class="fas fa-arrow-up"></i>
+
+        </a>
+
 
     </div>
 
@@ -1363,6 +1741,7 @@ footer {
 
     <div class="footer-inner">
 
+
         <div>
 
             <div class="footer-brand">
@@ -1370,6 +1749,7 @@ footer {
                 Legado que Ensina
 
             </div>
+
 
             <div class="footer-copy">
 
@@ -1382,52 +1762,77 @@ footer {
 
         <div class="social">
 
-            <a href="#" aria-label="Instagram">
+            <a
+                href="#"
+                aria-label="Instagram"
+            >
+
                 <i class="fab fa-instagram"></i>
+
             </a>
 
-            <a href="#" aria-label="LinkedIn">
+
+            <a
+                href="#"
+                aria-label="LinkedIn"
+            >
+
                 <i class="fab fa-linkedin-in"></i>
+
             </a>
 
-            <a href="#" aria-label="YouTube">
+
+            <a
+                href="#"
+                aria-label="YouTube"
+            >
+
                 <i class="fab fa-youtube"></i>
+
             </a>
 
         </div>
+
 
     </div>
 
 </footer>
 
 
+<!-- ==========================================================
+     JAVASCRIPT
+========================================================== -->
+
 <script>
 
-/* Rolagem suave */
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(function(link) {
 
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+        link.addEventListener("click", function(event) {
 
-    link.addEventListener("click", function(e) {
+            const id =
+                this.getAttribute("href");
 
-        const destino =
-            document.querySelector(
-                this.getAttribute("href")
-            );
+            const destino =
+                document.querySelector(id);
 
-        if (!destino) return;
+            if (!destino) return;
 
-        e.preventDefault();
+            event.preventDefault();
 
-        destino.scrollIntoView({
-            behavior: "smooth"
+            destino.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
         });
 
     });
-
-});
 
 </script>
 
 
 </body>
+
 </html>
