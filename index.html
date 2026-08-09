@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legado que Ensina - Aprender hoje, transformar sempre.</title>
+  <title>Legado que Ensina · Psicopedagogia Online</title>
   
   <!-- FAVICON E THEME-COLOR -->
   <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
@@ -12,314 +12,554 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   
   <style>
+    /* ===== RESET E BASE ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: #f5f7fc;
-      color: #1a2634;
+      background: #f0f4f8;
+      color: #1a1a2e;
       line-height: 1.6;
       overflow-x: hidden;
     }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    .page { display: none; animation: fadeIn 0.4s ease; }
+    /* ===== ANIMAÇÕES ===== */
+    .page { display: none; animation: fadeInUp 0.6s ease; }
     .page.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
 
+    /* ===== BOTÃO WHATSAPP FIXO ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25d366;
+      color: white;
+      border-radius: 60px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      z-index: 999;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      border: 2px solid rgba(255,255,255,0.2);
+    }
+    .whatsapp-float i { font-size: 1.6rem; }
+    .whatsapp-float:hover { 
+      transform: scale(1.08); 
+      background: #1ebe5c;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.55);
+    }
+
+    /* ===== TOPBAR ===== */
+    .topbar {
+      background: #0f0f1a;
+      color: #a0aec0;
+      padding: 10px 0;
+      font-size: 0.8rem;
+      border-bottom: 3px solid #4a9e8f;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .topbar a { color: #a0aec0; text-decoration: none; margin-left: 18px; transition: 0.3s; }
+    .topbar a:hover { color: #fff; }
+    .topbar i { margin-right: 6px; }
+
+    /* ===== HERO ===== */
     .hero {
-      padding: 60px 0 80px;
-      background: linear-gradient(165deg, #f5f7fc 0%, #e8edf8 100%);
+      padding: 80px 0 100px;
+      background: linear-gradient(165deg, #f0f4f8 0%, #e2e8f0 50%, #d5e0ec 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 150%;
+      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.05) 0%, transparent 70%);
+      pointer-events: none;
     }
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 60px;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(74, 158, 143, 0.15);
+      padding: 8px 22px;
+      border-radius: 60px;
+      color: #4a9e8f;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      width: fit-content;
+      border: 1px solid rgba(74, 158, 143, 0.2);
+      text-transform: uppercase;
     }
     .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3.6rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: #0e1a26;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #0f0f1a;
     }
-    .hero h1 span { color: #4a9e8f; }
+    .hero h1 span { 
+      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .hero p {
-      font-size: 1.1rem;
-      color: #3a4a5e;
+      font-size: 1.15rem;
+      color: #4a5568;
       max-width: 520px;
-      line-height: 1.7;
+      line-height: 1.8;
     }
     .btn-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 4px;
+      gap: 16px;
+      margin-top: 8px;
     }
     .btn-primary {
-      background: #4a9e8f;
+      background: linear-gradient(135deg, #4a9e8f, #3a7e72);
       color: white;
-      padding: 14px 38px;
+      padding: 16px 42px;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
-      transition: 0.25s;
-      box-shadow: 0 8px 24px rgba(74, 158, 143, 0.25);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 28px rgba(74, 158, 143, 0.35);
       border: none;
       font-size: 1rem;
       cursor: pointer;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
     }
-    .btn-primary:hover { background: #3a7e72; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(74, 158, 143, 0.35); }
+    .btn-primary:hover { 
+      transform: translateY(-4px); 
+      box-shadow: 0 16px 40px rgba(74, 158, 143, 0.45);
+      background: linear-gradient(135deg, #3a7e72, #2d6b60);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #1a1a2e;
+      padding: 16px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #cbd5e0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-outline:hover { 
+      border-color: #4a9e8f; 
+      background: rgba(74, 158, 143, 0.05);
+      transform: translateY(-4px);
+    }
 
     .hero-logo {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      background: transparent;
+      animation: float 4s ease-in-out infinite;
     }
     .hero-logo img {
       max-width: 480px;
       width: 100%;
       height: auto;
       display: block;
-      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.06));
+      filter: drop-shadow(0 30px 50px rgba(0,0,0,0.08));
     }
 
+    /* ===== ABOUT ===== */
     .about {
-      padding: 80px 0;
+      padding: 100px 0;
       background: white;
+      position: relative;
+    }
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #4a9e8f, #2d7a6b, #4a9e8f);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: -200% 0; }
+      50% { background-position: 200% 0; }
     }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 60px;
       align-items: center;
     }
     .about-text h2 {
-      font-size: 2.2rem;
-      font-weight: 600;
+      font-size: 2.6rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      color: #0e1a26;
-      margin-bottom: 16px;
+      color: #0f0f1a;
+      margin-bottom: 20px;
     }
-    .about-text h2 span { color: #4a9e8f; }
+    .about-text h2 span { 
+      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .about-text p {
-      color: #3a4a5e;
-      margin-bottom: 18px;
-      line-height: 1.8;
+      color: #4a5568;
+      margin-bottom: 20px;
+      line-height: 1.9;
+      font-size: 1.05rem;
     }
     .btn-historia {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: #4a9e8f;
+      gap: 12px;
+      background: linear-gradient(135deg, #4a9e8f, #3a7e72);
       color: white;
-      padding: 12px 28px;
+      padding: 14px 32px;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       border: none;
       cursor: pointer;
       font-size: 0.95rem;
-      transition: 0.2s;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(74, 158, 143, 0.25);
     }
-    .btn-historia:hover { background: #3a7e72; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 158, 143, 0.2); }
+    .btn-historia:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 14px 32px rgba(74, 158, 143, 0.35);
+    }
     .about-image img {
       width: 100%;
-      border-radius: 28px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      border-radius: 32px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.06);
       display: block;
+      transition: all 0.5s ease;
+    }
+    .about-image img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.1);
     }
 
+    /* ===== SERVICES ===== */
     .services {
-      padding: 80px 0;
-      background: #f5f7fc;
+      padding: 100px 0;
+      background: linear-gradient(165deg, #f7fafc 0%, #edf2f7 100%);
     }
     .section-title {
       text-align: center;
-      font-size: 2.2rem;
-      font-weight: 600;
+      font-size: 2.6rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      color: #0e1a26;
+      color: #0f0f1a;
     }
-    .section-title span { color: #4a9e8f; }
+    .section-title span { 
+      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .section-desc {
       text-align: center;
       max-width: 700px;
-      margin: 12px auto 48px;
-      color: #3a4a5e;
-      font-size: 1.05rem;
+      margin: 16px auto 56px;
+      color: #4a5568;
+      font-size: 1.1rem;
     }
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 30px;
     }
     .service-card {
       background: white;
-      padding: 32px 24px;
-      border-radius: 24px;
-      border: 1px solid #e8edf4;
-      transition: 0.25s;
-      border-top: 5px solid #4a9e8f;
+      padding: 40px 32px;
+      border-radius: 28px;
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      position: relative;
+      overflow: hidden;
     }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 25px 40px rgba(0,0,0,0.04); border-color: #4a9e8f; }
-    .service-card i { font-size: 2.4rem; color: #4a9e8f; margin-bottom: 18px; }
-    .service-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: #0e1a26; }
-    .service-card p { color: #3a4a5e; line-height: 1.7; }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #4a9e8f, #2d7a6b);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+    .service-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+      border-color: rgba(74, 158, 143, 0.15);
+    }
+    .service-card i { 
+      font-size: 2.8rem; 
+      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .service-card h3 { 
+      font-size: 1.3rem; 
+      margin-bottom: 12px; 
+      color: #0f0f1a;
+      font-weight: 700;
+    }
+    .service-card p { 
+      color: #4a5568; 
+      line-height: 1.8;
+    }
 
+    /* ===== BLOG ===== */
     .blog {
-      padding: 80px 0;
+      padding: 100px 0;
       background: white;
     }
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
     }
     .blog-card {
-      background: #f5f7fc;
-      border-radius: 24px;
+      background: #f7fafc;
+      border-radius: 28px;
       overflow: hidden;
-      transition: 0.3s;
-      border: 1px solid #e8edf4;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(0,0,0,0.04);
       cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
     }
-    .blog-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: #4a9e8f; }
-    .blog-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
-    .blog-card-body { padding: 24px; }
+    .blog-card:hover { 
+      transform: translateY(-8px); 
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+      border-color: rgba(74, 158, 143, 0.15);
+    }
+    .blog-card img { 
+      width: 100%; 
+      height: 220px; 
+      object-fit: cover; 
+      display: block;
+      transition: all 0.5s ease;
+    }
+    .blog-card:hover img {
+      transform: scale(1.03);
+    }
+    .blog-card-body { padding: 28px 28px 32px; }
     .blog-card-body .blog-tag {
       display: inline-block;
-      background: #e8edf4;
-      padding: 4px 14px;
+      background: rgba(74, 158, 143, 0.12);
+      padding: 4px 16px;
       border-radius: 60px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #3a4a5e;
-      margin-bottom: 10px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #4a9e8f;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
     }
     .blog-card-body h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #0e1a26;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f0f1a;
       margin-bottom: 8px;
       line-height: 1.3;
     }
     .blog-card-body .blog-date {
       font-size: 0.85rem;
-      color: #6a7a8e;
+      color: #718096;
       margin-bottom: 12px;
     }
     .blog-card-body p {
-      color: #3a4a5e;
+      color: #4a5568;
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
+      line-height: 1.7;
+      margin-bottom: 18px;
     }
     .blog-card-body .btn-leia {
       background: transparent;
       color: #4a9e8f;
       border: 2px solid #4a9e8f;
-      padding: 8px 20px;
+      padding: 8px 24px;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.85rem;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.3s ease;
       display: inline-block;
     }
-    .blog-card-body .btn-leia:hover { background: #4a9e8f; color: white; }
-
-    .testimonial { display: none; }
-
-    .cta-section {
-      padding: 80px 0;
-      background: white;
-      text-align: center;
+    .blog-card-body .btn-leia:hover { 
+      background: #4a9e8f; 
+      color: white;
+      transform: translateX(4px);
     }
-    .cta-section .container { max-width: 720px; }
+
+    /* ===== CTA / CONTATO ===== */
+    .cta-section {
+      padding: 100px 0;
+      background: linear-gradient(165deg, #0f0f1a 0%, #1a1a2e 100%);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-section .container { position: relative; z-index: 1; max-width: 720px; }
     .cta-section h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
+      font-size: 2.8rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      color: #0e1a26;
       margin-bottom: 8px;
     }
-    .cta-section h2 span { color: #4a9e8f; }
+    .cta-section h2 span { 
+      background: linear-gradient(135deg, #4a9e8f, #6bc2b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .cta-section .cta-sub {
-      color: #3a4a5e;
-      font-size: 1.05rem;
-      margin-bottom: 40px;
+      color: #a0aec0;
+      font-size: 1.1rem;
+      margin-bottom: 48px;
     }
 
     .cta-card {
-      background: #f5f7fc;
-      padding: 48px 40px;
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+      padding: 56px 48px;
       border-radius: 32px;
-      border: 1px solid #e8edf4;
+      border: 1px solid rgba(255,255,255,0.08);
       text-align: center;
-      transition: 0.3s;
+      transition: all 0.4s ease;
     }
     .cta-card:hover {
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-      border-color: #4a9e8f;
+      border-color: rgba(74, 158, 143, 0.3);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
     }
     .cta-card .cta-icon {
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: #25d366;
       margin-bottom: 16px;
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
     }
     .cta-card h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #0e1a26;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
       margin-bottom: 8px;
     }
     .cta-card p {
-      color: #6a7a8e;
+      color: #a0aec0;
       font-size: 1rem;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
     }
     .cta-card .btn-whatsapp {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       background: #25d366;
       color: white;
-      padding: 16px 48px;
+      padding: 18px 52px;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.1rem;
       text-decoration: none;
-      transition: 0.25s;
-      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
     }
     .cta-card .btn-whatsapp:hover {
       background: #1ebe5c;
-      transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(37, 211, 102, 0.5);
     }
-    .cta-card .btn-whatsapp i {
-      font-size: 1.6rem;
-    }
+    .cta-card .btn-whatsapp i { font-size: 1.8rem; }
 
     .cta-card .cta-divider {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin: 24px 0 20px;
-      color: #bcc9db;
+      margin: 28px 0 24px;
+      color: #4a5568;
       font-size: 0.85rem;
     }
     .cta-card .cta-divider::before,
@@ -327,63 +567,65 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: #e8edf4;
+      background: rgba(255,255,255,0.08);
     }
 
     .cta-card .cta-contato-rapido {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 24px;
+      gap: 28px;
       font-size: 0.9rem;
-      color: #6a7a8e;
+      color: #a0aec0;
     }
-    .cta-card .cta-contato-rapido a {
-      color: #1a2634;
-      text-decoration: none;
+    .cta-card .cta-contato-rapido span {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      transition: 0.2s;
-    }
-    .cta-card .cta-contato-rapido a:hover {
-      color: #4a9e8f;
+      gap: 10px;
     }
     .cta-card .cta-contato-rapido i {
       color: #4a9e8f;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
+    /* ===== FOOTER ===== */
     .footer {
-      background: #0f1722;
-      padding: 48px 0 32px;
-      color: #9aadc4;
+      background: #0a0a16;
+      padding: 56px 0 32px;
+      color: #a0aec0;
+      border-top: 1px solid rgba(255,255,255,0.03);
     }
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 40px;
     }
-    .footer h4 { color: white; font-weight: 600; margin-bottom: 16px; }
+    .footer h4 { 
+      color: white; 
+      font-weight: 700; 
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
     .footer a {
-      color: #9aadc4;
+      color: #a0aec0;
       text-decoration: none;
       display: block;
-      margin-bottom: 8px;
-      transition: 0.2s;
+      margin-bottom: 10px;
+      transition: all 0.3s ease;
       cursor: pointer;
     }
-    .footer a:hover { color: white; }
-    .footer i { margin-right: 8px; width: 20px; }
+    .footer a:hover { color: #4a9e8f; padding-left: 4px; }
+    .footer i { margin-right: 10px; width: 20px; }
     .footer-bottom {
-      border-top: 1px solid #1e2b3a;
+      border-top: 1px solid rgba(255,255,255,0.04);
       margin-top: 40px;
       padding-top: 24px;
       text-align: center;
       font-size: 0.9rem;
-      color: #6a7a8e;
+      color: #4a5568;
     }
 
+    /* ===== PÁGINAS INTERNAS ===== */
     .pagina-interna {
       padding: 60px 0 80px;
       background: white;
@@ -393,49 +635,53 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #e8edf4;
-      color: #1a2634;
-      padding: 10px 24px;
+      background: #edf2f7;
+      color: #1a1a2e;
+      padding: 12px 28px;
       border-radius: 60px;
       font-weight: 600;
       border: none;
       cursor: pointer;
-      transition: 0.2s;
+      transition: all 0.3s ease;
       margin-bottom: 30px;
     }
-    .pagina-interna .btn-voltar:hover { background: #d5dee9; }
+    .pagina-interna .btn-voltar:hover { background: #e2e8f0; transform: translateX(-4px); }
     .pagina-interna .artigo-header { margin-bottom: 30px; }
     .pagina-interna .artigo-header .artigo-tag {
       display: inline-block;
-      background: #e8edf4;
-      padding: 4px 14px;
+      background: rgba(74, 158, 143, 0.12);
+      padding: 4px 16px;
       border-radius: 60px;
       font-size: 0.8rem;
-      font-weight: 600;
-      color: #3a4a5e;
+      font-weight: 700;
+      color: #4a9e8f;
       margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .pagina-interna .artigo-header h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #0e1a26;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: #0f0f1a;
       line-height: 1.2;
       margin-bottom: 8px;
     }
-    .pagina-interna .artigo-header .artigo-date { font-size: 0.9rem; color: #6a7a8e; }
+    .pagina-interna .artigo-header .artigo-date { font-size: 0.9rem; color: #718096; }
     .pagina-interna .artigo-header img {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
       border-radius: 24px;
       margin-top: 20px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
     }
-    .pagina-interna .artigo-body { font-size: 1.05rem; color: #3a4a5e; line-height: 1.8; }
-    .pagina-interna .artigo-body p { margin-bottom: 18px; }
-    .pagina-interna .artigo-body strong { color: #4a9e8f; }
-    .pagina-interna .artigo-body ul { margin-bottom: 18px; padding-left: 24px; }
-    .pagina-interna .artigo-body li { margin-bottom: 6px; }
+    .pagina-interna .artigo-body { font-size: 1.05rem; color: #4a5568; line-height: 1.9; }
+    .pagina-interna .artigo-body p { margin-bottom: 20px; }
+    .pagina-interna .artigo-body strong { color: #2d7a6b; }
+    .pagina-interna .artigo-body ul { margin-bottom: 20px; padding-left: 24px; }
+    .pagina-interna .artigo-body li { margin-bottom: 8px; }
 
+    /* ===== RESPONSIVO ===== */
     @media (max-width: 992px) {
       .hero-grid { 
         grid-template-columns: 1fr; 
@@ -455,32 +701,61 @@
       .hero-logo img { max-width: 340px; }
       .about-grid { grid-template-columns: 1fr; }
       .about-image { order: -1; }
+      .about-image img { max-width: 400px; margin: 0 auto; }
     }
 
     @media (max-width: 768px) {
       .hero { padding: 40px 0 60px; }
-      .hero-logo img { max-width: 280px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-logo img { max-width: 260px; }
+      .about { padding: 60px 0; }
+      .about-text h2 { font-size: 2rem; }
+      .services { padding: 60px 0; }
+      .section-title { font-size: 2rem; }
+      .blog { padding: 60px 0; }
+      .cta-section { padding: 60px 0; }
+      .cta-section h2 { font-size: 2rem; }
       .cta-card { padding: 32px 24px; }
       .cta-card .btn-whatsapp { padding: 14px 32px; font-size: 1rem; }
       .blog-grid { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+      .topbar .container { flex-direction: column; text-align: center; }
+      .topbar a { margin: 0 8px; }
+      .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
+      .whatsapp-float i { font-size: 1.2rem; }
     }
 
     @media (max-width: 480px) {
-      .hero-logo img { max-width: 220px; }
+      .hero-logo img { max-width: 200px; }
       .cta-card .cta-contato-rapido { flex-direction: column; gap: 12px; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ===== TOPBAR ===== -->
+  <div class="topbar">
+    <div class="container">
+      <span><i class="fas fa-phone-alt"></i> (43) 92003-6581</span>
+      <span>
+        <i class="fas fa-video"></i> Atendimento online para todo o Brasil
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </span>
+    </div>
+  </div>
 
   <!-- ============================================= -->
   <!-- PÁGINA INICIAL -->
   <!-- ============================================= -->
   <div id="pagina-inicial" class="page active">
 
+    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
+          <span class="hero-badge"><i class="fas fa-video" style="margin-right:8px;"></i> Atendimento online</span>
           <h1>Construindo <span>pontes</span> para o <br />aprendizado</h1>
           <p>Transformando desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento e estratégias personalizadas.</p>
           <div class="btn-group">
@@ -493,6 +768,7 @@
       </div>
     </section>
 
+    <!-- ===== ABOUT ===== -->
     <section class="about" id="sobre">
       <div class="container about-grid">
         <div class="about-text">
@@ -509,10 +785,11 @@
       </div>
     </section>
 
+    <!-- ===== SERVICES ===== -->
     <section class="services" id="servicos">
       <div class="container">
         <h2 class="section-title">Nossos <span>serviços</span></h2>
-        <p class="section-desc">Atendimento presencial e online, com foco na construção da autonomia e da relação saudável com o conhecimento.</p>
+        <p class="section-desc">Atendimento online, com foco na construção da autonomia e da relação saudável com o conhecimento.</p>
         <div class="card-grid">
           <div class="service-card">
             <i class="fas fa-user-graduate"></i>
@@ -522,22 +799,23 @@
           <div class="service-card">
             <i class="fas fa-clipboard-list"></i>
             <h3>Avaliação psicopedagógica</h3>
-            <p>Avaliação completa das habilidades de leitura, escrita, raciocínio lógico, atenção, memória e funções executivas, identificando dificuldades e potencialidades para um plano de intervenção eficaz.</p>
+            <p>Avaliação completa das habilidades de leitura, escrita, raciocínio lógico, atenção, memória e funções executivas, identificando dificuldades e potencialidades.</p>
           </div>
           <div class="service-card">
             <i class="fas fa-puzzle-piece"></i>
             <h3>Intervenção personalizada</h3>
-            <p>Plano de intervenção elaborado de acordo com as necessidades de cada paciente, utilizando estratégias pedagógicas, recursos lúdicos e atividades que favorecem o desenvolvimento da aprendizagem.</p>
+            <p>Plano de intervenção elaborado de acordo com as necessidades de cada paciente, utilizando estratégias pedagógicas, recursos lúdicos e atividades que favorecem o desenvolvimento.</p>
           </div>
           <div class="service-card">
             <i class="fas fa-chalkboard-teacher"></i>
             <h3>Orientação à família e à escola</h3>
-            <p>Acompanhamento e orientações para familiares e instituições de ensino, promovendo uma atuação integrada que fortalece o processo de aprendizagem e o desenvolvimento.</p>
+            <p>Acompanhamento e orientações para familiares e instituições de ensino, promovendo uma atuação integrada que fortalece o processo de aprendizagem.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== BLOG ===== -->
     <section class="blog" id="blog">
       <div class="container">
         <h2 class="section-title">Artigos <span>recentes</span></h2>
@@ -577,12 +855,11 @@
       </div>
     </section>
 
-    <section class="testimonial"></section>
-
+    <!-- ===== CTA ===== -->
     <section class="cta-section" id="contato">
       <div class="container">
         <h2>Vamos <span>conversar</span>?</h2>
-        <p class="cta-sub">Agende uma avaliação inicial sem compromisso. Descubra como podemos ajudar!</p>
+        <p class="cta-sub">Agende uma avaliação inicial online sem compromisso. Conheça nosso espaço virtual e descubra como podemos ajudar.</p>
         
         <div class="cta-card">
           <div class="cta-icon">
@@ -606,11 +883,12 @@
       </div>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <div class="container footer-grid">
         <div>
           <h4>Legado que Ensina</h4>
-          <p style="color:#8a9eb5; line-height:1.7;">Acompanhamento, avaliação e intervenção psicopedagógica para crianças, adolescentes e adultos.</p>
+          <p style="color:#718096; line-height:1.8;">Acompanhamento, avaliação e intervenção psicopedagógica para crianças, adolescentes e adultos.</p>
         </div>
         <div>
           <h4>Contato</h4>
@@ -626,10 +904,15 @@
         </div>
       </div>
       <div class="footer-bottom">
-        &copy; 2026 Legado que Ensina
+        &copy; 2026 Legado que Ensina. Todos os direitos reservados.
       </div>
     </footer>
   </div>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
+  <a href="https://wa.me/5543920036581" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i> Atendimento
+  </a>
 
   <!-- ============================================= -->
   <!-- PÁGINA DA HISTÓRIA -->
@@ -653,26 +936,26 @@
           <p>Mais do que atividades ou conteúdos, permaneceram os vínculos construídos, os aprendizados compartilhados e os momentos que transformaram vidas.</p>
           <p>O Legado que Ensina representa exatamente isso: a continuidade dessas vivências e a base que sustenta uma prática construída com presença, escuta e significado — em qualquer lugar.</p>
 
-          <div style="background:#f5f7fc; border-radius:16px; padding:24px 28px; margin:24px 0; border:1px solid #e8edf4;">
-            <h4 style="color:#0e1a26; margin-bottom:12px;"><i class="fas fa-heart" style="color:#4a9e8f;"></i> Em homenagem à nossa história:</h4>
-            <div style="display:flex; flex-wrap:wrap; gap:8px 16px;">
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Benício</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Maicon</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Pedro</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Marcos</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Maria</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Professora Vanessa</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Professora Cirleia</span>
-              <span style="background:white; padding:4px 14px; border-radius:20px; border:1px solid #e8edf4; font-size:0.9rem;">Professora Joceli</span>
+          <div style="background:#f7fafc; border-radius:20px; padding:28px 32px; margin:28px 0; border:1px solid #e2e8f0;">
+            <h4 style="color:#0f0f1a; margin-bottom:16px;"><i class="fas fa-heart" style="color:#4a9e8f;"></i> Em homenagem à nossa história:</h4>
+            <div style="display:flex; flex-wrap:wrap; gap:10px 18px;">
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Benício</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Maicon</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Pedro</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Marcos</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Maria</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Vanessa</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Cirleia</span>
+              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Joceli</span>
             </div>
           </div>
 
           <p>Mais do que nomes, representam experiências que permanecem vivas e seguem fazendo parte da construção desse trabalho.</p>
 
-          <div style="font-size:1.1rem; font-weight:500; color:#0e1a26; margin-top:20px; padding:16px 20px; background:#f5f7fc; border-radius:12px; border-left:4px solid #4a9e8f;">
-            <i class="fas fa-quote-left" style="color:#4a9e8f; margin-right:8px;"></i>
+          <div style="font-size:1.1rem; font-weight:600; color:#0f0f1a; margin-top:24px; padding:20px 24px; background:#f7fafc; border-radius:16px; border-left:5px solid #4a9e8f;">
+            <i class="fas fa-quote-left" style="color:#4a9e8f; margin-right:10px;"></i>
             Porque algumas experiências na educação não passam com o tempo — <br />
-            <strong>elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo.</strong>
+            <span style="color:#2d7a6b;">elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo.</span>
           </div>
         </div>
       </div>
@@ -680,8 +963,10 @@
   </div>
 
   <!-- ============================================= -->
-  <!-- ARTIGO 1 - DIFICULDADES DE APRENDIZAGEM      -->
+  <!-- ARTIGOS -->
   <!-- ============================================= -->
+
+  <!-- ARTIGO 1 -->
   <div id="pagina-artigo1" class="page">
     <section class="pagina-interna">
       <div class="container">
@@ -730,9 +1015,7 @@
     </section>
   </div>
 
-  <!-- ============================================= -->
-  <!-- ARTIGO 2 - MOTIVAÇÃO NOS ESTUDOS             -->
-  <!-- ============================================= -->
+  <!-- ARTIGO 2 -->
   <div id="pagina-artigo2" class="page">
     <section class="pagina-interna">
       <div class="container">
@@ -777,9 +1060,7 @@
     </section>
   </div>
 
-  <!-- ============================================= -->
-  <!-- ARTIGO 3 - GAMIFICAÇÃO                       -->
-  <!-- ============================================= -->
+  <!-- ARTIGO 3 -->
   <div id="pagina-artigo3" class="page">
     <section class="pagina-interna">
       <div class="container">
