@@ -1,617 +1,1427 @@
 ```html
-<!-- ==========================================================
-     LEGIADO QUE ENSINA — PÁGINA DE LANÇAMENTO
-     Pré-lançamento / Site em construção
-========================================================== -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
 
-<style>
-  :root {
-    --verde: #2d7a6b;
-    --verde-dark: #235f54;
-    --azul: #0f1a2e;
-    --cinza: #667085;
-    --fundo: #f7f9fa;
-    --branco: #ffffff;
-    --borda: #e4e9ed;
-  }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  * {
-    box-sizing: border-box;
-  }
+  <meta
+    name="description"
+    content="Legado que Ensina — um novo espaço para acolher, compreender e transformar a aprendizagem. Em breve."
+  >
 
-  body {
-    margin: 0;
-    font-family: "Inter", Arial, sans-serif;
-    background: var(--fundo);
-    color: var(--azul);
-  }
+  <title>Legado que Ensina | Em breve</title>
 
-  .coming-soon {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
+  <!-- ==========================================================
+       FONTES
+  =========================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  /* Elementos decorativos */
-  .coming-soon::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: rgba(45, 122, 107, 0.055);
-    top: -250px;
-    right: -180px;
-    pointer-events: none;
-  }
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  .coming-soon::after {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: rgba(15, 26, 46, 0.025);
-    bottom: -180px;
-    left: -120px;
-    pointer-events: none;
-  }
+  <!-- ==========================================================
+       FONT AWESOME
+  =========================================================== -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
 
-  /* ==========================================================
-     HEADER
-  ========================================================== */
 
-  .launch-header {
-    width: 100%;
-    padding: 28px 6%;
-    position: relative;
-    z-index: 2;
-  }
+  <style>
 
-  .launch-header-inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+    /* ==========================================================
+       RESET
+    =========================================================== */
 
-  .launch-logo {
-    width: 155px;
-    height: auto;
-    display: block;
-  }
+    :root {
+      --green: #2d7a6b;
+      --green-dark: #1f5e52;
+      --green-light: #eaf3f0;
 
-  .status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--verde);
-  }
+      --navy: #102033;
+      --navy-soft: #253447;
 
-  .status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--verde);
-    animation: pulse 1.8s infinite;
-  }
+      --cream: #f8f7f3;
+      --cream-dark: #f0eee8;
 
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(45, 122, 107, 0.35);
-    }
-    70% {
-      box-shadow: 0 0 0 7px rgba(45, 122, 107, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(45, 122, 107, 0);
-    }
-  }
+      --white: #ffffff;
 
-  /* ==========================================================
-     HERO
-  ========================================================== */
+      --text: #263442;
+      --muted: #71808c;
 
-  .launch-main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    padding: 40px 6% 70px;
-  }
+      --line: rgba(16, 32, 51, .10);
 
-  .launch-container {
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
-  }
+      --shadow:
+        0 30px 80px rgba(16, 32, 51, .10);
 
-  .launch-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    align-items: center;
-    gap: 80px;
-  }
+      --shadow-soft:
+        0 15px 45px rgba(16, 32, 51, .07);
 
-  .launch-content {
-    max-width: 650px;
-  }
-
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    color: var(--verde);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 22px;
-  }
-
-  .eyebrow::before {
-    content: "";
-    width: 28px;
-    height: 2px;
-    background: var(--verde);
-  }
-
-  .launch-title {
-    margin: 0;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    line-height: 0.98;
-    letter-spacing: -0.055em;
-    font-weight: 800;
-    color: var(--azul);
-  }
-
-  .launch-title span {
-    color: var(--verde);
-  }
-
-  .launch-description {
-    max-width: 570px;
-    margin: 28px 0 32px;
-    color: var(--cinza);
-    font-size: 1.05rem;
-    line-height: 1.75;
-  }
-
-  .launch-actions {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .btn-brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 14px 22px;
-    border-radius: 7px;
-    background: var(--verde);
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 700;
-    transition: 0.25s ease;
-  }
-
-  .btn-brand:hover {
-    background: var(--verde-dark);
-    transform: translateY(-2px);
-  }
-
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 13px 21px;
-    border: 1px solid var(--borda);
-    border-radius: 7px;
-    background: #fff;
-    color: var(--azul);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: 0.25s ease;
-  }
-
-  .btn-outline:hover {
-    border-color: var(--verde);
-    color: var(--verde);
-  }
-
-  /* ==========================================================
-     LOGO / IMAGEM
-  ========================================================== */
-
-  .launch-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo-card {
-    width: min(390px, 100%);
-    aspect-ratio: 1 / 1;
-    background: #fff;
-    border: 1px solid var(--borda);
-    border-radius: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 25px 70px rgba(15, 26, 46, 0.07);
-  }
-
-  .logo-card::before {
-    content: "";
-    position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(45, 122, 107, 0.12);
-    border-radius: 20px;
-  }
-
-  .logo-card img {
-    width: 68%;
-    max-width: 260px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .construction-label {
-    position: absolute;
-    right: -18px;
-    bottom: 35px;
-    background: var(--azul);
-    color: #fff;
-    padding: 11px 17px;
-    border-radius: 6px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    z-index: 2;
-  }
-
-  /* ==========================================================
-     HISTÓRIA
-  ========================================================== */
-
-  .history-preview {
-    margin-top: 70px;
-    padding-top: 28px;
-    border-top: 1px solid var(--borda);
-  }
-
-  .history-preview-label {
-    color: var(--verde);
-    font-size: 0.7rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .history-preview p {
-    margin: 0;
-    max-width: 760px;
-    color: var(--azul);
-    font-size: 0.95rem;
-    line-height: 1.7;
-  }
-
-  /* ==========================================================
-     HOMENAGEM
-  ========================================================== */
-
-  .tribute {
-    margin-top: 22px;
-    padding: 18px 20px;
-    background: #fff;
-    border: 1px solid var(--borda);
-    border-radius: 10px;
-  }
-
-  .tribute-title {
-    margin: 0 0 12px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--azul);
-  }
-
-  .tribute-title i {
-    color: var(--verde);
-    margin-right: 5px;
-  }
-
-  .tribute-names {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tribute-names span {
-    background: var(--fundo);
-    border: 1px solid var(--borda);
-    border-radius: 50px;
-    padding: 5px 12px;
-    font-size: 0.72rem;
-    color: #596474;
-  }
-
-  /* ==========================================================
-     FRASE
-  ========================================================== */
-
-  .quote {
-    margin-top: 18px;
-    padding: 20px 22px;
-    background: rgba(45, 122, 107, 0.055);
-    border-left: 3px solid var(--verde);
-    border-radius: 0 8px 8px 0;
-  }
-
-  .quote i {
-    color: var(--verde);
-    font-size: 0.9rem;
-    margin-bottom: 7px;
-    display: block;
-  }
-
-  .quote p {
-    margin: 0;
-    color: var(--azul);
-    font-size: 0.88rem;
-    line-height: 1.65;
-    font-weight: 600;
-  }
-
-  /* ==========================================================
-     FOOTER
-  ========================================================== */
-
-  .launch-footer {
-    position: relative;
-    z-index: 2;
-    border-top: 1px solid var(--borda);
-    padding: 22px 6%;
-  }
-
-  .launch-footer-inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .launch-footer p {
-    margin: 0;
-    color: #8a94a3;
-    font-size: 0.72rem;
-  }
-
-  .footer-social {
-    display: flex;
-    gap: 8px;
-  }
-
-  .footer-social a {
-    width: 32px;
-    height: 32px;
-    border: 1px solid var(--borda);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--azul);
-    text-decoration: none;
-    font-size: 0.75rem;
-    transition: 0.2s ease;
-  }
-
-  .footer-social a:hover {
-    color: var(--verde);
-    border-color: var(--verde);
-  }
-
-  /* ==========================================================
-     RESPONSIVO
-  ========================================================== */
-
-  @media (max-width: 850px) {
-    .launch-header {
-      padding: 22px 6%;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
     }
 
-    .launch-main {
-      padding-top: 35px;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .launch-grid {
-      grid-template-columns: 1fr;
-      gap: 50px;
+
+    html {
+      scroll-behavior: smooth;
     }
 
-    .launch-content {
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+
+
+    img {
       max-width: 100%;
-      text-align: center;
+      display: block;
     }
 
-    .eyebrow {
-      justify-content: center;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .launch-description {
-      margin-left: auto;
-      margin-right: auto;
+
+    button {
+      font: inherit;
     }
 
-    .launch-actions {
-      justify-content: center;
+
+    /* ==========================================================
+       PAGE
+    =========================================================== */
+
+    .page {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
 
-    .launch-visual {
-      order: -1;
+
+    /* ==========================================================
+       BACKGROUND DECORATION
+    =========================================================== */
+
+    .ambient {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .logo-card {
-      width: 280px;
+
+    .ambient-1 {
+      width: 620px;
+      height: 620px;
+
+      top: -280px;
+      right: -220px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(45, 122, 107, .13) 0%,
+          rgba(45, 122, 107, .04) 45%,
+          transparent 70%
+        );
     }
 
-    .construction-label {
-      right: -12px;
+
+    .ambient-2 {
+      width: 500px;
+      height: 500px;
+
+      left: -260px;
+      top: 560px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(16, 32, 51, .055) 0%,
+          transparent 70%
+        );
     }
 
-    .history-preview {
-      text-align: left;
-    }
-  }
 
-  @media (max-width: 520px) {
-    .launch-logo {
-      width: 125px;
+    .ambient-line {
+      width: 1px;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(16, 32, 51, .07) 20%,
+        rgba(16, 32, 51, .07) 80%,
+        transparent
+      );
     }
+
+
+    .ambient-line.left {
+      left: 7%;
+    }
+
+
+    .ambient-line.right {
+      right: 7%;
+    }
+
+
+    /* ==========================================================
+       CONTAINER
+    =========================================================== */
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* ==========================================================
+       HEADER
+    =========================================================== */
+
+    header {
+      padding: 28px 0;
+      position: relative;
+      z-index: 10;
+    }
+
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .logo {
+      width: 150px;
+    }
+
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
 
     .status {
-      font-size: 0.62rem;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      padding: 9px 14px;
+
+      background: rgba(255,255,255,.65);
+      border: 1px solid var(--line);
+
+      border-radius: 50px;
+
+      color: var(--navy);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .10em;
+      text-transform: uppercase;
+
+      backdrop-filter: blur(12px);
     }
 
-    .launch-title {
-      font-size: 3.1rem;
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+
+      background: var(--green);
+
+      border-radius: 50%;
+
+      position: relative;
     }
 
-    .launch-description {
-      font-size: 0.94rem;
+
+    .status-dot::after {
+      content: "";
+
+      position: absolute;
+      inset: -4px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(45,122,107,.35);
+
+      animation: statusPulse 2s infinite;
     }
 
-    .launch-actions {
-      flex-direction: column;
-      width: 100%;
+
+    @keyframes statusPulse {
+
+      0% {
+        transform: scale(.7);
+        opacity: .9;
+      }
+
+      70% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+
     }
 
-    .btn-brand,
-    .btn-outline {
-      width: 100%;
+
+    /* ==========================================================
+       HERO
+    =========================================================== */
+
+    .hero {
+      min-height: calc(100vh - 95px);
+
+      display: flex;
+      align-items: center;
+
+      padding:
+        70px 0
+        100px;
+    }
+
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(380px, .95fr);
+
+      align-items: center;
+
+      gap: 90px;
+    }
+
+
+    /* ==========================================================
+       HERO TEXT
+    =========================================================== */
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      color: var(--green);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .20em;
+      text-transform: uppercase;
+
+      margin-bottom: 28px;
+    }
+
+
+    .eyebrow-line {
+      width: 38px;
+      height: 1px;
+
+      background: var(--green);
+    }
+
+
+    .hero h1 {
+      color: var(--navy);
+
+      font-family: var(--serif);
+
+      font-size:
+        clamp(54px, 6.3vw, 92px);
+
+      font-weight: 600;
+
+      line-height: .98;
+
+      letter-spacing: -.045em;
+    }
+
+
+    .hero h1 strong {
+      color: var(--green);
+      font-weight: 600;
+      font-style: italic;
+    }
+
+
+    .hero-description {
+      max-width: 590px;
+
+      margin-top: 30px;
+
+      color: var(--muted);
+
+      font-size: 17px;
+
+      line-height: 1.8;
+    }
+
+
+    .hero-description strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+
+    /* ==========================================================
+       HERO ACTIONS
+    =========================================================== */
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+
+      margin-top: 35px;
+    }
+
+
+    .btn {
+      min-height: 50px;
+
+      padding: 0 21px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      border-radius: 6px;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        border .25s ease,
+        color .25s ease;
+    }
+
+
+    .btn-primary {
+      color: white;
+      background: var(--green);
+
+      box-shadow:
+        0 12px 25px rgba(45,122,107,.18);
+    }
+
+
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+
+    .btn-secondary {
+      color: var(--navy);
+      background: rgba(255,255,255,.65);
+
+      border: 1px solid var(--line);
+    }
+
+
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ==========================================================
+       HERO SMALL INFO
+    =========================================================== */
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      margin-top: 42px;
+
+      color: #8a969f;
+
+      font-size: 12px;
+    }
+
+
+    .hero-note i {
+      color: var(--green);
+      font-size: 13px;
+    }
+
+
+    /* ==========================================================
+       VISUAL
+    =========================================================== */
+
+    .visual {
+      position: relative;
+
+      min-height: 540px;
+
+      display: flex;
+      align-items: center;
       justify-content: center;
     }
 
-    .logo-card {
-      width: 240px;
-      border-radius: 20px;
+
+    .visual-bg {
+      position: absolute;
+
+      width: 450px;
+      height: 450px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          #ffffff 0%,
+          #f4f1e9 58%,
+          transparent 70%
+        );
     }
 
-    .construction-label {
-      bottom: 20px;
-      font-size: 0.58rem;
+
+    .visual-ring {
+      position: absolute;
+
+      width: 430px;
+      height: 430px;
+
+      border: 1px solid rgba(45,122,107,.13);
+
+      border-radius: 50%;
     }
 
-    .launch-footer-inner {
+
+    .visual-ring::before {
+      content: "";
+
+      position: absolute;
+
+      width: 12px;
+      height: 12px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      top: 45px;
+      right: 72px;
+
+      box-shadow:
+        0 0 0 8px rgba(45,122,107,.08);
+    }
+
+
+    .logo-frame {
+      width: 365px;
+      height: 365px;
+
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,.92);
+
+      border: 1px solid rgba(16,32,51,.09);
+
+      border-radius: 28px;
+
+      box-shadow: var(--shadow);
+
+      transform: rotate(-2deg);
+
+      transition: transform .4s ease;
+    }
+
+
+    .logo-frame:hover {
+      transform: rotate(0deg) translateY(-5px);
+    }
+
+
+    .logo-frame::before {
+      content: "";
+
+      position: absolute;
+      inset: 13px;
+
+      border: 1px solid rgba(45,122,107,.13);
+
+      border-radius: 19px;
+    }
+
+
+    .logo-frame img {
+      width: 70%;
+      position: relative;
+      z-index: 2;
+    }
+
+
+    /* ==========================================================
+       FLOATING LABEL
+    =========================================================== */
+
+    .floating-card {
+      position: absolute;
+
+      z-index: 4;
+
+      left: -15px;
+      bottom: 62px;
+
+      background: var(--navy);
+      color: white;
+
+      padding: 15px 18px;
+
+      border-radius: 8px;
+
+      box-shadow:
+        0 20px 40px rgba(16,32,51,.20);
+    }
+
+
+    .floating-card-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #91c9bc;
+
+      font-size: 9px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+
+    .floating-card-top i {
+      font-size: 8px;
+    }
+
+
+    .floating-card-title {
+      margin-top: 6px;
+
+      font-family: var(--serif);
+
+      font-size: 18px;
+    }
+
+
+    /* ==========================================================
+       SCROLL INDICATOR
+    =========================================================== */
+
+    .scroll-indicator {
+      position: absolute;
+
+      bottom: 28px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      display: flex;
       flex-direction: column;
-      text-align: center;
+      align-items: center;
+      gap: 8px;
+
+      color: #9ba5ac;
+
+      font-size: 9px;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
-  }
-</style>
 
 
-<!-- ==========================================================
-     PÁGINA
-========================================================== -->
+    .scroll-line {
+      width: 1px;
+      height: 35px;
 
-<div class="coming-soon">
-
-  <!-- HEADER -->
-  <header class="launch-header">
-    <div class="launch-header-inner">
-
-      <img
-        class="launch-logo"
-        src="https://i.imgur.com/YIQDI4s.png"
-        alt="Legado que Ensina"
-      />
-
-      <div class="status">
-        <span class="status-dot"></span>
-        Em breve
-      </div>
-
-    </div>
-  </header>
+      background:
+        linear-gradient(
+          to bottom,
+          var(--green),
+          transparent
+        );
+    }
 
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main class="launch-main">
+    /* ==========================================================
+       DIVIDER
+    =========================================================== */
 
-    <div class="launch-container">
-
-      <div class="launch-grid">
-
-        <!-- TEXTO -->
-        <div class="launch-content">
-
-          <div class="eyebrow">
-            Lançamento oficial
-          </div>
-
-          <h1 class="launch-title">
-            Vem aí o<br>
-            <span>Legado que Ensina.</span>
-          </h1>
-
-          <p class="launch-description">
-            Estamos preparando um novo espaço para compartilhar nossa forma
-            de acolher, compreender e transformar a aprendizagem.
-            <strong>Em breve, estaremos oficialmente no ar.</strong>
-          </p>
-
-          <div class="launch-actions">
-
-            <a
-              href="#historia"
-              class="btn-brand"
-            >
-              Conheça nossa história
-              <i class="fas fa-arrow-right"></i>
-            </a>
-
-            <a
-              href="#marca"
-              class="btn-outline"
-            >
-              Sobre o Legado
-            </a>
-
-          </div>
-
-        </div>
+    .section-divider {
+      height: 1px;
+      background: var(--line);
+    }
 
 
-        <!-- LOGOMARCA -->
-        <div class="launch-visual">
+    /* ==========================================================
+       BRAND STORY
+    =========================================================== */
 
-          <div class="logo-card">
+    .story {
+      padding: 115px 0;
+      background: var(--white);
+    }
+
+
+    .story-grid {
+      display: grid;
+
+      grid-template-columns: .65fr 1.35fr;
+
+      gap: 100px;
+    }
+
+
+    .section-label {
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+
+    .story-left h2 {
+      margin-top: 20px;
+
+      color: var(--navy);
+
+      font-family: var(--serif);
+
+      font-size: 46px;
+      line-height: 1.05;
+
+      letter-spacing: -.03em;
+    }
+
+
+    .story-left h2 em {
+      color: var(--green);
+      font-style: italic;
+    }
+
+
+    .story-right {
+      padding-top: 4px;
+    }
+
+
+    .story-lead {
+      color: var(--navy);
+
+      font-size: 22px;
+      line-height: 1.55;
+
+      font-weight: 500;
+    }
+
+
+    .story-text {
+      max-width: 680px;
+
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+
+    /* ==========================================================
+       TRIBUTE
+    =========================================================== */
+
+    .tribute {
+      margin-top: 45px;
+
+      padding: 25px 27px;
+
+      background: var(--cream);
+
+      border: 1px solid var(--line);
+
+      border-radius: 10px;
+    }
+
+
+    .tribute-header {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--navy);
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+
+    .tribute-header i {
+      color: var(--green);
+    }
+
+
+    .names {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-top: 16px;
+    }
+
+
+    .name {
+      padding: 7px 13px;
+
+      background: white;
+
+      border: 1px solid var(--line);
+
+      border-radius: 50px;
+
+      color: #64717b;
+
+      font-size: 11px;
+    }
+
+
+    /* ==========================================================
+       QUOTE
+    =========================================================== */
+
+    .quote {
+      margin-top: 18px;
+
+      padding: 27px 30px;
+
+      border-radius: 10px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(45,122,107,.08),
+          rgba(45,122,107,.025)
+        );
+
+      border-left: 3px solid var(--green);
+    }
+
+
+    .quote-mark {
+      color: var(--green);
+      font-size: 20px;
+    }
+
+
+    .quote p {
+      margin-top: 7px;
+
+      color: var(--navy);
+
+      font-family: var(--serif);
+
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+
+    /* ==========================================================
+       FINAL CTA
+    =========================================================== */
+
+    .final {
+      padding: 110px 0;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(45,122,107,.14),
+          transparent 32%
+        ),
+        var(--navy);
+
+      color: white;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    .final::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(255,255,255,.06);
+
+      right: -180px;
+      bottom: -250px;
+    }
+
+
+    .final-inner {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      align-items: center;
+
+      gap: 60px;
+    }
+
+
+    .final-label {
+      color: #7fc1b2;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+
+    .final h2 {
+      max-width: 680px;
+
+      margin-top: 15px;
+
+      font-family: var(--serif);
+
+      font-size: 48px;
+      line-height: 1.08;
+
+      font-weight: 500;
+    }
+
+
+    .final h2 em {
+      color: #8bcabb;
+    }
+
+
+    .final p {
+      max-width: 590px;
+
+      margin-top: 17px;
+
+      color: rgba(255,255,255,.65);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    .final-button {
+      white-space: nowrap;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 16px 23px;
+
+      color: var(--navy);
+
+      background: white;
+
+      border-radius: 6px;
+
+      font-size: 12px;
+      font-weight: 700;
+
+      transition: .25s ease;
+    }
+
+
+    .final-button:hover {
+      color: white;
+      background: var(--green);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* ==========================================================
+       FOOTER
+    =========================================================== */
+
+    footer {
+      background: #0c1827;
+      color: rgba(255,255,255,.55);
+
+      padding: 27px 0;
+    }
+
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    .footer-copy {
+      font-size: 11px;
+    }
+
+
+    .footer-brand {
+      color: white;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+
+    .social {
+      display: flex;
+      gap: 8px;
+    }
+
+
+    .social a {
+      width: 34px;
+      height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      border-radius: 50%;
+
+      color: rgba(255,255,255,.65);
+
+      font-size: 12px;
+
+      transition: .2s ease;
+    }
+
+
+    .social a:hover {
+      border-color: var(--green);
+      color: white;
+      background: var(--green);
+    }
+
+
+    /* ==========================================================
+       ANIMATIONS
+    =========================================================== */
+
+    .fade-up {
+      animation: fadeUp .9s cubic-bezier(.2,.7,.2,1) both;
+    }
+
+
+    .delay-1 {
+      animation-delay: .12s;
+    }
+
+
+    .delay-2 {
+      animation-delay: .24s;
+    }
+
+
+    .delay-3 {
+      animation-delay: .36s;
+    }
+
+
+    @keyframes fadeUp {
+
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
+    /* ==========================================================
+       RESPONSIVE — TABLET
+    =========================================================== */
+
+    @media (max-width: 900px) {
+
+      .hero {
+        padding-top: 50px;
+      }
+
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+
+      .hero-copy {
+        text-align: center;
+      }
+
+
+      .eyebrow {
+        justify-content: center;
+      }
+
+
+      .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+
+      .hero-note {
+        justify-content: center;
+      }
+
+
+      .visual {
+        min-height: 430px;
+      }
+
+
+      .visual-bg {
+        width: 360px;
+        height: 360px;
+      }
+
+
+      .visual-ring {
+        width: 350px;
+        height: 350px;
+      }
+
+
+      .logo-frame {
+        width: 300px;
+        height: 300px;
+      }
+
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+
+      .story-left h2 {
+        font-size: 42px;
+      }
+
+
+      .final-inner {
+        grid-template-columns: 1fr;
+      }
+
+
+      .final-button {
+        justify-self: start;
+      }
+
+    }
+
+
+    /* ==========================================================
+       RESPONSIVE — MOBILE
+    =========================================================== */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+
+      header {
+        padding: 20px 0;
+      }
+
+
+      .logo {
+        width: 125px;
+      }
+
+
+      .status {
+        padding: 7px 10px;
+        font-size: 9px;
+      }
+
+
+      .hero {
+        min-height: auto;
+
+        padding:
+          55px 0
+          80px;
+      }
+
+
+      .hero h1 {
+        font-size: 50px;
+      }
+
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+
+      .btn {
+        width: 100%;
+      }
+
+
+      .hero-note {
+        font-size: 11px;
+        line-height: 1.5;
+        text-align: left;
+      }
+
+
+      .visual {
+        min-height: 340px;
+      }
+
+
+      .visual-bg {
+        width: 290px;
+        height: 290px;
+      }
+
+
+      .visual-ring {
+        width: 285px;
+        height: 285px;
+      }
+
+
+      .logo-frame {
+        width: 245px;
+        height: 245px;
+
+        border-radius: 20px;
+      }
+
+
+      .floating-card {
+        left: 5px;
+        bottom: 20px;
+      }
+
+
+      .floating-card-title {
+        font-size: 15px;
+      }
+
+
+      .scroll-indicator {
+        display: none;
+      }
+
+
+      .story {
+        padding: 75px 0;
+      }
+
+
+      .story-left h2 {
+        font-size: 38px;
+      }
+
+
+      .story-lead {
+        font-size: 18px;
+      }
+
+
+      .tribute {
+        padding: 20px;
+      }
+
+
+      .quote {
+        padding: 22px;
+      }
+
+
+      .quote p {
+        font-size: 16px;
+      }
+
+
+      .final {
+        padding: 75px 0;
+      }
+
+
+      .final h2 {
+        font-size: 38px;
+      }
+
+
+      .final-button {
+        width: 100%;
+        justify-content: center;
+      }
+
+
+      footer {
+        padding: 25px 0;
+      }
+
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <!-- ======================================================
+         BACKGROUND
+    ======================================================= -->
+
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
+
+    <div class="ambient-line left"></div>
+    <div class="ambient-line right"></div>
+
+
+    <!-- ======================================================
+         HEADER
+    ======================================================= -->
+
+    <header>
+
+      <div class="container">
+
+        <div class="header-inner">
+
+          <a href="#" aria-label="Legado que Ensina">
 
             <img
+              class="logo"
               src="https://i.imgur.com/YIQDI4s.png"
               alt="Legado que Ensina"
-            />
+            >
 
-            <div class="construction-label">
-              <i class="fas fa-tools"></i>
-              Preparando algo especial
+          </a>
+
+
+          <div class="header-right">
+
+            <div class="status">
+
+              <span class="status-dot"></span>
+
+              Lançamento em breve
+
             </div>
 
           </div>
@@ -620,100 +1430,509 @@
 
       </div>
 
-
-      <!-- ======================================================
-           HISTÓRIA / IDENTIDADE
-      ====================================================== -->
-
-      <section
-        class="history-preview"
-        id="historia"
-      >
-
-        <span class="history-preview-label">
-          Um legado que continua
-        </span>
-
-        <p id="marca">
-          O <strong>Legado que Ensina</strong> nasce de experiências que
-          atravessam o tempo e continuam presentes na forma como escolhemos
-          ensinar, acolher e transformar o aprendizado em algo significativo.
-        </p>
+    </header>
 
 
-        <!-- HOMENAGEM -->
-        <div class="tribute">
 
-          <h4 class="tribute-title">
-            <i class="fas fa-heart"></i>
-            Em homenagem à nossa história
-          </h4>
+    <!-- ======================================================
+         HERO
+    ======================================================= -->
 
-          <div class="tribute-names">
+    <main>
 
-            <span>Benício</span>
-            <span>Maicon</span>
-            <span>Pedro</span>
-            <span>Marcos</span>
-            <span>Maria</span>
-            <span>Profª Vanessa</span>
-            <span>Profª Cirleia</span>
-            <span>Profª Joceli</span>
+      <section class="hero">
+
+        <div class="container">
+
+          <div class="hero-grid">
+
+
+            <!-- TEXTO -->
+
+            <div class="hero-copy">
+
+              <div class="eyebrow fade-up">
+
+                <span class="eyebrow-line"></span>
+
+                Um novo capítulo começa
+
+              </div>
+
+
+              <h1 class="fade-up delay-1">
+
+                Vem aí o<br>
+
+                <strong>Legado que Ensina.</strong>
+
+              </h1>
+
+
+              <p class="hero-description fade-up delay-2">
+
+                Estamos preparando um novo espaço para compartilhar
+                experiências, conhecimento e uma maneira mais humana
+                de olhar para a aprendizagem.
+
+                <br><br>
+
+                <strong>
+                  Nosso lançamento oficial está chegando.
+                </strong>
+
+              </p>
+
+
+              <div class="hero-actions fade-up delay-3">
+
+                <a
+                  href="#historia"
+                  class="btn btn-primary"
+                >
+
+                  Conheça nossa história
+
+                  <i class="fas fa-arrow-down"></i>
+
+                </a>
+
+
+                <a
+                  href="#marca"
+                  class="btn btn-secondary"
+                >
+
+                  Conheça a marca
+
+                  <i class="fas fa-arrow-right"></i>
+
+                </a>
+
+              </div>
+
+
+              <div class="hero-note fade-up delay-3">
+
+                <i class="fas fa-sparkles"></i>
+
+                Estamos preparando tudo com cuidado para você.
+
+              </div>
+
+            </div>
+
+
+
+            <!-- LOGO / VISUAL -->
+
+            <div class="visual">
+
+              <div class="visual-bg"></div>
+
+              <div class="visual-ring"></div>
+
+
+              <div class="logo-frame">
+
+                <img
+                  src="https://i.imgur.com/YIQDI4s.png"
+                  alt="Legado que Ensina"
+                >
+
+              </div>
+
+
+              <div class="floating-card">
+
+                <div class="floating-card-top">
+
+                  <i class="fas fa-circle"></i>
+
+                  Em construção
+
+                </div>
+
+                <div class="floating-card-title">
+
+                  Algo especial está chegando.
+
+                </div>
+
+              </div>
+
+            </div>
+
 
           </div>
 
         </div>
 
 
-        <!-- FRASE -->
-        <div class="quote">
+        <div class="scroll-indicator">
 
-          <i class="fas fa-quote-left"></i>
+          Descubra
 
-          <p>
-            “Porque algumas experiências na educação não passam com o tempo —
-            elas continuam existindo na forma como se escolhe ensinar,
-            acolher e transformar o aprendizado em algo significativo.”
-          </p>
+          <span class="scroll-line"></span>
 
         </div>
 
       </section>
 
-    </div>
-
-  </main>
 
 
-  <!-- FOOTER -->
-  <footer class="launch-footer">
+      <!-- ====================================================
+           DIVISOR
+      ===================================================== -->
 
-    <div class="launch-footer-inner">
+      <div class="section-divider"></div>
 
-      <p>
-        &copy; 2026 Legado que Ensina.
-        Todos os direitos reservados.
-      </p>
 
-      <div class="footer-social">
 
-        <a href="#" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+      <!-- ====================================================
+           HISTÓRIA / MARCA
+      ===================================================== -->
 
-        <a href="#" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+      <section
+        class="story"
+        id="historia"
+      >
 
-        <a href="#" aria-label="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
+        <div class="container">
+
+          <div class="story-grid">
+
+
+            <!-- ESQUERDA -->
+
+            <div class="story-left">
+
+              <span class="section-label">
+
+                Nossa essência
+
+              </span>
+
+
+              <h2>
+
+                Antes do site,<br>
+
+                existe uma <em>história.</em>
+
+              </h2>
+
+            </div>
+
+
+
+            <!-- DIREITA -->
+
+            <div
+              class="story-right"
+              id="marca"
+            >
+
+              <p class="story-lead">
+
+                O Legado que Ensina nasce de experiências
+                que continuam presentes na forma como
+                escolhemos ensinar, acolher e transformar.
+
+              </p>
+
+
+              <p class="story-text">
+
+                Cada pessoa que passou por essa trajetória
+                deixou uma marca. Cada desafio trouxe um
+                aprendizado. Cada encontro ajudou a construir
+                aquilo que hoje chamamos de
+
+                <strong>Legado que Ensina.</strong>
+
+                <br><br>
+
+                Este novo espaço está sendo preparado para
+                reunir essa história e, ao mesmo tempo,
+                abrir espaço para tudo aquilo que ainda está
+                por vir.
+
+              </p>
+
+
+
+              <!-- HOMENAGEM -->
+
+              <div class="tribute">
+
+                <div class="tribute-header">
+
+                  <i class="fas fa-heart"></i>
+
+                  Em homenagem à nossa história
+
+                </div>
+
+
+                <div class="names">
+
+                  <span class="name">
+                    Benício
+                  </span>
+
+                  <span class="name">
+                    Maicon
+                  </span>
+
+                  <span class="name">
+                    Pedro
+                  </span>
+
+                  <span class="name">
+                    Marcos
+                  </span>
+
+                  <span class="name">
+                    Maria
+                  </span>
+
+                  <span class="name">
+                    Profª Vanessa
+                  </span>
+
+                  <span class="name">
+                    Profª Cirleia
+                  </span>
+
+                  <span class="name">
+                    Profª Joceli
+                  </span>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- FRASE -->
+
+              <div class="quote">
+
+                <div class="quote-mark">
+
+                  <i class="fas fa-quote-left"></i>
+
+                </div>
+
+
+                <p>
+
+                  “Porque algumas experiências na educação
+                  não passam com o tempo — elas continuam
+                  existindo na forma como se escolhe ensinar,
+                  acolher e transformar o aprendizado em algo
+                  significativo.”
+
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           CTA FINAL
+      ===================================================== -->
+
+      <section class="final">
+
+        <div class="container">
+
+          <div class="final-inner">
+
+
+            <div>
+
+              <span class="final-label">
+
+                Em breve
+
+              </span>
+
+
+              <h2>
+
+                Um novo espaço.<br>
+
+                O mesmo propósito.<br>
+
+                <em>Um legado que continua.</em>
+
+              </h2>
+
+
+              <p>
+
+                O site oficial do Legado que Ensina está
+                sendo preparado. Em breve, você poderá
+                conhecer todos os nossos serviços, conteúdos,
+                histórias e projetos.
+
+              </p>
+
+            </div>
+
+
+            <a
+              href="#historia"
+              class="final-button"
+            >
+
+              Conhecer o Legado
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
+
+    <footer>
+
+      <div class="container">
+
+        <div class="footer-inner">
+
+
+          <div>
+
+            <div class="footer-brand">
+
+              Legado que Ensina
+
+            </div>
+
+
+            <div class="footer-copy">
+
+              © 2026 — Todos os direitos reservados.
+
+            </div>
+
+          </div>
+
+
+          <div class="social">
+
+            <a
+              href="#"
+              aria-label="Instagram"
+            >
+
+              <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+            <a
+              href="#"
+              aria-label="LinkedIn"
+            >
+
+              <i class="fab fa-linkedin-in"></i>
+
+            </a>
+
+
+            <a
+              href="#"
+              aria-label="YouTube"
+            >
+
+              <i class="fab fa-youtube"></i>
+
+            </a>
+
+          </div>
+
+
+        </div>
 
       </div>
 
-    </div>
+    </footer>
 
-  </footer>
 
-</div>
+  </div>
+
+
+  <!-- ========================================================
+       SCRIPT
+  ========================================================= -->
+
+  <script>
+
+    /*
+      Pequeno efeito de entrada ao carregar a página.
+      Não depende de nenhuma biblioteca.
+    */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      document.body.classList.add("loaded");
+
+    });
+
+
+    /*
+      Suaviza o clique dos links internos.
+    */
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+
+      link.addEventListener("click", function(event) {
+
+        const target = document.querySelector(
+          this.getAttribute("href")
+        );
+
+        if (target) {
+
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
 ```
