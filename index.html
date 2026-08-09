@@ -1,1632 +1,719 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legado que Ensina · Psicopedagogia</title>
-  
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="theme-color" content="#ffffff" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  
-  <style>
-    /* ==========================================================
-       RESET
-    ========================================================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      color: #1a2332;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* ==========================================================
-       TOPBAR
-    ========================================================== */
-    .topbar {
-      background: #0f1a2e;
-      color: rgba(255, 255, 255, 0.5);
-      padding: 6px 0;
-      font-size: 0.7rem;
-      border-bottom: 3px solid #2d7a6b;
-    }
-
-    .topbar .container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .topbar span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .topbar a {
-      color: rgba(255, 255, 255, 0.3);
-      margin-left: 14px;
-      transition: 0.3s;
-    }
-
-    .topbar a:hover {
-      color: #fff;
-    }
-
-    /* ==========================================================
-       HEADER / NAV
-    ========================================================== */
-    .header {
-      background: #fff;
-      border-bottom: 1px solid #e8ecf1;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 14px 0;
-    }
-
-    .header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      height: 42px;
-      width: auto;
-    }
-
-    .logo span {
-      font-size: 1rem;
-      font-weight: 800;
-      color: #0f1a2e;
-      letter-spacing: -0.5px;
-    }
-
-    .logo span em {
-      font-style: normal;
-      color: #2d7a6b;
-    }
-
-    .nav {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .nav a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #1a2332;
-      transition: 0.3s;
-      cursor: pointer;
-      padding: 4px 0;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav a:hover {
-      color: #2d7a6b;
-    }
-
-    .nav a.ativo {
-      color: #2d7a6b;
-      border-bottom-color: #2d7a6b;
-    }
-
-    .nav .btn-nav {
-      background: #2d7a6b;
-      color: #fff !important;
-      padding: 10px 28px;
-      border-radius: 60px;
-      border: none;
-      font-weight: 600;
-      transition: 0.3s;
-      font-size: 0.85rem;
-    }
-
-    .nav .btn-nav:hover {
-      background: #1e5a4f;
-      transform: translateY(-2px);
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .menu-toggle span {
-      width: 28px;
-      height: 2px;
-      background: #1a2332;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-
-    .menu-toggle.ativo span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-toggle.ativo span:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-toggle.ativo span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-
-    /* ==========================================================
-       PÁGINAS
-    ========================================================== */
-    .pagina {
-      display: none;
-      animation: fadeUp 0.5s ease;
-    }
-
-    .pagina.ativa {
-      display: block;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ==========================================================
-       HERO
-    ========================================================== */
-    .hero {
-      padding: 60px 0 80px;
-      background: #f5f7fa;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero-texto h1 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 800;
-      line-height: 1.08;
-      color: #0f1a2e;
-      margin-bottom: 16px;
-    }
-
-    .hero-texto h1 span {
-      color: #2d7a6b;
-    }
-
-    .hero-texto p {
-      font-size: 1.05rem;
-      color: #4a5a6e;
-      max-width: 480px;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    .hero-botoes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #2d7a6b;
-      color: #fff;
-      padding: 14px 36px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      background: #1e5a4f;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(45, 122, 107, 0.25);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      color: #1a2332;
-      padding: 14px 32px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: 2px solid #d0d7e0;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .btn-secondary:hover {
-      border-color: #2d7a6b;
-      color: #2d7a6b;
-      transform: translateY(-2px);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      margin-top: 28px;
-      padding-top: 20px;
-      border-top: 1px solid #e0e5ec;
-    }
-
-    .hero-stats .stat {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .hero-stats .stat .numero {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #0f1a2e;
-    }
-
-    .hero-stats .stat .label {
-      font-size: 0.8rem;
-      color: #6a7a8e;
-    }
-
-    .hero-imagem {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-imagem img {
-      max-width: 400px;
-      width: 100%;
-    }
-
-    /* ==========================================================
-       CATEGORIAS (ESTILO KUMON)
-    ========================================================== */
-    .categorias {
-      padding: 30px 0 10px;
-      background: #fff;
-      border-bottom: 1px solid #e8ecf1;
-    }
-
-    .categorias .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 24px;
-      align-items: center;
-    }
-
-    .categorias .label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #6a7a8e;
-      letter-spacing: 0.5px;
-    }
-
-    .categorias a {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: #1a2332;
-      transition: 0.3s;
-      padding: 4px 0;
-      border-bottom: 2px solid transparent;
-    }
-
-    .categorias a:hover {
-      color: #2d7a6b;
-      border-bottom-color: #2d7a6b;
-    }
-
-    /* ==========================================================
-       BLOG - ESTILO KUMON (TÍTULO EM CIMA DA IMAGEM)
-    ========================================================== */
-    .blog {
-      padding: 50px 0 70px;
-      background: #f5f7fa;
-    }
-
-    .blog-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-    }
-
-    .blog-header h2 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #0f1a2e;
-    }
-
-    .blog-header .ver-todos {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #2d7a6b;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .blog-header .ver-todos:hover {
-      transform: translateX(4px);
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 28px;
-    }
-
-    .blog-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-      border: 1px solid #e8ecf1;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
-      border-color: #2d7a6b;
-    }
-
-    .blog-card .img {
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .blog-card .img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.5s;
-    }
-
-    .blog-card:hover .img img {
-      transform: scale(1.04);
-    }
-
-    /* TÍTULO EM CIMA DA IMAGEM (ESTILO KUMON) */
-    .blog-card .img .titulo-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 20px 20px 16px;
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-      color: #fff;
-    }
-
-    .blog-card .img .titulo-overlay h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .blog-card .img .titulo-overlay .tag {
-      display: inline-block;
-      font-size: 0.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: #fff;
-      background: rgba(45, 122, 107, 0.7);
-      padding: 2px 12px;
-      border-radius: 60px;
-    }
-
-    .blog-card .conteudo {
-      padding: 16px 20px 20px;
-    }
-
-    .blog-card .conteudo .meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      color: #6a7a8e;
-    }
-
-    .blog-card .conteudo .meta .categoria {
-      color: #2d7a6b;
-      font-weight: 600;
-    }
-
-    .blog-card .conteudo .ler {
-      color: #2d7a6b;
-      font-weight: 600;
-      font-size: 0.8rem;
-      transition: 0.3s;
-      display: inline-block;
-      margin-top: 8px;
-    }
-
-    .blog-card .conteudo .ler:hover {
-      transform: translateX(6px);
-    }
-
-    /* Card de vídeo */
-    .blog-card.video .img .play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 48px;
-      height: 48px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.3s;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .blog-card.video .img .play i {
-      font-size: 1.2rem;
-      color: #2d7a6b;
-      margin-left: 4px;
-    }
-
-    .blog-card.video:hover .img .play {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    /* ==========================================================
-       OFERECEMOS (ESTILO KUMON - ÍCONES CIRCULARES)
-    ========================================================== */
-    .oferecemos {
-      padding: 60px 0;
-      background: #fff;
-    }
-
-    .oferecemos-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .oferecemos-header h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #0f1a2e;
-    }
-
-    .oferecemos-header h2 span {
-      color: #2d7a6b;
-    }
-
-    .oferecemos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .oferecemos-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px 16px;
-      border-radius: 12px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .oferecemos-item:hover {
-      background: #f5f7fa;
-      transform: translateY(-4px);
-    }
-
-    .oferecemos-item .circulo {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(45, 122, 107, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-      transition: 0.3s;
-      border: 2px solid transparent;
-    }
-
-    .oferecemos-item:hover .circulo {
-      background: rgba(45, 122, 107, 0.12);
-      border-color: #2d7a6b;
-    }
-
-    .oferecemos-item .circulo i {
-      font-size: 2rem;
-      color: #2d7a6b;
-    }
-
-    .oferecemos-item h4 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #0f1a2e;
-      margin-bottom: 4px;
-    }
-
-    .oferecemos-item p {
-      font-size: 0.75rem;
-      color: #6a7a8e;
-      line-height: 1.4;
-    }
-
-    /* ==========================================================
-       CTA / CONTATO
-    ========================================================== */
-    .cta {
-      padding: 60px 0;
-      background: #0f1a2e;
-      color: #fff;
-    }
-
-    .cta-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .cta-texto h2 {
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .cta-texto h2 span {
-      color: #4a9e8f;
-    }
-
-    .cta-texto p {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .cta-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .cta-features span {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.85rem;
-    }
-
-    .cta-features i {
-      color: #4a9e8f;
-    }
-
-    .cta-card {
-      background: rgba(255, 255, 255, 0.04);
-      padding: 32px 28px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      text-align: center;
-    }
-
-    .cta-card .icone {
-      font-size: 2.8rem;
-      color: #25d366;
-      margin-bottom: 12px;
-      display: inline-block;
-    }
-
-    .cta-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .cta-card p {
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
-
-    .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #25d366;
-      color: #fff;
-      padding: 12px 36px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .btn-whatsapp:hover {
-      background: #1ebe5c;
-      transform: translateY(-2px);
-    }
-
-    .btn-whatsapp i {
-      font-size: 1.3rem;
-    }
-
-    .cta-divider {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin: 16px 0 14px;
-      color: rgba(255, 255, 255, 0.06);
-      font-size: 0.75rem;
-    }
-
-    .cta-divider::before,
-    .cta-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.04);
-    }
-
-    .cta-contatos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .cta-contatos span {
-      color: rgba(255, 255, 255, 0.3);
-      font-size: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cta-contatos i {
-      color: #4a9e8f;
-    }
-
-    /* ==========================================================
-       FOOTER
-    ========================================================== */
-    .footer {
-      background: #070d18;
-      padding: 40px 0 24px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 40px;
-      margin-bottom: 28px;
-    }
-
-    .footer-brand img {
-      height: 34px;
-      width: auto;
-      margin-bottom: 10px;
-    }
-
-    .footer-brand p {
-      color: rgba(255, 255, 255, 0.2);
-      line-height: 1.8;
-      max-width: 280px;
-      font-size: 0.85rem;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .footer-social a {
-      color: rgba(255, 255, 255, 0.1);
-      transition: 0.3s;
-      font-size: 1rem;
-    }
-
-    .footer-social a:hover {
-      color: #4a9e8f;
-    }
-
-    .footer h4 {
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-
-    .footer a {
-      color: rgba(255, 255, 255, 0.15);
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.85rem;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .footer a:hover {
-      color: #4a9e8f;
-      padding-left: 4px;
-    }
-
-    .footer a i {
-      width: 16px;
-      margin-right: 6px;
-    }
-
-    .footer .newsletter {
-      display: flex;
-      gap: 0;
-      border-radius: 60px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.03);
-    }
-
-    .footer .newsletter input {
-      flex: 1;
-      padding: 8px 16px;
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 0.85rem;
-      outline: none;
-    }
-
-    .footer .newsletter input::placeholder {
-      color: rgba(255, 255, 255, 0.1);
-    }
-
-    .footer .newsletter button {
-      padding: 8px 16px;
-      background: #2d7a6b;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .footer .newsletter button:hover {
-      background: #1e5a4f;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.02);
-      padding-top: 16px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.06);
-    }
-
-    /* ==========================================================
-       PÁGINAS INTERNAS
-    ========================================================== */
-    .pagina-interna {
-      padding: 40px 0 60px;
-      background: #fff;
-    }
-
-    .pagina-interna .container {
-      max-width: 820px;
-    }
-
-    .btn-voltar {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #f5f7fa;
-      color: #1a2332;
-      padding: 8px 20px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-      margin-bottom: 24px;
-    }
-
-    .btn-voltar:hover {
-      background: #e8ecf1;
-      transform: translateX(-4px);
-    }
-
-    .pagina-interna .cabecalho {
-      margin-bottom: 24px;
-    }
-
-    .pagina-interna .cabecalho .tag {
-      display: inline-block;
-      background: rgba(45, 122, 107, 0.08);
-      padding: 4px 14px;
-      border-radius: 60px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #2d7a6b;
-      margin-bottom: 8px;
-    }
-
-    .pagina-interna .cabecalho h1 {
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      font-weight: 700;
-      color: #0f1a2e;
-      margin-bottom: 4px;
-    }
-
-    .pagina-interna .cabecalho .data {
-      font-size: 0.8rem;
-      color: #6a7a8e;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .pagina-interna .cabecalho img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    }
-
-    .pagina-interna .conteudo {
-      font-size: 0.95rem;
-      color: #4a5a6e;
-      line-height: 1.9;
-    }
-
-    .pagina-interna .conteudo p {
-      margin-bottom: 16px;
-    }
-
-    .pagina-interna .conteudo strong {
-      color: #0f1a2e;
-    }
-
-    .pagina-interna .conteudo ul {
-      margin-bottom: 16px;
-      padding-left: 20px;
-    }
-
-    .pagina-interna .conteudo ul li {
-      margin-bottom: 4px;
-    }
-
-    /* ==========================================================
-       RESPONSIVO
-    ========================================================== */
-    @media (max-width: 992px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-      }
-
-      .hero-texto p {
-        max-width: 100%;
-      }
-
-      .hero-botoes {
-        justify-content: center;
-      }
-
-      .hero-stats {
-        justify-content: center;
-      }
-
-      .cta-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-      }
-
-      .cta-features {
-        justify-content: center;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-      }
-
-      .oferecemos-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .topbar .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #fff;
-        padding: 20px;
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
-        gap: 14px;
-        align-items: center;
-        border-top: 1px solid #e8ecf1;
-      }
-
-      .nav.aberto {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-
-      .hero {
-        padding: 40px 0 60px;
-      }
-
-      .hero-stats {
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .hero-stats .stat .numero {
-        font-size: 1.3rem;
-      }
-
-      .blog-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .blog-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-      }
-
-      .oferecemos-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .oferecemos-item .circulo {
-        width: 64px;
-        height: 64px;
-      }
-
-      .oferecemos-item .circulo i {
-        font-size: 1.6rem;
-      }
-
-      .cta-card {
-        padding: 20px 16px;
-      }
-
-      .cta-card .btn-whatsapp {
-        padding: 10px 24px;
-        font-size: 0.85rem;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-brand p {
-        max-width: 100%;
-        margin: 0 auto;
-      }
-
-      .footer-social {
-        justify-content: center;
-      }
-
-      .pagina-interna .cabecalho img {
-        max-height: 180px;
-      }
-
-      .categorias .container {
-        justify-content: center;
-        gap: 4px 16px;
-      }
-
-      .categorias .label {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-
-      .btn-primary,
-      .btn-secondary {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .hero-botoes {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .cta-contatos {
-        flex-direction: column;
-        gap: 4px;
-      }
-
-      .logo span {
-        display: none;
-      }
-
-      .oferecemos-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-
-      .oferecemos-item {
-        padding: 12px 8px;
-      }
-
-      .oferecemos-item .circulo {
-        width: 56px;
-        height: 56px;
-      }
-
-      .oferecemos-item .circulo i {
-        font-size: 1.3rem;
-      }
-
-      .oferecemos-item h4 {
-        font-size: 0.8rem;
-      }
-
-      .oferecemos-item p {
-        font-size: 0.65rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- ==========================================================
-     TOPBAR
-  ========================================================== -->
-  <div class="topbar">
-    <div class="container">
-      <span><i class="fas fa-phone-alt"></i> (43) 92003-6581</span>
-      <span>
-        Atendimento presencial e online
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </span>
-    </div>
-  </div>
-
-  <!-- ==========================================================
+```html
+<!-- ==========================================================
+     LEGIADO QUE ENSINA — PÁGINA DE LANÇAMENTO
+     Pré-lançamento / Site em construção
+========================================================== -->
+
+<style>
+  :root {
+    --verde: #2d7a6b;
+    --verde-dark: #235f54;
+    --azul: #0f1a2e;
+    --cinza: #667085;
+    --fundo: #f7f9fa;
+    --branco: #ffffff;
+    --borda: #e4e9ed;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--azul);
+  }
+
+  .coming-soon {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Elementos decorativos */
+  .coming-soon::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(45, 122, 107, 0.055);
+    top: -250px;
+    right: -180px;
+    pointer-events: none;
+  }
+
+  .coming-soon::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(15, 26, 46, 0.025);
+    bottom: -180px;
+    left: -120px;
+    pointer-events: none;
+  }
+
+  /* ==========================================================
      HEADER
-  ========================================================== -->
-  <header class="header">
-    <div class="container">
-      <a href="#" onclick="mostrarPagina('inicial')" class="logo">
-        <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
-        <span>Legado <em>que Ensina</em></span>
-      </a>
-      <nav class="nav" id="navMenu">
-        <a href="#" onclick="mostrarPagina('inicial')" class="ativo">Início</a>
-        <a href="#" onclick="mostrarPagina('historia')">História</a>
-        <a href="#contato" onclick="mostrarPagina('inicial')" class="btn-nav">Agendar</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle">
-        <span></span><span></span><span></span>
-      </button>
+  ========================================================== */
+
+  .launch-header {
+    width: 100%;
+    padding: 28px 6%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .launch-header-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .launch-logo {
+    width: 155px;
+    height: auto;
+    display: block;
+  }
+
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--verde);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--verde);
+    animation: pulse 1.8s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(45, 122, 107, 0.35);
+    }
+    70% {
+      box-shadow: 0 0 0 7px rgba(45, 122, 107, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(45, 122, 107, 0);
+    }
+  }
+
+  /* ==========================================================
+     HERO
+  ========================================================== */
+
+  .launch-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 40px 6% 70px;
+  }
+
+  .launch-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .launch-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .launch-content {
+    max-width: 650px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--verde);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--verde);
+  }
+
+  .launch-title {
+    margin: 0;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    font-weight: 800;
+    color: var(--azul);
+  }
+
+  .launch-title span {
+    color: var(--verde);
+  }
+
+  .launch-description {
+    max-width: 570px;
+    margin: 28px 0 32px;
+    color: var(--cinza);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  .launch-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 14px 22px;
+    border-radius: 7px;
+    background: var(--verde);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: 0.25s ease;
+  }
+
+  .btn-brand:hover {
+    background: var(--verde-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 21px;
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.25s ease;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--verde);
+    color: var(--verde);
+  }
+
+  /* ==========================================================
+     LOGO / IMAGEM
+  ========================================================== */
+
+  .launch-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-card {
+    width: min(390px, 100%);
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(15, 26, 46, 0.07);
+  }
+
+  .logo-card::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(45, 122, 107, 0.12);
+    border-radius: 20px;
+  }
+
+  .logo-card img {
+    width: 68%;
+    max-width: 260px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .construction-label {
+    position: absolute;
+    right: -18px;
+    bottom: 35px;
+    background: var(--azul);
+    color: #fff;
+    padding: 11px 17px;
+    border-radius: 6px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  /* ==========================================================
+     HISTÓRIA
+  ========================================================== */
+
+  .history-preview {
+    margin-top: 70px;
+    padding-top: 28px;
+    border-top: 1px solid var(--borda);
+  }
+
+  .history-preview-label {
+    color: var(--verde);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .history-preview p {
+    margin: 0;
+    max-width: 760px;
+    color: var(--azul);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* ==========================================================
+     HOMENAGEM
+  ========================================================== */
+
+  .tribute {
+    margin-top: 22px;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+  }
+
+  .tribute-title {
+    margin: 0 0 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--azul);
+  }
+
+  .tribute-title i {
+    color: var(--verde);
+    margin-right: 5px;
+  }
+
+  .tribute-names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tribute-names span {
+    background: var(--fundo);
+    border: 1px solid var(--borda);
+    border-radius: 50px;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+    color: #596474;
+  }
+
+  /* ==========================================================
+     FRASE
+  ========================================================== */
+
+  .quote {
+    margin-top: 18px;
+    padding: 20px 22px;
+    background: rgba(45, 122, 107, 0.055);
+    border-left: 3px solid var(--verde);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .quote i {
+    color: var(--verde);
+    font-size: 0.9rem;
+    margin-bottom: 7px;
+    display: block;
+  }
+
+  .quote p {
+    margin: 0;
+    color: var(--azul);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    font-weight: 600;
+  }
+
+  /* ==========================================================
+     FOOTER
+  ========================================================== */
+
+  .launch-footer {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--borda);
+    padding: 22px 6%;
+  }
+
+  .launch-footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .launch-footer p {
+    margin: 0;
+    color: #8a94a3;
+    font-size: 0.72rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 8px;
+  }
+
+  .footer-social a {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: 0.2s ease;
+  }
+
+  .footer-social a:hover {
+    color: var(--verde);
+    border-color: var(--verde);
+  }
+
+  /* ==========================================================
+     RESPONSIVO
+  ========================================================== */
+
+  @media (max-width: 850px) {
+    .launch-header {
+      padding: 22px 6%;
+    }
+
+    .launch-main {
+      padding-top: 35px;
+    }
+
+    .launch-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .launch-content {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .eyebrow {
+      justify-content: center;
+    }
+
+    .launch-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .launch-actions {
+      justify-content: center;
+    }
+
+    .launch-visual {
+      order: -1;
+    }
+
+    .logo-card {
+      width: 280px;
+    }
+
+    .construction-label {
+      right: -12px;
+    }
+
+    .history-preview {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .launch-logo {
+      width: 125px;
+    }
+
+    .status {
+      font-size: 0.62rem;
+    }
+
+    .launch-title {
+      font-size: 3.1rem;
+    }
+
+    .launch-description {
+      font-size: 0.94rem;
+    }
+
+    .launch-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-brand,
+    .btn-outline {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .logo-card {
+      width: 240px;
+      border-radius: 20px;
+    }
+
+    .construction-label {
+      bottom: 20px;
+      font-size: 0.58rem;
+    }
+
+    .launch-footer-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
+
+
+<!-- ==========================================================
+     PÁGINA
+========================================================== -->
+
+<div class="coming-soon">
+
+  <!-- HEADER -->
+  <header class="launch-header">
+    <div class="launch-header-inner">
+
+      <img
+        class="launch-logo"
+        src="https://i.imgur.com/YIQDI4s.png"
+        alt="Legado que Ensina"
+      />
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Em breve
+      </div>
+
     </div>
   </header>
 
-  <!-- ==========================================================
-     PÁGINA INICIAL
-  ========================================================== -->
-  <div id="pagina-inicial" class="pagina ativa">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-texto">
-            <h1>Construindo <span>pontes</span> para o <br />aprendizado</h1>
-            <p>Transformamos desafios em oportunidades. Com acolhimento, escuta ativa e estratégias personalizadas, cada criança encontra seu próprio caminho para aprender.</p>
-            <div class="hero-botoes">
-              <a href="#contato" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
-              <button class="btn-secondary" onclick="mostrarPagina('historia')">Nossa história</button>
-            </div>
-            <div class="hero-stats">
-              <div class="stat">
-                <span class="numero">98%</span>
-                <span class="label">Satisfação</span>
-              </div>
-              <div class="stat">
-                <span class="numero">5+</span>
-                <span class="label">Anos de experiência</span>
-              </div>
-            </div>
-          </div>
-          <div class="hero-imagem">
-            <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="launch-main">
 
-    <!-- ==========================================================
-       CATEGORIAS (ESTILO KUMON)
-    ========================================================== -->
-    <section class="categorias">
-      <div class="container">
-        <span class="label">Categorias</span>
-        <a href="#">Acompanhamento</a>
-        <a href="#">Avaliação</a>
-        <a href="#">Intervenção</a>
-        <a href="#">Orientação</a>
-        <a href="#">Depoimentos</a>
-        <a href="#">Institucional</a>
-        <a href="#">Artigos</a>
-        <a href="#">Vídeos</a>
-      </div>
-    </section>
+    <div class="launch-container">
 
-    <!-- ==========================================================
-       BLOG (ESTILO KUMON - TÍTULO EM CIMA DA IMAGEM)
-    ========================================================== -->
-    <section class="blog" id="blog">
-      <div class="container">
-        <div class="blog-header">
-          <h2>Artigos <span style="color:#2d7a6b;">recentes</span></h2>
-          <span class="ver-todos">Ver todos →</span>
-        </div>
+      <div class="launch-grid">
 
-        <div class="blog-grid">
-          <!-- ARTIGO 1 -->
-          <div class="blog-card" onclick="mostrarPagina('artigo1')">
-            <div class="img">
-              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=60" alt="Dificuldades de aprendizagem" />
-              <div class="titulo-overlay">
-                <span class="tag">Aprendizagem</span>
-                <h3>Como identificar dificuldades de aprendizagem cedo</h3>
-              </div>
-            </div>
-            <div class="conteudo">
-              <div class="meta">
-                <span>14/07/2026</span>
-                <span class="categoria">Aprendizagem</span>
-              </div>
-              <span class="ler">Leia mais →</span>
-            </div>
+        <!-- TEXTO -->
+        <div class="launch-content">
+
+          <div class="eyebrow">
+            Lançamento oficial
           </div>
 
-          <!-- ARTIGO 2 -->
-          <div class="blog-card" onclick="mostrarPagina('artigo2')">
-            <div class="img">
-              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=60" alt="Motivação" />
-              <div class="titulo-overlay">
-                <span class="tag">Motivação</span>
-                <h3>Como manter a motivação nos estudos em casa</h3>
-              </div>
-            </div>
-            <div class="conteudo">
-              <div class="meta">
-                <span>12/06/2026</span>
-                <span class="categoria">Motivação</span>
-              </div>
-              <span class="ler">Leia mais →</span>
-            </div>
-          </div>
+          <h1 class="launch-title">
+            Vem aí o<br>
+            <span>Legado que Ensina.</span>
+          </h1>
 
-          <!-- ARTIGO 3 -->
-          <div class="blog-card" onclick="mostrarPagina('artigo3')">
-            <div class="img">
-              <img src="https://i.imgur.com/BvcvoHU.png" alt="Gamificação" />
-              <div class="titulo-overlay">
-                <span class="tag">Gamificação</span>
-                <h3>Gamificação: como jogos ajudam no aprendizado</h3>
-              </div>
-            </div>
-            <div class="conteudo">
-              <div class="meta">
-                <span>10/06/2026</span>
-                <span class="categoria">Gamificação</span>
-              </div>
-              <span class="ler">Leia mais →</span>
-            </div>
-          </div>
+          <p class="launch-description">
+            Estamos preparando um novo espaço para compartilhar nossa forma
+            de acolher, compreender e transformar a aprendizagem.
+            <strong>Em breve, estaremos oficialmente no ar.</strong>
+          </p>
 
-          <!-- ARTIGO 4 - VÍDEO -->
-          <div class="blog-card video" onclick="window.open('https://youtu.be/Exv33fj5Ivc?si=SbPjA8cOGzqkfT86', '_blank')">
-            <div class="img">
-              <img src="https://img.youtube.com/vi/Exv33fj5Ivc/maxresdefault.jpg" alt="Vídeo sobre aprendizagem" />
-              <div class="play"><i class="fas fa-play"></i></div>
-              <div class="titulo-overlay">
-                <span class="tag">Vídeo</span>
-                <h3>Como a psicopedagogia transforma a aprendizagem</h3>
-              </div>
-            </div>
-            <div class="conteudo">
-              <div class="meta">
-                <span>05/06/2026</span>
-                <span class="categoria">Vídeo</span>
-              </div>
-              <span class="ler">Assistir vídeo →</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="launch-actions">
 
-    <!-- ==========================================================
-       OFERECEMOS (ESTILO KUMON - ÍCONES CIRCULARES)
-    ========================================================== -->
-    <section class="oferecemos" id="servicos">
-      <div class="container">
-        <div class="oferecemos-header">
-          <h2>Conheça o que o <span>Legado que Ensina</span> oferece</h2>
-        </div>
-        <div class="oferecemos-grid">
-          <div class="oferecemos-item">
-            <div class="circulo"><i class="fas fa-user-graduate"></i></div>
-            <h4>Acompanhamento</h4>
-            <p>psicopedagógico</p>
-          </div>
-          <div class="oferecemos-item">
-            <div class="circulo"><i class="fas fa-clipboard-list"></i></div>
-            <h4>Avaliação</h4>
-            <p>psicopedagógica</p>
-          </div>
-          <div class="oferecemos-item">
-            <div class="circulo"><i class="fas fa-puzzle-piece"></i></div>
-            <h4>Intervenção</h4>
-            <p>personalizada</p>
-          </div>
-          <div class="oferecemos-item">
-            <div class="circulo"><i class="fas fa-chalkboard-teacher"></i></div>
-            <h4>Orientação</h4>
-            <p>à família e escola</p>
-          </div>
-          <div class="oferecemos-item">
-            <div class="circulo"><i class="fas fa-users"></i></div>
-            <h4>Atendimento</h4>
-            <p>presencial e online</p>
-          </div>
-          <div class="oferecemos-item">
-            <div class="circulo"><i class="fas fa-star"></i></div>
-            <h4>Acompanhamento</h4>
-            <p>contínuo</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA / CONTATO -->
-    <section class="cta" id="contato">
-      <div class="container">
-        <div class="cta-grid">
-          <div class="cta-texto">
-            <h2>Agende sua <span>avaliação</span> inicial</h2>
-            <p>Sem compromisso. Conheça nosso espaço e descubra como podemos ajudar no desenvolvimento do seu filho.</p>
-            <div class="cta-features">
-              <span><i class="fas fa-check-circle"></i> Atendimento humanizado</span>
-              <span><i class="fas fa-check-circle"></i> Presencial e online</span>
-              <span><i class="fas fa-check-circle"></i> Primeira conversa gratuita</span>
-            </div>
-          </div>
-          <div class="cta-card">
-            <div class="icone"><i class="fab fa-whatsapp"></i></div>
-            <h3>Fale pelo WhatsApp</h3>
-            <p>Clique no botão e inicie uma conversa agora mesmo.</p>
-            <a href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedagógico." class="btn-whatsapp" target="_blank">
-              <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+            <a
+              href="#historia"
+              class="btn-brand"
+            >
+              Conheça nossa história
+              <i class="fas fa-arrow-right"></i>
             </a>
-            <div class="cta-divider">ou</div>
-            <div class="cta-contatos">
-              <span><i class="fas fa-phone"></i> (43) 92003-6581</span>
-              <span><i class="fas fa-envelope"></i> contato@legadoqueensina.com</span>
+
+            <a
+              href="#marca"
+              class="btn-outline"
+            >
+              Sobre o Legado
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- LOGOMARCA -->
+        <div class="launch-visual">
+
+          <div class="logo-card">
+
+            <img
+              src="https://i.imgur.com/YIQDI4s.png"
+              alt="Legado que Ensina"
+            />
+
+            <div class="construction-label">
+              <i class="fas fa-tools"></i>
+              Preparando algo especial
             </div>
+
           </div>
+
         </div>
+
       </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
-            <p>Acompanhamento, avaliação e intervenção psicopedagógica para crianças, adolescentes e adultos.</p>
-            <div class="footer-social">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+
+      <!-- ======================================================
+           HISTÓRIA / IDENTIDADE
+      ====================================================== -->
+
+      <section
+        class="history-preview"
+        id="historia"
+      >
+
+        <span class="history-preview-label">
+          Um legado que continua
+        </span>
+
+        <p id="marca">
+          O <strong>Legado que Ensina</strong> nasce de experiências que
+          atravessam o tempo e continuam presentes na forma como escolhemos
+          ensinar, acolher e transformar o aprendizado em algo significativo.
+        </p>
+
+
+        <!-- HOMENAGEM -->
+        <div class="tribute">
+
+          <h4 class="tribute-title">
+            <i class="fas fa-heart"></i>
+            Em homenagem à nossa história
+          </h4>
+
+          <div class="tribute-names">
+
+            <span>Benício</span>
+            <span>Maicon</span>
+            <span>Pedro</span>
+            <span>Marcos</span>
+            <span>Maria</span>
+            <span>Profª Vanessa</span>
+            <span>Profª Cirleia</span>
+            <span>Profª Joceli</span>
+
           </div>
-          <div>
-            <h4>Navegação</h4>
-            <a href="#" onclick="mostrarPagina('inicial')">Início</a>
-            <a href="#" onclick="mostrarPagina('historia')">História</a>
-            <a href="#contato" onclick="mostrarPagina('inicial')">Agendamento</a>
-          </div>
-          <div>
-            <h4>Serviços</h4>
-            <a href="#servicos">Acompanhamento</a>
-            <a href="#servicos">Avaliação</a>
-            <a href="#servicos">Intervenção</a>
-            <a href="#servicos">Orientação</a>
-          </div>
-          <div>
-            <h4>Newsletter</h4>
-            <p style="color:rgba(255,255,255,0.15); font-size:0.85rem; margin-bottom:12px;">Receba conteúdos exclusivos.</p>
-            <form class="newsletter" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');">
-              <input type="email" placeholder="Seu e-mail" required />
-              <button type="submit"><i class="fas fa-arrow-right"></i></button>
-            </form>
-          </div>
+
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Legado que Ensina. Todos os direitos reservados.</p>
+
+
+        <!-- FRASE -->
+        <div class="quote">
+
+          <i class="fas fa-quote-left"></i>
+
+          <p>
+            “Porque algumas experiências na educação não passam com o tempo —
+            elas continuam existindo na forma como se escolhe ensinar,
+            acolher e transformar o aprendizado em algo significativo.”
+          </p>
+
         </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="launch-footer">
+
+    <div class="launch-footer-inner">
+
+      <p>
+        &copy; 2026 Legado que Ensina.
+        Todos os direitos reservados.
+      </p>
+
+      <div class="footer-social">
+
+        <a href="#" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+
       </div>
-    </footer>
-  </div>
 
-  <!-- ==========================================================
-     PÁGINA HISTÓRIA
-  ========================================================== -->
-  <div id="pagina-historia" class="pagina">
-    <section class="pagina-interna">
-      <div class="container">
-        <button class="btn-voltar" onclick="mostrarPagina('inicial')">
-          <i class="fas fa-arrow-left"></i> Voltar
-        </button>
-        <div class="cabecalho">
-          <span class="tag">Nossa história</span>
-          <h1>Uma trajetória de <span style="color:#2d7a6b;">acolhimento</span></h1>
-        </div>
-        <div class="conteudo">
-          <p>Antes de qualquer método, planejamento ou proposta pedagógica, existem experiências que transformam a forma como a educação passa a ser enxergada.</p>
-          <p>A alfabetização vai muito além do ensinar a ler e escrever. Ela é construída nos vínculos, na convivência diária, nas pequenas conquistas, nas tentativas, nos momentos compartilhados e na maneira como cada criança encontra seu próprio caminho para aprender.</p>
-          <p>São experiências que ultrapassam o conteúdo pedagógico. Momentos simples, mas profundamente humanos, que permanecem vivos ao longo do tempo e deixam marcas que seguem acompanhando a trajetória de quem ensina e de quem aprende.</p>
-          <p>O <strong>Legado que Ensina</strong> nasce como forma de reconhecimento às crianças e profissionais que contribuíram com essa construção — agora também no ambiente online, ampliando o alcance e o acolhimento.</p>
-          <p>Ao longo da vivência no contexto escolar, diferentes experiências foram formando um olhar mais atento sobre o processo de aprendizagem. Cada criança, com seu próprio ritmo, suas tentativas e suas formas de se expressar, ajudou a reforçar a importância de uma alfabetização mais sensível, consciente e acessível.</p>
-          <p>Nesse percurso, também foi fundamental a troca com profissionais da educação que compartilharam o cotidiano escolar, fortalecendo reflexões, experiências e possibilidades dentro do processo educativo.</p>
-          <p>Mais do que atividades ou conteúdos, permaneceram os vínculos construídos, os aprendizados compartilhados e os momentos que transformaram vidas.</p>
-          <p>O Legado que Ensina representa exatamente isso: a continuidade dessas vivências e a base que sustenta uma prática construída com presença, escuta e significado — em qualquer lugar.</p>
+    </div>
 
-          <div style="background:#f5f7fa; border-radius:12px; padding:20px 24px; margin:24px 0;">
-            <h4 style="color:#0f1a2e; margin-bottom:12px;"><i class="fas fa-heart" style="color:#2d7a6b;"></i> Em homenagem à nossa história</h4>
-            <div style="display:flex; flex-wrap:wrap; gap:6px 12px;">
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Benício</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Maicon</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Pedro</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Marcos</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Maria</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Profª Vanessa</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Profª Cirleia</span>
-              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Profª Joceli</span>
-            </div>
-          </div>
+  </footer>
 
-          <div style="background:#f5f7fa; border-radius:12px; padding:24px 28px; border-left:4px solid #2d7a6b;">
-            <i class="fas fa-quote-left" style="color:#2d7a6b; font-size:1.2rem; margin-bottom:4px; display:block;"></i>
-            <p style="font-size:1rem; font-weight:600; color:#0f1a2e; margin:0;">"Porque algumas experiências na educação não passam com o tempo — elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo."</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ==========================================================
-     ARTIGOS
-  ========================================================== -->
-  <!-- ARTIGO 1 -->
-  <div id="pagina-artigo1" class="pagina">
-    <section class="pagina-interna">
-      <div class="container">
-        <button class="btn-voltar" onclick="mostrarPagina('inicial')"><i class="fas fa-arrow-left"></i> Voltar</button>
-        <div class="cabecalho">
-          <span class="tag">Aprendizagem</span>
-          <h1>Como identificar dificuldades de aprendizagem cedo</h1>
-          <span class="data">14/07/2026 · Psicopedagogia</span>
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=60" alt="Dificuldades de aprendizagem" />
-        </div>
-        <div class="conteudo">
-          <p>Identificar sinais de dificuldades de aprendizagem o quanto antes é essencial para que a criança receba o suporte necessário. Quanto mais cedo o diagnóstico e a intervenção, maiores as chances de a criança desenvolver suas habilidades e superar os desafios com mais facilidade.</p>
-          <p>Pais e educadores devem estar atentos a comportamentos que podem indicar que algo não vai bem no processo de aprendizagem. Muitas vezes, esses sinais são sutis e podem ser confundidos com preguiça ou desinteresse, mas é fundamental observar com atenção.</p>
-          <p><strong>Principais sinais de alerta:</strong></p>
-          <ul>
-            <li><strong>Dificuldade persistente em ler, escrever ou realizar cálculos básicos</strong> — a criança pode trocar letras, inverter sílabas, ter dificuldade para acompanhar a leitura em voz alta ou apresentar erros recorrentes em operações matemáticas simples.</li>
-            <li><strong>Baixa concentração durante as atividades escolares</strong> — a criança se distrai com facilidade, não consegue terminar as tarefas ou parece estar sempre "viajando" durante as explicações.</li>
-            <li><strong>Frustração ou choro ao fazer lição de casa</strong> — quando a tarefa se torna um momento de tensão e sofrimento, é um sinal de que algo precisa ser investigado.</li>
-            <li><strong>Esquecimento frequente de conteúdos já trabalhados</strong> — a criança estuda, mas no dia seguinte parece ter esquecido tudo o que aprendeu.</li>
-            <li><strong>Comparação negativa com os colegas de classe</strong> — a criança começa a se perceber como "menos capaz" e isso afeta sua autoestima.</li>
-            <li><strong>Dificuldade para seguir instruções</strong> — a criança tem problemas para entender e executar comandos simples.</li>
-            <li><strong>Comportamento de esquiva</strong> — a criança inventa desculpas para não ir à escola ou para não fazer as atividades.</li>
-          </ul>
-          <p><strong>O que fazer ao identificar esses sinais?</strong></p>
-          <p>O primeiro passo é conversar com os professores e com a equipe pedagógica da escola para entender como a criança está se comportando em sala de aula. Em seguida, é fundamental buscar uma avaliação psicopedagógica completa.</p>
-          <p>No <strong>Legado que Ensina</strong>, realizamos uma avaliação detalhada que identifica as potencialidades e os pontos de atenção de cada criança. A partir disso, construímos um plano de intervenção personalizado, com estratégias específicas para cada caso.</p>
-          <p><strong>Benefícios da intervenção precoce:</strong></p>
-          <ul>
-            <li>Maior chance de sucesso escolar e acadêmico</li>
-            <li>Desenvolvimento da autoestima e da confiança</li>
-            <li>Prevenção de problemas emocionais relacionados à aprendizagem</li>
-            <li>Melhor relação com a escola e com os colegas</li>
-            <li>Redução do estresse familiar em relação ao desempenho escolar</li>
-          </ul>
-          <p>Lembre-se: cada criança tem seu próprio ritmo de aprendizagem. O importante é oferecer o suporte necessário para que ela possa desenvolver todo o seu potencial, sem pressão e com muito acolhimento.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ARTIGO 2 -->
-  <div id="pagina-artigo2" class="pagina">
-    <section class="pagina-interna">
-      <div class="container">
-        <button class="btn-voltar" onclick="mostrarPagina('inicial')"><i class="fas fa-arrow-left"></i> Voltar</button>
-        <div class="cabecalho">
-          <span class="tag">Motivação</span>
-          <h1>Como manter a motivação nos estudos em casa</h1>
-          <span class="data">12/06/2026 · Psicopedagogia</span>
-          <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=60" alt="Motivação" />
-        </div>
-        <div class="conteudo">
-          <p>Manter a motivação nos estudos é um dos maiores desafios enfrentados por famílias e educadores, especialmente em um mundo cheio de distrações como celulares, videogames e redes sociais. A falta de motivação pode levar à queda no desempenho escolar, ao desinteresse e até mesmo à evasão escolar.</p>
-          <p>No entanto, existem estratégias eficazes que podem ajudar a transformar o momento de estudo em uma experiência mais leve, prazerosa e produtiva. Aqui estão algumas dicas práticas:</p>
-          <p><strong>1. Crie uma rotina consistente</strong> — horários fixos para estudar ajudam a criar o hábito e reduzem a resistência inicial.</p>
-          <p><strong>2. Ofereça escolhas</strong> — permitir que a criança escolha a ordem das tarefas ou o local de estudo aumenta o senso de autonomia.</p>
-          <p><strong>3. Valorize o esforço, não apenas o resultado</strong> — reconhecer o empenho, mesmo quando o resultado não é perfeito, fortalece a autoestima.</p>
-          <p><strong>4. Use jogos e materiais lúdicos</strong> — transformar o aprendizado em algo divertido torna o processo mais leve.</p>
-          <p><strong>5. Mantenha uma comunicação aberta</strong> — pergunte sobre o que está sendo estudado e demonstre interesse genuíno.</p>
-          <p><strong>6. Crie um ambiente adequado para estudar</strong> — um espaço organizado, silencioso e com boa iluminação faz toda a diferença.</p>
-          <p><strong>7. Estabeleça metas realistas e celebre as conquistas</strong> — defina objetivos pequenos e alcançáveis a curto prazo.</p>
-          <p>No <strong>Legado que Ensina</strong>, trabalhamos a motivação como parte essencial do processo de aprendizagem, ajudando cada criança a encontrar seu próprio ritmo e prazer em aprender.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- ARTIGO 3 -->
-  <div id="pagina-artigo3" class="pagina">
-    <section class="pagina-interna">
-      <div class="container">
-        <button class="btn-voltar" onclick="mostrarPagina('inicial')"><i class="fas fa-arrow-left"></i> Voltar</button>
-        <div class="cabecalho">
-          <span class="tag">Gamificação</span>
-          <h1>Gamificação: como jogos ajudam no aprendizado</h1>
-          <span class="data">10/06/2026 · Psicopedagogia</span>
-          <img src="https://i.imgur.com/BvcvoHU.png" alt="Gamificação" />
-        </div>
-        <div class="conteudo">
-          <p>A gamificação é uma das abordagens mais promissoras no campo da educação e da psicopedagogia. Ela utiliza elementos de jogos — como pontos, níveis, desafios, recompensas e narrativas — para engajar os alunos no processo de aprendizagem, tornando-o mais dinâmico, interativo e significativo.</p>
-          <p><strong>O que é gamificação?</strong> Gamificação não é simplesmente jogar por jogar. É a aplicação de mecânicas e dinâmicas de jogos em contextos que não são jogos, com objetivos claros e educacionais.</p>
-          <p><strong>Por que a gamificação funciona?</strong></p>
-          <ul>
-            <li><strong>Engajamento:</strong> Jogos são naturalmente envolventes. Eles despertam curiosidade, desafiam e recompensam.</li>
-            <li><strong>Feedback imediato:</strong> Nos jogos, o jogador sabe na hora se acertou ou errou, permitindo ajustes rápidos.</li>
-            <li><strong>Senso de progresso:</strong> Níveis, pontos e conquistas mostram ao aluno que ele está avançando.</li>
-            <li><strong>Autonomia:</strong> O aluno tem mais controle sobre seu próprio aprendizado.</li>
-            <li><strong>Desafio na medida certa:</strong> Jogos bem projetados oferecem desafios equilibrados.</li>
-          </ul>
-          <p><strong>Exemplos práticos:</strong> jogos de tabuleiro adaptados, aplicativos educativos, sistemas de recompensas, narrativas interativas e quizzes.</p>
-          <p>No <strong>Legado que Ensina</strong>, a gamificação é uma ferramenta central em nosso trabalho. Acreditamos que quando o aprendizado é divertido e desafiador, a criança se engaja de forma mais profunda e significativa.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    if (menuToggle) {
-      menuToggle.addEventListener('click', function() {
-        this.classList.toggle('ativo');
-        navMenu.classList.toggle('aberto');
-      });
-    }
-
-    function mostrarPagina(pagina) {
-      document.querySelectorAll('.pagina').forEach(function(el) {
-        el.classList.remove('ativa');
-      });
-      if (pagina === 'inicial') {
-        document.getElementById('pagina-inicial').classList.add('ativa');
-      } else if (pagina === 'historia') {
-        document.getElementById('pagina-historia').classList.add('ativa');
-      } else if (pagina === 'artigo1') {
-        document.getElementById('pagina-artigo1').classList.add('ativa');
-      } else if (pagina === 'artigo2') {
-        document.getElementById('pagina-artigo2').classList.add('ativa');
-      } else if (pagina === 'artigo3') {
-        document.getElementById('pagina-artigo3').classList.add('ativa');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (navMenu) navMenu.classList.remove('aberto');
-      if (menuToggle) menuToggle.classList.remove('ativo');
-    }
-  </script>
-
-</body>
-</html>
+</div>
+```
