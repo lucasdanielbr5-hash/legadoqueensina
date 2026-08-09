@@ -4,25 +4,43 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Legado que Ensina — Em breve</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Legado que Ensina — Lançamento em breve
+    </title>
 
     <meta
         name="description"
-        content="Legado que Ensina — um novo espaço está chegando. Conheça nossa história."
+        content="Um novo capítulo está começando. O Legado que Ensina está preparando um novo espaço."
     >
 
-    <!-- FONTES -->
+    <!-- ======================================================
+         FONTES
+    ======================================================= -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
         rel="stylesheet"
     >
 
-    <!-- FONT AWESOME -->
+
+    <!-- ======================================================
+         FONT AWESOME
+    ======================================================= -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -31,9 +49,9 @@
 
     <style>
 
-    /* ==========================================================
+    /* =========================================================
        VARIÁVEIS
-    ========================================================== */
+    ========================================================= */
 
     :root {
 
@@ -41,7 +59,7 @@
         --verde-escuro: #205c50;
 
         --azul: #102033;
-        --azul-escuro: #0a1726;
+        --azul-escuro: #091522;
 
         --cinza: #687582;
         --cinza-claro: #f5f7f6;
@@ -51,14 +69,21 @@
 
         --linha: rgba(16, 32, 51, .10);
 
-        --serif: "Playfair Display", Georgia, serif;
-        --sans: "DM Sans", Arial, sans-serif;
+        --serif:
+            "Playfair Display",
+            Georgia,
+            serif;
+
+        --sans:
+            "DM Sans",
+            Arial,
+            sans-serif;
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        RESET
-    ========================================================== */
+    ========================================================= */
 
     * {
         margin: 0;
@@ -93,8 +118,8 @@
 
 
     img {
-        max-width: 100%;
         display: block;
+        max-width: 100%;
     }
 
 
@@ -104,27 +129,24 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        HERO
-    ========================================================== */
+    ========================================================= */
 
     .hero {
 
-        min-height: 100vh;
-        min-height: 100svh;
-
         position: relative;
 
-        display: flex;
-        align-items: center;
+        min-height: 100vh;
+        min-height: 100svh;
 
         overflow: hidden;
 
         background:
 
             radial-gradient(
-                circle at 82% 48%,
-                rgba(45, 122, 107, .11),
+                circle at 83% 48%,
+                rgba(45, 122, 107, .10),
                 transparent 30%
             ),
 
@@ -132,7 +154,9 @@
     }
 
 
-    /* círculo decorativo superior */
+    /*
+       Círculo decorativo superior
+    */
 
     .hero::before {
 
@@ -143,8 +167,8 @@
         width: 650px;
         height: 650px;
 
-        right: -320px;
-        top: -320px;
+        right: -330px;
+        top: -330px;
 
         border-radius: 50%;
 
@@ -154,7 +178,9 @@
     }
 
 
-    /* círculo decorativo inferior */
+    /*
+       Círculo decorativo inferior
+    */
 
     .hero::after {
 
@@ -162,11 +188,11 @@
 
         position: absolute;
 
-        width: 430px;
-        height: 430px;
+        width: 460px;
+        height: 460px;
 
-        left: -280px;
-        bottom: -260px;
+        left: -310px;
+        bottom: -300px;
 
         border-radius: 50%;
 
@@ -176,13 +202,19 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        CONTAINER
-    ========================================================== */
+    ========================================================= */
 
     .hero-container {
 
-        width: min(1160px, calc(100% - 70px));
+        width: min(
+            1160px,
+            calc(100% - 70px)
+        );
+
+        min-height: 100vh;
+        min-height: 100svh;
 
         margin: 0 auto;
 
@@ -192,20 +224,45 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
+       TOPO
+       
+       IMPORTANTE:
+       A LOGO NÃO É ABSOLUTA.
+       ELA OCUPA ESPAÇO REAL.
+    ========================================================= */
+
+    .topo {
+
+        width: 100%;
+
+        height: 145px;
+
+        display: flex;
+
+        align-items: flex-start;
+
+        justify-content: space-between;
+
+        padding-top: 22px;
+
+        position: relative;
+
+        z-index: 20;
+    }
+
+
+    /* =========================================================
        LOGO DO TOPO
-    ========================================================== */
+    ========================================================= */
 
     .logo-topo {
 
-        position: absolute;
-
-        top: 24px;
-        left: 0;
-
-        z-index: 20;
-
         display: block;
+
+        flex-shrink: 0;
+
+        position: relative;
     }
 
 
@@ -214,24 +271,24 @@
         width: 125px;
 
         height: auto;
+
+        display: block;
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        STATUS
-    ========================================================== */
+    ========================================================= */
 
     .status {
 
-        position: absolute;
-
-        top: 31px;
-        right: 0;
-
         display: flex;
+
         align-items: center;
 
         gap: 9px;
+
+        margin-top: 9px;
 
         padding: 9px 15px;
 
@@ -239,7 +296,7 @@
 
         border-radius: 50px;
 
-        background: rgba(255,255,255,.55);
+        background: rgba(255, 255, 255, .55);
 
         color: var(--azul);
 
@@ -267,19 +324,18 @@
         background: var(--verde);
 
         box-shadow:
-
-            0 0 0 5px rgba(45,122,107,.08);
+            0 0 0 5px rgba(45, 122, 107, .08);
     }
 
 
-    /* ==========================================================
-       GRID PRINCIPAL
-    ========================================================== */
+    /* =========================================================
+       GRID DO HERO
+    ========================================================= */
 
     .hero-grid {
 
-        min-height: 100vh;
-        min-height: 100svh;
+        min-height: calc(100vh - 145px);
+        min-height: calc(100svh - 145px);
 
         display: grid;
 
@@ -288,29 +344,31 @@
         align-items: center;
 
         gap: 70px;
+
+        padding-bottom: 65px;
     }
 
 
-    /* ==========================================================
-       TEXTO
-    ========================================================== */
+    /* =========================================================
+       TEXTO PRINCIPAL
+    ========================================================= */
 
     .hero-texto {
 
-        /*
-         * Espaço reservado para que a logo do topo
-         * nunca fique sobre o conteúdo.
-         */
+        padding: 0;
 
-        padding-top: 105px;
-
-        padding-bottom: 30px;
+        margin: 0;
     }
 
+
+    /* =========================================================
+       EYEBROW
+    ========================================================= */
 
     .eyebrow {
 
         display: flex;
+
         align-items: center;
 
         gap: 12px;
@@ -336,9 +394,15 @@
         width: 36px;
         height: 1px;
 
+        flex: 0 0 36px;
+
         background: var(--verde);
     }
 
+
+    /* =========================================================
+       TÍTULO
+    ========================================================= */
 
     .hero h1 {
 
@@ -348,7 +412,11 @@
 
         font-family: var(--serif);
 
-        font-size: clamp(55px, 6vw, 84px);
+        font-size: clamp(
+            55px,
+            6vw,
+            84px
+        );
 
         line-height: .98;
 
@@ -365,6 +433,10 @@
         font-style: italic;
     }
 
+
+    /* =========================================================
+       DESCRIÇÃO
+    ========================================================= */
 
     .descricao {
 
@@ -388,9 +460,9 @@
     }
 
 
-    /* ==========================================================
-       BOTÃO
-    ========================================================== */
+    /* =========================================================
+       AÇÕES
+    ========================================================= */
 
     .acoes {
 
@@ -407,6 +479,7 @@
         display: inline-flex;
 
         align-items: center;
+
         justify-content: center;
 
         gap: 11px;
@@ -423,8 +496,8 @@
 
             transform .25s ease,
             background .25s ease,
-            border-color .25s ease,
-            color .25s ease;
+            color .25s ease,
+            box-shadow .25s ease;
     }
 
 
@@ -435,8 +508,7 @@
         color: #fff;
 
         box-shadow:
-
-            0 12px 26px rgba(45,122,107,.18);
+            0 12px 26px rgba(45, 122, 107, .18);
     }
 
 
@@ -445,27 +517,33 @@
         background: var(--verde-escuro);
 
         transform: translateY(-2px);
+
+        box-shadow:
+            0 15px 30px rgba(45, 122, 107, .22);
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        VISUAL DA DIREITA
-    ========================================================== */
+    ========================================================= */
 
     .visual {
 
-        min-height: 620px;
+        min-height: 560px;
 
         position: relative;
 
         display: flex;
 
         align-items: center;
+
         justify-content: center;
     }
 
 
-    /* círculo atrás da logo */
+    /* =========================================================
+       CÍRCULO
+    ========================================================= */
 
     .visual-circulo {
 
@@ -487,7 +565,9 @@
     }
 
 
-    /* órbita */
+    /* =========================================================
+       ÓRBITA
+    ========================================================= */
 
     .visual-orbita {
 
@@ -498,7 +578,7 @@
 
         border-radius: 50%;
 
-        border: 1px solid rgba(45,122,107,.14);
+        border: 1px solid rgba(45, 122, 107, .14);
     }
 
 
@@ -519,14 +599,13 @@
         background: var(--verde);
 
         box-shadow:
-
-            0 0 0 7px rgba(45,122,107,.08);
+            0 0 0 7px rgba(45, 122, 107, .08);
     }
 
 
-    /* ==========================================================
-       CARTÃO COM LOGO
-    ========================================================== */
+    /* =========================================================
+       CARTÃO DA LOGO
+    ========================================================= */
 
     .logo-card {
 
@@ -542,25 +621,27 @@
         align-items: center;
         justify-content: center;
 
-        background: rgba(255,255,255,.97);
+        background: rgba(255, 255, 255, .97);
 
-        border: 1px solid rgba(16,32,51,.09);
+        border: 1px solid rgba(16, 32, 51, .09);
 
         border-radius: 28px;
 
         box-shadow:
-
-            0 35px 90px rgba(16,32,51,.12);
+            0 35px 90px rgba(16, 32, 51, .12);
 
         transform: rotate(-2deg);
 
-        transition: transform .4s ease;
+        transition:
+            transform .4s ease;
     }
 
 
     .logo-card:hover {
 
-        transform: rotate(0deg) translateY(-6px);
+        transform:
+            rotate(0deg)
+            translateY(-6px);
     }
 
 
@@ -572,7 +653,7 @@
 
         inset: 14px;
 
-        border: 1px solid rgba(45,122,107,.12);
+        border: 1px solid rgba(45, 122, 107, .12);
 
         border-radius: 20px;
     }
@@ -590,9 +671,9 @@
     }
 
 
-    /* ==========================================================
-       ETIQUETA SOBRE O VISUAL
-    ========================================================== */
+    /* =========================================================
+       ETIQUETA DO CARTÃO
+    ========================================================= */
 
     .card-status {
 
@@ -601,7 +682,8 @@
         z-index: 8;
 
         left: 12px;
-        bottom: 63px;
+
+        bottom: 45px;
 
         padding: 14px 17px;
 
@@ -612,8 +694,7 @@
         color: #fff;
 
         box-shadow:
-
-            0 20px 40px rgba(16,32,51,.18);
+            0 20px 40px rgba(16, 32, 51, .18);
     }
 
 
@@ -633,6 +714,14 @@
     }
 
 
+    .card-status small i {
+
+        font-size: 6px;
+
+        margin-right: 4px;
+    }
+
+
     .card-status strong {
 
         display: block;
@@ -647,15 +736,16 @@
     }
 
 
-    /* ==========================================================
-       SCROLL
-    ========================================================== */
+    /* =========================================================
+       INDICADOR DE SCROLL
+    ========================================================= */
 
     .scroll {
 
         position: absolute;
 
         bottom: 22px;
+
         left: 50%;
 
         z-index: 5;
@@ -694,15 +784,15 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        HISTÓRIA
-    ========================================================== */
+    ========================================================= */
 
     .historia {
 
         padding: 120px 0;
 
-        background: #fff;
+        background: var(--branco);
 
         border-top: 1px solid var(--linha);
     }
@@ -710,7 +800,10 @@
 
     .historia-container {
 
-        width: min(1080px, calc(100% - 48px));
+        width: min(
+            1080px,
+            calc(100% - 48px)
+        );
 
         margin: 0 auto;
     }
@@ -726,6 +819,10 @@
     }
 
 
+    /* =========================================================
+       LABEL
+    ========================================================= */
+
     .label {
 
         color: var(--verde);
@@ -739,6 +836,10 @@
         text-transform: uppercase;
     }
 
+
+    /* =========================================================
+       TÍTULO HISTÓRIA
+    ========================================================= */
 
     .historia h2 {
 
@@ -766,6 +867,10 @@
     }
 
 
+    /* =========================================================
+       TEXTO
+    ========================================================= */
+
     .lead {
 
         color: var(--azul);
@@ -791,12 +896,14 @@
     .texto strong {
 
         color: var(--azul);
+
+        font-weight: 700;
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        HOMENAGEM
-    ========================================================== */
+    ========================================================= */
 
     .homenagem {
 
@@ -817,6 +924,8 @@
         color: var(--azul);
 
         font-size: 12px;
+
+        font-weight: 700;
     }
 
 
@@ -856,9 +965,9 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        FRASE
-    ========================================================== */
+    ========================================================= */
 
     .frase {
 
@@ -870,7 +979,7 @@
 
         border-radius: 0 9px 9px 0;
 
-        background: rgba(45,122,107,.055);
+        background: rgba(45, 122, 107, .055);
     }
 
 
@@ -896,9 +1005,9 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        BLOCO FINAL
-    ========================================================== */
+    ========================================================= */
 
     .final {
 
@@ -914,7 +1023,10 @@
 
     .final-inner {
 
-        width: min(800px, calc(100% - 48px));
+        width: min(
+            800px,
+            calc(100% - 48px)
+        );
 
         margin: 0 auto;
     }
@@ -940,7 +1052,11 @@
 
         font-family: var(--serif);
 
-        font-size: clamp(40px, 5vw, 62px);
+        font-size: clamp(
+            40px,
+            5vw,
+            62px
+        );
 
         line-height: 1.07;
 
@@ -964,7 +1080,7 @@
 
         margin: 23px auto 0;
 
-        color: rgba(255,255,255,.60);
+        color: rgba(255, 255, 255, .60);
 
         font-size: 14px;
 
@@ -992,9 +1108,9 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        FOOTER
-    ========================================================== */
+    ========================================================= */
 
     footer {
 
@@ -1002,13 +1118,16 @@
 
         background: var(--azul-escuro);
 
-        color: rgba(255,255,255,.5);
+        color: rgba(255, 255, 255, .5);
     }
 
 
     .footer-inner {
 
-        width: min(1080px, calc(100% - 48px));
+        width: min(
+            1080px,
+            calc(100% - 48px)
+        );
 
         margin: 0 auto;
 
@@ -1062,7 +1181,7 @@
         align-items: center;
         justify-content: center;
 
-        border: 1px solid rgba(255,255,255,.12);
+        border: 1px solid rgba(255, 255, 255, .12);
 
         border-radius: 50%;
 
@@ -1082,9 +1201,9 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        TABLET
-    ========================================================== */
+    ========================================================= */
 
     @media (max-width: 900px) {
 
@@ -1094,19 +1213,27 @@
         }
 
 
+        .topo {
+
+            height: 145px;
+
+            padding-top: 20px;
+        }
+
+
         .hero-grid {
 
             grid-template-columns: 1fr;
 
+            min-height: auto;
+
             gap: 20px;
 
-            padding-top: 30px;
+            padding-bottom: 60px;
         }
 
 
         .hero-texto {
-
-            padding-top: 150px;
 
             text-align: center;
         }
@@ -1121,6 +1248,7 @@
         .descricao {
 
             margin-left: auto;
+
             margin-right: auto;
         }
 
@@ -1147,9 +1275,9 @@
     }
 
 
-    /* ==========================================================
+    /* =========================================================
        CELULAR
-    ========================================================== */
+    ========================================================= */
 
     @media (max-width: 600px) {
 
@@ -1159,9 +1287,18 @@
         }
 
 
-        .logo-topo {
+        /*
+           A LOGO CONTINUA NO FLUXO.
+           O TEXTO VEM DEPOIS DELA.
+        */
 
-            top: 18px;
+        .topo {
+
+            height: 130px;
+
+            padding-top: 17px;
+
+            align-items: flex-start;
         }
 
 
@@ -1173,35 +1310,57 @@
 
         .status {
 
-            top: 20px;
+            margin-top: 5px;
 
             padding: 7px 10px;
 
             font-size: 7px;
 
-            letter-spacing: .10em;
+            letter-spacing: .08em;
         }
 
 
         .hero-grid {
 
-            padding-top: 20px;
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            min-height: auto;
+
+            padding-bottom: 40px;
         }
 
 
         .hero-texto {
 
-            padding-top: 145px;
+            width: 100%;
 
-            padding-bottom: 10px;
+            padding: 0;
+
+            text-align: center;
         }
 
 
         .eyebrow {
 
+            justify-content: center;
+
+            margin-bottom: 18px;
+
             font-size: 8px;
 
-            letter-spacing: .16em;
+            letter-spacing: .14em;
+        }
+
+
+        .eyebrow::before {
+
+            width: 25px;
+
+            flex-basis: 25px;
         }
 
 
@@ -1210,6 +1369,8 @@
             font-size: 50px;
 
             line-height: 1;
+
+            letter-spacing: -.055em;
         }
 
 
@@ -1225,6 +1386,8 @@
 
         .acoes {
 
+            width: 100%;
+
             margin-top: 27px;
         }
 
@@ -1238,6 +1401,8 @@
 
 
         .visual {
+
+            width: 100%;
 
             min-height: 340px;
         }
@@ -1372,39 +1537,52 @@
     <div class="hero-container">
 
 
-        <!-- LOGO -->
+        <!-- ==================================================
+             TOPO
+             
+             A LOGO ESTÁ NO FLUXO NORMAL.
+             NÃO É POSITION ABSOLUTE.
+        =================================================== -->
 
-        <a
-            href="#"
-            class="logo-topo"
-            aria-label="Legado que Ensina"
-        >
+        <div class="topo">
 
-            <img
-                src="https://i.imgur.com/YIQDI4s.png"
-                alt="Legado que Ensina"
+
+            <a
+                href="#"
+                class="logo-topo"
+                aria-label="Legado que Ensina"
             >
 
-        </a>
+                <img
+                    src="https://i.imgur.com/YIQDI4s.png"
+                    alt="Legado que Ensina"
+                >
+
+            </a>
 
 
-        <!-- STATUS -->
+            <div class="status">
 
-        <div class="status">
+                <span class="status-dot"></span>
 
-            <span class="status-dot"></span>
+                Lançamento em breve
 
-            Lançamento em breve
+            </div>
+
 
         </div>
 
 
-        <!-- CONTEÚDO -->
+        <!-- ==================================================
+             CONTEÚDO PRINCIPAL
+        =================================================== -->
 
         <div class="hero-grid">
 
 
-            <!-- TEXTO -->
+            <!-- ==================================================
+                 TEXTO
+            =================================================== -->
 
             <div class="hero-texto">
 
@@ -1420,7 +1598,9 @@
 
                     Vem aí o<br>
 
-                    <span>Legado que Ensina.</span>
+                    <span>
+                        Legado que Ensina.
+                    </span>
 
                 </h1>
 
@@ -1441,7 +1621,9 @@
                 </p>
 
 
-                <!-- ÚNICA CTA -->
+                <!-- ==================================================
+                     ÚNICA AÇÃO
+                =================================================== -->
 
                 <div class="acoes">
 
@@ -1462,28 +1644,33 @@
             </div>
 
 
-
-            <!-- VISUAL -->
+            <!-- ==================================================
+                 VISUAL
+            =================================================== -->
 
             <div class="visual">
 
 
                 <div class="visual-circulo"></div>
 
+
                 <div class="visual-orbita"></div>
 
 
                 <div class="logo-card">
+
 
                     <img
                         src="https://i.imgur.com/YIQDI4s.png"
                         alt="Legado que Ensina"
                     >
 
+
                 </div>
 
 
                 <div class="card-status">
+
 
                     <small>
 
@@ -1500,6 +1687,7 @@
 
                     </strong>
 
+
                 </div>
 
 
@@ -1511,7 +1699,9 @@
     </div>
 
 
-    <!-- INDICADOR -->
+    <!-- ======================================================
+         SCROLL
+    ======================================================= -->
 
     <div class="scroll">
 
@@ -1534,15 +1724,19 @@
     id="historia"
 >
 
+
     <div class="historia-container">
 
 
         <div class="historia-grid">
 
 
-            <!-- TÍTULO -->
+            <!-- ==================================================
+                 TÍTULO
+            =================================================== -->
 
             <div>
+
 
                 <span class="label">
 
@@ -1559,10 +1753,13 @@
 
                 </h2>
 
+
             </div>
 
 
-            <!-- TEXTO -->
+            <!-- ==================================================
+                 TEXTO
+            =================================================== -->
 
             <div>
 
@@ -1583,7 +1780,9 @@
                     aprendizado. Cada encontro ajudou a construir
                     aquilo que hoje chamamos de
 
-                    <strong>Legado que Ensina.</strong>
+                    <strong>
+                        Legado que Ensina.
+                    </strong>
 
                     <br><br>
 
@@ -1595,7 +1794,9 @@
                 </p>
 
 
-                <!-- HOMENAGEM -->
+                <!-- ==================================================
+                     HOMENAGEM
+                =================================================== -->
 
                 <div class="homenagem">
 
@@ -1611,46 +1812,58 @@
 
                     <div class="nomes">
 
+
                         <span class="nome">
                             Benício
                         </span>
+
 
                         <span class="nome">
                             Maicon
                         </span>
 
+
                         <span class="nome">
                             Pedro
                         </span>
+
 
                         <span class="nome">
                             Marcos
                         </span>
 
+
                         <span class="nome">
                             Maria
                         </span>
+
 
                         <span class="nome">
                             Profª Vanessa
                         </span>
 
+
                         <span class="nome">
                             Profª Cirleia
                         </span>
 
+
                         <span class="nome">
                             Profª Joceli
                         </span>
+
 
                     </div>
 
                 </div>
 
 
-                <!-- FRASE -->
+                <!-- ==================================================
+                     FRASE
+                =================================================== -->
 
                 <div class="frase">
+
 
                     <i class="fas fa-quote-left"></i>
 
@@ -1665,14 +1878,18 @@
 
                     </p>
 
+
                 </div>
 
 
             </div>
 
+
         </div>
 
+
     </div>
+
 
 </section>
 
@@ -1683,6 +1900,7 @@
 ========================================================== -->
 
 <section class="final">
+
 
     <div class="final-inner">
 
@@ -1700,7 +1918,9 @@
 
             O mesmo propósito.<br>
 
-            <em>Um legado que continua.</em>
+            <em>
+                Um legado que continua.
+            </em>
 
         </h2>
 
@@ -1720,7 +1940,7 @@
             class="btn"
         >
 
-            Conhecer o Legado
+            Conhecer nossa história
 
             <i class="fas fa-arrow-up"></i>
 
@@ -1728,6 +1948,7 @@
 
 
     </div>
+
 
 </section>
 
@@ -1739,10 +1960,12 @@
 
 <footer>
 
+
     <div class="footer-inner">
 
 
         <div>
+
 
             <div class="footer-brand">
 
@@ -1757,10 +1980,12 @@
 
             </div>
 
+
         </div>
 
 
         <div class="social">
+
 
             <a
                 href="#"
@@ -1791,12 +2016,15 @@
 
             </a>
 
+
         </div>
 
 
     </div>
 
+
 </footer>
+
 
 
 <!-- ==========================================================
@@ -1809,24 +2037,32 @@ document
     .querySelectorAll('a[href^="#"]')
     .forEach(function(link) {
 
-        link.addEventListener("click", function(event) {
+        link.addEventListener(
+            "click",
+            function(event) {
 
-            const id =
-                this.getAttribute("href");
+                const id =
+                    this.getAttribute("href");
 
-            const destino =
-                document.querySelector(id);
+                const destino =
+                    document.querySelector(id);
 
-            if (!destino) return;
+                if (!destino) {
+                    return;
+                }
 
-            event.preventDefault();
+                event.preventDefault();
 
-            destino.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
+                destino.scrollIntoView({
 
-        });
+                    behavior: "smooth",
+
+                    block: "start"
+
+                });
+
+            }
+        );
 
     });
 
