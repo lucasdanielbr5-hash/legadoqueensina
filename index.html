@@ -26,14 +26,14 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f4f6f9;
+      background: #f5f7fa;
       color: #1a2332;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1140px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -55,8 +55,8 @@
       background: #0f1a2e;
       color: rgba(255, 255, 255, 0.5);
       padding: 6px 0;
-      font-size: 0.75rem;
-      border-bottom: 2px solid #2d7a6b;
+      font-size: 0.7rem;
+      border-bottom: 3px solid #2d7a6b;
     }
 
     .topbar .container {
@@ -92,7 +92,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 12px 0;
+      padding: 14px 0;
     }
 
     .header .container {
@@ -108,14 +108,15 @@
     }
 
     .logo img {
-      height: 40px;
+      height: 42px;
       width: auto;
     }
 
     .logo span {
       font-size: 1rem;
-      font-weight: 700;
+      font-weight: 800;
       color: #0f1a2e;
+      letter-spacing: -0.5px;
     }
 
     .logo span em {
@@ -125,12 +126,12 @@
 
     .nav {
       display: flex;
-      gap: 28px;
+      gap: 32px;
       align-items: center;
     }
 
     .nav a {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: #1a2332;
       transition: 0.3s;
@@ -151,11 +152,12 @@
     .nav .btn-nav {
       background: #2d7a6b;
       color: #fff !important;
-      padding: 8px 24px;
+      padding: 10px 28px;
       border-radius: 60px;
       border: none;
       font-weight: 600;
       transition: 0.3s;
+      font-size: 0.85rem;
     }
 
     .nav .btn-nav:hover {
@@ -219,7 +221,7 @@
     ========================================================== */
     .hero {
       padding: 60px 0 80px;
-      background: #f4f6f9;
+      background: #f5f7fa;
     }
 
     .hero-grid {
@@ -333,203 +335,74 @@
     }
 
     /* ==========================================================
-       ABOUT
+       CATEGORIAS (ESTILO KUMON)
     ========================================================== */
-    .about {
-      padding: 70px 0;
+    .categorias {
+      padding: 30px 0 10px;
       background: #fff;
+      border-bottom: 1px solid #e8ecf1;
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+    .categorias .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
       align-items: center;
     }
 
-    .about-imagem img {
-      border-radius: 16px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.04);
-      width: 100%;
-    }
-
-    .etiqueta {
-      display: inline-block;
+    .categorias .label {
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: #2d7a6b;
-      background: rgba(45, 122, 107, 0.08);
-      padding: 4px 16px;
-      border-radius: 60px;
-      margin-bottom: 12px;
+      color: #6a7a8e;
+      letter-spacing: 0.5px;
     }
 
-    .about-texto h2 {
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-      font-weight: 700;
-      color: #0f1a2e;
-      margin-bottom: 16px;
-    }
-
-    .about-texto h2 span {
-      color: #2d7a6b;
-    }
-
-    .about-texto p {
-      color: #4a5a6e;
-      margin-bottom: 14px;
-      line-height: 1.8;
-    }
-
-    .about-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 16px 0 24px;
-    }
-
-    .about-features .feat {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: #4a5a6e;
-    }
-
-    .about-features .feat i {
-      color: #2d7a6b;
-    }
-
-    .btn-historia {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #2d7a6b;
-      color: #fff;
-      padding: 12px 32px;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
+    .categorias a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1a2332;
       transition: 0.3s;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
     }
 
-    .btn-historia:hover {
-      background: #1e5a4f;
-      transform: translateY(-2px);
+    .categorias a:hover {
+      color: #2d7a6b;
+      border-bottom-color: #2d7a6b;
     }
 
     /* ==========================================================
-       SERVIÇOS
-    ========================================================== */
-    .servicos {
-      padding: 70px 0;
-      background: #f4f6f9;
-    }
-
-    .servicos-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 50px;
-    }
-
-    .servicos-header h2 {
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
-      font-weight: 700;
-      color: #0f1a2e;
-      margin-bottom: 12px;
-    }
-
-    .servicos-header h2 span {
-      color: #2d7a6b;
-    }
-
-    .servicos-header p {
-      color: #4a5a6e;
-      font-size: 1rem;
-    }
-
-    .servicos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .servico-card {
-      background: #fff;
-      padding: 32px 24px;
-      border-radius: 16px;
-      border: 1px solid #e8ecf1;
-      transition: 0.3s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-    }
-
-    .servico-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-      border-color: #2d7a6b;
-    }
-
-    .servico-card .icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      background: rgba(45, 122, 107, 0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .servico-card .icon i {
-      font-size: 1.4rem;
-      color: #2d7a6b;
-    }
-
-    .servico-card h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #0f1a2e;
-      margin-bottom: 8px;
-    }
-
-    .servico-card p {
-      color: #4a5a6e;
-      font-size: 0.9rem;
-      line-height: 1.7;
-    }
-
-    /* ==========================================================
-       BLOG
+       BLOG - ESTILO KUMON (TÍTULO EM CIMA DA IMAGEM)
     ========================================================== */
     .blog {
-      padding: 70px 0;
-      background: #fff;
+      padding: 50px 0 70px;
+      background: #f5f7fa;
     }
 
     .blog-header {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
     }
 
     .blog-header h2 {
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-size: 1.4rem;
       font-weight: 700;
       color: #0f1a2e;
-      margin-bottom: 12px;
     }
 
-    .blog-header h2 span {
+    .blog-header .ver-todos {
+      font-size: 0.8rem;
+      font-weight: 600;
       color: #2d7a6b;
+      transition: 0.3s;
+      cursor: pointer;
     }
 
-    .blog-header p {
-      color: #4a5a6e;
-      font-size: 1rem;
+    .blog-header .ver-todos:hover {
+      transform: translateX(4px);
     }
 
     .blog-grid {
@@ -539,21 +412,25 @@
     }
 
     .blog-card {
-      background: #f4f6f9;
-      border-radius: 16px;
+      background: #fff;
+      border-radius: 12px;
       overflow: hidden;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e8ecf1;
     }
 
     .blog-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+      border-color: #2d7a6b;
     }
 
     .blog-card .img {
-      height: 180px;
+      height: 200px;
       overflow: hidden;
+      position: relative;
     }
 
     .blog-card .img img {
@@ -567,43 +444,60 @@
       transform: scale(1.04);
     }
 
-    .blog-card .conteudo {
-      padding: 20px 22px 24px;
+    /* TÍTULO EM CIMA DA IMAGEM (ESTILO KUMON) */
+    .blog-card .img .titulo-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px 20px 16px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+      color: #fff;
     }
 
-    .blog-card .conteudo .tag {
+    .blog-card .img .titulo-overlay h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .blog-card .img .titulo-overlay .tag {
       display: inline-block;
       font-size: 0.6rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #2d7a6b;
-      background: rgba(45, 122, 107, 0.08);
-      padding: 3px 14px;
+      color: #fff;
+      background: rgba(45, 122, 107, 0.7);
+      padding: 2px 12px;
       border-radius: 60px;
-      margin-bottom: 10px;
     }
 
-    .blog-card .conteudo h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #0f1a2e;
-      margin-bottom: 6px;
+    .blog-card .conteudo {
+      padding: 16px 20px 20px;
     }
 
-    .blog-card .conteudo p {
-      color: #4a5a6e;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 12px;
+    .blog-card .conteudo .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #6a7a8e;
+    }
+
+    .blog-card .conteudo .meta .categoria {
+      color: #2d7a6b;
+      font-weight: 600;
     }
 
     .blog-card .conteudo .ler {
       color: #2d7a6b;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       transition: 0.3s;
       display: inline-block;
+      margin-top: 8px;
     }
 
     .blog-card .conteudo .ler:hover {
@@ -611,17 +505,13 @@
     }
 
     /* Card de vídeo */
-    .blog-card.video .img {
-      position: relative;
-    }
-
     .blog-card.video .img .play {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 56px;
-      height: 56px;
+      width: 48px;
+      height: 48px;
       background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
       display: flex;
@@ -632,21 +522,103 @@
     }
 
     .blog-card.video .img .play i {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #2d7a6b;
       margin-left: 4px;
     }
 
     .blog-card.video:hover .img .play {
       transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    /* ==========================================================
+       OFERECEMOS (ESTILO KUMON - ÍCONES CIRCULARES)
+    ========================================================== */
+    .oferecemos {
+      padding: 60px 0;
       background: #fff;
+    }
+
+    .oferecemos-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .oferecemos-header h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #0f1a2e;
+    }
+
+    .oferecemos-header h2 span {
+      color: #2d7a6b;
+    }
+
+    .oferecemos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .oferecemos-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px 16px;
+      border-radius: 12px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .oferecemos-item:hover {
+      background: #f5f7fa;
+      transform: translateY(-4px);
+    }
+
+    .oferecemos-item .circulo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(45, 122, 107, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      transition: 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .oferecemos-item:hover .circulo {
+      background: rgba(45, 122, 107, 0.12);
+      border-color: #2d7a6b;
+    }
+
+    .oferecemos-item .circulo i {
+      font-size: 2rem;
+      color: #2d7a6b;
+    }
+
+    .oferecemos-item h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #0f1a2e;
+      margin-bottom: 4px;
+    }
+
+    .oferecemos-item p {
+      font-size: 0.75rem;
+      color: #6a7a8e;
+      line-height: 1.4;
     }
 
     /* ==========================================================
        CTA / CONTATO
     ========================================================== */
     .cta {
-      padding: 70px 0;
+      padding: 60px 0;
       background: #0f1a2e;
       color: #fff;
     }
@@ -658,13 +630,8 @@
       align-items: center;
     }
 
-    .cta-texto .etiqueta {
-      background: rgba(45, 122, 107, 0.15);
-      color: #4a9e8f;
-    }
-
     .cta-texto h2 {
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       font-weight: 700;
       margin-bottom: 16px;
     }
@@ -691,7 +658,7 @@
       align-items: center;
       gap: 8px;
       color: rgba(255, 255, 255, 0.5);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .cta-features i {
@@ -700,21 +667,21 @@
 
     .cta-card {
       background: rgba(255, 255, 255, 0.04);
-      padding: 36px 32px;
-      border-radius: 16px;
+      padding: 32px 28px;
+      border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.06);
       text-align: center;
     }
 
     .cta-card .icone {
-      font-size: 3rem;
+      font-size: 2.8rem;
       color: #25d366;
       margin-bottom: 12px;
       display: inline-block;
     }
 
     .cta-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 4px;
     }
@@ -722,19 +689,19 @@
     .cta-card p {
       color: rgba(255, 255, 255, 0.4);
       font-size: 0.9rem;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .btn-whatsapp {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       background: #25d366;
       color: #fff;
-      padding: 14px 40px;
+      padding: 12px 36px;
       border-radius: 60px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       transition: 0.3s;
     }
 
@@ -744,16 +711,16 @@
     }
 
     .btn-whatsapp i {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
     .cta-divider {
       display: flex;
       align-items: center;
       gap: 16px;
-      margin: 18px 0 16px;
+      margin: 16px 0 14px;
       color: rgba(255, 255, 255, 0.06);
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
 
     .cta-divider::before,
@@ -768,15 +735,15 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
     }
 
     .cta-contatos span {
       color: rgba(255, 255, 255, 0.3);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .cta-contatos i {
@@ -788,39 +755,39 @@
     ========================================================== */
     .footer {
       background: #070d18;
-      padding: 48px 0 28px;
+      padding: 40px 0 24px;
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: 40px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .footer-brand img {
-      height: 36px;
+      height: 34px;
       width: auto;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .footer-brand p {
       color: rgba(255, 255, 255, 0.2);
       line-height: 1.8;
-      max-width: 300px;
-      font-size: 0.9rem;
+      max-width: 280px;
+      font-size: 0.85rem;
     }
 
     .footer-social {
       display: flex;
-      gap: 14px;
-      margin-top: 14px;
+      gap: 12px;
+      margin-top: 12px;
     }
 
     .footer-social a {
       color: rgba(255, 255, 255, 0.1);
       transition: 0.3s;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .footer-social a:hover {
@@ -830,17 +797,17 @@
     .footer h4 {
       color: #fff;
       font-weight: 700;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .footer a {
       color: rgba(255, 255, 255, 0.15);
       display: block;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
       transition: 0.3s;
       cursor: pointer;
     }
@@ -851,7 +818,7 @@
     }
 
     .footer a i {
-      width: 18px;
+      width: 16px;
       margin-right: 6px;
     }
 
@@ -866,11 +833,11 @@
 
     .footer .newsletter input {
       flex: 1;
-      padding: 10px 18px;
+      padding: 8px 16px;
       background: transparent;
       border: none;
       color: #fff;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       outline: none;
     }
 
@@ -879,7 +846,7 @@
     }
 
     .footer .newsletter button {
-      padding: 10px 18px;
+      padding: 8px 16px;
       background: #2d7a6b;
       border: none;
       color: #fff;
@@ -893,9 +860,9 @@
 
     .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.02);
-      padding-top: 20px;
+      padding-top: 16px;
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: rgba(255, 255, 255, 0.06);
     }
 
@@ -903,7 +870,7 @@
        PÁGINAS INTERNAS
     ========================================================== */
     .pagina-interna {
-      padding: 50px 0 70px;
+      padding: 40px 0 60px;
       background: #fff;
     }
 
@@ -915,16 +882,16 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #f4f6f9;
+      background: #f5f7fa;
       color: #1a2332;
-      padding: 8px 22px;
+      padding: 8px 20px;
       border-radius: 60px;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       border: none;
       cursor: pointer;
       transition: 0.3s;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .btn-voltar:hover {
@@ -933,51 +900,51 @@
     }
 
     .pagina-interna .cabecalho {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .pagina-interna .cabecalho .tag {
       display: inline-block;
       background: rgba(45, 122, 107, 0.08);
-      padding: 4px 16px;
+      padding: 4px 14px;
       border-radius: 60px;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       font-weight: 700;
       text-transform: uppercase;
       color: #2d7a6b;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .pagina-interna .cabecalho h1 {
-      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       font-weight: 700;
       color: #0f1a2e;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .pagina-interna .cabecalho .data {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #6a7a8e;
       display: block;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .pagina-interna .cabecalho img {
       width: 100%;
-      max-height: 340px;
+      max-height: 300px;
       object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     }
 
     .pagina-interna .conteudo {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #4a5a6e;
       line-height: 1.9;
     }
 
     .pagina-interna .conteudo p {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .pagina-interna .conteudo strong {
@@ -985,12 +952,12 @@
     }
 
     .pagina-interna .conteudo ul {
-      margin-bottom: 18px;
-      padding-left: 22px;
+      margin-bottom: 16px;
+      padding-left: 20px;
     }
 
     .pagina-interna .conteudo ul li {
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     /* ==========================================================
@@ -1015,16 +982,6 @@
         justify-content: center;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-      }
-
-      .about-features {
-        justify-content: center;
-      }
-
       .cta-grid {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1037,7 +994,11 @@
 
       .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 28px;
+        gap: 24px;
+      }
+
+      .oferecemos-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -1083,25 +1044,39 @@
         font-size: 1.3rem;
       }
 
-      .servicos-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
       .blog-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
         margin: 0 auto;
       }
 
+      .blog-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
+
+      .oferecemos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .oferecemos-item .circulo {
+        width: 64px;
+        height: 64px;
+      }
+
+      .oferecemos-item .circulo i {
+        font-size: 1.6rem;
+      }
+
       .cta-card {
-        padding: 24px 20px;
+        padding: 20px 16px;
       }
 
       .cta-card .btn-whatsapp {
-        padding: 12px 28px;
-        font-size: 0.9rem;
+        padding: 10px 24px;
+        font-size: 0.85rem;
       }
 
       .footer-grid {
@@ -1119,7 +1094,17 @@
       }
 
       .pagina-interna .cabecalho img {
-        max-height: 200px;
+        max-height: 180px;
+      }
+
+      .categorias .container {
+        justify-content: center;
+        gap: 4px 16px;
+      }
+
+      .categorias .label {
+        width: 100%;
+        text-align: center;
       }
     }
 
@@ -1141,11 +1126,37 @@
 
       .cta-contatos {
         flex-direction: column;
-        gap: 6px;
+        gap: 4px;
       }
 
       .logo span {
         display: none;
+      }
+
+      .oferecemos-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .oferecemos-item {
+        padding: 12px 8px;
+      }
+
+      .oferecemos-item .circulo {
+        width: 56px;
+        height: 56px;
+      }
+
+      .oferecemos-item .circulo i {
+        font-size: 1.3rem;
+      }
+
+      .oferecemos-item h4 {
+        font-size: 0.8rem;
+      }
+
+      .oferecemos-item p {
+        font-size: 0.65rem;
       }
     }
   </style>
@@ -1220,121 +1231,148 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="sobre">
+    <!-- ==========================================================
+       CATEGORIAS (ESTILO KUMON)
+    ========================================================== -->
+    <section class="categorias">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-imagem">
-            <img src="https://i.imgur.com/TGq1ae3.png" alt="Sobre o Legado que Ensina" />
-          </div>
-          <div class="about-texto">
-            <span class="etiqueta">Sobre nós</span>
-            <h2>Uma história de <span>acolhimento</span> e <span>aprendizado</span></h2>
-            <p>O <strong>Legado que Ensina</strong> nasce do reconhecimento às crianças e profissionais que construíram uma prática de alfabetização mais sensível, consciente e acessível.</p>
-            <p>Mais que um método, é uma forma de enxergar a educação com presença, escuta e significado. Agora também no ambiente online, ampliamos o alcance e o acolhimento.</p>
-            <div class="about-features">
-              <span class="feat"><i class="fas fa-check"></i> Atendimento humanizado</span>
-              <span class="feat"><i class="fas fa-check"></i> Estratégias personalizadas</span>
-              <span class="feat"><i class="fas fa-check"></i> Acompanhamento contínuo</span>
-            </div>
-            <button class="btn-historia" onclick="mostrarPagina('historia')">
-              Ler história completa <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
+        <span class="label">Categorias</span>
+        <a href="#">Acompanhamento</a>
+        <a href="#">Avaliação</a>
+        <a href="#">Intervenção</a>
+        <a href="#">Orientação</a>
+        <a href="#">Depoimentos</a>
+        <a href="#">Institucional</a>
+        <a href="#">Artigos</a>
+        <a href="#">Vídeos</a>
       </div>
     </section>
 
-    <!-- SERVIÇOS -->
-    <section class="servicos" id="servicos">
-      <div class="container">
-        <div class="servicos-header">
-          <span class="etiqueta">Nossos serviços</span>
-          <h2>O que <span>oferecemos</span></h2>
-          <p>Atendimento presencial e online com foco na construção da autonomia e da relação saudável com o conhecimento.</p>
-        </div>
-        <div class="servicos-grid">
-          <div class="servico-card">
-            <div class="icon"><i class="fas fa-user-graduate"></i></div>
-            <h3>Acompanhamento psicopedagógico</h3>
-            <p>Sessões individuais voltadas ao desenvolvimento das habilidades cognitivas, emocionais e estratégias de aprendizagem.</p>
-          </div>
-          <div class="servico-card">
-            <div class="icon"><i class="fas fa-clipboard-list"></i></div>
-            <h3>Avaliação psicopedagógica</h3>
-            <p>Avaliação completa das habilidades de leitura, escrita, raciocínio lógico, atenção, memória e funções executivas.</p>
-          </div>
-          <div class="servico-card">
-            <div class="icon"><i class="fas fa-puzzle-piece"></i></div>
-            <h3>Intervenção personalizada</h3>
-            <p>Plano de intervenção elaborado com estratégias pedagógicas, recursos lúdicos e atividades que favorecem o desenvolvimento.</p>
-          </div>
-          <div class="servico-card">
-            <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
-            <h3>Orientação à família e escola</h3>
-            <p>Acompanhamento e orientações para familiares e instituições de ensino, promovendo uma atuação integrada.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
+    <!-- ==========================================================
+       BLOG (ESTILO KUMON - TÍTULO EM CIMA DA IMAGEM)
+    ========================================================== -->
     <section class="blog" id="blog">
       <div class="container">
         <div class="blog-header">
-          <span class="etiqueta">Conteúdos</span>
-          <h2>Artigos <span>recentes</span></h2>
-          <p>Dicas, reflexões e conteúdos para apoiar o desenvolvimento e a aprendizagem.</p>
+          <h2>Artigos <span style="color:#2d7a6b;">recentes</span></h2>
+          <span class="ver-todos">Ver todos →</span>
         </div>
+
         <div class="blog-grid">
+          <!-- ARTIGO 1 -->
           <div class="blog-card" onclick="mostrarPagina('artigo1')">
             <div class="img">
               <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=60" alt="Dificuldades de aprendizagem" />
+              <div class="titulo-overlay">
+                <span class="tag">Aprendizagem</span>
+                <h3>Como identificar dificuldades de aprendizagem cedo</h3>
+              </div>
             </div>
             <div class="conteudo">
-              <span class="tag">Aprendizagem</span>
-              <h3>Como identificar dificuldades de aprendizagem cedo</h3>
-              <p>Sinais de alerta e estratégias para pais e educadores.</p>
+              <div class="meta">
+                <span>14/07/2026</span>
+                <span class="categoria">Aprendizagem</span>
+              </div>
               <span class="ler">Leia mais →</span>
             </div>
           </div>
 
+          <!-- ARTIGO 2 -->
           <div class="blog-card" onclick="mostrarPagina('artigo2')">
             <div class="img">
               <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=60" alt="Motivação" />
+              <div class="titulo-overlay">
+                <span class="tag">Motivação</span>
+                <h3>Como manter a motivação nos estudos em casa</h3>
+              </div>
             </div>
             <div class="conteudo">
-              <span class="tag">Motivação</span>
-              <h3>Como manter a motivação nos estudos em casa</h3>
-              <p>Dicas práticas para criar uma rotina de estudos.</p>
+              <div class="meta">
+                <span>12/06/2026</span>
+                <span class="categoria">Motivação</span>
+              </div>
               <span class="ler">Leia mais →</span>
             </div>
           </div>
 
+          <!-- ARTIGO 3 -->
           <div class="blog-card" onclick="mostrarPagina('artigo3')">
             <div class="img">
               <img src="https://i.imgur.com/BvcvoHU.png" alt="Gamificação" />
+              <div class="titulo-overlay">
+                <span class="tag">Gamificação</span>
+                <h3>Gamificação: como jogos ajudam no aprendizado</h3>
+              </div>
             </div>
             <div class="conteudo">
-              <span class="tag">Gamificação</span>
-              <h3>Gamificação: como jogos ajudam no aprendizado</h3>
-              <p>Entenda como elementos de jogos transformam o aprendizado.</p>
+              <div class="meta">
+                <span>10/06/2026</span>
+                <span class="categoria">Gamificação</span>
+              </div>
               <span class="ler">Leia mais →</span>
             </div>
           </div>
 
-          <!-- ARTIGO COM VÍDEO -->
+          <!-- ARTIGO 4 - VÍDEO -->
           <div class="blog-card video" onclick="window.open('https://youtu.be/Exv33fj5Ivc?si=SbPjA8cOGzqkfT86', '_blank')">
             <div class="img">
               <img src="https://img.youtube.com/vi/Exv33fj5Ivc/maxresdefault.jpg" alt="Vídeo sobre aprendizagem" />
               <div class="play"><i class="fas fa-play"></i></div>
+              <div class="titulo-overlay">
+                <span class="tag">Vídeo</span>
+                <h3>Como a psicopedagogia transforma a aprendizagem</h3>
+              </div>
             </div>
             <div class="conteudo">
-              <span class="tag">Vídeo</span>
-              <h3>Como a psicopedagogia pode transformar a aprendizagem</h3>
-              <p>Assista ao vídeo e entenda como o acompanhamento psicopedagógico pode fazer a diferença.</p>
+              <div class="meta">
+                <span>05/06/2026</span>
+                <span class="categoria">Vídeo</span>
+              </div>
               <span class="ler">Assistir vídeo →</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+       OFERECEMOS (ESTILO KUMON - ÍCONES CIRCULARES)
+    ========================================================== -->
+    <section class="oferecemos" id="servicos">
+      <div class="container">
+        <div class="oferecemos-header">
+          <h2>Conheça o que o <span>Legado que Ensina</span> oferece</h2>
+        </div>
+        <div class="oferecemos-grid">
+          <div class="oferecemos-item">
+            <div class="circulo"><i class="fas fa-user-graduate"></i></div>
+            <h4>Acompanhamento</h4>
+            <p>psicopedagógico</p>
+          </div>
+          <div class="oferecemos-item">
+            <div class="circulo"><i class="fas fa-clipboard-list"></i></div>
+            <h4>Avaliação</h4>
+            <p>psicopedagógica</p>
+          </div>
+          <div class="oferecemos-item">
+            <div class="circulo"><i class="fas fa-puzzle-piece"></i></div>
+            <h4>Intervenção</h4>
+            <p>personalizada</p>
+          </div>
+          <div class="oferecemos-item">
+            <div class="circulo"><i class="fas fa-chalkboard-teacher"></i></div>
+            <h4>Orientação</h4>
+            <p>à família e escola</p>
+          </div>
+          <div class="oferecemos-item">
+            <div class="circulo"><i class="fas fa-users"></i></div>
+            <h4>Atendimento</h4>
+            <p>presencial e online</p>
+          </div>
+          <div class="oferecemos-item">
+            <div class="circulo"><i class="fas fa-star"></i></div>
+            <h4>Acompanhamento</h4>
+            <p>contínuo</p>
           </div>
         </div>
       </div>
@@ -1345,7 +1383,6 @@
       <div class="container">
         <div class="cta-grid">
           <div class="cta-texto">
-            <span class="etiqueta">Vamos conversar</span>
             <h2>Agende sua <span>avaliação</span> inicial</h2>
             <p>Sem compromisso. Conheça nosso espaço e descubra como podemos ajudar no desenvolvimento do seu filho.</p>
             <div class="cta-features">
@@ -1399,9 +1436,9 @@
           </div>
           <div>
             <h4>Newsletter</h4>
-            <p style="color:rgba(255,255,255,0.15); font-size:0.9rem; margin-bottom:14px;">Receba conteúdos exclusivos sobre aprendizagem.</p>
+            <p style="color:rgba(255,255,255,0.15); font-size:0.85rem; margin-bottom:12px;">Receba conteúdos exclusivos.</p>
             <form class="newsletter" onsubmit="event.preventDefault(); alert('Inscrição realizada com sucesso!');">
-              <input type="email" placeholder="Seu melhor e-mail" required />
+              <input type="email" placeholder="Seu e-mail" required />
               <button type="submit"><i class="fas fa-arrow-right"></i></button>
             </form>
           </div>
@@ -1436,23 +1473,23 @@
           <p>Mais do que atividades ou conteúdos, permaneceram os vínculos construídos, os aprendizados compartilhados e os momentos que transformaram vidas.</p>
           <p>O Legado que Ensina representa exatamente isso: a continuidade dessas vivências e a base que sustenta uma prática construída com presença, escuta e significado — em qualquer lugar.</p>
 
-          <div style="background:#f4f6f9; border-radius:16px; padding:24px 28px; margin:28px 0;">
-            <h4 style="color:#0f1a2e; margin-bottom:14px;"><i class="fas fa-heart" style="color:#2d7a6b;"></i> Em homenagem à nossa história</h4>
-            <div style="display:flex; flex-wrap:wrap; gap:8px 14px;">
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Benício</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Maicon</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Pedro</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Marcos</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Maria</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Profª Vanessa</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Profª Cirleia</span>
-              <span style="background:#fff; padding:4px 16px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.85rem;">Profª Joceli</span>
+          <div style="background:#f5f7fa; border-radius:12px; padding:20px 24px; margin:24px 0;">
+            <h4 style="color:#0f1a2e; margin-bottom:12px;"><i class="fas fa-heart" style="color:#2d7a6b;"></i> Em homenagem à nossa história</h4>
+            <div style="display:flex; flex-wrap:wrap; gap:6px 12px;">
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Benício</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Maicon</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Pedro</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Marcos</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Maria</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Profª Vanessa</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Profª Cirleia</span>
+              <span style="background:#fff; padding:4px 14px; border-radius:60px; border:1px solid #e0e5ec; font-size:0.8rem;">Profª Joceli</span>
             </div>
           </div>
 
-          <div style="background:#f4f6f9; border-radius:16px; padding:28px 32px; border-left:4px solid #2d7a6b;">
-            <i class="fas fa-quote-left" style="color:#2d7a6b; font-size:1.2rem; margin-bottom:6px; display:block;"></i>
-            <p style="font-size:1.05rem; font-weight:600; color:#0f1a2e; margin:0;">"Porque algumas experiências na educação não passam com o tempo — elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo."</p>
+          <div style="background:#f5f7fa; border-radius:12px; padding:24px 28px; border-left:4px solid #2d7a6b;">
+            <i class="fas fa-quote-left" style="color:#2d7a6b; font-size:1.2rem; margin-bottom:4px; display:block;"></i>
+            <p style="font-size:1rem; font-weight:600; color:#0f1a2e; margin:0;">"Porque algumas experiências na educação não passam com o tempo — elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo."</p>
           </div>
         </div>
       </div>
@@ -1470,7 +1507,7 @@
         <div class="cabecalho">
           <span class="tag">Aprendizagem</span>
           <h1>Como identificar dificuldades de aprendizagem cedo</h1>
-          <span class="data">15/06/2026 · Psicopedagogia</span>
+          <span class="data">14/07/2026 · Psicopedagogia</span>
           <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=60" alt="Dificuldades de aprendizagem" />
         </div>
         <div class="conteudo">
@@ -1511,7 +1548,7 @@
         <div class="cabecalho">
           <span class="tag">Motivação</span>
           <h1>Como manter a motivação nos estudos em casa</h1>
-          <span class="data">13/06/2026 · Psicopedagogia</span>
+          <span class="data">12/06/2026 · Psicopedagogia</span>
           <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=60" alt="Motivação" />
         </div>
         <div class="conteudo">
