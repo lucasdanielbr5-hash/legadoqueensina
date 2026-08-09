@@ -2954,6 +2954,81 @@ body {
     }
 }
 
+
+/* Conteúdos completos em uma única página — GitHub Pages */
+.embedded-articles {
+    padding: 110px 0;
+    background: #f7f5ef;
+}
+.embedded-articles .section-label,
+.article-category {
+    color: #2d7a6b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+.embedded-articles .section-title {
+    max-width: 720px;
+}
+.embedded-articles .section-description {
+    max-width: 700px;
+    color: #66747c;
+    margin-bottom: 60px;
+}
+.single-article {
+    max-width: 850px;
+    margin: 0 auto 80px;
+    padding: 55px clamp(24px, 6vw, 70px);
+    background: #fff;
+    box-shadow: 0 12px 45px rgba(14,32,52,.06);
+    scroll-margin-top: 30px;
+}
+.single-article h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -.03em;
+    margin: 15px 0 20px;
+}
+.single-article h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
+    margin: 40px 0 12px;
+}
+.single-article p {
+    color: #596873;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+.single-article .article-lead {
+    font-size: 17px;
+    color: #40515d;
+    margin-bottom: 35px;
+}
+.article-note {
+    margin-top: 35px;
+    padding: 20px 22px;
+    border-left: 3px solid #2d7a6b;
+    background: #f4f4ef;
+    color: #596873;
+    font-size: 13px;
+    line-height: 1.7;
+}
+@media (max-width: 720px) {
+    .embedded-articles { padding: 70px 0; }
+    .single-article {
+        padding: 32px 22px;
+        margin-bottom: 45px;
+    }
+    .single-article h2 { font-size: 32px; }
+    .single-article h3 { font-size: 24px; }
+    .single-article p { font-size: 15px; line-height: 1.8; }
+}
+
 </style>
 
 
@@ -3054,7 +3129,7 @@ body {
                 Dúvidas
             </a>
 
-            <a href="#conteudos">
+            <a href="#artigos-completos">
                 Conteúdos
             </a>
 
@@ -4887,7 +4962,7 @@ body {
 
 
             <a
-                href="#conteudos"
+                href="#artigos-completos"
                 class="blog-link"
             >
 
@@ -4903,7 +4978,7 @@ body {
 
             <article class="article reveal">
 
-                <a href="artigo-dificuldades-de-aprendizagem.html" aria-label="Ler: Dificuldades de aprendizagem: sinais que merecem atenção">
+                <a href="#artigos-completos" aria-label="Ler: Dificuldades de aprendizagem: sinais que merecem atenção">
 
                     <div class="article-image">
 
@@ -4942,7 +5017,7 @@ body {
 
             <article class="article reveal">
 
-                <a href="artigo-rotina-de-estudos.html" aria-label="Ler: Como criar uma rotina de estudos mais leve e possível">
+                <a href="#artigos-completos" aria-label="Ler: Como criar uma rotina de estudos mais leve e possível">
 
                     <div class="article-image">
 
@@ -4981,7 +5056,7 @@ body {
 
             <article class="article reveal">
 
-                <a href="artigo-brincar-e-aprender.html" aria-label="Ler: Quando brincar também significa aprender">
+                <a href="#artigos-completos" aria-label="Ler: Quando brincar também significa aprender">
 
                     <div class="article-image">
 
@@ -5020,7 +5095,7 @@ body {
 
             <article class="article reveal">
 
-                <a href="artigo-leitura-e-escrita.html" aria-label="Ler: Como incentivar leitura e escrita sem transformar tudo em cobrança">
+                <a href="#artigos-completos" aria-label="Ler: Como incentivar leitura e escrita sem transformar tudo em cobrança">
 
                     <div class="article-image">
 
@@ -5059,7 +5134,7 @@ body {
 
             <article class="article reveal">
 
-                <a href="artigo-matematica.html" aria-label="Ler: Dificuldades em matemática: como observar e apoiar">
+                <a href="#artigos-completos" aria-label="Ler: Dificuldades em matemática: como observar e apoiar">
 
                     <div class="article-image">
 
@@ -5098,7 +5173,7 @@ body {
 
             <article class="article reveal">
 
-                <a href="artigo-psicopedagogia.html" aria-label="Ler: O que faz um psicopedagogo e quando buscar acompanhamento">
+                <a href="#artigos-completos" aria-label="Ler: O que faz um psicopedagogo e quando buscar acompanhamento">
 
                     <div class="article-image">
 
@@ -5275,6 +5350,88 @@ body {
      FOOTER
 ========================================================= -->
 
+
+<section id="artigos-completos" class="embedded-articles">
+  <div class="container">
+    <div class="section-label">CONTEÚDOS</div>
+    <h2 class="section-title">Informação para apoiar a aprendizagem</h2>
+    <p class="section-description">Conteúdos preparados para famílias e estudantes, com orientações sobre aprendizagem, estudos, leitura, matemática e psicopedagogia.</p>
+    
+<article class="single-article" id="artigo-1">
+  <div class="article-category">Aprendizagem</div>
+  <h2>Dificuldades de aprendizagem: sinais que merecem atenção</h2>
+  <p class="article-lead">Nem toda dificuldade escolar significa falta de esforço. Observar como a criança aprende, em quais situações encontra obstáculos e o que acontece quando recebe apoio ajuda a compreender melhor a situação.</p>
+  <h3>Quando uma dificuldade merece atenção?</h3><p>É comum que estudantes tenham fases de maior ou menor rendimento. Uma atividade pode parecer simples em um dia e difícil em outro, especialmente quando existe cansaço, mudança de rotina ou falta de familiaridade com o conteúdo. O sinal de atenção aparece quando determinadas dificuldades persistem, interferem na rotina escolar ou provocam sofrimento, frustração e perda de confiança.</p>
+<h3>Sinais que podem aparecer no dia a dia</h3><p>Alguns sinais são observados com frequência por famílias e professores: dificuldade persistente para acompanhar instruções, demora muito maior do que o esperado para concluir tarefas, resistência intensa diante de atividades escolares, dificuldades recorrentes de leitura e escrita, insegurança em matemática, esquecimento de conteúdos já trabalhados e necessidade constante de ajuda para organizar o estudo. Um sinal isolado não permite concluir a causa da dificuldade.</p>
+<h3>O que observar antes de cobrar mais?</h3><p>Antes de aumentar a quantidade de exercícios, vale observar como a tarefa foi apresentada. A criança compreendeu o enunciado? Sabe por onde começar? Consegue manter a atenção? O ambiente tem muitos estímulos? O conteúdo está adequado ao momento de aprendizagem? Essas perguntas ajudam a diferenciar uma lacuna específica de uma dificuldade mais ampla.</p>
+<h3>Como a família pode ajudar</h3><p>A família pode oferecer uma rotina previsível, dividir tarefas longas em etapas menores, reconhecer o esforço e evitar comparações com irmãos ou colegas. Também é útil manter comunicação com a escola e registrar exemplos concretos das dificuldades.</p>
+<h3>Quando procurar orientação profissional</h3><p>Quando as dificuldades permanecem e começam a afetar o desempenho, a autonomia ou a relação da criança com os estudos, uma avaliação individual pode ajudar a organizar as informações. O acompanhamento psicopedagógico busca compreender a relação da pessoa com a aprendizagem e planejar estratégias compatíveis com suas necessidades.</p>
+  <div class="article-note">Este conteúdo é educativo e não substitui uma avaliação individual.</div>
+</article>
+
+<article class="single-article" id="artigo-2">
+  <div class="article-category">Hábitos de estudo</div>
+  <h2>Como criar uma rotina de estudos mais leve e possível</h2>
+  <p class="article-lead">Uma boa rotina de estudos não precisa ocupar muitas horas. Ela precisa ser previsível, adequada à idade e suficientemente flexível para caber na vida real.</p>
+  <h3>Comece pela rotina que já existe</h3><p>Em vez de criar um cronograma completamente novo, observe os horários de escola, refeições, sono, lazer e compromissos. O estudo pode ser encaixado em um período em que o estudante esteja mais disponível. Uma rotina sustentável costuma ser melhor do que um plano perfeito que não é mantido.</p>
+<h3>Defina pequenas metas</h3><p>Troque metas vagas como “estudar matemática” por ações concretas: revisar duas páginas, resolver cinco questões ou ler um texto e destacar as ideias principais. Metas menores tornam o começo menos pesado e permitem perceber o que realmente foi realizado.</p>
+<h3>Organize o ambiente</h3><p>O espaço de estudo não precisa ser sofisticado. Uma mesa organizada, iluminação adequada, materiais necessários e redução de distrações já ajudam. O celular pode ficar afastado durante uma tarefa que exige concentração.</p>
+<h3>Use pausas de maneira planejada</h3><p>Pausas não significam falta de disciplina. Elas podem ajudar a manter a atenção em tarefas mais longas. O intervalo deve ter duração combinada e não transformar-se em uma atividade tão envolvente que dificulte o retorno aos estudos.</p>
+<h3>Revise a rotina semanalmente</h3><p>Uma rotina precisa ser ajustada. Se uma tarefa sempre fica para depois, talvez o horário esteja inadequado ou a atividade esteja grande demais. Rever o planejamento permite descobrir quais estratégias funcionam melhor.</p>
+  <div class="article-note">Este conteúdo é educativo e não substitui uma avaliação individual.</div>
+</article>
+
+<article class="single-article" id="artigo-3">
+  <div class="article-category">Aprender brincando</div>
+  <h2>Quando brincar também significa aprender</h2>
+  <p class="article-lead">Brincadeiras podem envolver linguagem, memória, atenção, planejamento, coordenação, raciocínio e interação. O aspecto lúdico não elimina a aprendizagem; muitas vezes, cria um contexto mais natural para ela acontecer.</p>
+  <h3>O que existe por trás de uma brincadeira?</h3><p>Ao montar um quebra-cabeça, por exemplo, a criança observa formas, testa hipóteses, compara peças e lida com tentativas que não funcionam. Em um jogo de regras, precisa compreender instruções, esperar sua vez e controlar impulsos.</p>
+<h3>Jogos e aprendizagem escolar</h3><p>Jogos de cartas podem trabalhar comparação e memória. Jogos de tabuleiro podem envolver contagem, planejamento e tomada de decisão. Brincadeiras com palavras podem ampliar consciência sobre sons e vocabulário.</p>
+<h3>Como o adulto pode participar</h3><p>O adulto não precisa controlar cada etapa. Pode observar, fazer perguntas, oferecer pistas e deixar a criança explicar seu raciocínio. Perguntas como “por que você escolheu essa peça?” ajudam a transformar a brincadeira em oportunidade de reflexão.</p>
+<h3>O valor do erro</h3><p>Durante o jogo, errar faz parte da experiência. Isso permite que a criança experimente estratégias sem associar imediatamente o erro a uma nota. A possibilidade de tentar novamente pode favorecer persistência.</p>
+<h3>Escolhendo atividades adequadas</h3><p>Uma boa atividade lúdica não é necessariamente a mais complexa. Ela precisa ser compreensível, interessante e possível de adaptar.</p>
+  <div class="article-note">Este conteúdo é educativo e não substitui uma avaliação individual.</div>
+</article>
+
+<article class="single-article" id="artigo-4">
+  <div class="article-category">Leitura e escrita</div>
+  <h2>Como incentivar leitura e escrita sem transformar tudo em cobrança</h2>
+  <p class="article-lead">Criar uma relação positiva com textos e palavras pode ser mais produtivo do que transformar cada momento de leitura em uma prova. A prática precisa fazer sentido para quem está aprendendo.</p>
+  <h3>Leia com a criança</h3><p>A leitura compartilhada permite que o adulto modele entonação, acompanhe imagens, faça perguntas e converse sobre a história. Não é necessário interromper a cada palavra desconhecida.</p>
+<h3>Ofereça textos diferentes</h3><p>Livros de histórias, quadrinhos, receitas, placas, listas, curiosidades e textos informativos apresentam diferentes funções da escrita. Dar opções aumenta a chance de encontrar assuntos que despertem interesse.</p>
+<h3>Escrever também pode ter uma finalidade real</h3><p>Fazer uma lista de compras, escrever um bilhete, criar uma legenda ou registrar uma ideia são situações concretas de uso da escrita. Quando existe uma finalidade, a criança percebe que escrever não é apenas uma atividade escolar.</p>
+<h3>Evite comparações</h3><p>Cada estudante apresenta um percurso próprio. Comparações podem aumentar a ansiedade e não explicam por que uma criança está encontrando determinada dificuldade.</p>
+<h3>Quando buscar apoio</h3><p>Se dificuldades de leitura e escrita persistirem apesar das oportunidades de prática e apoio, é importante conversar com a escola e considerar uma avaliação individual.</p>
+  <div class="article-note">Este conteúdo é educativo e não substitui uma avaliação individual.</div>
+</article>
+
+<article class="single-article" id="artigo-5">
+  <div class="article-category">Matemática</div>
+  <h2>Dificuldades em matemática: como observar e apoiar</h2>
+  <p class="article-lead">Quando uma criança diz que “não entende matemática”, vale investigar o que exatamente está difícil. Cálculo, interpretação de problemas, compreensão de quantidade e organização do raciocínio são habilidades diferentes.</p>
+  <h3>Descubra onde está o obstáculo</h3><p>Uma conta pode estar correta ou incorreta por vários motivos. O estudante pode não compreender o conceito, confundir símbolos, perder uma etapa do procedimento ou não entender o enunciado. Pedir que explique como pensou costuma revelar mais do que simplesmente marcar a resposta.</p>
+<h3>Use situações do cotidiano</h3><p>Receitas, horários, dinheiro, medidas e jogos oferecem oportunidades para trabalhar conceitos matemáticos em situações concretas.</p>
+<h3>Trabalhe uma habilidade por vez</h3><p>Quando uma atividade reúne muitos conteúdos, fica difícil identificar o que causou o erro. Dividir a tarefa em etapas permite que o estudante perceba o procedimento.</p>
+<h3>Não transforme o erro em rótulo</h3><p>Expressões como “você é ruim em matemática” podem fazer o estudante associar a disciplina à própria identidade. É mais produtivo tratar o erro como informação.</p>
+<h3>Observe a evolução</h3><p>Registrar quais estratégias funcionaram ajuda a perceber avanços que nem sempre aparecem imediatamente nas notas.</p>
+  <div class="article-note">Este conteúdo é educativo e não substitui uma avaliação individual.</div>
+</article>
+
+<article class="single-article" id="artigo-6">
+  <div class="article-category">Psicopedagogia</div>
+  <h2>O que faz um psicopedagogo e quando buscar acompanhamento</h2>
+  <p class="article-lead">A psicopedagogia se dedica a compreender processos relacionados à aprendizagem. O acompanhamento considera a pessoa, sua história, suas formas de aprender e as condições em que as dificuldades aparecem.</p>
+  <h3>O trabalho psicopedagógico</h3><p>O acompanhamento pode envolver escuta, observação, atividades e análise das estratégias utilizadas diante de diferentes tarefas. A partir das informações reunidas, o profissional pode planejar intervenções voltadas às necessidades identificadas.</p>
+<h3>Avaliação e intervenção são coisas diferentes</h3><p>A avaliação busca compreender a demanda e levantar informações sobre o processo de aprendizagem. A intervenção acontece a partir dessa compreensão e utiliza estratégias para trabalhar habilidades e favorecer novas possibilidades.</p>
+<h3>Quando procurar orientação</h3><p>Famílias podem buscar orientação quando percebem dificuldades persistentes em leitura, escrita, matemática, organização dos estudos, autonomia ou outros aspectos relacionados à aprendizagem.</p>
+<h3>A importância do trabalho conjunto</h3><p>A aprendizagem acontece em diferentes contextos. Quando possível, a comunicação entre família, escola e profissional ajuda a reunir informações e alinhar estratégias.</p>
+<h3>O que o psicopedagogo não deve fazer</h3><p>O acompanhamento psicopedagógico não deve ser apresentado como solução universal para qualquer dificuldade. Quando a situação exige avaliação ou cuidado de outra área profissional, o encaminhamento adequado faz parte de uma atuação responsável.</p>
+  <div class="article-note">Este conteúdo é educativo e não substitui uma avaliação individual.</div>
+</article>
+
+  </div>
+</section>
+
 <footer class="footer">
 
     <div class="container">
@@ -5446,7 +5603,7 @@ body {
 
         
             <div class="footer-legal">
-                <a href="politica-de-privacidade.html">Política de Privacidade</a>
+                <a href="#privacidade">Política de Privacidade</a>
             </div>
 
 <div class="footer-bottom">
@@ -5740,6 +5897,23 @@ document.addEventListener("keydown", event => {
         <path d="M16.02 3C8.84 3 3 8.84 3 16.02c0 2.29.6 4.52 1.74 6.49L3 29l6.68-1.71a13 13 0 0 0 6.34 1.62h.01C23.2 28.91 29 23.08 29 15.99 29 8.84 23.2 3 16.02 3zm0 23.65h-.01a10.8 10.8 0 0 1-5.5-1.5l-.39-.23-3.96 1.01 1.06-3.86-.25-.4a10.82 10.82 0 1 1 9.05 4.98z"/>
     </svg>
 </a>
+
+
+<section id="privacidade" class="embedded-articles">
+  <div class="container">
+    <article class="single-article">
+      <div class="article-category">PRIVACIDADE</div>
+      <h2>Política de Privacidade</h2>
+      <p>O Legado que Ensina respeita a privacidade dos visitantes. Informações fornecidas voluntariamente em contatos, como nome, telefone e e-mail, são utilizadas para responder solicitações e organizar a comunicação.</p>
+      <h3>Cookies e publicidade</h3>
+      <p>O site poderá utilizar cookies e tecnologias semelhantes para melhorar a experiência, analisar o uso das páginas e, quando aplicável, exibir publicidade. Serviços de terceiros podem utilizar essas tecnologias de acordo com suas próprias políticas.</p>
+      <h3>Links externos</h3>
+      <p>O site pode conter links para serviços externos. O tratamento de dados nesses serviços é regido pelas políticas dos respectivos operadores.</p>
+      <h3>Contato</h3>
+      <p>Para dúvidas sobre privacidade, entre em contato pelo e-mail contato@legadoqueensina.com.br.</p>
+    </article>
+  </div>
+</section>
 
 </body>
 
