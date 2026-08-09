@@ -1,2391 +1,5462 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Legado que Ensina | Psicopedagogia e Desenvolvimento</title>
+    <meta charset="UTF-8">
 
-  <meta
-    name="description"
-    content="Legado que Ensina — psicopedagogia, aprendizagem e desenvolvimento. Atendimento individualizado para crianças, adolescentes e adultos."
-  />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <!-- FAVICON -->
-  <link
-    rel="icon"
-    type="image/png"
-    href="https://i.imgur.com/YIQDI4s.png"
-  />
+    <title>
+        Legado que Ensina | Clínica de Psicopedagogia
+    </title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="description"
+        content="Legado que Ensina — clínica de psicopedagogia dedicada ao acompanhamento, avaliação e intervenção no processo de aprendizagem."
+    >
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <style>
-    :root {
-      --navy: #101c31;
-      --navy-2: #172640;
-      --green: #2d7a6b;
-      --green-light: #eaf4f1;
-      --cream: #faf9f6;
-      --white: #ffffff;
-      --text: #263246;
-      --muted: #718096;
-      --border: #e8ecef;
-      --gold: #c7a66a;
-      --shadow: 0 20px 60px rgba(16, 28, 49, .08);
-      --radius: 22px;
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f7f5ef;
+    color: #0e2034;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --navy: #0e2034;
+    --navy-dark: #081522;
+
+    --green: #2d7a6b;
+    --green-dark: #216356;
+    --green-light: #c8ded8;
+
+    --cream: #f7f5ef;
+    --cream-dark: #eeece4;
+
+    --white: #ffffff;
+
+    --text: #596873;
+    --muted: #89939a;
+
+    --line: rgba(14, 32, 52, .12);
+
+    --serif: "Playfair Display", Georgia, serif;
+
+    --container: 1240px;
+}
+
+
+/* =========================================================
+   UTIL
+========================================================= */
+
+.container {
+    width: min(
+        var(--container),
+        calc(100% - 80px)
+    );
+
+    margin: 0 auto;
+}
+
+.section {
+    padding: 130px 0;
+}
+
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--green);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .22em;
+    text-transform: uppercase;
+}
+
+.section-label::before {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    background: var(--green);
+}
+
+.serif {
+    font-family: var(--serif);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 92px;
+
+    z-index: 1000;
+
+    background: rgba(247,245,239,.94);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid transparent;
+
+    transition: .3s ease;
+}
+
+.header.scrolled {
+    height: 76px;
+
+    border-color: var(--line);
+
+    box-shadow:
+        0 10px 30px rgba(14,32,52,.04);
+}
+
+.header-inner {
+    width: min(
+        var(--container),
+        calc(100% - 80px)
+    );
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    width: 112px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.nav a {
+    position: relative;
+
+    color: var(--navy);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--green);
+
+    transition: .25s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.header-button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    height: 43px;
+
+    padding: 0 18px;
+
+    background: var(--navy);
+
+    color: white;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .07em;
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.header-button:hover {
+    background: var(--green);
+}
+
+.menu-button {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid var(--line);
+
+    background: transparent;
+
+    color: var(--navy);
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.mobile-nav {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    background: var(--navy);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 28px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-20px);
+
+    transition: .35s ease;
+}
+
+.mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mobile-nav a {
+    color: white;
+
+    font-family: var(--serif);
+
+    font-size: 34px;
+}
+
+.mobile-nav .mobile-small {
+    font-family: "DM Sans", sans-serif;
+
+    color: var(--green-light);
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding-top: 92px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--cream);
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .25;
+
+    background-image:
+        radial-gradient(
+            rgba(14,32,52,.08) .6px,
+            transparent .6px
+        );
+
+    background-size: 8px 8px;
+
+    pointer-events: none;
+}
+
+.hero-grid {
+    min-height:
+        calc(100vh - 92px);
+
+    min-height:
+        calc(100svh - 92px);
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-copy {
+    padding: 70px 0;
+}
+
+.hero-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 28px;
+
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+}
+
+.hero-eyebrow::before {
+    content: "";
+
+    width: 38px;
+    height: 1px;
+
+    background: var(--green);
+}
+
+.hero h1 {
+    max-width: 720px;
+
+    font-family: var(--serif);
+
+    color: var(--navy);
+
+    font-size: clamp(
+        62px,
+        7vw,
+        105px
+    );
+
+    line-height: .88;
+
+    font-weight: 400;
+
+    letter-spacing: -.065em;
+}
+
+.hero h1 em {
+    color: var(--green);
+
+    font-style: italic;
+}
+
+.hero-text {
+    max-width: 500px;
+
+    margin-top: 38px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 34px;
+}
+
+.btn-primary {
+    height: 52px;
+
+    padding: 0 23px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background: var(--navy);
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--green);
+
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    height: 52px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: 1px solid var(--navy);
+
+    color: var(--navy);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--navy);
+
+    color: white;
+}
+
+.hero-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-top: 42px;
+}
+
+.hero-note-number {
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+    color: var(--navy);
+}
+
+.hero-note-text {
+    padding-left: 17px;
+
+    border-left: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+    letter-spacing: .14em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.hero-visual {
+    min-height: 610px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.hero-circle {
+    width: 510px;
+    height: 510px;
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #ebe9e0;
+}
+
+.hero-circle::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 35px;
+
+    border: 1px solid rgba(45,122,107,.2);
+
+    border-radius: 50%;
+}
+
+.hero-logo {
+    position: relative;
+
+    z-index: 3;
+
+    width: 315px;
+    height: 315px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 35px 80px
+        rgba(14,32,52,.14);
+}
+
+.hero-logo img {
+    width: 75%;
+}
+
+.hero-stamp {
+    position: absolute;
+
+    right: -10px;
+    top: 70px;
+
+    width: 115px;
+    height: 115px;
+
+    border: 1px solid var(--green);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--green);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    transform: rotate(10deg);
+}
+
+.hero-stamp i {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 18px;
+}
+
+.hero-card {
+    position: absolute;
+
+    left: 10px;
+    bottom: 50px;
+
+    z-index: 4;
+
+    width: 210px;
+
+    padding: 19px;
+
+    background: var(--navy);
+
+    color: white;
+
+    box-shadow:
+        0 25px 45px
+        rgba(14,32,52,.18);
+}
+
+.hero-card small {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--green-light);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+.hero-card strong {
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee {
+    overflow: hidden;
+
+    background: var(--green);
+
+    color: white;
+
+    padding: 15px 0;
+
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: inline-flex;
+
+    gap: 30px;
+
+    animation: marquee 28s linear infinite;
+}
+
+.marquee span {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+}
+
+.marquee i {
+    color: var(--green-light);
+}
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    to {
+        transform: translateX(-50%);
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+}
 
-    body {
-      font-family: "DM Sans", sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
+/* =========================================================
+   INTRO
+========================================================= */
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+.intro {
+    background: white;
 
-    button {
-      font-family: inherit;
-    }
+    padding: 125px 0;
+}
 
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
-    }
+.intro-grid {
+    display: grid;
 
-    /* =====================================================
-       HEADER
-    ===================================================== */
+    grid-template-columns:
+        .65fr 1.35fr;
 
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(232,236,239,.8);
+    gap: 100px;
+}
+
+.intro-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 52px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.intro-title em {
+    color: var(--green);
+}
+
+.intro-text {
+    max-width: 750px;
+
+    padding-top: 15px;
+}
+
+.intro-lead {
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    line-height: 1.45;
+
+    color: var(--navy);
+
+    margin-bottom: 28px;
+}
+
+.intro-text p {
+    color: var(--text);
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    margin-bottom: 18px;
+}
+
+.signature {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 10px;
+
+    color: var(--navy);
+
+    font-family: var(--serif);
+
+    font-size: 20px;
+
+    font-style: italic;
+}
+
+.signature::before {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    background: var(--green);
+}
+
+
+/* =========================================================
+   NÚMEROS
+========================================================= */
+
+.numbers {
+    padding: 0 0 120px;
+
+    background: white;
+}
+
+.numbers-grid {
+    border-top: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.number-item {
+    padding: 35px 25px;
+
+    border-right: 1px solid var(--line);
+}
+
+.number-item:last-child {
+    border-right: 0;
+}
+
+.number {
+    font-family: var(--serif);
+
+    font-size: 46px;
+
+    color: var(--navy);
+}
+
+.number-label {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SERVIÇOS
+========================================================= */
+
+.services {
+    background: var(--cream);
+
+    padding: 135px 0;
+}
+
+.services-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 65px;
+}
+
+.services-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 57px;
+
+    line-height: .98;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.services-title em {
+    color: var(--green);
+}
+
+.services-intro {
+    max-width: 390px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
+}
+
+.service {
+    min-height: 290px;
+
+    padding: 32px;
+
+    background: var(--cream);
+
+    transition: .3s ease;
+
+    position: relative;
+}
+
+.service:hover {
+    background: white;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(14,32,52,.08);
+
+    z-index: 2;
+}
+
+.service-number {
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+
+    margin-top: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(45,122,107,.3);
+
+    border-radius: 50%;
+
+    color: var(--green);
+
+    font-size: 16px;
+}
+
+.service h3 {
+    margin-top: 22px;
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    font-weight: 400;
+
+    color: var(--navy);
+}
+
+.service p {
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.service-arrow {
+    position: absolute;
+
+    right: 28px;
+    bottom: 27px;
+
+    color: var(--green);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   PSICOPEDAGOGIA
+========================================================= */
+
+.psychopedagogy {
+    background: var(--navy);
+
+    color: white;
+
+    padding: 135px 0;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.psychopedagogy::before {
+    content: "APRENDER";
+
+    position: absolute;
+
+    right: -100px;
+    bottom: -70px;
+
+    font-family: var(--serif);
+
+    font-size: 190px;
+
+    color: rgba(255,255,255,.025);
+
+    white-space: nowrap;
+}
+
+.psych-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.psych-label {
+    color: var(--green-light);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .20em;
+
+    text-transform: uppercase;
+}
+
+.psych-title {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: 58px;
+
+    line-height: .98;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.psych-title em {
+    color: var(--green-light);
+}
+
+.psych-text p {
+    margin-bottom: 20px;
+
+    color: rgba(255,255,255,.67);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.psych-points {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.psych-point {
+    padding: 17px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.psych-point i {
+    margin-right: 8px;
+
+    color: var(--green-light);
+}
+
+
+/* =========================================================
+   PÚBLICO
+========================================================= */
+
+.audience {
+    background: white;
+
+    padding: 130px 0;
+}
+
+.audience-header {
+    max-width: 750px;
+
+    margin-bottom: 60px;
+}
+
+.audience-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 57px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.audience-title em {
+    color: var(--green);
+}
+
+.audience-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.audience-card {
+    padding: 30px 25px;
+
+    background: #f6f6f2;
+
+    border: 1px solid #e8e8e2;
+
+    transition: .3s ease;
+}
+
+.audience-card:hover {
+    border-color: var(--green);
+
+    background: white;
+
+    transform: translateY(-5px);
+}
+
+.audience-card i {
+    color: var(--green);
+
+    font-size: 19px;
+}
+
+.audience-card h3 {
+    margin-top: 30px;
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+    font-weight: 400;
+}
+
+.audience-card p {
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.process {
+    background: var(--cream);
+
+    padding: 130px 0;
+}
+
+.process-head {
+    display: grid;
+
+    grid-template-columns:
+        .7fr 1.3fr;
+
+    gap: 80px;
+
+    margin-bottom: 75px;
+}
+
+.process-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 56px;
+
+    line-height: .98;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.process-title em {
+    color: var(--green);
+}
+
+.process-intro {
+    max-width: 650px;
+
+    padding-top: 25px;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 0;
+}
+
+.step {
+    position: relative;
+
+    padding: 30px;
+
+    border-top: 1px solid var(--navy);
+
+    border-right: 1px solid var(--line);
+}
+
+.step:last-child {
+    border-right: 0;
+}
+
+.step-number {
+    font-family: var(--serif);
+
+    color: var(--green);
+
+    font-size: 30px;
+}
+
+.step h3 {
+    margin-top: 30px;
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    font-weight: 400;
+}
+
+.step p {
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   DIFERENCIAIS
+========================================================= */
+
+.differentials {
+    background: white;
+
+    padding: 130px 0;
+}
+
+.diff-grid {
+    display: grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.diff-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 58px;
+
+    line-height: .97;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.diff-title em {
+    color: var(--green);
+}
+
+.diff-description {
+    margin-top: 25px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.diff-list {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 1px;
+
+    background: var(--line);
+
+    border: 1px solid var(--line);
+}
+
+.diff-item {
+    padding: 27px;
+
+    background: white;
+}
+
+.diff-item i {
+    color: var(--green);
+
+    font-size: 15px;
+}
+
+.diff-item h3 {
+    margin-top: 17px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.diff-item p {
+    margin-top: 7px;
+
+    color: var(--text);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   HISTÓRIA
+========================================================= */
+
+.story {
+    background: #f1f0ea;
+
+    padding: 135px 0;
+}
+
+.story-grid {
+    display: grid;
+
+    grid-template-columns:
+        .75fr 1.25fr;
+
+    gap: 100px;
+}
+
+.story-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 55px;
+
+    line-height: .98;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.story-title em {
+    color: var(--green);
+}
+
+.story-intro {
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    line-height: 1.5;
+
+    color: var(--navy);
+}
+
+.story-text {
+    margin-top: 25px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+.dedication {
+    margin-top: 45px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-left: 3px solid var(--green);
+}
+
+.dedication-title {
+    margin-bottom: 17px;
+
+    color: var(--navy);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+.dedication-title i {
+    margin-right: 7px;
+
+    color: var(--green);
+}
+
+.names {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.name {
+    padding: 7px 12px;
+
+    background: #f5f5f2;
+
+    border: 1px solid #e2e4df;
+
+    border-radius: 50px;
+
+    color: #68737a;
+
+    font-size: 9px;
+}
+
+.story-quote {
+    margin-top: 18px;
+
+    padding: 30px;
+
+    background: var(--navy);
+
+    color: white;
+}
+
+.story-quote i {
+    color: var(--green-light);
+}
+
+.story-quote p {
+    margin-top: 12px;
+
+    font-family: var(--serif);
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DEPOIMENTOS
+========================================================= */
+
+.testimonials {
+    background: white;
+
+    padding: 135px 0;
+}
+
+.testimonials-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 60px;
+}
+
+.testimonials-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.testimonials-title em {
+    color: var(--green);
+}
+
+.testimonials-note {
+    max-width: 320px;
+
+    color: var(--text);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+.testimonials-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.testimonial {
+    padding: 30px;
+
+    background: #f6f6f2;
+
+    position: relative;
+}
+
+.testimonial::before {
+    content: "“";
+
+    position: absolute;
+
+    right: 25px;
+    top: 10px;
+
+    font-family: var(--serif);
+
+    color: var(--green-light);
+
+    font-size: 70px;
+
+    line-height: 1;
+}
+
+.testimonial p {
+    min-height: 130px;
+
+    font-family: var(--serif);
+
+    color: var(--navy);
+
+    font-size: 17px;
+
+    line-height: 1.55;
+}
+
+.testimonial-author {
+    margin-top: 25px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq {
+    background: var(--cream);
+
+    padding: 130px 0;
+}
+
+.faq-grid {
+    display: grid;
+
+    grid-template-columns:
+        .7fr 1.3fr;
+
+    gap: 100px;
+}
+
+.faq-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 57px;
+
+    line-height: .98;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.faq-title em {
+    color: var(--green);
+}
+
+.faq-description {
+    margin-top: 25px;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.faq-list {
+    border-top: 1px solid var(--line);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--line);
+}
+
+.faq-question {
+    width: 100%;
+
+    padding: 22px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: none;
+
+    border: 0;
+
+    color: var(--navy);
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.faq-question i {
+    color: var(--green);
+
+    transition: .3s ease;
+}
+
+.faq-item.active
+.faq-question i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: .35s ease;
+}
+
+.faq-answer p {
+    padding: 0 30px 22px 0;
+
+    color: var(--text);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BLOG
+========================================================= */
+
+.blog {
+    background: white;
+
+    padding: 130px 0;
+}
+
+.blog-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 60px;
+}
+
+.blog-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 55px;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.blog-title em {
+    color: var(--green);
+}
+
+.blog-link {
+    color: var(--green);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+    text-transform: uppercase;
+}
+
+.blog-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.article {
+    cursor: pointer;
+}
+
+.article-image {
+    height: 300px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #e9e8e1;
+}
+
+.article-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .6s ease;
+}
+
+.article:hover img {
+    transform: scale(1.05);
+}
+
+.article-tag {
+    position: absolute;
+
+    left: 15px;
+    top: 15px;
+
+    padding: 7px 10px;
+
+    background: white;
+
+    color: var(--green);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+.article-info {
+    padding-top: 20px;
+}
+
+.article-date {
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: .1em;
+
+    text-transform: uppercase;
+}
+
+.article h3 {
+    margin-top: 9px;
+
+    font-family: var(--serif);
+
+    font-size: 24px;
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: var(--navy);
+}
+
+.article-read {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: var(--green);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    background: var(--green);
+
+    color: white;
+
+    padding: 125px 0;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.cta::before {
+    content: "LEGADO";
+
+    position: absolute;
+
+    right: -60px;
+    bottom: -80px;
+
+    font-family: var(--serif);
+
+    font-size: 200px;
+
+    color: rgba(255,255,255,.04);
+
+    white-space: nowrap;
+}
+
+.cta-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr .8fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.cta-label {
+    color: #c7e2dc;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+
+    text-transform: uppercase;
+}
+
+.cta-title {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 67px;
+
+    line-height: .94;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+}
+
+.cta-title em {
+    color: #d5e9e4;
+}
+
+.cta-text {
+    max-width: 520px;
+
+    margin-top: 25px;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 32px;
+
+    height: 53px;
+
+    padding: 0 23px;
+
+    background: white;
+
+    color: var(--navy);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.cta-button:hover {
+    background: var(--navy);
+
+    color: white;
+}
+
+.contact-card {
+    padding: 32px;
+
+    background: var(--navy);
+
+    box-shadow:
+        0 25px 60px
+        rgba(8,21,34,.2);
+}
+
+.contact-card-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 50%;
+
+    color: var(--green-light);
+}
+
+.contact-card h3 {
+    margin-top: 24px;
+
+    font-family: var(--serif);
+
+    font-size: 27px;
+
+    font-weight: 400;
+}
+
+.contact-card p {
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.58);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+.contact-details {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.contact-details span {
+    display: block;
+
+    margin-top: 9px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 10px;
+}
+
+.contact-details i {
+    width: 20px;
+
+    color: var(--green-light);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: var(--navy-dark);
+
+    color: white;
+
+    padding: 75px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr .7fr .7fr .9fr;
+
+    gap: 60px;
+
+    padding-bottom: 60px;
+
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.footer-logo {
+    width: 115px;
+
+    filter:
+        brightness(0)
+        invert(1);
+
+    opacity: .9;
+}
+
+.footer-brand-text {
+    max-width: 270px;
+
+    margin-top: 18px;
+
+    color: rgba(255,255,255,.45);
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
+
+.footer h4 {
+    margin-bottom: 18px;
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    text-transform: uppercase;
+}
+
+.footer-links a {
+    display: block;
+
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.48);
+
+    font-size: 10px;
+
+    transition: .2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-contact span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: rgba(255,255,255,.48);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+.footer-contact i {
+    width: 20px;
+
+    color: var(--green-light);
+}
+
+.footer-social {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+.footer-social a {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 50%;
+
+    color: rgba(255,255,255,.6);
+
+    font-size: 10px;
+
+    transition: .2s ease;
+}
+
+.footer-social a:hover {
+    background: var(--green);
+
+    border-color: var(--green);
+
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: rgba(255,255,255,.28);
+
+    font-size: 8px;
+
+    letter-spacing: .06em;
+}
+
+
+/* =========================================================
+   VOLTAR AO TOPO
+========================================================= */
+
+.back-top {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 43px;
+    height: 43px;
+
+    z-index: 500;
+
+    border: 0;
+
+    background: var(--navy);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: .3s ease;
+}
+
+.back-top.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.back-top:hover {
+    background: var(--green);
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .container,
+    .header-inner {
+        width: calc(100% - 50px);
     }
 
     .nav {
-      height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+        gap: 20px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      line-height: 1.05;
-    }
-
-    .logo-text strong {
-      display: block;
-      color: var(--navy);
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-    }
-
-    .logo-text span {
-      display: block;
-      color: var(--green);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .menu a {
-      color: #4f5b6d;
-      font-size: 14px;
-      font-weight: 500;
-      transition: .25s;
-    }
-
-    .menu a:hover {
-      color: var(--green);
-    }
-
-    .nav-button {
-      background: var(--navy);
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 100px;
-    }
-
-    .nav-button:hover {
-      background: var(--green);
-    }
-
-    .mobile-menu {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border: 0;
-      background: var(--green-light);
-      color: var(--green);
-      border-radius: 50%;
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-      padding: 155px 0 100px;
-      background:
-        radial-gradient(circle at 90% 10%, rgba(45,122,107,.09), transparent 30%),
-        linear-gradient(180deg, #fff 0%, #fafcfb 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(45,122,107,.08);
-      border-radius: 50%;
-      right: -250px;
-      top: 80px;
+    .nav a {
+        font-size: 8px;
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: center;
-      gap: 80px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--green);
+        gap: 30px;
     }
 
     .hero h1 {
-      font-family: "Playfair Display", serif;
-      color: var(--navy);
-      font-size: clamp(48px, 6vw, 76px);
-      line-height: 1.05;
-      font-weight: 600;
-      letter-spacing: -2px;
+        font-size: 72px;
     }
 
-    .hero h1 span {
-      color: var(--green);
-      font-style: italic;
+    .hero-circle {
+        width: 420px;
+        height: 420px;
     }
 
-    .hero-description {
-      margin-top: 25px;
-      max-width: 590px;
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-top: 34px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 23px;
-      border-radius: 100px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: .25s;
-      cursor: pointer;
-      border: 0;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: white;
-      box-shadow: 0 10px 25px rgba(45,122,107,.2);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #24695d;
-    }
-
-    .btn-outline {
-      background: white;
-      color: var(--navy);
-      border: 1px solid var(--border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--green);
-      color: var(--green);
-    }
-
-    .hero-note {
-      margin-top: 30px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #8993a2;
-      font-size: 12px;
-    }
-
-    .hero-note i {
-      color: var(--green);
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-image {
-      background: var(--green-light);
-      border-radius: 45% 45% 20px 20px;
-      padding: 35px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-image::after {
-      content: "";
-      position: absolute;
-      width: 230px;
-      height: 230px;
-      background: rgba(255,255,255,.4);
-      border-radius: 50%;
-      top: -90px;
-      right: -80px;
-    }
-
-    .hero-image img {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-height: 480px;
-      object-fit: contain;
-    }
-
-    .floating-card {
-      position: absolute;
-      z-index: 5;
-      background: white;
-      border-radius: 16px;
-      padding: 17px 20px;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .floating-card i {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      background: var(--green-light);
-      color: var(--green);
-      border-radius: 50%;
-    }
-
-    .floating-card strong {
-      display: block;
-      color: var(--navy);
-      font-size: 13px;
-    }
-
-    .floating-card span {
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    .card-1 {
-      left: -35px;
-      bottom: 45px;
-    }
-
-    .card-2 {
-      right: -25px;
-      top: 55px;
-    }
-
-    /* =====================================================
-       INTRO
-    ===================================================== */
-
-    .intro {
-      padding: 100px 0;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 90px;
-      align-items: start;
-    }
-
-    .section-label {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      color: var(--navy);
-      font-size: clamp(36px, 4vw, 54px);
-      line-height: 1.15;
-      margin-top: 13px;
-    }
-
-    .section-title span {
-      color: var(--green);
-    }
-
-    .intro-text p {
-      color: var(--muted);
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-
-    .signature {
-      margin-top: 30px;
-      color: var(--navy);
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-size: 24px;
-    }
-
-    /* =====================================================
-       SERVICES
-    ===================================================== */
-
-    .services {
-      background: var(--cream);
-      padding: 100px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 55px;
-    }
-
-    .section-header p {
-      color: var(--muted);
-      margin-top: 15px;
+    .hero-logo {
+        width: 270px;
+        height: 270px;
     }
 
     .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service {
-      background: white;
-      border: 1px solid var(--border);
-      padding: 32px;
-      border-radius: var(--radius);
-      transition: .3s;
-    }
-
-    .service:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .service-icon {
-      width: 55px;
-      height: 55px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green-light);
-      color: var(--green);
-      font-size: 20px;
-      margin-bottom: 24px;
-    }
-
-    .service h3 {
-      font-family: "Playfair Display", serif;
-      color: var(--navy);
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .service p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* =====================================================
-       PROCESSO
-    ===================================================== */
-
-    .process {
-      padding: 105px 0;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .process-image {
-      background: var(--navy);
-      border-radius: 30px;
-      padding: 50px;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .process-image::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-      top: -100px;
-      right: -80px;
-    }
-
-    .process-image img {
-      width: 75%;
-      margin: auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .process-list {
-      margin-top: 35px;
-    }
-
-    .process-item {
-      display: grid;
-      grid-template-columns: 45px 1fr;
-      gap: 18px;
-      padding-bottom: 27px;
-      margin-bottom: 27px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .process-number {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--green-light);
-      color: var(--green);
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .process-item h4 {
-      color: var(--navy);
-      margin-bottom: 5px;
-    }
-
-    .process-item p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       ATENDIMENTO
-    ===================================================== */
-
-    .attendance {
-      background: var(--navy);
-      color: white;
-      padding: 100px 0;
-    }
-
-    .attendance-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .attendance .section-label {
-      color: #8bc6ba;
-    }
-
-    .attendance .section-title {
-      color: white;
-    }
-
-    .attendance p {
-      color: rgba(255,255,255,.67);
-      margin-top: 20px;
-    }
-
-    .attendance-cards {
-      display: grid;
-      gap: 15px;
-    }
-
-    .attendance-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      padding: 25px;
-      border-radius: 18px;
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-
-    .attendance-card i {
-      color: #8bc6ba;
-      font-size: 22px;
-      margin-top: 3px;
-    }
-
-    .attendance-card h4 {
-      font-size: 15px;
-      margin-bottom: 4px;
-    }
-
-    .attendance-card span {
-      color: rgba(255,255,255,.58);
-      font-size: 13px;
-    }
-
-    /* =====================================================
-       PUBLICO
-    ===================================================== */
-
-    .audience {
-      padding: 100px 0;
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 45px;
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .audience-card {
-      min-height: 210px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      transition: .3s;
+    .steps {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
-    .audience-card:hover {
-      border-color: var(--green);
-      transform: translateY(-4px);
+    .step:nth-child(2) {
+        border-right: 0;
     }
 
-    .audience-card i {
-      font-size: 24px;
-      color: var(--green);
-      margin-bottom: auto;
-    }
-
-    .audience-card h3 {
-      color: var(--navy);
-      font-family: "Playfair Display", serif;
-      font-size: 21px;
-    }
-
-    .audience-card p {
-      color: var(--muted);
-      font-size: 12px;
-      margin-top: 5px;
-    }
-
-    /* =====================================================
-       HISTORIA
-    ===================================================== */
-
-    .history {
-      background: var(--cream);
-      padding: 105px 0;
-    }
-
-    .history-box {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .history-box p {
-      color: var(--muted);
-      font-size: 17px;
-      margin-top: 20px;
-    }
-
-    .quote {
-      margin-top: 45px;
-      background: white;
-      border-radius: 18px;
-      padding: 30px;
-      border-left: 4px solid var(--green);
-      text-align: left;
-    }
-
-    .quote i {
-      color: var(--green);
-      margin-bottom: 10px;
-    }
-
-    .quote p {
-      margin: 0;
-      color: var(--navy);
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    .names {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 30px;
-    }
-
-    .name {
-      padding: 7px 15px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      font-size: 12px;
-      color: #647084;
-    }
-
-    /* =====================================================
-       BLOG
-    ===================================================== */
-
-    .blog {
-      padding: 105px 0;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 50px;
-    }
-
-    .article {
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      background: white;
-      transition: .3s;
-    }
-
-    .article:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-
-    .article-image {
-      height: 220px;
-      overflow: hidden;
-    }
-
-    .article-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .5s;
-    }
-
-    .article:hover img {
-      transform: scale(1.05);
-    }
-
-    .article-content {
-      padding: 23px;
-    }
-
-    .article-tag {
-      color: var(--green);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-    }
-
-    .article h3 {
-      font-family: "Playfair Display", serif;
-      color: var(--navy);
-      font-size: 21px;
-      line-height: 1.25;
-      margin-top: 9px;
-    }
-
-    .article-date {
-      color: #9aa2ad;
-      font-size: 11px;
-      margin-top: 16px;
-    }
-
-    /* =====================================================
-       FAQ
-    ===================================================== */
-
-    .faq {
-      background: var(--cream);
-      padding: 100px 0;
-    }
-
-    .faq-list {
-      max-width: 800px;
-      margin: 50px auto 0;
-    }
-
-    .faq-item {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      margin-bottom: 10px;
-      overflow: hidden;
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: 0;
-      padding: 20px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--navy);
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .faq-question i {
-      color: var(--green);
-      transition: .25s;
-    }
-
-    .faq-answer {
-      display: none;
-      padding: 0 22px 20px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .faq-item.active .faq-answer {
-      display: block;
-    }
-
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
-    }
-
-    /* =====================================================
-       CTA
-    ===================================================== */
-
-    .cta {
-      padding: 90px 0;
-    }
-
-    .cta-box {
-      background: var(--green);
-      border-radius: 30px;
-      padding: 60px;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box::after {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 50%;
-      right: -120px;
-      top: -130px;
-    }
-
-    .cta-box h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 40px;
-      line-height: 1.15;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-box p {
-      color: rgba(255,255,255,.72);
-      margin-top: 10px;
-      max-width: 620px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-box .btn {
-      background: white;
-      color: var(--green);
-      position: relative;
-      z-index: 2;
-      white-space: nowrap;
-    }
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    footer {
-      background: var(--navy);
-      color: white;
-      padding: 70px 0 25px;
+    .step:nth-child(3),
+    .step:nth-child(4) {
+        border-top: 1px solid var(--line);
     }
 
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 60px;
-      padding-bottom: 50px;
+        grid-template-columns:
+            1fr 1fr;
     }
 
-    .footer-logo {
-      width: 85px;
-      margin-bottom: 18px;
-      filter: brightness(0) invert(1);
-      opacity: .9;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .container,
+    .header-inner {
+        width: calc(100% - 32px);
     }
 
-    .footer-brand p {
-      color: rgba(255,255,255,.55);
-      font-size: 13px;
-      max-width: 330px;
+    .section {
+        padding: 90px 0;
     }
 
-    footer h4 {
-      font-size: 13px;
-      margin-bottom: 18px;
+    .header {
+        height: 78px;
     }
 
-    footer a {
-      display: block;
-      color: rgba(255,255,255,.55);
-      font-size: 12px;
-      margin-bottom: 10px;
-      transition: .2s;
+    .header.scrolled {
+        height: 70px;
     }
 
-    footer a:hover {
-      color: white;
+    .nav,
+    .header-button {
+        display: none;
     }
 
-    .social {
-      display: flex;
-      gap: 8px;
-      margin-top: 22px;
+    .menu-button {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        position: relative;
+
+        z-index: 1001;
     }
 
-    .social a {
-      width: 35px;
-      height: 35px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      margin: 0;
+    .hero {
+        padding-top: 78px;
+    }
+
+    .hero-grid {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding:
+            55px 0
+            70px;
+    }
+
+    .hero-copy {
+        padding: 0;
+
+        text-align: center;
+    }
+
+    .hero-eyebrow {
+        justify-content: center;
+
+        font-size: 8px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+
+        line-height: .9;
+    }
+
+    .hero-text {
+        margin:
+            28px auto 0;
+
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+    }
+
+    .hero-note {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        min-height: 370px;
+
+        margin-top: 10px;
+    }
+
+    .hero-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-circle::after {
+        inset: 23px;
+    }
+
+    .hero-logo {
+        width: 205px;
+        height: 205px;
+    }
+
+    .hero-stamp {
+        width: 80px;
+        height: 80px;
+
+        right: 4px;
+
+        top: 30px;
+
+        font-size: 6px;
+    }
+
+    .hero-stamp i {
+        font-size: 13px;
+    }
+
+    .hero-card {
+        left: 0;
+
+        bottom: 20px;
+
+        width: 175px;
+    }
+
+    .hero-card strong {
+        font-size: 14px;
+    }
+
+    .intro-grid,
+    .psych-grid,
+    .diff-grid,
+    .story-grid,
+    .faq-grid,
+    .cta-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .intro-title,
+    .services-title,
+    .psych-title,
+    .audience-title,
+    .process-title,
+    .diff-title,
+    .story-title,
+    .testimonials-title,
+    .faq-title,
+    .blog-title {
+        font-size: 44px;
+    }
+
+    .intro-lead {
+        font-size: 21px;
+    }
+
+    .numbers-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .number-item:nth-child(2) {
+        border-right: 0;
+    }
+
+    .number-item:nth-child(3),
+    .number-item:nth-child(4) {
+        border-top: 1px solid var(--line);
+    }
+
+    .services-head,
+    .testimonials-header,
+    .blog-head {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service {
+        min-height: 260px;
+    }
+
+    .psych-points {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-head {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step,
+    .step:nth-child(2),
+    .step:nth-child(3),
+    .step:nth-child(4) {
+        border-right: 0;
+
+        border-top: 1px solid var(--line);
+    }
+
+    .diff-list {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-image {
+        height: 260px;
+    }
+
+    .cta-title {
+        font-size: 51px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 20px;
-      color: rgba(255,255,255,.35);
-      font-size: 11px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* =====================================================
-       WHATSAPP
-    ===================================================== */
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25d366;
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 26px;
-      box-shadow: 0 10px 30px rgba(37,211,102,.3);
-      z-index: 999;
-      transition: .25s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.08);
-    }
-
-    /* =====================================================
-       RESPONSIVO
-    ===================================================== */
-
-    @media(max-width: 900px) {
-
-      .menu {
-        display: none;
-        position: absolute;
-        left: 20px;
-        right: 20px;
-        top: 75px;
-        background: white;
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 20px;
         flex-direction: column;
-        align-items: stretch;
-        box-shadow: var(--shadow);
-      }
-
-      .menu.active {
-        display: flex;
-      }
-
-      .mobile-menu {
-        display: block;
-      }
-
-      .hero-grid,
-      .intro-grid,
-      .process-grid,
-      .attendance-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        gap: 55px;
-      }
-
-      .hero-visual {
-        max-width: 620px;
-        margin: auto;
-      }
-
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .audience-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .cta-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
     }
 
-    @media(max-width: 600px) {
+}
 
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
 
-      .nav {
-        height: 70px;
-      }
+/* =========================================================
+   MOBILE PEQUENO
+========================================================= */
 
-      .logo img {
-        width: 48px;
-        height: 48px;
-      }
+@media (max-width: 400px) {
 
-      .logo-text strong {
-        font-size: 17px;
-      }
-
-      .hero {
-        padding: 120px 0 70px;
-      }
-
-      .hero h1 {
-        font-size: 43px;
-        letter-spacing: -1px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-      }
-
-      .hero-image {
-        padding: 20px;
-      }
-
-      .floating-card {
-        display: none;
-      }
-
-      .intro,
-      .services,
-      .process,
-      .attendance,
-      .audience,
-      .history,
-      .blog,
-      .faq {
-        padding: 70px 0;
-      }
-
-      .services-grid,
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .audience-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .process-image {
-        padding: 30px;
-      }
-
-      .cta {
-        padding: 60px 0;
-      }
-
-      .cta-box {
-        padding: 35px 25px;
-      }
-
-      .cta-box h2 {
-        font-size: 31px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 35px 25px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-      }
+    .hero h1 {
+        font-size: 50px;
     }
-  </style>
+
+    .hero-circle {
+        width: 270px;
+        height: 270px;
+    }
+
+    .hero-logo {
+        width: 185px;
+        height: 185px;
+    }
+
+    .hero-card {
+        width: 155px;
+    }
+
+    .hero-card strong {
+        font-size: 12px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<!-- =====================================================
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+
+<div
+    class="mobile-nav"
+    id="mobileNav"
+>
+
+    <span class="mobile-small">
+        Navegação
+    </span>
+
+    <a href="#inicio">Início</a>
+
+    <a href="#sobre">A clínica</a>
+
+    <a href="#servicos">Atendimentos</a>
+
+    <a href="#processo">Como funciona</a>
+
+    <a href="#historia">Nossa história</a>
+
+    <a href="#faq">Dúvidas</a>
+
+    <a href="#contato">Contato</a>
+
+</div>
+
+
+
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
-<header>
-  <div class="container">
-    <nav class="nav">
+<header
+    class="header"
+    id="header"
+>
 
-      <a href="#inicio" class="logo">
-        <img
-          src="https://i.imgur.com/YIQDI4s.png"
-          alt="Legado que Ensina"
-        />
+    <div class="header-inner">
 
-        <div class="logo-text">
-          <strong>Legado que Ensina</strong>
-          <span>Psicopedagogia</span>
-        </div>
-      </a>
-
-      <div class="menu" id="menu">
-
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Atendimentos</a>
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#historia">Nossa história</a>
-        <a href="#artigos">Conteúdos</a>
 
         <a
-          href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedagógico."
-          target="_blank"
-          class="nav-button"
+            href="#inicio"
+            class="logo"
         >
-          Fale conosco
+
+            <img
+                src="https://i.imgur.com/YIQDI4s.png"
+                alt="Legado que Ensina"
+            >
+
         </a>
 
-      </div>
 
-      <button
-        class="mobile-menu"
-        onclick="toggleMenu()"
-        aria-label="Abrir menu"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+        <nav class="nav">
 
-    </nav>
-  </div>
+            <a href="#sobre">
+                A clínica
+            </a>
+
+            <a href="#servicos">
+                Atendimentos
+            </a>
+
+            <a href="#processo">
+                Como funciona
+            </a>
+
+            <a href="#historia">
+                História
+            </a>
+
+            <a href="#faq">
+                Dúvidas
+            </a>
+
+        </nav>
+
+
+        <a
+            href="#contato"
+            class="header-button"
+        >
+
+            Agendar atendimento
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Abrir menu"
+        >
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+
+    </div>
+
 </header>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      HERO
-===================================================== -->
+========================================================= -->
 
-<section class="hero" id="inicio">
+<main id="inicio">
 
-  <div class="container">
 
-    <div class="hero-grid">
+<section class="hero">
 
-      <div>
 
-        <span class="eyebrow">
-          Psicopedagogia & desenvolvimento
-        </span>
+    <div class="container hero-grid">
 
-        <h1>
-          Cada pessoa tem um jeito
-          <span>único</span> de aprender.
-        </h1>
 
-        <p class="hero-description">
-          No Legado que Ensina, olhamos para a aprendizagem
-          de forma individual, acolhedora e cuidadosa.
-          Porque antes de ensinar, é preciso compreender.
-        </p>
+        <div class="hero-copy reveal">
 
-        <div class="hero-actions">
 
-          <a
-            href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20conhecer%20o%20trabalho%20do%20Legado%20que%20Ensina."
-            target="_blank"
-            class="btn btn-primary"
-          >
-            <i class="fab fa-whatsapp"></i>
-            Conhecer nosso trabalho
-          </a>
+            <div class="hero-eyebrow">
 
-          <a href="#sobre" class="btn btn-outline">
-            Nossa história
-          </a>
+                Psicopedagogia com propósito
+
+            </div>
+
+
+            <h1>
+
+                Cada pessoa
+
+                <br>
+
+                aprende de um
+
+                <em>jeito único.</em>
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                O Legado que Ensina é uma clínica de
+                psicopedagogia dedicada a compreender o
+                processo de aprendizagem de forma individual,
+                acolhedora e humana.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="#contato"
+                    class="btn-primary"
+                >
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    Agendar atendimento
+
+                </a>
+
+
+                <a
+                    href="#sobre"
+                    class="btn-outline"
+                >
+
+                    Conheça a clínica
+
+                </a>
+
+
+            </div>
+
+
+            <div class="hero-note">
+
+
+                <span class="hero-note-number">
+
+                    01
+
+                </span>
+
+
+                <span class="hero-note-text">
+
+                    Acolher para compreender.<br>
+
+                    Compreender para transformar.
+
+                </span>
+
+
+            </div>
+
 
         </div>
 
-        <div class="hero-note">
-          <i class="fas fa-heart"></i>
-          Atendimento individualizado, presencial e on-line
+
+
+        <div class="hero-visual reveal">
+
+
+            <div class="hero-circle"></div>
+
+
+            <div class="hero-logo">
+
+                <img
+                    src="https://i.imgur.com/YIQDI4s.png"
+                    alt="Legado que Ensina"
+                >
+
+            </div>
+
+
+            <div class="hero-stamp">
+
+                <div>
+
+                    <i class="fas fa-heart"></i>
+
+                    <br>
+
+                    Aprender<br>
+                    pode ser<br>
+                    significativo
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <small>
+                    Legado que Ensina
+                </small>
+
+                <strong>
+                    Um espaço para
+                    aprender com
+                    acolhimento.
+                </strong>
+
+            </div>
+
+
         </div>
 
-      </div>
-
-
-      <div class="hero-visual">
-
-        <div class="hero-image">
-
-          <img
-            src="https://i.imgur.com/YIQDI4s.png"
-            alt="Legado que Ensina"
-          />
-
-        </div>
-
-        <div class="floating-card card-1">
-          <i class="fas fa-heart"></i>
-
-          <div>
-            <strong>Escuta e acolhimento</strong>
-            <span>Antes de qualquer intervenção</span>
-          </div>
-        </div>
-
-        <div class="floating-card card-2">
-          <i class="fas fa-lightbulb"></i>
-
-          <div>
-            <strong>Aprendizagem significativa</strong>
-            <span>Cada pessoa no seu ritmo</span>
-          </div>
-        </div>
-
-      </div>
 
     </div>
 
-  </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+<div class="marquee">
+
+    <div class="marquee-track">
+
+        <span>
+            Psicopedagogia
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Acolhimento
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Aprendizagem
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Desenvolvimento
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Individualidade
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Psicopedagogia
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Acolhimento
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Aprendizagem
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Desenvolvimento
+        </span>
+
+        <i>✦</i>
+
+        <span>
+            Individualidade
+        </span>
+
+        <i>✦</i>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
      SOBRE
-===================================================== -->
+========================================================= -->
 
-<section class="intro" id="sobre">
+<section
+    class="intro"
+    id="sobre"
+>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="intro-grid">
 
-      <div>
+        <div class="intro-grid">
 
-        <span class="section-label">
-          Sobre o Legado
-        </span>
 
-        <h2 class="section-title">
-          Aprender também é
-          <span>se sentir capaz.</span>
-        </h2>
+            <div class="reveal">
 
-      </div>
+                <div class="section-label">
 
-      <div class="intro-text">
+                    A clínica
 
-        <p>
-          O Legado que Ensina nasceu da compreensão de que
-          cada história de aprendizagem é diferente.
-        </p>
+                </div>
 
-        <p>
-          Nem sempre uma dificuldade significa falta de
-          capacidade. Muitas vezes, é preciso mudar o olhar,
-          compreender o processo e encontrar novas formas
-          de construir conhecimento.
-        </p>
 
-        <p>
-          Nosso trabalho é oferecer um acompanhamento
-          psicopedagógico individualizado, respeitando
-          características, necessidades, potencialidades
-          e o tempo de cada pessoa.
-        </p>
+                <h2 class="intro-title">
 
-        <div class="signature">
-          Legado que Ensina
+                    Mais do que<br>
+
+                    <em>aprender.</em>
+
+                </h2>
+
+            </div>
+
+
+            <div
+                class="intro-text reveal"
+            >
+
+                <p class="intro-lead">
+
+                    Nós acreditamos que, antes de perguntar
+                    “por que não está aprendendo?”, é preciso
+                    perguntar “como essa pessoa aprende?”.
+
+                </p>
+
+
+                <p>
+
+                    A psicopedagogia nos permite olhar para
+                    o processo de aprendizagem de maneira
+                    ampla, considerando aspectos cognitivos,
+                    emocionais, sociais e pedagógicos.
+
+                </p>
+
+
+                <p>
+
+                    Na Legado que Ensina, cada atendimento é
+                    pensado a partir da história, das necessidades
+                    e das potencialidades de cada pessoa.
+
+                </p>
+
+
+                <p>
+
+                    Nosso objetivo não é apenas trabalhar uma
+                    dificuldade. É ajudar a construir caminhos
+                    para que aprender volte a fazer sentido.
+
+                </p>
+
+
+                <span class="signature">
+
+                    Legado que Ensina
+
+                </span>
+
+            </div>
+
+
         </div>
 
-      </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
+     NÚMEROS
+========================================================= -->
+
+<section class="numbers">
+
+    <div class="container">
+
+
+        <div class="numbers-grid">
+
+
+            <div class="number-item reveal">
+
+                <div class="number">
+                    01
+                </div>
+
+                <span class="number-label">
+                    Olhar individualizado
+                </span>
+
+            </div>
+
+
+            <div class="number-item reveal">
+
+                <div class="number">
+                    02
+                </div>
+
+                <span class="number-label">
+                    Escuta ativa
+                </span>
+
+            </div>
+
+
+            <div class="number-item reveal">
+
+                <div class="number">
+                    03
+                </div>
+
+                <span class="number-label">
+                    Estratégias personalizadas
+                </span>
+
+            </div>
+
+
+            <div class="number-item reveal">
+
+                <div class="number">
+                    04
+                </div>
+
+                <span class="number-label">
+                    Acompanhamento contínuo
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
      SERVIÇOS
-===================================================== -->
+========================================================= -->
 
-<section class="services" id="servicos">
+<section
+    class="services"
+    id="servicos"
+>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-header">
 
-      <span class="section-label">
-        O que fazemos
-      </span>
+        <div class="services-head reveal">
 
-      <h2 class="section-title">
-        Cuidado que olha para
-        <span>o todo.</span>
-      </h2>
 
-      <p>
-        O acompanhamento é construído de acordo com
-        as necessidades de cada pessoa e de sua realidade.
-      </p>
+            <div>
+
+                <div class="section-label">
+
+                    Nossos atendimentos
+
+                </div>
+
+
+                <h2 class="services-title">
+
+                    Cuidar do processo
+
+                    <br>
+
+                    é cuidar de <em>quem aprende.</em>
+
+                </h2>
+
+            </div>
+
+
+            <p class="services-intro">
+
+                Oferecemos diferentes formas de acompanhamento
+                psicopedagógico, sempre respeitando a singularidade
+                e o momento de cada pessoa.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <!-- 01 -->
+
+            <article class="service reveal">
+
+                <span class="service-number">
+                    01 / 06
+                </span>
+
+
+                <div class="service-icon">
+
+                    <i class="fas fa-user-graduate"></i>
+
+                </div>
+
+
+                <h3>
+                    Acompanhamento psicopedagógico
+                </h3>
+
+
+                <p>
+
+                    Acompanhamento individual para compreender
+                    dificuldades, desenvolver habilidades e
+                    fortalecer a relação com a aprendizagem.
+
+                </p>
+
+
+                <span class="service-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article class="service reveal">
+
+                <span class="service-number">
+                    02 / 06
+                </span>
+
+
+                <div class="service-icon">
+
+                    <i class="fas fa-clipboard-list"></i>
+
+                </div>
+
+
+                <h3>
+                    Avaliação psicopedagógica
+                </h3>
+
+
+                <p>
+
+                    Investigação cuidadosa do processo de
+                    aprendizagem, buscando compreender suas
+                    dificuldades e potencialidades.
+
+                </p>
+
+
+                <span class="service-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article class="service reveal">
+
+                <span class="service-number">
+                    03 / 06
+                </span>
+
+
+                <div class="service-icon">
+
+                    <i class="fas fa-puzzle-piece"></i>
+
+                </div>
+
+
+                <h3>
+                    Intervenção personalizada
+                </h3>
+
+
+                <p>
+
+                    Estratégias e atividades construídas de
+                    acordo com as necessidades identificadas
+                    durante o processo.
+
+                </p>
+
+
+                <span class="service-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article class="service reveal">
+
+                <span class="service-number">
+                    04 / 06
+                </span>
+
+
+                <div class="service-icon">
+
+                    <i class="fas fa-school"></i>
+
+                </div>
+
+
+                <h3>
+                    Orientação à escola
+                </h3>
+
+
+                <p>
+
+                    Comunicação e orientação para favorecer
+                    uma rede de apoio entre família,
+                    profissional e escola.
+
+                </p>
+
+
+                <span class="service-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <!-- 05 -->
+
+            <article class="service reveal">
+
+                <span class="service-number">
+                    05 / 06
+                </span>
+
+
+                <div class="service-icon">
+
+                    <i class="fas fa-people-roof"></i>
+
+                </div>
+
+
+                <h3>
+                    Orientação familiar
+                </h3>
+
+
+                <p>
+
+                    Conversas e direcionamentos para que a
+                    família possa compreender e apoiar o
+                    processo de aprendizagem.
+
+                </p>
+
+
+                <span class="service-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+            <!-- 06 -->
+
+            <article class="service reveal">
+
+                <span class="service-number">
+                    06 / 06
+                </span>
+
+
+                <div class="service-icon">
+
+                    <i class="fas fa-laptop"></i>
+
+                </div>
+
+
+                <h3>
+                    Atendimento online
+                </h3>
+
+
+                <p>
+
+                    Possibilidade de acompanhamento remoto,
+                    mantendo a proximidade e o cuidado
+                    durante todo o processo.
+
+                </p>
+
+
+                <span class="service-arrow">
+                    →
+                </span>
+
+            </article>
+
+
+        </div>
+
 
     </div>
-
-
-    <div class="services-grid">
-
-      <div class="service">
-
-        <div class="service-icon">
-          <i class="fas fa-user-graduate"></i>
-        </div>
-
-        <h3>Acompanhamento psicopedagógico</h3>
-
-        <p>
-          Um processo contínuo para compreender dificuldades,
-          fortalecer habilidades e desenvolver novas estratégias
-          de aprendizagem.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          <i class="fas fa-clipboard-check"></i>
-        </div>
-
-        <h3>Avaliação psicopedagógica</h3>
-
-        <p>
-          Investigação cuidadosa dos processos envolvidos na
-          aprendizagem, considerando aspectos cognitivos,
-          emocionais e pedagógicos.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          <i class="fas fa-puzzle-piece"></i>
-        </div>
-
-        <h3>Intervenção personalizada</h3>
-
-        <p>
-          Estratégias e atividades pensadas de maneira
-          individual para estimular habilidades e favorecer
-          avanços significativos.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          <i class="fas fa-school"></i>
-        </div>
-
-        <h3>Orientação à família e escola</h3>
-
-        <p>
-          Construção de caminhos em conjunto com familiares
-          e profissionais envolvidos no desenvolvimento.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          <i class="fas fa-child"></i>
-        </div>
-
-        <h3>Desenvolvimento infantil</h3>
-
-        <p>
-          Acompanhamento voltado às necessidades de crianças
-          em diferentes momentos de sua trajetória escolar.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-icon">
-          <i class="fas fa-laptop"></i>
-        </div>
-
-        <h3>Atendimento on-line</h3>
-
-        <p>
-          Acompanhamento remoto com a mesma atenção,
-          planejamento e individualização do atendimento.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
-     COMO FUNCIONA
-===================================================== -->
 
-<section class="process" id="como-funciona">
+<!-- =========================================================
+     O QUE É PSICOPEDAGOGIA
+========================================================= -->
 
-  <div class="container">
+<section class="psychopedagogy">
 
-    <div class="process-grid">
-
-      <div class="process-image">
-
-        <img
-          src="https://i.imgur.com/BvcvoHU.png"
-          alt="Aprendizagem e desenvolvimento"
-        />
-
-      </div>
+    <div class="container">
 
 
-      <div>
+        <div class="psych-grid">
 
-        <span class="section-label">
-          Como funciona
-        </span>
 
-        <h2 class="section-title">
-          Um processo construído
-          <span>junto.</span>
-        </h2>
+            <div class="reveal">
 
-        <div class="process-list">
+                <span class="psych-label">
 
-          <div class="process-item">
+                    Entender para transformar
 
-            <div class="process-number">01</div>
+                </span>
 
-            <div>
-              <h4>Primeira conversa</h4>
 
-              <p>
-                Conhecemos a história, as necessidades e
-                as principais dúvidas da família.
-              </p>
+                <h2 class="psych-title">
+
+                    Afinal,
+
+                    <br>
+
+                    o que é
+
+                    <em>psicopedagogia?</em>
+
+                </h2>
+
             </div>
 
-          </div>
+
+            <div
+                class="psych-text reveal"
+            >
+
+                <p>
+
+                    A psicopedagogia é uma área que busca
+                    compreender como cada pessoa se relaciona
+                    com o conhecimento e com o processo de
+                    aprendizagem.
+
+                </p>
 
 
-          <div class="process-item">
+                <p>
 
-            <div class="process-number">02</div>
+                    O trabalho psicopedagógico considera não
+                    apenas o desempenho escolar, mas também
+                    aspectos emocionais, cognitivos, familiares
+                    e sociais que podem influenciar esse processo.
 
-            <div>
-              <h4>Compreensão da demanda</h4>
+                </p>
 
-              <p>
-                Buscamos compreender como acontece o processo
-                de aprendizagem e quais aspectos precisam
-                de maior atenção.
-              </p>
+
+                <div class="psych-points">
+
+
+                    <div class="psych-point">
+
+                        <i class="fas fa-check"></i>
+
+                        Desenvolvimento cognitivo
+
+                    </div>
+
+
+                    <div class="psych-point">
+
+                        <i class="fas fa-check"></i>
+
+                        Estratégias de aprendizagem
+
+                    </div>
+
+
+                    <div class="psych-point">
+
+                        <i class="fas fa-check"></i>
+
+                        Autonomia
+
+                    </div>
+
+
+                    <div class="psych-point">
+
+                        <i class="fas fa-check"></i>
+
+                        Organização e rotina
+
+                    </div>
+
+
+                </div>
+
+
             </div>
 
-          </div>
-
-
-          <div class="process-item">
-
-            <div class="process-number">03</div>
-
-            <div>
-              <h4>Planejamento</h4>
-
-              <p>
-                Definimos objetivos e estratégias de acordo
-                com o perfil e as necessidades identificadas.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="process-item">
-
-            <div class="process-number">04</div>
-
-            <div>
-              <h4>Acompanhamento</h4>
-
-              <p>
-                O processo é acompanhado e ajustado conforme
-                os avanços e novas necessidades.
-              </p>
-            </div>
-
-          </div>
 
         </div>
 
-      </div>
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
-     ATENDIMENTO
-===================================================== -->
 
-<section class="attendance">
-
-  <div class="container">
-
-    <div class="attendance-grid">
-
-      <div>
-
-        <span class="section-label">
-          Onde acontecem os atendimentos
-        </span>
-
-        <h2 class="section-title">
-          Flexibilidade para
-          <span>cuidar.</span>
-        </h2>
-
-        <p>
-          Os atendimentos são realizados de maneira
-          presencial em espaços profissionais parceiros,
-          escolhidos de acordo com a necessidade do
-          acompanhamento.
-        </p>
-
-        <p>
-          Também oferecemos a possibilidade de atendimento
-          on-line, ampliando o acesso ao acompanhamento
-          psicopedagógico.
-        </p>
-
-      </div>
-
-
-      <div class="attendance-cards">
-
-        <div class="attendance-card">
-
-          <i class="fas fa-location-dot"></i>
-
-          <div>
-
-            <h4>Atendimento presencial</h4>
-
-            <span>
-              Em espaços profissionais parceiros e adequados
-              para o acompanhamento.
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="attendance-card">
-
-          <i class="fas fa-laptop"></i>
-
-          <div>
-
-            <h4>Atendimento on-line</h4>
-
-            <span>
-              Com praticidade e acompanhamento individualizado
-              à distância.
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="attendance-card">
-
-          <i class="fas fa-user-heart"></i>
-
-          <div>
-
-            <h4>Atendimento individualizado</h4>
-
-            <span>
-              Cada planejamento considera a história e as
-              necessidades de quem está sendo acompanhado.
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     PARA QUEM
-===================================================== -->
+<!-- =========================================================
+     PARA QUEM É
+========================================================= -->
 
 <section class="audience">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-header">
 
-      <span class="section-label">
-        Para quem é
-      </span>
+        <div class="audience-header reveal">
 
-      <h2 class="section-title">
-        Cada fase tem seus
-        <span>desafios.</span>
-      </h2>
+            <div class="section-label">
 
-      <p>
-        O acompanhamento pode acontecer em diferentes
-        momentos da vida e da trajetória escolar.
-      </p>
+                Para quem é
+
+            </div>
+
+
+            <h2 class="audience-title">
+
+                Cada fase tem seus
+
+                <em>desafios.</em>
+
+            </h2>
+
+        </div>
+
+
+        <div class="audience-grid">
+
+
+            <div class="audience-card reveal">
+
+                <i class="fas fa-child"></i>
+
+
+                <h3>
+                    Crianças
+                </h3>
+
+
+                <p>
+
+                    Para dificuldades de aprendizagem,
+                    alfabetização, leitura, escrita,
+                    matemática e desenvolvimento de
+                    estratégias para estudar.
+
+                </p>
+
+            </div>
+
+
+            <div class="audience-card reveal">
+
+                <i class="fas fa-user-graduate"></i>
+
+
+                <h3>
+                    Adolescentes
+                </h3>
+
+
+                <p>
+
+                    Para organização, autonomia,
+                    planejamento, hábitos de estudo
+                    e dificuldades que aparecem durante
+                    a vida escolar.
+
+                </p>
+
+            </div>
+
+
+            <div class="audience-card reveal">
+
+                <i class="fas fa-users"></i>
+
+
+                <h3>
+                    Famílias
+                </h3>
+
+
+                <p>
+
+                    Para compreender melhor as necessidades
+                    da criança ou adolescente e encontrar
+                    formas de oferecer apoio.
+
+                </p>
+
+            </div>
+
+
+            <div class="audience-card reveal">
+
+                <i class="fas fa-school"></i>
+
+
+                <h3>
+                    Escolas
+                </h3>
+
+
+                <p>
+
+                    Para construir estratégias de parceria
+                    e favorecer um olhar integrado sobre
+                    o processo de aprendizagem.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
 
     </div>
-
-
-    <div class="audience-grid">
-
-      <div class="audience-card">
-
-        <i class="fas fa-child"></i>
-
-        <h3>Crianças</h3>
-
-        <p>
-          Desenvolvimento, alfabetização e dificuldades
-          no processo de aprendizagem.
-        </p>
-
-      </div>
-
-
-      <div class="audience-card">
-
-        <i class="fas fa-user"></i>
-
-        <h3>Adolescentes</h3>
-
-        <p>
-          Organização, autonomia, estudos e desafios
-          relacionados à aprendizagem.
-        </p>
-
-      </div>
-
-
-      <div class="audience-card">
-
-        <i class="fas fa-user-graduate"></i>
-
-        <h3>Adultos</h3>
-
-        <p>
-          Novos desafios, organização e desenvolvimento
-          de estratégias de aprendizagem.
-        </p>
-
-      </div>
-
-
-      <div class="audience-card">
-
-        <i class="fas fa-people-roof"></i>
-
-        <h3>Famílias</h3>
-
-        <p>
-          Orientação e parceria para compreender e
-          acompanhar cada processo.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
+     COMO FUNCIONA
+========================================================= -->
+
+<section
+    class="process"
+    id="processo"
+>
+
+    <div class="container">
+
+
+        <div class="process-head">
+
+
+            <div class="reveal">
+
+                <div class="section-label">
+
+                    Como funciona
+
+                </div>
+
+
+                <h2 class="process-title">
+
+                    Um processo
+
+                    <br>
+
+                    pensado <em>para você.</em>
+
+                </h2>
+
+            </div>
+
+
+            <p class="process-intro reveal">
+
+                O atendimento psicopedagógico não segue uma
+                fórmula pronta. O primeiro passo é conhecer
+                a história, compreender a demanda e construir
+                um caminho possível.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="steps">
+
+
+            <div class="step reveal">
+
+                <span class="step-number">
+                    01
+                </span>
+
+
+                <h3>
+                    Primeiro contato
+                </h3>
+
+
+                <p>
+
+                    Conversamos para entender a demanda,
+                    esclarecer dúvidas e identificar o
+                    melhor caminho para o atendimento.
+
+                </p>
+
+            </div>
+
+
+            <div class="step reveal">
+
+                <span class="step-number">
+                    02
+                </span>
+
+
+                <h3>
+                    Conhecer
+                </h3>
+
+
+                <p>
+
+                    Conhecemos a história, a rotina,
+                    as dificuldades e as potencialidades
+                    de quem será acompanhado.
+
+                </p>
+
+            </div>
+
+
+            <div class="step reveal">
+
+                <span class="step-number">
+                    03
+                </span>
+
+
+                <h3>
+                    Compreender
+                </h3>
+
+
+                <p>
+
+                    A partir das informações e observações,
+                    buscamos compreender como o processo
+                    de aprendizagem está acontecendo.
+
+                </p>
+
+            </div>
+
+
+            <div class="step reveal">
+
+                <span class="step-number">
+                    04
+                </span>
+
+
+                <h3>
+                    Construir
+                </h3>
+
+
+                <p>
+
+                    Desenvolvemos estratégias individualizadas
+                    e acompanhamos a evolução ao longo do
+                    processo.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DIFERENCIAIS
+========================================================= -->
+
+<section class="differentials">
+
+    <div class="container">
+
+
+        <div class="diff-grid">
+
+
+            <div class="reveal">
+
+                <div class="section-label">
+
+                    Nosso jeito de cuidar
+
+                </div>
+
+
+                <h2 class="diff-title">
+
+                    Porque cada
+
+                    <br>
+
+                    história merece
+
+                    <em>atenção.</em>
+
+                </h2>
+
+
+                <p class="diff-description">
+
+                    Trabalhamos para que o atendimento seja
+                    um espaço de segurança, escuta e
+                    construção. O objetivo é olhar para além
+                    da dificuldade e reconhecer possibilidades.
+
+                </p>
+
+            </div>
+
+
+            <div class="diff-list">
+
+
+                <div class="diff-item reveal">
+
+                    <i class="fas fa-heart"></i>
+
+                    <h3>
+                        Atendimento humanizado
+                    </h3>
+
+                    <p>
+                        Escuta, acolhimento e respeito pela
+                        história de cada pessoa.
+                    </p>
+
+                </div>
+
+
+                <div class="diff-item reveal">
+
+                    <i class="fas fa-fingerprint"></i>
+
+                    <h3>
+                        Individualidade
+                    </h3>
+
+                    <p>
+                        Cada plano de acompanhamento considera
+                        necessidades específicas.
+                    </p>
+
+                </div>
+
+
+                <div class="diff-item reveal">
+
+                    <i class="fas fa-comments"></i>
+
+                    <h3>
+                        Escuta ativa
+                    </h3>
+
+                    <p>
+                        Conversar também faz parte de compreender
+                        o processo de aprendizagem.
+                    </p>
+
+                </div>
+
+
+                <div class="diff-item reveal">
+
+                    <i class="fas fa-arrows-rotate"></i>
+
+                    <h3>
+                        Acompanhamento
+                    </h3>
+
+                    <p>
+                        O processo é acompanhado e ajustado
+                        conforme a evolução.
+                    </p>
+
+                </div>
+
+
+                <div class="diff-item reveal">
+
+                    <i class="fas fa-people-group"></i>
+
+                    <h3>
+                        Trabalho em parceria
+                    </h3>
+
+                    <p>
+                        Família, profissional e escola podem
+                        construir caminhos em conjunto.
+                    </p>
+
+                </div>
+
+
+                <div class="diff-item reveal">
+
+                    <i class="fas fa-lightbulb"></i>
+
+                    <h3>
+                        Estratégias criativas
+                    </h3>
+
+                    <p>
+                        Recursos pensados para tornar o
+                        aprendizado mais significativo.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
      HISTÓRIA
-===================================================== -->
+========================================================= -->
 
-<section class="history" id="historia">
+<section
+    class="story"
+    id="historia"
+>
 
-  <div class="container">
-
-    <div class="history-box">
-
-      <span class="section-label">
-        Nossa história
-      </span>
-
-      <h2 class="section-title">
-        Um legado construído
-        <span>por pessoas.</span>
-      </h2>
-
-      <p>
-        O Legado que Ensina carrega histórias, encontros,
-        aprendizados e pessoas que fizeram parte dessa
-        caminhada.
-      </p>
-
-      <div class="names">
-
-        <span class="name">Benício</span>
-        <span class="name">Maicon</span>
-        <span class="name">Pedro</span>
-        <span class="name">Marcos</span>
-        <span class="name">Maria</span>
-        <span class="name">Profª Vanessa</span>
-        <span class="name">Profª Cirleia</span>
-        <span class="name">Profª Joceli</span>
-
-      </div>
+    <div class="container">
 
 
-      <div class="quote">
+        <div class="story-grid">
 
-        <i class="fas fa-quote-left"></i>
 
-        <p>
-          "Porque algumas experiências na educação não
-          passam com o tempo — elas continuam existindo
-          na forma como se escolhe ensinar, acolher e
-          transformar o aprendizado em algo significativo."
-        </p>
+            <div class="reveal">
 
-      </div>
+
+                <div class="section-label">
+
+                    Nossa história
+
+                </div>
+
+
+                <h2 class="story-title">
+
+                    Antes do novo,
+
+                    <br>
+
+                    existe o
+
+                    <em>legado.</em>
+
+                </h2>
+
+
+            </div>
+
+
+            <div class="reveal">
+
+
+                <p class="story-intro">
+
+                    Algumas experiências na educação não
+                    passam com o tempo. Elas continuam
+                    existindo na forma como escolhemos
+                    ensinar, acolher e transformar.
+
+                </p>
+
+
+                <p class="story-text">
+
+                    O Legado que Ensina nasce de uma história
+                    construída através de pessoas, encontros,
+                    desafios e aprendizados.
+
+                    <br><br>
+
+                    Cada experiência ajudou a formar aquilo
+                    que somos hoje. Cada criança, cada família
+                    e cada profissional deixou uma parte
+                    dessa trajetória.
+
+                    <br><br>
+
+                    Agora, abrimos um novo capítulo.
+                    Um novo espaço, novas possibilidades
+                    e o mesmo propósito: fazer da aprendizagem
+                    uma experiência mais significativa,
+                    acolhedora e humana.
+
+                </p>
+
+
+                <div class="dedication">
+
+
+                    <div class="dedication-title">
+
+                        <i class="fas fa-heart"></i>
+
+                        Em homenagem à nossa história
+
+                    </div>
+
+
+                    <div class="names">
+
+                        <span class="name">
+                            Benício
+                        </span>
+
+                        <span class="name">
+                            Maicon
+                        </span>
+
+                        <span class="name">
+                            Pedro
+                        </span>
+
+                        <span class="name">
+                            Marcos
+                        </span>
+
+                        <span class="name">
+                            Maria
+                        </span>
+
+                        <span class="name">
+                            Profª Vanessa
+                        </span>
+
+                        <span class="name">
+                            Profª Cirleia
+                        </span>
+
+                        <span class="name">
+                            Profª Joceli
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="story-quote">
+
+                    <i class="fas fa-quote-left"></i>
+
+
+                    <p>
+
+                        “Porque algumas experiências na educação
+                        não passam com o tempo — elas continuam
+                        existindo na forma como se escolhe ensinar,
+                        acolher e transformar o aprendizado em
+                        algo significativo.”
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
-     ARTIGOS
-===================================================== -->
 
-<section class="blog" id="artigos">
+<!-- =========================================================
+     DEPOIMENTOS
+========================================================= -->
 
-  <div class="container">
+<section class="testimonials">
 
-    <div class="section-header">
+    <div class="container">
 
-      <span class="section-label">
-        Conteúdos
-      </span>
 
-      <h2 class="section-title">
-        Ideias para
-        <span>aprender melhor.</span>
-      </h2>
+        <div class="testimonials-header">
 
-      <p>
-        Conteúdos sobre aprendizagem, desenvolvimento,
-        educação e psicopedagogia.
-      </p>
+
+            <div class="reveal">
+
+                <div class="section-label">
+
+                    Experiências
+
+                </div>
+
+
+                <h2 class="testimonials-title">
+
+                    Histórias que
+
+                    <em>fazem parte.</em>
+
+                </h2>
+
+            </div>
+
+
+            <p class="testimonials-note reveal">
+
+                Espaço reservado para relatos reais de
+                famílias e pessoas atendidas pela clínica.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="testimonials-grid">
+
+
+            <article class="testimonial reveal">
+
+                <p>
+
+                    “Aqui você poderá conhecer, em breve,
+                    a experiência de uma família que encontrou
+                    novas possibilidades para o processo
+                    de aprendizagem.”
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    Depoimento — em breve
+
+                </div>
+
+            </article>
+
+
+            <article class="testimonial reveal">
+
+                <p>
+
+                    “Um espaço para compartilhar histórias
+                    reais, conquistas e pequenas transformações
+                    que fazem diferença no caminho.”
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    Depoimento — em breve
+
+                </div>
+
+            </article>
+
+
+            <article class="testimonial reveal">
+
+                <p>
+
+                    “Porque cada evolução merece ser
+                    reconhecida — e cada pessoa merece
+                    ser vista para além de suas dificuldades.”
+
+                </p>
+
+
+                <div class="testimonial-author">
+
+                    Depoimento — em breve
+
+                </div>
+
+            </article>
+
+
+        </div>
+
 
     </div>
-
-
-    <div class="blog-grid">
-
-      <article class="article">
-
-        <div class="article-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&fit=crop&q=80"
-            alt="Criança estudando"
-          />
-
-        </div>
-
-        <div class="article-content">
-
-          <span class="article-tag">
-            Aprendizagem
-          </span>
-
-          <h3>
-            Como identificar dificuldades de aprendizagem
-            cedo?
-          </h3>
-
-          <div class="article-date">
-            14 de julho de 2026
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="article">
-
-        <div class="article-image">
-
-          <img
-            src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&auto=format&fit=crop&q=80"
-            alt="Estudos"
-          />
-
-        </div>
-
-        <div class="article-content">
-
-          <span class="article-tag">
-            Motivação
-          </span>
-
-          <h3>
-            Como manter a motivação nos estudos em casa?
-          </h3>
-
-          <div class="article-date">
-            12 de junho de 2026
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <article class="article">
-
-        <div class="article-image">
-
-          <img
-            src="https://i.imgur.com/BvcvoHU.png"
-            alt="Gamificação e aprendizagem"
-          />
-
-        </div>
-
-        <div class="article-content">
-
-          <span class="article-tag">
-            Desenvolvimento
-          </span>
-
-          <h3>
-            Quando brincar também pode ser uma forma
-            de aprender.
-          </h3>
-
-          <div class="article-date">
-            10 de junho de 2026
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      FAQ
-===================================================== -->
+========================================================= -->
 
-<section class="faq">
+<section
+    class="faq"
+    id="faq"
+>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="section-header">
 
-      <span class="section-label">
-        Dúvidas
-      </span>
+        <div class="faq-grid">
 
-      <h2 class="section-title">
-        Perguntas
-        <span>frequentes.</span>
-      </h2>
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    Dúvidas
+
+                </div>
+
+
+                <h2 class="faq-title">
+
+                    Talvez você
+
+                    <br>
+
+                    esteja se
+
+                    <em>perguntando.</em>
+
+                </h2>
+
+
+                <p class="faq-description">
+
+                    Reunimos algumas das perguntas mais comuns
+                    sobre o atendimento psicopedagógico.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="faq-list">
+
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                    >
+
+                        Quando procurar um psicopedagogo?
+
+                        <i class="fas fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            O acompanhamento pode ser considerado
+                            quando existem dificuldades persistentes
+                            relacionadas à aprendizagem, organização,
+                            leitura, escrita, matemática, hábitos de
+                            estudo ou quando existe uma necessidade
+                            de compreender melhor como a pessoa
+                            aprende.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                    >
+
+                        A avaliação é indicada para qualquer idade?
+
+                        <i class="fas fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            A psicopedagogia pode acompanhar
+                            diferentes fases do desenvolvimento.
+                            A necessidade e o formato da avaliação
+                            são definidos de acordo com a demanda
+                            apresentada.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                    >
+
+                        O atendimento é somente para crianças?
+
+                        <i class="fas fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            Não. O acompanhamento pode ser
+                            direcionado a crianças, adolescentes
+                            e também adultos, conforme a proposta
+                            de atendimento da clínica.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                    >
+
+                        Como funciona o primeiro atendimento?
+
+                        <i class="fas fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            O primeiro contato é destinado a
+                            compreender a demanda, conhecer
+                            brevemente a história e orientar
+                            sobre os próximos passos.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                    >
+
+                        Existe atendimento online?
+
+                        <i class="fas fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            Sim. A clínica pode oferecer
+                            atendimento online conforme a
+                            necessidade e a adequação ao
+                            acompanhamento.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <button
+                        class="faq-question"
+                    >
+
+                        A família participa do processo?
+
+                        <i class="fas fa-plus"></i>
+
+                    </button>
+
+
+                    <div class="faq-answer">
+
+                        <p>
+
+                            A participação da família pode ser
+                            muito importante. A forma de participação
+                            é definida de acordo com a necessidade
+                            de cada acompanhamento.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
-
-
-    <div class="faq-list">
-
-      <div class="faq-item">
-
-        <button class="faq-question">
-
-          O atendimento é presencial ou on-line?
-
-          <i class="fas fa-chevron-down"></i>
-
-        </button>
-
-        <div class="faq-answer">
-
-          Trabalhamos com as duas modalidades.
-          Os atendimentos presenciais acontecem em
-          espaços profissionais parceiros.
-
-        </div>
-
-      </div>
-
-
-      <div class="faq-item">
-
-        <button class="faq-question">
-
-          O atendimento é somente para crianças?
-
-          <i class="fas fa-chevron-down"></i>
-
-        </button>
-
-        <div class="faq-answer">
-
-          Não. O acompanhamento pode ser realizado com
-          crianças, adolescentes e adultos, de acordo com
-          a demanda apresentada.
-
-        </div>
-
-      </div>
-
-
-      <div class="faq-item">
-
-        <button class="faq-question">
-
-          Como funciona a primeira conversa?
-
-          <i class="fas fa-chevron-down"></i>
-
-        </button>
-
-        <div class="faq-answer">
-
-          O primeiro contato é um momento para compreender
-          a demanda, conhecer a história e esclarecer as
-          principais dúvidas antes de definir os próximos
-          passos.
-
-        </div>
-
-      </div>
-
-
-      <div class="faq-item">
-
-        <button class="faq-question">
-
-          É necessário ter um diagnóstico?
-
-          <i class="fas fa-chevron-down"></i>
-
-        </button>
-
-        <div class="faq-answer">
-
-          Não necessariamente. Uma dificuldade de
-          aprendizagem pode ser investigada mesmo quando
-          ainda não existe um diagnóstico definido.
-
-        </div>
-
-      </div>
-
-
-      <div class="faq-item">
-
-        <button class="faq-question">
-
-          O atendimento substitui acompanhamento médico
-          ou psicológico?
-
-          <i class="fas fa-chevron-down"></i>
-
-        </button>
-
-        <div class="faq-answer">
-
-          Não. O trabalho psicopedagógico possui objetivos
-          próprios e, quando necessário, pode acontecer
-          em parceria com outros profissionais.
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
+     BLOG
+========================================================= -->
+
+<section class="blog">
+
+    <div class="container">
+
+
+        <div class="blog-head">
+
+
+            <div class="reveal">
+
+
+                <div class="section-label">
+
+                    Conteúdos
+
+                </div>
+
+
+                <h2 class="blog-title">
+
+                    Para continuar
+
+                    <em>aprendendo.</em>
+
+                </h2>
+
+
+            </div>
+
+
+            <a
+                href="#"
+                class="blog-link"
+            >
+
+                Ver todos os conteúdos →
+
+            </a>
+
+
+        </div>
+
+
+        <div class="blog-grid">
+
+
+            <article class="article reveal">
+
+
+                <div class="article-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&auto=format&fit=crop&q=80"
+                        alt="Criança estudando"
+                    >
+
+                    <span class="article-tag">
+
+                        Aprendizagem
+
+                    </span>
+
+                </div>
+
+
+                <div class="article-info">
+
+                    <span class="article-date">
+
+                        Aprendizagem
+
+                    </span>
+
+
+                    <h3>
+
+                        Como identificar dificuldades
+                        de aprendizagem?
+
+                    </h3>
+
+
+                    <span class="article-read">
+
+                        Ler artigo →
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <article class="article reveal">
+
+
+                <div class="article-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=900&auto=format&fit=crop&q=80"
+                        alt="Estudante lendo"
+                    >
+
+                    <span class="article-tag">
+
+                        Estudos
+
+                    </span>
+
+                </div>
+
+
+                <div class="article-info">
+
+                    <span class="article-date">
+
+                        Hábitos de estudo
+
+                    </span>
+
+
+                    <h3>
+
+                        Estratégias para tornar
+                        os estudos mais leves
+
+                    </h3>
+
+
+                    <span class="article-read">
+
+                        Ler artigo →
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+
+            <article class="article reveal">
+
+
+                <div class="article-image">
+
+                    <img
+                        src="https://i.imgur.com/BvcvoHU.png"
+                        alt="Aprendizagem através de jogos"
+                    >
+
+                    <span class="article-tag">
+
+                        Desenvolvimento
+
+                    </span>
+
+                </div>
+
+
+                <div class="article-info">
+
+                    <span class="article-date">
+
+                        Psicopedagogia
+
+                    </span>
+
+
+                    <h3>
+
+                        Quando brincar também
+                        significa aprender
+
+                    </h3>
+
+
+                    <span class="article-read">
+
+                        Ler artigo →
+
+                    </span>
+
+                </div>
+
+
+            </article>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
      CTA
-===================================================== -->
+========================================================= -->
 
-<section class="cta">
+<section
+    class="cta"
+    id="contato"
+>
 
-  <div class="container">
-
-    <div class="cta-box">
-
-      <div>
-
-        <h2>
-          Vamos conversar sobre
-          essa história?
-        </h2>
-
-        <p>
-          O primeiro passo pode ser simplesmente uma conversa.
-          Conte-nos o que está acontecendo e descubra como
-          podemos ajudar.
-        </p>
-
-      </div>
+    <div class="container">
 
 
-      <a
-        href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20conhecer%20o%20trabalho%20do%20Legado%20que%20Ensina."
-        target="_blank"
-        class="btn"
-      >
+        <div class="cta-grid">
 
-        <i class="fab fa-whatsapp"></i>
 
-        Falar pelo WhatsApp
+            <div class="reveal">
 
-      </a>
+
+                <span class="cta-label">
+
+                    Vamos conversar?
+
+                </span>
+
+
+                <h2 class="cta-title">
+
+                    O próximo passo
+
+                    <br>
+
+                    pode começar
+
+                    <em>aqui.</em>
+
+                </h2>
+
+
+                <p class="cta-text">
+
+                    Entre em contato para conhecer melhor
+                    nosso trabalho, conversar sobre sua
+                    necessidade e saber como funciona
+                    o atendimento.
+
+                </p>
+
+
+                <a
+                    href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedagógico."
+                    target="_blank"
+                    class="cta-button"
+                >
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    Falar pelo WhatsApp
+
+                </a>
+
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+
+                <div class="contact-card-icon">
+
+                    <i class="fas fa-comments"></i>
+
+                </div>
+
+
+                <h3>
+
+                    Legado que Ensina
+
+                </h3>
+
+
+                <p>
+
+                    Estamos aqui para ouvir,
+                    acolher e orientar.
+
+                </p>
+
+
+                <div class="contact-details">
+
+
+                    <span>
+
+                        <i class="fab fa-whatsapp"></i>
+
+                        (43) 92003-6581
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fas fa-envelope"></i>
+
+                        contato@legadoqueensina.com
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
-
-  </div>
 
 </section>
 
 
-<!-- =====================================================
+</main>
+
+
+
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
-<footer>
+<footer class="footer">
 
-  <div class="container">
+    <div class="container">
 
-    <div class="footer-grid">
 
-      <div class="footer-brand">
+        <div class="footer-grid">
 
-        <img
-          class="footer-logo"
-          src="https://i.imgur.com/YIQDI4s.png"
-          alt="Legado que Ensina"
-        />
 
-        <p>
-          Psicopedagogia, aprendizagem e desenvolvimento
-          com acolhimento, escuta e estratégias
-          individualizadas.
-        </p>
+            <div>
 
-        <div class="social">
 
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
+                <img
+                    class="footer-logo"
+                    src="https://i.imgur.com/YIQDI4s.png"
+                    alt="Legado que Ensina"
+                >
 
-          <a href="#" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-          </a>
 
-          <a href="#" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
+                <p class="footer-brand-text">
+
+                    Clínica de psicopedagogia dedicada
+                    ao acompanhamento, avaliação e
+                    intervenção no processo de aprendizagem.
+
+                </p>
+
+
+                <div class="footer-social">
+
+
+                    <a
+                        href="#"
+                        aria-label="Instagram"
+                    >
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="Facebook"
+                    >
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        aria-label="YouTube"
+                    >
+
+                        <i class="fab fa-youtube"></i>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <h4>
+                    Navegação
+                </h4>
+
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#sobre">
+                    A clínica
+                </a>
+
+                <a href="#servicos">
+                    Atendimentos
+                </a>
+
+                <a href="#processo">
+                    Como funciona
+                </a>
+
+                <a href="#historia">
+                    Nossa história
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <h4>
+                    Atendimentos
+                </h4>
+
+
+                <a href="#servicos">
+                    Acompanhamento
+                </a>
+
+                <a href="#servicos">
+                    Avaliação
+                </a>
+
+                <a href="#servicos">
+                    Intervenção
+                </a>
+
+                <a href="#servicos">
+                    Orientação familiar
+                </a>
+
+                <a href="#servicos">
+                    Atendimento online
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+
+                <h4>
+                    Contato
+                </h4>
+
+
+                <span>
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    (43) 92003-6581
+
+                </span>
+
+
+                <span>
+
+                    <i class="fas fa-envelope"></i>
+
+                    contato@legadoqueensina.com
+
+                </span>
+
+
+                <span>
+
+                    <i class="fas fa-clock"></i>
+
+                    Atendimento com horário agendado
+
+                </span>
+
+
+            </div>
+
 
         </div>
 
-      </div>
+
+        <div class="footer-bottom">
 
 
-      <div>
+            <span>
 
-        <h4>Navegação</h4>
+                © 2026 Legado que Ensina.
+                Todos os direitos reservados.
 
-        <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#servicos">Atendimentos</a>
-        <a href="#historia">Nossa história</a>
-
-      </div>
+            </span>
 
 
-      <div>
+            <span>
 
-        <h4>Atendimentos</h4>
+                Psicopedagogia • Aprendizagem • Desenvolvimento
 
-        <a href="#servicos">Acompanhamento</a>
-        <a href="#servicos">Avaliação</a>
-        <a href="#servicos">Intervenção</a>
-        <a href="#servicos">Orientação</a>
-
-      </div>
+            </span>
 
 
-      <div>
+        </div>
 
-        <h4>Contato</h4>
-
-        <a href="tel:+5543920036581">
-          (43) 92003-6581
-        </a>
-
-        <a href="mailto:contato@legadoqueensina.com">
-          contato@legadoqueensina.com
-        </a>
-
-        <a
-          href="https://wa.me/5543920036581"
-          target="_blank"
-        >
-          WhatsApp
-        </a>
-
-      </div>
 
     </div>
-
-
-    <div class="footer-bottom">
-
-      <span>
-        © 2026 Legado que Ensina. Todos os direitos reservados.
-      </span>
-
-      <span>
-        Psicopedagogia & desenvolvimento
-      </span>
-
-    </div>
-
-  </div>
 
 </footer>
 
 
-<!-- =====================================================
-     WHATSAPP FLUTUANTE
-===================================================== -->
 
-<a
-  class="whatsapp"
-  href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Legado%20que%20Ensina."
-  target="_blank"
-  aria-label="Falar pelo WhatsApp"
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Voltar ao topo"
 >
-  <i class="fab fa-whatsapp"></i>
-</a>
+
+    <i class="fas fa-arrow-up"></i>
+
+</button>
 
 
-<!-- =====================================================
+
+<!-- =========================================================
      JAVASCRIPT
-===================================================== -->
+========================================================= -->
 
 <script>
 
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("active");
-  }
 
+/* =========================================================
+   HEADER AO ROLAR
+========================================================= */
 
-  document.querySelectorAll(".menu a").forEach(link => {
+const header =
+    document.getElementById("header");
 
-    link.addEventListener("click", () => {
+const backTop =
+    document.getElementById("backTop");
 
-      document.getElementById("menu").classList.remove("active");
+window.addEventListener("scroll", () => {
 
-    });
+    if (window.scrollY > 50) {
 
-  });
+        header.classList.add("scrolled");
 
+    } else {
 
-  document.querySelectorAll(".faq-question").forEach(button => {
+        header.classList.remove("scrolled");
 
-    button.addEventListener("click", () => {
-
-      const item = button.parentElement;
-
-      document.querySelectorAll(".faq-item").forEach(other => {
-
-        if (other !== item) {
-          other.classList.remove("active");
-        }
-
-      });
-
-      item.classList.toggle("active");
-
-    });
-
-  });
-
-
-  /* Animação suave ao aparecer na tela */
-
-  const observer = new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "translateY(0)";
-
-        }
-
-      });
-
-    },
-    {
-      threshold: .08
     }
-  );
 
 
-  document
-    .querySelectorAll(
-      ".service, .article, .audience-card, .process-item, .attendance-card"
-    )
+    if (window.scrollY > 500) {
+
+        backTop.classList.add("show");
+
+    } else {
+
+        backTop.classList.remove("show");
+
+    }
+
+});
+
+
+/* =========================================================
+   VOLTAR AO TOPO
+========================================================= */
+
+backTop.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+
+/* =========================================================
+   MENU MOBILE
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const mobileNav =
+    document.getElementById("mobileNav");
+
+const menuIcon =
+    menuButton.querySelector("i");
+
+
+menuButton.addEventListener("click", () => {
+
+    mobileNav.classList.toggle("open");
+
+    document.body.classList.toggle("menu-open");
+
+
+    if (mobileNav.classList.contains("open")) {
+
+        menuIcon.classList.remove("fa-bars");
+
+        menuIcon.classList.add("fa-xmark");
+
+    } else {
+
+        menuIcon.classList.remove("fa-xmark");
+
+        menuIcon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+document
+    .querySelectorAll(".mobile-nav a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            mobileNav.classList.remove("open");
+
+            document.body.classList.remove("menu-open");
+
+            menuIcon.classList.remove("fa-xmark");
+
+            menuIcon.classList.add("fa-bars");
+
+        });
+
+    });
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+document
+    .querySelectorAll(".faq-question")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const item =
+                button.closest(".faq-item");
+
+            const answer =
+                item.querySelector(".faq-answer");
+
+            const isActive =
+                item.classList.contains("active");
+
+
+            document
+                .querySelectorAll(".faq-item")
+                .forEach(other => {
+
+                    if (other !== item) {
+
+                        other.classList.remove("active");
+
+                        const otherAnswer =
+                            other.querySelector(".faq-answer");
+
+                        otherAnswer.style.maxHeight = null;
+
+                    }
+
+                });
+
+
+            if (!isActive) {
+
+                item.classList.add("active");
+
+                answer.style.maxHeight =
+                    answer.scrollHeight + "px";
+
+            } else {
+
+                item.classList.remove("active");
+
+                answer.style.maxHeight = null;
+
+            }
+
+        });
+
+    });
+
+
+/* =========================================================
+   REVEAL ON SCROLL
+========================================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
+                }
+
+            });
+
+        },
+        {
+            threshold: .12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
     .forEach(element => {
 
-      element.style.opacity = "0";
-      element.style.transform = "translateY(20px)";
-      element.style.transition = "opacity .6s ease, transform .6s ease";
-
-      observer.observe(element);
+        revealObserver.observe(element);
 
     });
+
+
+/* =========================================================
+   FECHAR MENU COM ESC
+========================================================= */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        mobileNav.classList.remove("open");
+
+        document.body.classList.remove("menu-open");
+
+        menuIcon.classList.remove("fa-xmark");
+
+        menuIcon.classList.add("fa-bars");
+
+    }
+
+});
+
 
 </script>
 
+
 </body>
+
 </html>
