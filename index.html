@@ -10,18 +10,16 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Legado que Ensina — Lançamento em breve
-    </title>
+    <title>Legado que Ensina — Em breve</title>
 
     <meta
         name="description"
-        content="Um novo capítulo está começando. O Legado que Ensina está preparando um novo espaço."
+        content="Um novo capítulo do Legado que Ensina está começando."
     >
 
-    <!-- ======================================================
+    <!-- =====================================================
          FONTES
-    ======================================================= -->
+    ====================================================== -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -32,14 +30,13 @@
     >
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
         rel="stylesheet"
     >
 
-
-    <!-- ======================================================
+    <!-- =====================================================
          FONT AWESOME
-    ======================================================= -->
+    ====================================================== -->
 
     <link
         rel="stylesheet"
@@ -49,41 +46,9 @@
 
     <style>
 
-    /* =========================================================
-       VARIÁVEIS
-    ========================================================= */
-
-    :root {
-
-        --verde: #2d7a6b;
-        --verde-escuro: #205c50;
-
-        --azul: #102033;
-        --azul-escuro: #091522;
-
-        --cinza: #687582;
-        --cinza-claro: #f5f7f6;
-
-        --creme: #f8f7f2;
-        --branco: #ffffff;
-
-        --linha: rgba(16, 32, 51, .10);
-
-        --serif:
-            "Playfair Display",
-            Georgia,
-            serif;
-
-        --sans:
-            "DM Sans",
-            Arial,
-            sans-serif;
-    }
-
-
-    /* =========================================================
+    /* =====================================================
        RESET
-    ========================================================= */
+    ====================================================== */
 
     * {
         margin: 0;
@@ -99,21 +64,16 @@
 
     body {
 
-        margin: 0;
+        background: #f7f5ef;
 
-        background: var(--creme);
+        color: #0e2034;
 
-        color: var(--azul);
-
-        font-family: var(--sans);
+        font-family:
+            "DM Sans",
+            Arial,
+            sans-serif;
 
         overflow-x: hidden;
-    }
-
-
-    a {
-        color: inherit;
-        text-decoration: none;
     }
 
 
@@ -123,40 +83,59 @@
     }
 
 
-    button,
     a {
-        -webkit-tap-highlight-color: transparent;
+        color: inherit;
+        text-decoration: none;
     }
 
 
-    /* =========================================================
+    /* =====================================================
+       VARIÁVEIS
+    ====================================================== */
+
+    :root {
+
+        --navy: #0e2034;
+
+        --navy-dark: #081522;
+
+        --green: #2d7a6b;
+
+        --green-light: #a9d0c5;
+
+        --cream: #f7f5ef;
+
+        --white: #ffffff;
+
+        --gray: #69757f;
+
+        --line: rgba(14, 32, 52, .12);
+
+        --serif:
+            "Playfair Display",
+            Georgia,
+            serif;
+    }
+
+
+    /* =====================================================
        HERO
-    ========================================================= */
+    ====================================================== */
 
     .hero {
-
-        position: relative;
 
         min-height: 100vh;
         min-height: 100svh;
 
+        position: relative;
+
         overflow: hidden;
 
-        background:
-
-            radial-gradient(
-                circle at 83% 48%,
-                rgba(45, 122, 107, .10),
-                transparent 30%
-            ),
-
-            var(--creme);
+        background: var(--cream);
     }
 
 
-    /*
-       Círculo decorativo superior
-    */
+    /* textura muito discreta */
 
     .hero::before {
 
@@ -164,591 +143,526 @@
 
         position: absolute;
 
-        width: 650px;
-        height: 650px;
+        inset: 0;
 
-        right: -330px;
-        top: -330px;
-
-        border-radius: 50%;
-
-        border: 1px solid rgba(45, 122, 107, .10);
+        opacity: .28;
 
         pointer-events: none;
+
+        background-image:
+            radial-gradient(
+                rgba(14,32,52,.07) .6px,
+                transparent .6px
+            );
+
+        background-size: 8px 8px;
     }
 
 
-    /*
-       Círculo decorativo inferior
-    */
+    /* =====================================================
+       HEADER
+    ====================================================== */
 
-    .hero::after {
-
-        content: "";
-
-        position: absolute;
-
-        width: 460px;
-        height: 460px;
-
-        left: -310px;
-        bottom: -300px;
-
-        border-radius: 50%;
-
-        background: rgba(16, 32, 51, .025);
-
-        pointer-events: none;
-    }
-
-
-    /* =========================================================
-       CONTAINER
-    ========================================================= */
-
-    .hero-container {
+    .header {
 
         width: min(
-            1160px,
-            calc(100% - 70px)
+            1280px,
+            calc(100% - 80px)
         );
 
-        min-height: 100vh;
-        min-height: 100svh;
+        height: 112px;
 
-        margin: 0 auto;
-
-        position: relative;
-
-        z-index: 2;
-    }
-
-
-    /* =========================================================
-       TOPO
-       
-       IMPORTANTE:
-       A LOGO NÃO É ABSOLUTA.
-       ELA OCUPA ESPAÇO REAL.
-    ========================================================= */
-
-    .topo {
-
-        width: 100%;
-
-        height: 145px;
-
-        display: flex;
-
-        align-items: flex-start;
-
-        justify-content: space-between;
-
-        padding-top: 22px;
-
-        position: relative;
-
-        z-index: 20;
-    }
-
-
-    /* =========================================================
-       LOGO DO TOPO
-    ========================================================= */
-
-    .logo-topo {
-
-        display: block;
-
-        flex-shrink: 0;
-
-        position: relative;
-    }
-
-
-    .logo-topo img {
-
-        width: 125px;
-
-        height: auto;
-
-        display: block;
-    }
-
-
-    /* =========================================================
-       STATUS
-    ========================================================= */
-
-    .status {
+        margin: auto;
 
         display: flex;
 
         align-items: center;
 
-        gap: 9px;
+        justify-content: space-between;
 
-        margin-top: 9px;
+        position: relative;
 
-        padding: 9px 15px;
+        z-index: 10;
 
-        border: 1px solid var(--linha);
+        border-bottom: 1px solid var(--line);
+    }
 
-        border-radius: 50px;
 
-        background: rgba(255, 255, 255, .55);
+    .logo {
 
-        color: var(--azul);
+        width: 130px;
+    }
+
+
+    .logo img {
+
+        width: 100%;
+    }
+
+
+    .header-right {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 14px;
+
+        color: var(--navy);
 
         font-size: 9px;
 
         font-weight: 700;
 
-        letter-spacing: .15em;
+        letter-spacing: .18em;
 
         text-transform: uppercase;
-
-        backdrop-filter: blur(10px);
     }
 
 
-    .status-dot {
+    .header-line {
 
-        width: 7px;
-        height: 7px;
+        width: 30px;
 
-        flex: 0 0 7px;
+        height: 1px;
 
-        border-radius: 50%;
-
-        background: var(--verde);
-
-        box-shadow:
-            0 0 0 5px rgba(45, 122, 107, .08);
+        background: var(--green);
     }
 
 
-    /* =========================================================
-       GRID DO HERO
-    ========================================================= */
+    /* =====================================================
+       HERO CONTENT
+    ====================================================== */
 
-    .hero-grid {
+    .hero-content {
 
-        min-height: calc(100vh - 145px);
-        min-height: calc(100svh - 145px);
+        width: min(
+            1280px,
+            calc(100% - 80px)
+        );
+
+        min-height:
+            calc(100vh - 112px);
+
+        min-height:
+            calc(100svh - 112px);
+
+        margin: auto;
 
         display: grid;
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1.15fr .85fr;
 
         align-items: center;
 
         gap: 70px;
 
-        padding-bottom: 65px;
+        position: relative;
+
+        z-index: 2;
+
+        padding:
+            50px 0
+            80px;
     }
 
 
-    /* =========================================================
-       TEXTO PRINCIPAL
-    ========================================================= */
+    /* =====================================================
+       TEXTO
+    ====================================================== */
 
-    .hero-texto {
+    .hero-copy {
 
-        padding: 0;
+        position: relative;
 
-        margin: 0;
+        z-index: 5;
     }
 
 
-    /* =========================================================
-       EYEBROW
-    ========================================================= */
-
-    .eyebrow {
+    .mini-title {
 
         display: flex;
 
         align-items: center;
 
-        gap: 12px;
+        gap: 13px;
 
-        margin-bottom: 22px;
+        margin-bottom: 25px;
 
-        color: var(--verde);
+        color: var(--green);
 
         font-size: 10px;
 
         font-weight: 700;
 
-        letter-spacing: .21em;
+        letter-spacing: .22em;
 
         text-transform: uppercase;
     }
 
 
-    .eyebrow::before {
+    .mini-title::before {
 
         content: "";
 
-        width: 36px;
+        width: 42px;
+
         height: 1px;
 
-        flex: 0 0 36px;
-
-        background: var(--verde);
+        background: var(--green);
     }
 
 
-    /* =========================================================
-       TÍTULO
-    ========================================================= */
-
-    .hero h1 {
-
-        margin: 0;
-
-        color: var(--azul);
+    .hero-title {
 
         font-family: var(--serif);
 
         font-size: clamp(
-            55px,
-            6vw,
-            84px
+            65px,
+            8vw,
+            120px
         );
 
-        line-height: .98;
+        line-height: .86;
 
-        font-weight: 500;
+        font-weight: 400;
 
-        letter-spacing: -.055em;
+        letter-spacing: -.065em;
+
+        color: var(--navy);
     }
 
 
-    .hero h1 span {
+    .hero-title .italic {
 
-        color: var(--verde);
+        display: block;
+
+        color: var(--green);
 
         font-style: italic;
+
+        margin-left: 75px;
     }
 
 
-    /* =========================================================
-       DESCRIÇÃO
-    ========================================================= */
+    .hero-description {
 
-    .descricao {
+        max-width: 470px;
 
-        max-width: 530px;
+        margin-top: 38px;
 
-        margin-top: 28px;
+        color: var(--gray);
 
-        color: var(--cinza);
-
-        font-size: 15px;
+        font-size: 14px;
 
         line-height: 1.85;
     }
 
 
-    .descricao strong {
+    .hero-description strong {
 
-        color: var(--azul);
+        color: var(--navy);
 
         font-weight: 700;
     }
 
 
-    /* =========================================================
-       AÇÕES
-    ========================================================= */
+    /* =====================================================
+       BOTÃO
+    ====================================================== */
 
-    .acoes {
+    .hero-action {
 
-        display: flex;
-
-        margin-top: 32px;
+        margin-top: 34px;
     }
 
 
-    .btn {
-
-        min-height: 50px;
+    .history-button {
 
         display: inline-flex;
 
         align-items: center;
 
-        justify-content: center;
+        gap: 14px;
 
-        gap: 11px;
+        height: 52px;
 
         padding: 0 21px;
 
-        border-radius: 6px;
+        border: 1px solid var(--navy);
 
-        font-size: 11px;
-
-        font-weight: 700;
-
-        transition:
-
-            transform .25s ease,
-            background .25s ease,
-            color .25s ease,
-            box-shadow .25s ease;
-    }
-
-
-    .btn-principal {
-
-        background: var(--verde);
+        background: var(--navy);
 
         color: #fff;
 
-        box-shadow:
-            0 12px 26px rgba(45, 122, 107, .18);
+        font-size: 10px;
+
+        font-weight: 700;
+
+        letter-spacing: .07em;
+
+        text-transform: uppercase;
+
+        transition: .3s ease;
     }
 
 
-    .btn-principal:hover {
+    .history-button i {
 
-        background: var(--verde-escuro);
+        font-size: 10px;
+
+        transition: .3s ease;
+    }
+
+
+    .history-button:hover {
+
+        background: var(--green);
+
+        border-color: var(--green);
 
         transform: translateY(-2px);
-
-        box-shadow:
-            0 15px 30px rgba(45, 122, 107, .22);
     }
 
 
-    /* =========================================================
-       VISUAL DA DIREITA
-    ========================================================= */
+    .history-button:hover i {
 
-    .visual {
+        transform: translateY(3px);
+    }
 
-        min-height: 560px;
 
-        position: relative;
+    /* =====================================================
+       NÚMERO / STATUS
+    ====================================================== */
+
+    .launch-info {
 
         display: flex;
 
         align-items: center;
 
-        justify-content: center;
+        gap: 16px;
+
+        margin-top: 42px;
     }
 
 
-    /* =========================================================
-       CÍRCULO
-    ========================================================= */
+    .launch-number {
 
-    .visual-circulo {
+        font-family: var(--serif);
 
-        position: absolute;
+        font-size: 30px;
 
-        width: 485px;
-        height: 485px;
-
-        border-radius: 50%;
-
-        background:
-
-            radial-gradient(
-                circle,
-                #ffffff 0%,
-                #f0eee7 55%,
-                transparent 73%
-            );
+        color: var(--navy);
     }
 
 
-    /* =========================================================
-       ÓRBITA
-    ========================================================= */
+    .launch-info-text {
 
-    .visual-orbita {
+        padding-left: 16px;
 
-        position: absolute;
+        border-left: 1px solid var(--line);
 
-        width: 440px;
-        height: 440px;
+        color: #7d878d;
 
-        border-radius: 50%;
+        font-size: 9px;
 
-        border: 1px solid rgba(45, 122, 107, .14);
-    }
+        line-height: 1.5;
 
-
-    .visual-orbita::before {
-
-        content: "";
-
-        position: absolute;
-
-        width: 9px;
-        height: 9px;
-
-        right: 47px;
-        top: 50px;
-
-        border-radius: 50%;
-
-        background: var(--verde);
-
-        box-shadow:
-            0 0 0 7px rgba(45, 122, 107, .08);
-    }
-
-
-    /* =========================================================
-       CARTÃO DA LOGO
-    ========================================================= */
-
-    .logo-card {
-
-        width: 350px;
-        height: 350px;
-
-        position: relative;
-
-        z-index: 4;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        background: rgba(255, 255, 255, .97);
-
-        border: 1px solid rgba(16, 32, 51, .09);
-
-        border-radius: 28px;
-
-        box-shadow:
-            0 35px 90px rgba(16, 32, 51, .12);
-
-        transform: rotate(-2deg);
-
-        transition:
-            transform .4s ease;
-    }
-
-
-    .logo-card:hover {
-
-        transform:
-            rotate(0deg)
-            translateY(-6px);
-    }
-
-
-    .logo-card::before {
-
-        content: "";
-
-        position: absolute;
-
-        inset: 14px;
-
-        border: 1px solid rgba(45, 122, 107, .12);
-
-        border-radius: 20px;
-    }
-
-
-    .logo-card img {
-
-        position: relative;
-
-        z-index: 2;
-
-        width: 72%;
-
-        height: auto;
-    }
-
-
-    /* =========================================================
-       ETIQUETA DO CARTÃO
-    ========================================================= */
-
-    .card-status {
-
-        position: absolute;
-
-        z-index: 8;
-
-        left: 12px;
-
-        bottom: 45px;
-
-        padding: 14px 17px;
-
-        border-radius: 7px;
-
-        background: var(--azul);
-
-        color: #fff;
-
-        box-shadow:
-            0 20px 40px rgba(16, 32, 51, .18);
-    }
-
-
-    .card-status small {
-
-        display: block;
-
-        color: #83c4b5;
-
-        font-size: 8px;
-
-        font-weight: 700;
-
-        letter-spacing: .14em;
+        letter-spacing: .12em;
 
         text-transform: uppercase;
     }
 
 
-    .card-status small i {
+    /* =====================================================
+       VISUAL DIREITO
+    ====================================================== */
 
-        font-size: 6px;
+    .hero-visual {
 
-        margin-right: 4px;
+        min-height: 570px;
+
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
 
-    .card-status strong {
+    /* grande círculo */
+
+    .visual-circle {
+
+        width: 510px;
+        height: 510px;
+
+        position: absolute;
+
+        border-radius: 50%;
+
+        background:
+            #eceae2;
+    }
+
+
+    /* círculo interno */
+
+    .visual-circle::after {
+
+        content: "";
+
+        position: absolute;
+
+        inset: 35px;
+
+        border: 1px solid
+            rgba(45,122,107,.18);
+
+        border-radius: 50%;
+    }
+
+
+    /* =====================================================
+       LOGO CENTRAL
+    ====================================================== */
+
+    .visual-logo {
+
+        width: 310px;
+        height: 310px;
+
+        position: relative;
+
+        z-index: 3;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background: #fff;
+
+        border-radius: 50%;
+
+        box-shadow:
+            0 35px 70px
+            rgba(14,32,52,.13);
+    }
+
+
+    .visual-logo img {
+
+        width: 75%;
+
+        height: auto;
+    }
+
+
+    /* =====================================================
+       "VEM AÍ" GIGANTE
+    ====================================================== */
+
+    .coming {
+
+        position: absolute;
+
+        right: -80px;
+
+        top: 50%;
+
+        z-index: 5;
+
+        transform:
+            translateY(-50%)
+            rotate(90deg);
+
+        color: rgba(14,32,52,.06);
+
+        font-size: 100px;
+
+        font-weight: 700;
+
+        letter-spacing: -.08em;
+
+        white-space: nowrap;
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       ETIQUETA
+    ====================================================== */
+
+    .under-construction {
+
+        position: absolute;
+
+        left: 0;
+
+        bottom: 65px;
+
+        z-index: 6;
+
+        padding: 14px 18px;
+
+        background: var(--navy);
+
+        color: white;
+
+        box-shadow:
+            0 18px 35px
+            rgba(14,32,52,.16);
+    }
+
+
+    .under-construction small {
 
         display: block;
 
-        margin-top: 5px;
+        margin-bottom: 5px;
+
+        color: var(--green-light);
+
+        font-size: 7px;
+
+        font-weight: 700;
+
+        letter-spacing: .18em;
+
+        text-transform: uppercase;
+    }
+
+
+    .under-construction strong {
+
+        display: block;
 
         font-family: var(--serif);
 
         font-size: 16px;
 
-        font-weight: 500;
+        font-weight: 400;
     }
 
 
-    /* =========================================================
-       INDICADOR DE SCROLL
-    ========================================================= */
+    /* =====================================================
+       SCROLL
+    ====================================================== */
 
-    .scroll {
+    .scroll-indicator {
 
         position: absolute;
 
-        bottom: 22px;
+        bottom: 25px;
 
         left: 50%;
-
-        z-index: 5;
 
         transform: translateX(-50%);
 
@@ -760,74 +674,78 @@
 
         gap: 8px;
 
-        color: #98a0a5;
+        color: #899196;
 
         font-size: 8px;
 
-        letter-spacing: .20em;
+        font-weight: 600;
+
+        letter-spacing: .18em;
 
         text-transform: uppercase;
+
+        z-index: 8;
     }
 
 
-    .scroll span {
+    .scroll-indicator span {
 
         width: 1px;
-        height: 28px;
+
+        height: 25px;
 
         background:
-
             linear-gradient(
-                var(--verde),
+                to bottom,
+                var(--green),
                 transparent
             );
     }
 
 
-    /* =========================================================
+    /* =====================================================
        HISTÓRIA
-    ========================================================= */
+    ====================================================== */
 
-    .historia {
+    .history {
 
-        padding: 120px 0;
+        position: relative;
 
-        background: var(--branco);
+        padding: 150px 0;
 
-        border-top: 1px solid var(--linha);
+        background: #fff;
     }
 
 
-    .historia-container {
+    .history-container {
 
         width: min(
-            1080px,
-            calc(100% - 48px)
+            1100px,
+            calc(100% - 80px)
         );
 
-        margin: 0 auto;
+        margin: auto;
     }
 
 
-    .historia-grid {
+    .history-header {
 
         display: grid;
 
-        grid-template-columns: .65fr 1.35fr;
+        grid-template-columns:
+            .7fr 1.3fr;
 
-        gap: 90px;
+        gap: 100px;
+
+        margin-bottom: 100px;
     }
 
 
-    /* =========================================================
-       LABEL
-    ========================================================= */
+    .history-label {
 
-    .label {
+        color: var(--green);
 
-        color: var(--verde);
-
-        font-size: 10px;
+        font-size: 9px;
 
         font-weight: 700;
 
@@ -837,329 +755,304 @@
     }
 
 
-    /* =========================================================
-       TÍTULO HISTÓRIA
-    ========================================================= */
+    .history-title {
 
-    .historia h2 {
-
-        margin-top: 20px;
-
-        color: var(--azul);
+        margin-top: 18px;
 
         font-family: var(--serif);
 
-        font-size: 47px;
+        font-size: 58px;
 
-        line-height: 1.05;
+        line-height: .98;
 
-        font-weight: 500;
+        font-weight: 400;
 
-        letter-spacing: -.035em;
+        letter-spacing: -.05em;
+
+        color: var(--navy);
     }
 
 
-    .historia h2 em {
+    .history-title em {
 
-        color: var(--verde);
+        color: var(--green);
 
         font-style: italic;
     }
 
 
-    /* =========================================================
-       TEXTO
-    ========================================================= */
+    .history-intro {
 
-    .lead {
+        padding-top: 25px;
 
-        color: var(--azul);
+        font-family: var(--serif);
 
-        font-size: 20px;
+        color: var(--navy);
 
-        line-height: 1.6;
+        font-size: 24px;
+
+        line-height: 1.45;
     }
 
 
-    .texto {
+    /* =====================================================
+       HISTÓRIA TEXTO
+    ====================================================== */
 
-        margin-top: 22px;
+    .history-body {
 
-        color: var(--cinza);
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 70px;
+    }
+
+
+    .history-text {
+
+        color: var(--gray);
 
         font-size: 14px;
 
-        line-height: 1.9;
+        line-height: 2;
     }
 
 
-    .texto strong {
+    .history-text strong {
 
-        color: var(--azul);
-
-        font-weight: 700;
+        color: var(--navy);
     }
 
 
-    /* =========================================================
+    /* =====================================================
        HOMENAGEM
-    ========================================================= */
+    ====================================================== */
 
-    .homenagem {
+    .dedication {
 
-        margin-top: 38px;
+        padding: 30px;
 
-        padding: 23px 24px;
+        background: #f5f5f0;
 
-        background: #f5f7f6;
-
-        border: 1px solid #e1e7e4;
-
-        border-radius: 11px;
+        border-left:
+            3px solid var(--green);
     }
 
 
-    .homenagem h4 {
+    .dedication-title {
 
-        color: var(--azul);
+        margin-bottom: 18px;
 
-        font-size: 12px;
+        color: var(--navy);
+
+        font-size: 11px;
 
         font-weight: 700;
+
+        text-transform: uppercase;
+
+        letter-spacing: .10em;
     }
 
 
-    .homenagem h4 i {
+    .dedication-title i {
 
         margin-right: 7px;
 
-        color: var(--verde);
+        color: var(--green);
     }
 
 
-    .nomes {
+    .names {
 
         display: flex;
 
         flex-wrap: wrap;
 
         gap: 7px;
-
-        margin-top: 14px;
     }
 
 
-    .nome {
+    .name {
 
-        padding: 6px 12px;
+        padding: 7px 12px;
 
-        border: 1px solid #dfe5e2;
+        background: white;
+
+        border: 1px solid #e3e5e1;
 
         border-radius: 50px;
 
-        background: #fff;
-
-        color: #64717b;
+        color: #65717a;
 
         font-size: 10px;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        FRASE
-    ========================================================= */
+    ====================================================== */
 
-    .frase {
+    .quote {
 
-        margin-top: 18px;
+        margin-top: 25px;
 
-        padding: 24px;
+        padding: 28px 30px;
 
-        border-left: 3px solid var(--verde);
+        background: var(--navy);
 
-        border-radius: 0 9px 9px 0;
-
-        background: rgba(45, 122, 107, .055);
+        color: white;
     }
 
 
-    .frase i {
+    .quote i {
 
-        color: var(--verde);
+        color: var(--green-light);
 
-        font-size: 14px;
+        font-size: 15px;
     }
 
 
-    .frase p {
+    .quote p {
 
-        margin-top: 9px;
-
-        color: var(--azul);
+        margin-top: 13px;
 
         font-family: var(--serif);
 
-        font-size: 17px;
+        font-size: 18px;
 
         line-height: 1.6;
+
+        font-weight: 400;
     }
 
 
-    /* =========================================================
-       BLOCO FINAL
-    ========================================================= */
+    /* =====================================================
+       FINAL CTA
+    ====================================================== */
 
-    .final {
+    .ending {
 
-        padding: 120px 0;
+        padding: 130px 20px;
 
-        background: var(--azul);
+        background: var(--green);
 
-        color: #fff;
+        color: white;
 
         text-align: center;
     }
 
 
-    .final-inner {
-
-        width: min(
-            800px,
-            calc(100% - 48px)
-        );
-
-        margin: 0 auto;
-    }
-
-
-    .final small {
-
-        color: #83c3b4;
+    .ending-label {
 
         font-size: 9px;
 
         font-weight: 700;
 
-        letter-spacing: .20em;
+        letter-spacing: .22em;
 
         text-transform: uppercase;
+
+        color: #c7e1da;
     }
 
 
-    .final h2 {
+    .ending h2 {
 
-        margin-top: 17px;
+        max-width: 800px;
+
+        margin: 20px auto 0;
 
         font-family: var(--serif);
 
         font-size: clamp(
-            40px,
-            5vw,
-            62px
+            45px,
+            6vw,
+            75px
         );
 
-        line-height: 1.07;
+        line-height: .98;
 
-        font-weight: 500;
+        font-weight: 400;
 
-        letter-spacing: -.03em;
+        letter-spacing: -.05em;
     }
 
 
-    .final h2 em {
-
-        color: #86c8b9;
+    .ending h2 em {
 
         font-style: italic;
+
+        color: #d9ebe6;
     }
 
 
-    .final p {
+    .ending p {
 
-        max-width: 590px;
+        max-width: 520px;
 
-        margin: 23px auto 0;
+        margin: 25px auto 0;
 
-        color: rgba(255, 255, 255, .60);
+        color: rgba(255,255,255,.72);
 
-        font-size: 14px;
+        font-size: 13px;
 
         line-height: 1.8;
     }
 
 
-    .final .btn {
-
-        margin-top: 30px;
-
-        background: #fff;
-
-        color: var(--azul);
-    }
-
-
-    .final .btn:hover {
-
-        background: var(--verde);
-
-        color: #fff;
-
-        transform: translateY(-2px);
-    }
-
-
-    /* =========================================================
+    /* =====================================================
        FOOTER
-    ========================================================= */
+    ====================================================== */
 
-    footer {
+    .footer {
 
-        padding: 24px 0;
+        padding: 25px 0;
 
-        background: var(--azul-escuro);
+        background: var(--navy-dark);
 
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255,255,255,.45);
     }
 
 
     .footer-inner {
 
         width: min(
-            1080px,
-            calc(100% - 48px)
+            1100px,
+            calc(100% - 80px)
         );
 
-        margin: 0 auto;
+        margin: auto;
 
         display: flex;
 
-        align-items: center;
-
         justify-content: space-between;
 
-        gap: 30px;
+        align-items: center;
     }
 
 
     .footer-brand {
 
-        color: #fff;
+        color: white;
 
-        font-size: 10px;
+        font-family: var(--serif);
 
-        font-weight: 700;
-
-        letter-spacing: .10em;
-
-        text-transform: uppercase;
+        font-size: 17px;
     }
 
 
     .footer-copy {
 
-        margin-top: 5px;
+        margin-top: 4px;
 
-        font-size: 9px;
+        font-size: 8px;
+
+        letter-spacing: .08em;
+
+        text-transform: uppercase;
     }
 
 
@@ -1179,9 +1072,11 @@
         display: flex;
 
         align-items: center;
+
         justify-content: center;
 
-        border: 1px solid rgba(255, 255, 255, .12);
+        border: 1px solid
+            rgba(255,255,255,.12);
 
         border-radius: 50%;
 
@@ -1193,59 +1088,57 @@
 
     .social a:hover {
 
-        background: var(--verde);
+        background: var(--green);
 
-        border-color: var(--verde);
+        border-color: var(--green);
 
-        color: #fff;
+        color: white;
     }
 
 
-    /* =========================================================
+    /* =====================================================
        TABLET
-    ========================================================= */
+    ====================================================== */
 
-    @media (max-width: 900px) {
+    @media (max-width: 950px) {
 
-        .hero-container {
+        .header,
+        .hero-content,
+        .history-container,
+        .footer-inner {
 
-            width: calc(100% - 50px);
+            width:
+                calc(100% - 50px);
         }
 
 
-        .topo {
-
-            height: 145px;
-
-            padding-top: 20px;
-        }
-
-
-        .hero-grid {
+        .hero-content {
 
             grid-template-columns: 1fr;
 
-            min-height: auto;
-
-            gap: 20px;
-
-            padding-bottom: 60px;
+            padding-top: 70px;
         }
 
 
-        .hero-texto {
+        .hero-copy {
 
             text-align: center;
         }
 
 
-        .eyebrow {
+        .mini-title {
 
             justify-content: center;
         }
 
 
-        .descricao {
+        .hero-title .italic {
+
+            margin-left: 0;
+        }
+
+
+        .hero-description {
 
             margin-left: auto;
 
@@ -1253,130 +1146,125 @@
         }
 
 
-        .acoes {
+        .hero-action {
+
+            display: flex;
 
             justify-content: center;
         }
 
 
-        .visual {
+        .launch-info {
 
-            min-height: 430px;
+            justify-content: center;
         }
 
 
-        .historia-grid {
+        .hero-visual {
+
+            min-height: 500px;
+        }
+
+
+        .history-header {
 
             grid-template-columns: 1fr;
 
-            gap: 45px;
+            gap: 25px;
+        }
+
+
+        .history-body {
+
+            grid-template-columns: 1fr;
         }
 
     }
 
 
-    /* =========================================================
-       CELULAR
-    ========================================================= */
+    /* =====================================================
+       MOBILE
+    ====================================================== */
 
     @media (max-width: 600px) {
 
-        .hero-container {
+        .header,
+        .hero-content,
+        .history-container,
+        .footer-inner {
 
-            width: calc(100% - 32px);
+            width:
+                calc(100% - 32px);
         }
 
 
-        /*
-           A LOGO CONTINUA NO FLUXO.
-           O TEXTO VEM DEPOIS DELA.
-        */
+        .header {
 
-        .topo {
-
-            height: 130px;
-
-            padding-top: 17px;
-
-            align-items: flex-start;
+            height: 90px;
         }
 
 
-        .logo-topo img {
+        .logo {
 
-            width: 105px;
+            width: 100px;
         }
 
 
-        .status {
-
-            margin-top: 5px;
-
-            padding: 7px 10px;
+        .header-right {
 
             font-size: 7px;
 
-            letter-spacing: .08em;
+            letter-spacing: .10em;
         }
 
 
-        .hero-grid {
+        .header-line {
 
-            display: flex;
-
-            flex-direction: column;
-
-            gap: 15px;
-
-            min-height: auto;
-
-            padding-bottom: 40px;
+            width: 18px;
         }
 
 
-        .hero-texto {
+        .hero-content {
 
-            width: 100%;
+            padding:
+                55px 0
+                80px;
 
-            padding: 0;
-
-            text-align: center;
+            gap: 20px;
         }
 
 
-        .eyebrow {
-
-            justify-content: center;
-
-            margin-bottom: 18px;
+        .mini-title {
 
             font-size: 8px;
 
-            letter-spacing: .14em;
+            letter-spacing: .15em;
         }
 
 
-        .eyebrow::before {
+        .mini-title::before {
 
             width: 25px;
-
-            flex-basis: 25px;
         }
 
 
-        .hero h1 {
+        .hero-title {
 
-            font-size: 50px;
+            font-size: 59px;
 
-            line-height: 1;
-
-            letter-spacing: -.055em;
+            line-height: .88;
         }
 
 
-        .descricao {
+        .hero-title .italic {
 
-            margin-top: 22px;
+            margin-top: 5px;
+        }
+
+
+        .hero-description {
+
+            margin-top: 28px;
 
             font-size: 13px;
 
@@ -1384,84 +1272,73 @@
         }
 
 
-        .acoes {
+        .history-button {
 
             width: 100%;
 
-            margin-top: 27px;
+            justify-content: center;
         }
 
 
-        .btn {
+        .launch-info {
 
-            width: 100%;
-
-            min-height: 48px;
+            margin-top: 30px;
         }
 
 
-        .visual {
+        .hero-visual {
 
-            width: 100%;
+            min-height: 370px;
 
-            min-height: 340px;
+            margin-top: 10px;
         }
 
 
-        .visual-circulo {
+        .visual-circle {
 
             width: 310px;
             height: 310px;
         }
 
 
-        .visual-orbita {
+        .visual-circle::after {
 
-            width: 290px;
-            height: 290px;
+            inset: 23px;
         }
 
 
-        .logo-card {
+        .visual-logo {
 
-            width: 245px;
-            height: 245px;
-
-            border-radius: 20px;
+            width: 210px;
+            height: 210px;
         }
 
 
-        .logo-card::before {
+        .coming {
 
-            inset: 10px;
+            right: -65px;
 
-            border-radius: 14px;
+            font-size: 60px;
         }
 
 
-        .card-status {
+        .under-construction {
 
             left: 0;
 
-            bottom: 8px;
+            bottom: 25px;
 
             padding: 11px 13px;
         }
 
 
-        .card-status small {
-
-            font-size: 7px;
-        }
-
-
-        .card-status strong {
+        .under-construction strong {
 
             font-size: 13px;
         }
 
 
-        .scroll {
+        .scroll-indicator {
 
             display: none;
         }
@@ -1469,41 +1346,73 @@
 
         /* HISTÓRIA */
 
-        .historia {
+        .history {
 
-            padding: 80px 0;
+            padding: 90px 0;
         }
 
 
-        .historia h2 {
+        .history-header {
 
-            font-size: 38px;
+            margin-bottom: 55px;
         }
 
 
-        .lead {
+        .history-title {
 
-            font-size: 18px;
+            font-size: 43px;
         }
 
 
-        .texto {
+        .history-intro {
+
+            font-size: 19px;
+        }
+
+
+        .history-body {
+
+            gap: 35px;
+        }
+
+
+        .history-text {
 
             font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        .dedication {
+
+            padding: 22px;
+        }
+
+
+        .quote {
+
+            padding: 23px;
+        }
+
+
+        .quote p {
+
+            font-size: 16px;
         }
 
 
         /* FINAL */
 
-        .final {
+        .ending {
 
-            padding: 85px 0;
+            padding: 90px 20px;
         }
 
 
-        .final h2 {
+        .ending h2 {
 
-            font-size: 40px;
+            font-size: 46px;
         }
 
 
@@ -1513,9 +1422,9 @@
 
             flex-direction: column;
 
-            text-align: center;
-
             gap: 20px;
+
+            text-align: center;
         }
 
     }
@@ -1528,182 +1437,191 @@
 <body>
 
 
-<!-- ==========================================================
-     HERO / LANÇAMENTO
+<!-- =========================================================
+     HERO
 ========================================================== -->
 
 <section class="hero">
 
-    <div class="hero-container">
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
 
 
-        <!-- ==================================================
-             TOPO
-             
-             A LOGO ESTÁ NO FLUXO NORMAL.
-             NÃO É POSITION ABSOLUTE.
-        =================================================== -->
+        <a
+            href="#"
+            class="logo"
+            aria-label="Legado que Ensina"
+        >
 
-        <div class="topo">
-
-
-            <a
-                href="#"
-                class="logo-topo"
-                aria-label="Legado que Ensina"
+            <img
+                src="https://i.imgur.com/YIQDI4s.png"
+                alt="Legado que Ensina"
             >
+
+        </a>
+
+
+        <div class="header-right">
+
+            <span class="header-line"></span>
+
+            Lançamento oficial
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO CONTENT
+    ====================================================== -->
+
+    <div class="hero-content">
+
+
+        <!-- =================================================
+             TEXTO
+        ================================================== -->
+
+        <div class="hero-copy">
+
+
+            <div class="mini-title">
+
+                Um novo capítulo começa
+
+            </div>
+
+
+            <h1 class="hero-title">
+
+                Vem aí
+
+                <span class="italic">
+
+                    algo novo.
+
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                O <strong>Legado que Ensina</strong> está
+                preparando um novo espaço para compartilhar
+                conhecimento, experiências e uma maneira mais
+                humana de olhar para a aprendizagem.
+
+                <br><br>
+
+                O site está sendo construído.
+                <strong>Em breve estaremos aqui.</strong>
+
+            </p>
+
+
+            <div class="hero-action">
+
+                <a
+                    href="#historia"
+                    class="history-button"
+                >
+
+                    Conheça nossa história
+
+                    <i class="fas fa-arrow-down"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="launch-info">
+
+
+                <span class="launch-number">
+
+                    01
+
+                </span>
+
+
+                <span class="launch-info-text">
+
+                    Primeiro capítulo<br>
+                    de uma nova fase
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             VISUAL
+        ================================================== -->
+
+        <div class="hero-visual">
+
+
+            <div class="visual-circle"></div>
+
+
+            <div class="visual-logo">
 
                 <img
                     src="https://i.imgur.com/YIQDI4s.png"
                     alt="Legado que Ensina"
                 >
 
-            </a>
+            </div>
 
 
-            <div class="status">
+            <div class="coming">
 
-                <span class="status-dot"></span>
+                VEM AÍ
 
-                Lançamento em breve
+            </div>
+
+
+            <div class="under-construction">
+
+                <small>
+
+                    Site em construção
+
+                </small>
+
+
+                <strong>
+
+                    Estamos preparando tudo.
+
+                </strong>
 
             </div>
 
 
         </div>
 
-
-        <!-- ==================================================
-             CONTEÚDO PRINCIPAL
-        =================================================== -->
-
-        <div class="hero-grid">
-
-
-            <!-- ==================================================
-                 TEXTO
-            =================================================== -->
-
-            <div class="hero-texto">
-
-
-                <div class="eyebrow">
-
-                    Um novo capítulo começa
-
-                </div>
-
-
-                <h1>
-
-                    Vem aí o<br>
-
-                    <span>
-                        Legado que Ensina.
-                    </span>
-
-                </h1>
-
-
-                <p class="descricao">
-
-                    Estamos preparando um novo espaço para
-                    compartilhar conhecimento, experiências e
-                    uma maneira mais humana de olhar para a
-                    aprendizagem.
-
-                    <br><br>
-
-                    <strong>
-                        O lançamento oficial está chegando.
-                    </strong>
-
-                </p>
-
-
-                <!-- ==================================================
-                     ÚNICA AÇÃO
-                =================================================== -->
-
-                <div class="acoes">
-
-                    <a
-                        href="#historia"
-                        class="btn btn-principal"
-                    >
-
-                        Conheça nossa história
-
-                        <i class="fas fa-arrow-down"></i>
-
-                    </a>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- ==================================================
-                 VISUAL
-            =================================================== -->
-
-            <div class="visual">
-
-
-                <div class="visual-circulo"></div>
-
-
-                <div class="visual-orbita"></div>
-
-
-                <div class="logo-card">
-
-
-                    <img
-                        src="https://i.imgur.com/YIQDI4s.png"
-                        alt="Legado que Ensina"
-                    >
-
-
-                </div>
-
-
-                <div class="card-status">
-
-
-                    <small>
-
-                        <i class="fas fa-circle"></i>
-
-                        Em preparação
-
-                    </small>
-
-
-                    <strong>
-
-                        Algo especial está chegando.
-
-                    </strong>
-
-
-                </div>
-
-
-            </div>
-
-
-        </div>
 
     </div>
 
 
-    <!-- ======================================================
+    <!-- =====================================================
          SCROLL
-    ======================================================= -->
+    ====================================================== -->
 
-    <div class="scroll">
+    <div class="scroll-indicator">
 
         Descubra
 
@@ -1711,45 +1629,44 @@
 
     </div>
 
+
 </section>
 
 
 
-<!-- ==========================================================
+<!-- =========================================================
      HISTÓRIA
 ========================================================== -->
 
 <section
-    class="historia"
+    class="history"
     id="historia"
 >
 
 
-    <div class="historia-container">
+    <div class="history-container">
 
 
-        <div class="historia-grid">
+        <div class="history-header">
 
-
-            <!-- ==================================================
-                 TÍTULO
-            =================================================== -->
 
             <div>
 
 
-                <span class="label">
+                <div class="history-label">
 
-                    Nossa essência
+                    Nossa história
 
-                </span>
+                </div>
 
 
-                <h2>
+                <h2 class="history-title">
 
-                    Antes do site,<br>
+                    Antes do novo,<br>
 
-                    existe uma <em>história.</em>
+                    existe o
+
+                    <em>legado.</em>
 
                 </h2>
 
@@ -1757,112 +1674,141 @@
             </div>
 
 
-            <!-- ==================================================
-                 TEXTO
-            =================================================== -->
+            <p class="history-intro">
+
+                Algumas experiências na educação não passam
+                com o tempo. Elas permanecem na forma como
+                escolhemos ensinar, acolher e transformar.
+
+            </p>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CORPO
+        ================================================== -->
+
+        <div class="history-body">
+
+
+            <div class="history-text">
+
+                <p>
+
+                    O Legado que Ensina nasce de uma história
+                    construída através de pessoas, encontros,
+                    desafios e aprendizados.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Cada experiência ajudou a formar aquilo que
+                    somos hoje. Cada criança, cada família e cada
+                    profissional deixou uma parte dessa trajetória.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    Agora, estamos abrindo um novo capítulo.
+
+                    <strong>
+                        Um novo espaço, novas possibilidades
+                        e o mesmo propósito:
+                    </strong>
+
+                    fazer da aprendizagem uma experiência mais
+                    significativa, acolhedora e humana.
+
+                </p>
+
+            </div>
+
 
             <div>
 
 
-                <p class="lead">
-
-                    O Legado que Ensina nasce de experiências
-                    que continuam presentes na forma como
-                    escolhemos ensinar, acolher e transformar.
-
-                </p>
-
-
-                <p class="texto">
-
-                    Cada pessoa que passou por essa trajetória
-                    deixou uma marca. Cada desafio trouxe um
-                    aprendizado. Cada encontro ajudou a construir
-                    aquilo que hoje chamamos de
-
-                    <strong>
-                        Legado que Ensina.
-                    </strong>
-
-                    <br><br>
-
-                    Este novo espaço está sendo preparado para
-                    reunir essa história e, ao mesmo tempo,
-                    abrir espaço para tudo aquilo que ainda está
-                    por vir.
-
-                </p>
-
-
-                <!-- ==================================================
+                <!-- =============================================
                      HOMENAGEM
-                =================================================== -->
+                ============================================== -->
 
-                <div class="homenagem">
+                <div class="dedication">
 
 
-                    <h4>
+                    <div class="dedication-title">
 
                         <i class="fas fa-heart"></i>
 
                         Em homenagem à nossa história
 
-                    </h4>
+                    </div>
 
 
-                    <div class="nomes">
+                    <div class="names">
 
 
-                        <span class="nome">
+                        <span class="name">
                             Benício
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Maicon
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Pedro
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Marcos
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Maria
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Profª Vanessa
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Profª Cirleia
                         </span>
 
 
-                        <span class="nome">
+                        <span class="name">
                             Profª Joceli
                         </span>
 
 
                     </div>
 
+
                 </div>
 
 
-                <!-- ==================================================
-                     FRASE
-                =================================================== -->
+                <!-- =============================================
+                     CITAÇÃO
+                ============================================== -->
 
-                <div class="frase">
+                <div class="quote">
 
 
                     <i class="fas fa-quote-left"></i>
@@ -1873,8 +1819,8 @@
                         “Porque algumas experiências na educação
                         não passam com o tempo — elas continuam
                         existindo na forma como se escolhe ensinar,
-                        acolher e transformar o aprendizado em algo
-                        significativo.”
+                        acolher e transformar o aprendizado em
+                        algo significativo.”
 
                     </p>
 
@@ -1895,70 +1841,46 @@
 
 
 
-<!-- ==========================================================
-     ENCERRAMENTO
+<!-- =========================================================
+     FINAL
 ========================================================== -->
 
-<section class="final">
+<section class="ending">
 
 
-    <div class="final-inner">
+    <div class="ending-label">
 
-
-        <small>
-
-            Lançamento oficial
-
-        </small>
-
-
-        <h2>
-
-            Um novo espaço.<br>
-
-            O mesmo propósito.<br>
-
-            <em>
-                Um legado que continua.
-            </em>
-
-        </h2>
-
-
-        <p>
-
-            O site oficial do Legado que Ensina está sendo
-            preparado. Em breve, você poderá conhecer nossa
-            história, nossos projetos, conteúdos e tudo o que
-            estamos construindo.
-
-        </p>
-
-
-        <a
-            href="#historia"
-            class="btn"
-        >
-
-            Conhecer nossa história
-
-            <i class="fas fa-arrow-up"></i>
-
-        </a>
-
+        Lançamento oficial — aguarde
 
     </div>
+
+
+    <h2>
+
+        O próximo capítulo<br>
+
+        <em>está começando.</em>
+
+    </h2>
+
+
+    <p>
+
+        Estamos cuidando de cada detalhe para apresentar
+        o novo Legado que Ensina.
+
+    </p>
 
 
 </section>
 
 
 
-<!-- ==========================================================
+<!-- =========================================================
      FOOTER
 ========================================================== -->
 
-<footer>
+<footer class="footer">
 
 
     <div class="footer-inner">
@@ -2026,45 +1948,41 @@
 </footer>
 
 
-
-<!-- ==========================================================
-     JAVASCRIPT
+<!-- =========================================================
+     SCRIPT
 ========================================================== -->
 
 <script>
 
-document
-    .querySelectorAll('a[href^="#"]')
-    .forEach(function(link) {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function(link) {
 
-        link.addEventListener(
-            "click",
-            function(event) {
+            link.addEventListener(
+                "click",
+                function(event) {
 
-                const id =
-                    this.getAttribute("href");
+                    const targetId =
+                        this.getAttribute("href");
 
-                const destino =
-                    document.querySelector(id);
+                    const target =
+                        document.querySelector(targetId);
 
-                if (!destino) {
-                    return;
+                    if (!target) {
+                        return;
+                    }
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
                 }
+            );
 
-                event.preventDefault();
-
-                destino.scrollIntoView({
-
-                    behavior: "smooth",
-
-                    block: "start"
-
-                });
-
-            }
-        );
-
-    });
+        });
 
 </script>
 
