@@ -12,100 +12,289 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   
   <style>
-    /* ===== RESET E BASE ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ============================================================
+       ROOT VARIABLES
+    ============================================================ */
+    :root {
+      --color-primary: #2d7a6b;
+      --color-primary-light: #4a9e8f;
+      --color-primary-dark: #1e5a4f;
+      --color-secondary: #0f0f1a;
+      --color-accent: #f0b27a;
+      --color-bg: #f5f7fa;
+      --color-text: #1a1a2e;
+      --color-text-light: #4a5568;
+      --color-text-muted: #718096;
+      --color-white: #ffffff;
+      --color-shadow: rgba(45, 122, 107, 0.12);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --radius-full: 60px;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f0f4f8;
-      color: #1a1a2e;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* ===== ANIMAÇÕES ===== */
-    .page { display: none; animation: fadeInUp 0.6s ease; }
-    .page.active { display: block; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    .heading-xl {
+      font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .heading-lg {
+      font-size: clamp(2.2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .heading-md {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .text-gradient-light {
+      background: linear-gradient(135deg, #6bc2b0, var(--color-primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    .page {
+      display: none;
+      animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .page.active {
+      display: block;
+    }
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* ===== BOTÃO WHATSAPP FIXO ===== */
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-16px);
+      }
+    }
+
+    @keyframes pulse-glow {
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(74, 158, 143, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 0 20px rgba(74, 158, 143, 0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    /* ============================================================
+       WHATSAPP FLOAT
+    ============================================================ */
     .whatsapp-float {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
+      bottom: 32px;
+      right: 32px;
       background: #25d366;
-      color: white;
+      color: #fff;
       border-radius: 60px;
-      padding: 16px 24px;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 700;
-      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.45);
+      font-size: 0.9rem;
       text-decoration: none;
       z-index: 999;
-      transition: all 0.3s ease;
-      font-size: 0.95rem;
-      border: 2px solid rgba(255,255,255,0.2);
-    }
-    .whatsapp-float i { font-size: 1.6rem; }
-    .whatsapp-float:hover { 
-      transform: scale(1.08); 
-      background: #1ebe5c;
-      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.55);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
     }
 
-    /* ===== TOPBAR ===== */
-    .topbar {
-      background: #0f0f1a;
-      color: #a0aec0;
-      padding: 10px 0;
-      font-size: 0.8rem;
-      border-bottom: 3px solid #4a9e8f;
+    .whatsapp-float i {
+      font-size: 1.5rem;
     }
+
+    .whatsapp-float:hover {
+      transform: scale(1.06) translateY(-3px);
+      box-shadow: 0 16px 48px rgba(37, 211, 102, 0.5);
+      background: #1ebe5c;
+    }
+
+    .whatsapp-float .badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 18px;
+      height: 18px;
+      background: #ff4757;
+      border-radius: 50%;
+      font-size: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #fff;
+    }
+
+    /* ============================================================
+       TOPBAR
+    ============================================================ */
+    .topbar {
+      background: var(--color-secondary);
+      color: rgba(255, 255, 255, 0.5);
+      padding: 8px 0;
+      font-size: 0.75rem;
+      border-bottom: 2px solid var(--color-primary-light);
+      letter-spacing: 0.3px;
+    }
+
     .topbar .container {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
-    .topbar a { color: #a0aec0; text-decoration: none; margin-left: 18px; transition: 0.3s; }
-    .topbar a:hover { color: #fff; }
-    .topbar i { margin-right: 6px; }
 
-    /* ===== HERO ===== */
+    .topbar a {
+      color: rgba(255, 255, 255, 0.4);
+      text-decoration: none;
+      margin-left: 20px;
+      transition: var(--transition);
+    }
+
+    .topbar a:hover {
+      color: #fff;
+    }
+
+    .topbar i {
+      margin-right: 6px;
+    }
+
+    .topbar .social-link {
+      margin-left: 14px;
+      opacity: 0.5;
+      transition: var(--transition);
+    }
+
+    .topbar .social-link:hover {
+      opacity: 1;
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
     .hero {
-      padding: 80px 0 100px;
-      background: linear-gradient(165deg, #f0f4f8 0%, #e2e8f0 50%, #d5e0ec 100%);
+      padding: 100px 0 120px;
+      background: var(--color-bg);
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 70%;
+      top: -40%;
+      right: -15%;
+      width: 60%;
       height: 150%;
-      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.06) 0%, transparent 70%);
       pointer-events: none;
     }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -113,122 +302,178 @@
       left: -10%;
       width: 50%;
       height: 100%;
-      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.05) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.04) 0%, transparent 70%);
       pointer-events: none;
     }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
-      position: relative;
-      z-index: 1;
     }
+
     .hero-content {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
+      animation: slideInLeft 0.8s ease;
     }
+
     .hero-badge {
-      display: inline-block;
-      background: rgba(74, 158, 143, 0.15);
-      padding: 8px 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(74, 158, 143, 0.1);
+      padding: 8px 24px;
       border-radius: 60px;
-      color: #4a9e8f;
+      color: var(--color-primary-light);
       font-weight: 700;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      width: fit-content;
-      border: 1px solid rgba(74, 158, 143, 0.2);
+      font-size: 0.75rem;
       text-transform: uppercase;
+      letter-spacing: 1.2px;
+      border: 1px solid rgba(74, 158, 143, 0.15);
+      width: fit-content;
     }
+
+    .hero-badge i {
+      font-size: 0.7rem;
+    }
+
     .hero h1 {
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: #0f0f1a;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--color-secondary);
     }
-    .hero h1 span { 
-      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+    .hero h1 .highlight {
+      position: relative;
+      display: inline-block;
     }
+
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-dark));
+      border-radius: 4px;
+      opacity: 0.3;
+    }
+
     .hero p {
       font-size: 1.15rem;
-      color: #4a5568;
-      max-width: 520px;
+      color: var(--color-text-light);
+      max-width: 500px;
       line-height: 1.8;
     }
-    .btn-group {
+
+    .hero .btn-group {
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
       margin-top: 8px;
     }
+
     .btn-primary {
-      background: linear-gradient(135deg, #4a9e8f, #3a7e72);
-      color: white;
-      padding: 16px 42px;
-      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+      color: #fff;
+      padding: 16px 40px;
+      border-radius: var(--radius-full);
       font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 28px rgba(74, 158, 143, 0.35);
-      border: none;
       font-size: 1rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn-primary:hover { 
-      transform: translateY(-4px); 
-      box-shadow: 0 16px 40px rgba(74, 158, 143, 0.45);
-      background: linear-gradient(135deg, #3a7e72, #2d6b60);
-    }
-    .btn-outline {
-      background: transparent;
-      color: #1a1a2e;
-      padding: 16px 36px;
-      border-radius: 60px;
-      font-weight: 600;
       text-decoration: none;
-      border: 2px solid #cbd5e0;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      box-shadow: 0 8px 32px rgba(74, 158, 143, 0.3);
+      border: none;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .btn-outline:hover { 
-      border-color: #4a9e8f; 
-      background: rgba(74, 158, 143, 0.05);
-      transform: translateY(-4px);
     }
 
-    .hero-logo {
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(74, 158, 143, 0.4);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--color-text);
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid #e2e8f0;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-primary-light);
+      color: var(--color-primary-light);
+      transform: translateY(-4px);
+      background: rgba(74, 158, 143, 0.04);
+    }
+
+    .hero-visual {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
-      animation: float 4s ease-in-out infinite;
-    }
-    .hero-logo img {
-      max-width: 480px;
-      width: 100%;
-      height: auto;
-      display: block;
-      filter: drop-shadow(0 30px 50px rgba(0,0,0,0.08));
+      animation: slideInRight 0.8s ease;
     }
 
-    /* ===== ABOUT ===== */
+    .hero-visual img {
+      max-width: 480px;
+      width: 100%;
+      filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.06));
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 8px;
+    }
+
+    .hero-stats .stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stats .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-secondary);
+    }
+
+    .hero-stats .stat-label {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
     .about {
       padding: 100px 0;
-      background: white;
+      background: var(--color-white);
       position: relative;
     }
+
     .about::before {
       content: '';
       position: absolute;
@@ -236,499 +481,833 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #4a9e8f, #2d7a6b, #4a9e8f);
+      background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-dark), var(--color-primary-light));
       background-size: 200% 100%;
-      animation: shimmer 3s ease-in-out infinite;
+      animation: shimmer 4s ease-in-out infinite;
     }
+
     @keyframes shimmer {
-      0%, 100% { background-position: -200% 0; }
-      50% { background-position: 200% 0; }
+      0%,
+      100% {
+        background-position: -200% 0;
+      }
+      50% {
+        background-position: 200% 0;
+      }
     }
+
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
     }
-    .about-text h2 {
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #0f0f1a;
+
+    .about-content h2 {
       margin-bottom: 20px;
     }
-    .about-text h2 span { 
-      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .about-text p {
-      color: #4a5568;
-      margin-bottom: 20px;
+
+    .about-content p {
+      color: var(--color-text-light);
+      margin-bottom: 18px;
       line-height: 1.9;
       font-size: 1.05rem;
     }
-    .btn-historia {
+
+    .about-content .btn-historia {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background: linear-gradient(135deg, #4a9e8f, #3a7e72);
-      color: white;
+      background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-dark));
+      color: #fff;
       padding: 14px 32px;
-      border-radius: 60px;
+      border-radius: var(--radius-full);
       font-weight: 700;
+      font-size: 0.95rem;
       border: none;
       cursor: pointer;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 24px rgba(74, 158, 143, 0.25);
+      transition: var(--transition);
+      box-shadow: 0 8px 24px rgba(74, 158, 143, 0.2);
     }
-    .btn-historia:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 14px 32px rgba(74, 158, 143, 0.35);
+
+    .about-content .btn-historia:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(74, 158, 143, 0.3);
     }
+
     .about-image img {
       width: 100%;
       border-radius: 32px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.06);
-      display: block;
-      transition: all 0.5s ease;
-    }
-    .about-image img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow-xl);
+      transition: var(--transition);
     }
 
-    /* ===== SERVICES ===== */
+    .about-image img:hover {
+      transform: scale(1.01);
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
     .services {
       padding: 100px 0;
-      background: linear-gradient(165deg, #f7fafc 0%, #edf2f7 100%);
+      background: var(--color-bg);
     }
-    .section-title {
-      text-align: center;
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #0f0f1a;
-    }
-    .section-title span { 
-      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .section-desc {
+
+    .services-header {
       text-align: center;
       max-width: 700px;
-      margin: 16px auto 56px;
-      color: #4a5568;
-      font-size: 1.1rem;
+      margin: 0 auto 60px;
     }
-    .card-grid {
+
+    .services-header .section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-primary-light);
+      background: rgba(74, 158, 143, 0.1);
+      padding: 6px 20px;
+      border-radius: 60px;
+      margin-bottom: 12px;
+    }
+
+    .services-header h2 {
+      margin-bottom: 12px;
+    }
+
+    .services-header p {
+      color: var(--color-text-light);
+      font-size: 1.05rem;
+    }
+
+    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
+
     .service-card {
-      background: white;
+      background: var(--color-white);
       padding: 40px 32px;
-      border-radius: 28px;
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+      border-radius: var(--radius);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      transition: var(--transition);
       position: relative;
-      overflow: hidden;
+      box-shadow: var(--shadow-sm);
     }
+
     .service-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #4a9e8f, #2d7a6b);
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary-dark));
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s ease;
     }
+
     .service-card:hover::before {
       transform: scaleX(1);
     }
-    .service-card:hover { 
-      transform: translateY(-8px); 
-      box-shadow: 0 24px 48px rgba(0,0,0,0.06);
-      border-color: rgba(74, 158, 143, 0.15);
-    }
-    .service-card i { 
-      font-size: 2.8rem; 
-      background: linear-gradient(135deg, #4a9e8f, #2d7a6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    .service-card h3 { 
-      font-size: 1.3rem; 
-      margin-bottom: 12px; 
-      color: #0f0f1a;
-      font-weight: 700;
-    }
-    .service-card p { 
-      color: #4a5568; 
-      line-height: 1.8;
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(74, 158, 143, 0.1);
     }
 
-    /* ===== BLOG ===== */
+    .service-card .icon-wrapper {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(74, 158, 143, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .icon-wrapper {
+      background: rgba(74, 158, 143, 0.15);
+    }
+
+    .service-card .icon-wrapper i {
+      font-size: 1.8rem;
+      color: var(--color-primary-light);
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--color-secondary);
+    }
+
+    .service-card p {
+      color: var(--color-text-light);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .service-card .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: var(--color-primary-light);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .service-card .card-link:hover {
+      gap: 14px;
+    }
+
+    /* ============================================================
+       BLOG
+    ============================================================ */
     .blog {
       padding: 100px 0;
-      background: white;
+      background: var(--color-white);
     }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-      margin-top: 48px;
+
+    .blog-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
     }
-    .blog-card {
-      background: #f7fafc;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.4s ease;
-      border: 1px solid rgba(0,0,0,0.04);
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
-    }
-    .blog-card:hover { 
-      transform: translateY(-8px); 
-      box-shadow: 0 24px 48px rgba(0,0,0,0.08);
-      border-color: rgba(74, 158, 143, 0.15);
-    }
-    .blog-card img { 
-      width: 100%; 
-      height: 220px; 
-      object-fit: cover; 
-      display: block;
-      transition: all 0.5s ease;
-    }
-    .blog-card:hover img {
-      transform: scale(1.03);
-    }
-    .blog-card-body { padding: 28px 28px 32px; }
-    .blog-card-body .blog-tag {
+
+    .blog-header .section-tag {
       display: inline-block;
-      background: rgba(74, 158, 143, 0.12);
-      padding: 4px 16px;
-      border-radius: 60px;
       font-size: 0.7rem;
       font-weight: 700;
-      color: #4a9e8f;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1.5px;
+      color: var(--color-primary-light);
+      background: rgba(74, 158, 143, 0.1);
+      padding: 6px 20px;
+      border-radius: 60px;
       margin-bottom: 12px;
     }
-    .blog-card-body h3 {
-      font-size: 1.25rem;
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .blog-card {
+      background: var(--color-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(74, 158, 143, 0.1);
+    }
+
+    .blog-card .blog-image {
+      position: relative;
+      overflow: hidden;
+      height: 220px;
+    }
+
+    .blog-card .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .blog-card:hover .blog-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-card .blog-image .blog-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: var(--color-white);
+      padding: 4px 16px;
+      border-radius: 60px;
+      font-size: 0.65rem;
       font-weight: 700;
-      color: #0f0f1a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-primary-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .blog-card .blog-body {
+      padding: 28px 28px 32px;
+    }
+
+    .blog-card .blog-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-secondary);
       margin-bottom: 8px;
       line-height: 1.3;
     }
-    .blog-card-body .blog-date {
-      font-size: 0.85rem;
-      color: #718096;
+
+    .blog-card .blog-body .blog-meta {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
       margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
-    .blog-card-body p {
-      color: #4a5568;
+
+    .blog-card .blog-body .blog-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .blog-card .blog-body p {
+      color: var(--color-text-light);
       font-size: 0.95rem;
       line-height: 1.7;
       margin-bottom: 18px;
     }
-    .blog-card-body .btn-leia {
-      background: transparent;
-      color: #4a9e8f;
-      border: 2px solid #4a9e8f;
-      padding: 8px 24px;
-      border-radius: 60px;
+
+    .blog-card .blog-body .btn-leia {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-primary-light);
       font-weight: 700;
       font-size: 0.85rem;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      background: none;
       cursor: pointer;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-    .blog-card-body .btn-leia:hover { 
-      background: #4a9e8f; 
-      color: white;
-      transform: translateX(4px);
+      padding: 0;
     }
 
-    /* ===== CTA / CONTATO ===== */
+    .blog-card .blog-body .btn-leia:hover {
+      gap: 14px;
+    }
+
+    /* ============================================================
+       CTA
+    ============================================================ */
     .cta-section {
       padding: 100px 0;
-      background: linear-gradient(165deg, #0f0f1a 0%, #1a1a2e 100%);
-      color: white;
-      text-align: center;
+      background: var(--color-secondary);
+      color: #fff;
       position: relative;
       overflow: hidden;
     }
+
     .cta-section::before {
       content: '';
       position: absolute;
       top: -50%;
-      right: -30%;
-      width: 80%;
+      right: -20%;
+      width: 60%;
       height: 200%;
-      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.1) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(74, 158, 143, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
-    .cta-section .container { position: relative; z-index: 1; max-width: 720px; }
+
+    .cta-section .container {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      text-align: center;
+    }
+
     .cta-section h2 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
       margin-bottom: 8px;
     }
-    .cta-section h2 span { 
-      background: linear-gradient(135deg, #4a9e8f, #6bc2b0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+
     .cta-section .cta-sub {
-      color: #a0aec0;
-      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.05rem;
       margin-bottom: 48px;
     }
 
     .cta-card {
-      background: rgba(255,255,255,0.04);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
       padding: 56px 48px;
-      border-radius: 32px;
-      border: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-      transition: all 0.4s ease;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: var(--transition);
     }
+
     .cta-card:hover {
-      border-color: rgba(74, 158, 143, 0.3);
-      box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+      border-color: rgba(74, 158, 143, 0.25);
+      box-shadow: var(--shadow-xl);
     }
+
     .cta-card .cta-icon {
-      font-size: 4rem;
+      font-size: 3.6rem;
       color: #25d366;
       margin-bottom: 16px;
       display: inline-block;
-      animation: pulse 2s ease-in-out infinite;
+      animation: pulse-glow 2s ease-in-out infinite;
     }
+
     .cta-card h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      color: white;
       margin-bottom: 8px;
     }
+
     .cta-card p {
-      color: #a0aec0;
+      color: rgba(255, 255, 255, 0.5);
       font-size: 1rem;
       margin-bottom: 32px;
     }
+
     .cta-card .btn-whatsapp {
       display: inline-flex;
       align-items: center;
       gap: 14px;
       background: #25d366;
-      color: white;
-      padding: 18px 52px;
-      border-radius: 60px;
+      color: #fff;
+      padding: 18px 48px;
+      border-radius: var(--radius-full);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       box-shadow: 0 8px 32px rgba(37, 211, 102, 0.35);
     }
+
     .cta-card .btn-whatsapp:hover {
       background: #1ebe5c;
       transform: translateY(-4px);
       box-shadow: 0 16px 48px rgba(37, 211, 102, 0.5);
     }
-    .cta-card .btn-whatsapp i { font-size: 1.8rem; }
+
+    .cta-card .btn-whatsapp i {
+      font-size: 1.6rem;
+    }
 
     .cta-card .cta-divider {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
       margin: 28px 0 24px;
-      color: #4a5568;
-      font-size: 0.85rem;
-    }
-    .cta-card .cta-divider::before,
-    .cta-card .cta-divider::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: rgba(255,255,255,0.08);
+      color: rgba(255, 255, 255, 0.15);
+      font-size: 0.8rem;
     }
 
-    .cta-card .cta-contato-rapido {
+    .cta-card .cta-divider::before,
+    .cta-card .cta-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .cta-card .cta-contato {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 28px;
       font-size: 0.9rem;
-      color: #a0aec0;
+      color: rgba(255, 255, 255, 0.4);
     }
-    .cta-card .cta-contato-rapido span {
+
+    .cta-card .cta-contato span {
       display: inline-flex;
       align-items: center;
       gap: 10px;
     }
-    .cta-card .cta-contato-rapido i {
-      color: #4a9e8f;
-      font-size: 1.1rem;
+
+    .cta-card .cta-contato i {
+      color: var(--color-primary-light);
     }
 
-    /* ===== FOOTER ===== */
+    /* ============================================================
+       FOOTER
+    ============================================================ */
     .footer {
-      background: #0a0a16;
-      padding: 56px 0 32px;
-      color: #a0aec0;
-      border-top: 1px solid rgba(255,255,255,0.03);
+      background: #080812;
+      padding: 60px 0 32px;
+      color: rgba(255, 255, 255, 0.3);
     }
+
     .footer-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      margin-bottom: 40px;
     }
-    .footer h4 { 
-      color: white; 
-      font-weight: 700; 
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, 0.3);
+      line-height: 1.8;
+      max-width: 360px;
+      font-size: 0.95rem;
+    }
+
+    .footer h4 {
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       margin-bottom: 16px;
-      font-size: 1.1rem;
     }
+
     .footer a {
-      color: #a0aec0;
+      color: rgba(255, 255, 255, 0.3);
       text-decoration: none;
       display: block;
       margin-bottom: 10px;
-      transition: all 0.3s ease;
+      transition: var(--transition);
+      font-size: 0.9rem;
       cursor: pointer;
     }
-    .footer a:hover { color: #4a9e8f; padding-left: 4px; }
-    .footer i { margin-right: 10px; width: 20px; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.04);
-      margin-top: 40px;
-      padding-top: 24px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #4a5568;
+
+    .footer a:hover {
+      color: var(--color-primary-light);
+      padding-left: 4px;
     }
 
-    /* ===== PÁGINAS INTERNAS ===== */
+    .footer a i {
+      margin-right: 10px;
+      width: 18px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 24px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.15);
+    }
+
+    /* ============================================================
+       PÁGINAS INTERNAS
+    ============================================================ */
     .pagina-interna {
       padding: 60px 0 80px;
-      background: white;
+      background: var(--color-white);
     }
-    .pagina-interna .container { max-width: 850px; }
+
+    .pagina-interna .container {
+      max-width: 850px;
+    }
+
     .pagina-interna .btn-voltar {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: #edf2f7;
-      color: #1a1a2e;
+      background: var(--color-bg);
+      color: var(--color-text);
       padding: 12px 28px;
-      border-radius: 60px;
+      border-radius: var(--radius-full);
       font-weight: 600;
+      font-size: 0.9rem;
       border: none;
       cursor: pointer;
-      transition: all 0.3s ease;
-      margin-bottom: 30px;
+      transition: var(--transition);
+      margin-bottom: 32px;
     }
-    .pagina-interna .btn-voltar:hover { background: #e2e8f0; transform: translateX(-4px); }
-    .pagina-interna .artigo-header { margin-bottom: 30px; }
+
+    .pagina-interna .btn-voltar:hover {
+      background: #e2e8f0;
+      transform: translateX(-4px);
+    }
+
+    .pagina-interna .artigo-header {
+      margin-bottom: 32px;
+    }
+
     .pagina-interna .artigo-header .artigo-tag {
       display: inline-block;
-      background: rgba(74, 158, 143, 0.12);
+      background: rgba(74, 158, 143, 0.1);
       padding: 4px 16px;
       border-radius: 60px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: #4a9e8f;
-      margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      color: var(--color-primary-light);
+      margin-bottom: 12px;
     }
+
     .pagina-interna .artigo-header h2 {
       font-size: 2.4rem;
       font-weight: 800;
-      color: #0f0f1a;
-      line-height: 1.2;
+      color: var(--color-secondary);
+      line-height: 1.15;
       margin-bottom: 8px;
     }
-    .pagina-interna .artigo-header .artigo-date { font-size: 0.9rem; color: #718096; }
+
+    .pagina-interna .artigo-header .artigo-date {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
     .pagina-interna .artigo-header img {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
-      border-radius: 24px;
+      border-radius: var(--radius);
       margin-top: 20px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-md);
     }
-    .pagina-interna .artigo-body { font-size: 1.05rem; color: #4a5568; line-height: 1.9; }
-    .pagina-interna .artigo-body p { margin-bottom: 20px; }
-    .pagina-interna .artigo-body strong { color: #2d7a6b; }
-    .pagina-interna .artigo-body ul { margin-bottom: 20px; padding-left: 24px; }
-    .pagina-interna .artigo-body li { margin-bottom: 8px; }
 
-    /* ===== RESPONSIVO ===== */
-    @media (max-width: 992px) {
-      .hero-grid { 
-        grid-template-columns: 1fr; 
-        text-align: center; 
-        gap: 30px; 
+    .pagina-interna .artigo-body {
+      font-size: 1.05rem;
+      color: var(--color-text-light);
+      line-height: 1.9;
+    }
+
+    .pagina-interna .artigo-body p {
+      margin-bottom: 20px;
+    }
+
+    .pagina-interna .artigo-body strong {
+      color: var(--color-primary-dark);
+    }
+
+    .pagina-interna .artigo-body ul {
+      margin-bottom: 20px;
+      padding-left: 24px;
+    }
+
+    .pagina-interna .artigo-body ul li {
+      margin-bottom: 8px;
+    }
+
+    /* ============================================================
+       RESPONSIVO
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        gap: 40px;
       }
-      .hero-content { 
-        align-items: center; 
+
+      .hero-visual img {
+        max-width: 380px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .hero-content {
+        align-items: center;
         order: 2;
       }
-      .hero p { max-width: 100%; }
-      .btn-group { justify-content: center; }
-      .hero-logo { 
-        padding: 0; 
+
+      .hero p {
+        max-width: 100%;
+      }
+
+      .hero .btn-group {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-visual {
         order: 1;
       }
-      .hero-logo img { max-width: 340px; }
-      .about-grid { grid-template-columns: 1fr; }
-      .about-image { order: -1; }
-      .about-image img { max-width: 400px; margin: 0 auto; }
+
+      .hero-visual img {
+        max-width: 320px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .about-content {
+        order: 2;
+      }
+
+      .about-image {
+        order: 1;
+      }
+
+      .about-image img {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .about-content .btn-historia {
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
     }
 
     @media (max-width: 768px) {
-      .hero { padding: 40px 0 60px; }
-      .hero h1 { font-size: 2rem; }
-      .hero-logo img { max-width: 260px; }
-      .about { padding: 60px 0; }
-      .about-text h2 { font-size: 2rem; }
-      .services { padding: 60px 0; }
-      .section-title { font-size: 2rem; }
-      .blog { padding: 60px 0; }
-      .cta-section { padding: 60px 0; }
-      .cta-section h2 { font-size: 2rem; }
-      .cta-card { padding: 32px 24px; }
-      .cta-card .btn-whatsapp { padding: 14px 32px; font-size: 1rem; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .card-grid { grid-template-columns: 1fr; }
-      .topbar .container { flex-direction: column; text-align: center; }
-      .topbar a { margin: 0 8px; }
-      .whatsapp-float { padding: 12px 18px; font-size: 0.8rem; }
-      .whatsapp-float i { font-size: 1.2rem; }
+      .container {
+        padding: 0 20px;
+      }
+
+      .hero {
+        padding: 60px 0 80px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero-visual img {
+        max-width: 240px;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .hero-stats .stat-number {
+        font-size: 1.4rem;
+      }
+
+      .about {
+        padding: 60px 0;
+      }
+
+      .services {
+        padding: 60px 0;
+      }
+
+      .blog {
+        padding: 60px 0;
+      }
+
+      .cta-section {
+        padding: 60px 0;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+
+      .cta-card {
+        padding: 32px 24px;
+      }
+
+      .cta-card .btn-whatsapp {
+        padding: 14px 32px;
+        font-size: 1rem;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .topbar .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .topbar a {
+        margin: 0 6px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .footer-brand p {
+        max-width: 100%;
+      }
+
+      .pagina-interna .artigo-header h2 {
+        font-size: 1.8rem;
+      }
+
+      .pagina-interna .artigo-header img {
+        max-height: 200px;
+      }
+
+      .whatsapp-float {
+        padding: 10px 16px;
+        font-size: 0.75rem;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .whatsapp-float i {
+        font-size: 1.2rem;
+      }
+
+      .whatsapp-float .badge {
+        display: none;
+      }
     }
 
     @media (max-width: 480px) {
-      .hero-logo img { max-width: 200px; }
-      .cta-card .cta-contato-rapido { flex-direction: column; gap: 12px; }
-      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .cta-card .cta-contato {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .pagina-interna .artigo-header h2 {
+        font-size: 1.4rem;
+      }
+
+      .pagina-interna .artigo-body {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
@@ -740,8 +1319,8 @@
       <span><i class="fas fa-phone-alt"></i> (43) 92003-6581</span>
       <span>
         <i class="fas fa-video"></i> Atendimento online para todo o Brasil
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
       </span>
     </div>
   </div>
@@ -753,34 +1332,56 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <span class="hero-badge"><i class="fas fa-video" style="margin-right:8px;"></i> Atendimento online</span>
-          <h1>Construindo <span>pontes</span> para o <br />aprendizado</h1>
-          <p>Transformando desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento e estratégias personalizadas.</p>
-          <div class="btn-group">
-            <a href="#contato" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="hero-badge"><i class="fas fa-video"></i> Atendimento online</span>
+            <h1>
+              Construindo <br />
+              <span class="highlight">pontes</span> para o <br />
+              aprendizado
+            </h1>
+            <p>Transformando desafios de aprendizagem em oportunidades de desenvolvimento, com acolhimento e estratégias personalizadas.</p>
+            <div class="btn-group">
+              <a href="#contato" class="btn-primary"><i class="fas fa-calendar-check"></i> Agendar atendimento</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-number">+200</span>
+                <span class="stat-label">Crianças atendidas</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Satisfação</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Anos de experiência</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="hero-logo">
-          <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
+          <div class="hero-visual">
+            <img src="https://i.imgur.com/YIQDI4s.png" alt="Legado que Ensina" />
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===== ABOUT ===== -->
     <section class="about" id="sobre">
-      <div class="container about-grid">
-        <div class="about-text">
-          <h2>Nossa <span>história</span></h2>
-          <p>O <strong>Legado que Ensina</strong> nasce do reconhecimento às crianças e profissionais que construíram uma prática de alfabetização mais sensível, consciente e acessível. Mais que um método, é uma forma de enxergar a educação com presença, escuta e significado.</p>
-          <p>Agora, também no ambiente online, ampliamos o alcance e o acolhimento, levando atendimento psicopedagógico de qualidade para onde você estiver.</p>
-          <button class="btn-historia" onclick="mostrarPagina('historia')">
-            <i class="fas fa-book-open"></i> Ler história completa
-          </button>
-        </div>
-        <div class="about-image">
-          <img src="https://i.imgur.com/TGq1ae3.png" alt="Legado que Ensina" />
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2 class="heading-lg">Nossa <span class="text-gradient">história</span></h2>
+            <p>O <strong>Legado que Ensina</strong> nasce do reconhecimento às crianças e profissionais que construíram uma prática de alfabetização mais sensível, consciente e acessível. Mais que um método, é uma forma de enxergar a educação com presença, escuta e significado.</p>
+            <p>Agora, também no ambiente online, ampliamos o alcance e o acolhimento, levando atendimento psicopedagógico de qualidade para onde você estiver.</p>
+            <button class="btn-historia" onclick="mostrarPagina('historia')">
+              <i class="fas fa-book-open"></i> Ler história completa
+            </button>
+          </div>
+          <div class="about-image">
+            <img src="https://i.imgur.com/TGq1ae3.png" alt="Legado que Ensina" />
+          </div>
         </div>
       </div>
     </section>
@@ -788,26 +1389,37 @@
     <!-- ===== SERVICES ===== -->
     <section class="services" id="servicos">
       <div class="container">
-        <h2 class="section-title">Nossos <span>serviços</span></h2>
-        <p class="section-desc">Atendimento online, com foco na construção da autonomia e da relação saudável com o conhecimento.</p>
-        <div class="card-grid">
+        <div class="services-header">
+          <span class="section-tag">O que fazemos</span>
+          <h2 class="heading-lg">Nossos <span class="text-gradient">serviços</span></h2>
+          <p>Atendimento online, com foco na construção da autonomia e da relação saudável com o conhecimento.</p>
+        </div>
+        <div class="service-grid">
           <div class="service-card">
-            <i class="fas fa-user-graduate"></i>
+            <div class="icon-wrapper">
+              <i class="fas fa-user-graduate"></i>
+            </div>
             <h3>Acompanhamento psicopedagógico</h3>
             <p>Sessões individuais voltadas ao desenvolvimento das habilidades cognitivas, emocionais e das estratégias de aprendizagem, respeitando o ritmo e as necessidades de cada pessoa.</p>
           </div>
           <div class="service-card">
-            <i class="fas fa-clipboard-list"></i>
+            <div class="icon-wrapper">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
             <h3>Avaliação psicopedagógica</h3>
             <p>Avaliação completa das habilidades de leitura, escrita, raciocínio lógico, atenção, memória e funções executivas, identificando dificuldades e potencialidades.</p>
           </div>
           <div class="service-card">
-            <i class="fas fa-puzzle-piece"></i>
+            <div class="icon-wrapper">
+              <i class="fas fa-puzzle-piece"></i>
+            </div>
             <h3>Intervenção personalizada</h3>
             <p>Plano de intervenção elaborado de acordo com as necessidades de cada paciente, utilizando estratégias pedagógicas, recursos lúdicos e atividades que favorecem o desenvolvimento.</p>
           </div>
           <div class="service-card">
-            <i class="fas fa-chalkboard-teacher"></i>
+            <div class="icon-wrapper">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
             <h3>Orientação à família e à escola</h3>
             <p>Acompanhamento e orientações para familiares e instituições de ensino, promovendo uma atuação integrada que fortalece o processo de aprendizagem.</p>
           </div>
@@ -818,37 +1430,55 @@
     <!-- ===== BLOG ===== -->
     <section class="blog" id="blog">
       <div class="container">
-        <h2 class="section-title">Artigos <span>recentes</span></h2>
-        <p class="section-desc">Dicas, reflexões e conteúdos para apoiar o desenvolvimento e a aprendizagem.</p>
+        <div class="blog-header">
+          <span class="section-tag">Conteúdos</span>
+          <h2 class="heading-lg">Artigos <span class="text-gradient">recentes</span></h2>
+          <p>Dicas, reflexões e conteúdos para apoiar o desenvolvimento e a aprendizagem.</p>
+        </div>
         <div class="blog-grid">
           <div class="blog-card" onclick="mostrarPagina('artigo1')">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=60" alt="Dificuldades de aprendizagem" />
-            <div class="blog-card-body">
+            <div class="blog-image">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=60" alt="Dificuldades de aprendizagem" />
               <span class="blog-tag">Aprendizagem</span>
+            </div>
+            <div class="blog-body">
               <h3>Como identificar dificuldades de aprendizagem cedo</h3>
-              <div class="blog-date">15/06/2026 · Psicopedagogia</div>
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 15/06/2026</span>
+                <span><i class="far fa-clock"></i> 5 min de leitura</span>
+              </div>
               <p>Sinais de alerta e estratégias para pais e educadores ajudarem as crianças a superarem desafios escolares.</p>
-              <span class="btn-leia">Leia mais →</span>
+              <button class="btn-leia">Leia mais <i class="fas fa-arrow-right"></i></button>
             </div>
           </div>
           <div class="blog-card" onclick="mostrarPagina('artigo2')">
-            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=60" alt="Motivação" />
-            <div class="blog-card-body">
+            <div class="blog-image">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&auto=format&fit=crop&q=60" alt="Motivação" />
               <span class="blog-tag">Motivação</span>
+            </div>
+            <div class="blog-body">
               <h3>Como manter a motivação nos estudos em casa</h3>
-              <div class="blog-date">13/06/2026 · Psicopedagogia</div>
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 13/06/2026</span>
+                <span><i class="far fa-clock"></i> 4 min de leitura</span>
+              </div>
               <p>Dicas práticas para criar uma rotina de estudos que estimule a autonomia e o prazer de aprender.</p>
-              <span class="btn-leia">Leia mais →</span>
+              <button class="btn-leia">Leia mais <i class="fas fa-arrow-right"></i></button>
             </div>
           </div>
           <div class="blog-card" onclick="mostrarPagina('artigo3')">
-            <img src="https://i.imgur.com/BvcvoHU.png" alt="Gamificação" />
-            <div class="blog-card-body">
+            <div class="blog-image">
+              <img src="https://i.imgur.com/BvcvoHU.png" alt="Gamificação" />
               <span class="blog-tag">Gamificação</span>
+            </div>
+            <div class="blog-body">
               <h3>Gamificação: como jogos ajudam no aprendizado</h3>
-              <div class="blog-date">10/06/2026 · Psicopedagogia</div>
+              <div class="blog-meta">
+                <span><i class="far fa-calendar-alt"></i> 10/06/2026</span>
+                <span><i class="far fa-clock"></i> 6 min de leitura</span>
+              </div>
               <p>Entenda como elementos de jogos podem transformar o processo de aprendizagem, tornando-o mais engajador e significativo.</p>
-              <span class="btn-leia">Leia mais →</span>
+              <button class="btn-leia">Leia mais <i class="fas fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
@@ -858,53 +1488,54 @@
     <!-- ===== CTA ===== -->
     <section class="cta-section" id="contato">
       <div class="container">
-        <h2>Vamos <span>conversar</span>?</h2>
+        <h2 class="heading-lg">Vamos <span class="text-gradient-light">conversar</span>?</h2>
         <p class="cta-sub">Agende uma avaliação inicial online sem compromisso. Conheça nosso espaço virtual e descubra como podemos ajudar.</p>
-        
+
         <div class="cta-card">
           <div class="cta-icon">
             <i class="fab fa-whatsapp"></i>
           </div>
           <h3>Fale com a gente pelo WhatsApp</h3>
           <p>Clique no botão abaixo e inicie uma conversa agora mesmo.</p>
-          
+
           <a href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento%20psicopedagógico%20online." class="btn-whatsapp" target="_blank">
             <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
           </a>
-          
+
           <div class="cta-divider">ou</div>
-          
-          <div class="cta-contato-rapido">
+
+          <div class="cta-contato">
             <span><i class="fas fa-phone"></i> (43) 92003-6581</span>
             <span><i class="fas fa-envelope"></i> contato@legadoqueensina.com</span>
           </div>
         </div>
-        
       </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-      <div class="container footer-grid">
-        <div>
-          <h4>Legado que Ensina</h4>
-          <p style="color:#718096; line-height:1.8;">Acompanhamento, avaliação e intervenção psicopedagógica para crianças, adolescentes e adultos.</p>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h4 style="color:#fff; font-size:1.2rem; margin-bottom:12px;">Legado que Ensina</h4>
+            <p>Acompanhamento, avaliação e intervenção psicopedagógica para crianças, adolescentes e adultos.</p>
+          </div>
+          <div>
+            <h4>Contato</h4>
+            <a href="#"><i class="fas fa-phone"></i> (43) 92003-6581</a>
+            <a href="#"><i class="fas fa-envelope"></i> contato@legadoqueensina.com</a>
+            <a href="#"><i class="fas fa-calendar-check"></i> Agende sua primeira conversa</a>
+          </div>
+          <div>
+            <h4>Links</h4>
+            <a href="#" onclick="mostrarPagina('inicial')">Início</a>
+            <a href="#" onclick="mostrarPagina('historia')">História</a>
+            <a href="#contato" onclick="mostrarPagina('inicial')">Agendamento</a>
+          </div>
         </div>
-        <div>
-          <h4>Contato</h4>
-          <a href="#"><i class="fas fa-phone"></i> (43) 92003-6581</a>
-          <a href="#"><i class="fas fa-envelope"></i> contato@legadoqueensina.com</a>
-          <a href="#"><i class="fas fa-calendar-check"></i> Agende sua primeira conversa</a>
+        <div class="footer-bottom">
+          &copy; 2026 Legado que Ensina. Todos os direitos reservados.
         </div>
-        <div>
-          <h4>Links</h4>
-          <a href="#" onclick="mostrarPagina('inicial')">Início</a>
-          <a href="#" onclick="mostrarPagina('historia')">História</a>
-          <a href="#contato" onclick="mostrarPagina('inicial')">Agendamento</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 Legado que Ensina. Todos os direitos reservados.
       </div>
     </footer>
   </div>
@@ -912,6 +1543,7 @@
   <!-- ===== WHATSAPP FLOAT ===== -->
   <a href="https://wa.me/5543920036581" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i> Atendimento
+    <span class="badge">1</span>
   </a>
 
   <!-- ============================================= -->
@@ -924,7 +1556,7 @@
           <i class="fas fa-arrow-left"></i> Voltar
         </button>
         <div class="artigo-header">
-          <h2>Nossa <span style="color:#4a9e8f;">história</span> completa</h2>
+          <h2 class="heading-lg">Nossa <span class="text-gradient">história</span> completa</h2>
         </div>
         <div class="artigo-body">
           <p>Antes de qualquer método, planejamento ou proposta pedagógica, existem experiências que transformam a forma como a educação passa a ser enxergada.</p>
@@ -936,26 +1568,26 @@
           <p>Mais do que atividades ou conteúdos, permaneceram os vínculos construídos, os aprendizados compartilhados e os momentos que transformaram vidas.</p>
           <p>O Legado que Ensina representa exatamente isso: a continuidade dessas vivências e a base que sustenta uma prática construída com presença, escuta e significado — em qualquer lugar.</p>
 
-          <div style="background:#f7fafc; border-radius:20px; padding:28px 32px; margin:28px 0; border:1px solid #e2e8f0;">
-            <h4 style="color:#0f0f1a; margin-bottom:16px;"><i class="fas fa-heart" style="color:#4a9e8f;"></i> Em homenagem à nossa história:</h4>
-            <div style="display:flex; flex-wrap:wrap; gap:10px 18px;">
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Benício</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Maicon</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Pedro</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Marcos</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Maria</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Vanessa</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Cirleia</span>
-              <span style="background:white; padding:6px 18px; border-radius:20px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Joceli</span>
+          <div style="background:var(--color-bg); border-radius:var(--radius); padding:32px 36px; margin:32px 0; border:1px solid rgba(0,0,0,0.04);">
+            <h4 style="color:var(--color-secondary); margin-bottom:16px;"><i class="fas fa-heart" style="color:var(--color-primary-light);"></i> Em homenagem à nossa história:</h4>
+            <div style="display:flex; flex-wrap:wrap; gap:12px 20px;">
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Benício</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Maicon</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Pedro</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Marcos</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Maria</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Vanessa</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Cirleia</span>
+              <span style="background:var(--color-white); padding:6px 20px; border-radius:60px; border:1px solid #e2e8f0; font-size:0.9rem;">Professora Joceli</span>
             </div>
           </div>
 
           <p>Mais do que nomes, representam experiências que permanecem vivas e seguem fazendo parte da construção desse trabalho.</p>
 
-          <div style="font-size:1.1rem; font-weight:600; color:#0f0f1a; margin-top:24px; padding:20px 24px; background:#f7fafc; border-radius:16px; border-left:5px solid #4a9e8f;">
-            <i class="fas fa-quote-left" style="color:#4a9e8f; margin-right:10px;"></i>
+          <div style="font-size:1.1rem; font-weight:600; color:var(--color-secondary); margin-top:28px; padding:24px 28px; background:var(--color-bg); border-radius:16px; border-left:5px solid var(--color-primary-light);">
+            <i class="fas fa-quote-left" style="color:var(--color-primary-light); margin-right:12px;"></i>
             Porque algumas experiências na educação não passam com o tempo — <br />
-            <span style="color:#2d7a6b;">elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo.</span>
+            <span style="color:var(--color-primary-dark);">elas continuam existindo na forma como se escolhe ensinar, acolher e transformar o aprendizado em algo significativo.</span>
           </div>
         </div>
       </div>
@@ -963,10 +1595,8 @@
   </div>
 
   <!-- ============================================= -->
-  <!-- ARTIGOS -->
-  <!-- ============================================= -->
-
   <!-- ARTIGO 1 -->
+  <!-- ============================================= -->
   <div id="pagina-artigo1" class="page">
     <section class="pagina-interna">
       <div class="container">
@@ -981,9 +1611,9 @@
         </div>
         <div class="artigo-body">
           <p>Identificar sinais de dificuldades de aprendizagem o quanto antes é essencial para que a criança receba o suporte necessário. Quanto mais cedo o diagnóstico e a intervenção, maiores as chances de a criança desenvolver suas habilidades e superar os desafios com mais facilidade.</p>
-          
+
           <p>Pais e educadores devem estar atentos a comportamentos que podem indicar que algo não vai bem no processo de aprendizagem. Muitas vezes, esses sinais são sutis e podem ser confundidos com preguiça ou desinteresse, mas é fundamental observar com atenção.</p>
-          
+
           <p><strong>Principais sinais de alerta:</strong></p>
           <ul>
             <li><strong>Dificuldade persistente em ler, escrever ou realizar cálculos básicos:</strong> A criança pode trocar letras, inverter sílabas, ter dificuldade para acompanhar a leitura em voz alta ou apresentar erros recorrentes em operações matemáticas simples.</li>
@@ -994,12 +1624,12 @@
             <li><strong>Dificuldade para seguir instruções:</strong> A criança tem problemas para entender e executar comandos simples, mesmo quando são repetidos várias vezes.</li>
             <li><strong>Comportamento de esquiva:</strong> A criança inventa desculpas para não ir à escola ou para não fazer as atividades escolares.</li>
           </ul>
-          
+
           <p><strong>O que fazer ao identificar esses sinais?</strong></p>
           <p>O primeiro passo é conversar com os professores e com a equipe pedagógica da escola para entender como a criança está se comportando em sala de aula. Em seguida, é fundamental buscar uma avaliação psicopedagógica completa.</p>
-          
+
           <p>No <strong>Legado que Ensina</strong>, realizamos uma avaliação detalhada que identifica as potencialidades e os pontos de atenção de cada criança. A partir disso, construímos um plano de intervenção personalizado, com estratégias específicas para cada caso.</p>
-          
+
           <p><strong>Benefícios da intervenção precoce:</strong></p>
           <ul>
             <li>Maior chance de sucesso escolar e acadêmico</li>
@@ -1008,14 +1638,16 @@
             <li>Melhor relação com a escola e com os colegas</li>
             <li>Redução do estresse familiar em relação ao desempenho escolar</li>
           </ul>
-          
+
           <p>Lembre-se: cada criança tem seu próprio ritmo de aprendizagem. O importante é oferecer o suporte necessário para que ela possa desenvolver todo o seu potencial, sem pressão e com muito acolhimento.</p>
         </div>
       </div>
     </section>
   </div>
 
+  <!-- ============================================= -->
   <!-- ARTIGO 2 -->
+  <!-- ============================================= -->
   <div id="pagina-artigo2" class="page">
     <section class="pagina-interna">
       <div class="container">
@@ -1030,37 +1662,39 @@
         </div>
         <div class="artigo-body">
           <p>Manter a motivação nos estudos é um dos maiores desafios enfrentados por famílias e educadores, especialmente em um mundo cheio de distrações como celulares, videogames e redes sociais. A falta de motivação pode levar à queda no desempenho escolar, ao desinteresse e até mesmo à evasão escolar.</p>
-          
+
           <p>No entanto, existem estratégias eficazes que podem ajudar a transformar o momento de estudo em uma experiência mais leve, prazerosa e produtiva. Aqui estão algumas dicas práticas:</p>
-          
+
           <p><strong>1. Crie uma rotina consistente</strong></p>
           <p>Horários fixos para estudar ajudam a criar o hábito e reduzem a resistência inicial. O cérebro se acostuma com a rotina e, com o tempo, o estudo se torna uma atividade natural do dia a dia. Defina um horário específico para cada matéria e respeite-o.</p>
-          
+
           <p><strong>2. Ofereça escolhas</strong></p>
           <p>Permitir que a criança escolha a ordem das tarefas ou o local de estudo aumenta o senso de autonomia e controle sobre o próprio aprendizado. Quando a criança sente que tem voz ativa no processo, a motivação tende a aumentar.</p>
-          
+
           <p><strong>3. Valorize o esforço, não apenas o resultado</strong></p>
           <p>Reconhecer o empenho, mesmo quando o resultado não é perfeito, fortalece a autoestima e incentiva a criança a continuar tentando. Frases como "Percebi o quanto você se dedicou" são mais eficazes do que "Você tirou nota baixa".</p>
-          
+
           <p><strong>4. Use jogos e materiais lúdicos</strong></p>
           <p>Transformar o aprendizado em algo divertido torna o processo mais leve e prazeroso. Jogos de tabuleiro, aplicativos educativos, brincadeiras e atividades interativas podem ser grandes aliados no processo de aprendizagem.</p>
-          
+
           <p><strong>5. Mantenha uma comunicação aberta</strong></p>
           <p>Pergunte sobre o que está sendo estudado e demonstre interesse genuíno. Mostre curiosidade sobre os temas e converse sobre como aqueles conteúdos se aplicam no dia a dia. Isso ajuda a criança a ver sentido no que está aprendendo.</p>
-          
+
           <p><strong>6. Crie um ambiente adequado para estudar</strong></p>
           <p>Um espaço organizado, silencioso e com boa iluminação faz toda a diferença. Evite distrações como televisão ligada ou celular por perto. Tenha todo o material necessário à mão antes de começar.</p>
-          
+
           <p><strong>7. Estabeleça metas realistas e celebre as conquistas</strong></p>
           <p>Defina objetivos pequenos e alcançáveis a curto prazo. Quando a criança atinge uma meta, comemore com ela. Isso cria um ciclo positivo de motivação e recompensa.</p>
-          
+
           <p>No <strong>Legado que Ensina</strong>, trabalhamos a motivação como parte essencial do processo de aprendizagem, ajudando cada criança a encontrar seu próprio ritmo e prazer em aprender. Acreditamos que quando a criança se sente motivada, o aprendizado acontece de forma natural e significativa.</p>
         </div>
       </div>
     </section>
   </div>
 
+  <!-- ============================================= -->
   <!-- ARTIGO 3 -->
+  <!-- ============================================= -->
   <div id="pagina-artigo3" class="page">
     <section class="pagina-interna">
       <div class="container">
@@ -1075,10 +1709,10 @@
         </div>
         <div class="artigo-body">
           <p>A gamificação é uma das abordagens mais promissoras no campo da educação e da psicopedagogia. Ela utiliza elementos de jogos — como pontos, níveis, desafios, recompensas e narrativas — para engajar os alunos no processo de aprendizagem, tornando-o mais dinâmico, interativo e significativo.</p>
-          
+
           <p><strong>O que é gamificação?</strong></p>
           <p>Gamificação não é simplesmente jogar por jogar. É a aplicação de mecânicas e dinâmicas de jogos em contextos que não são jogos, com objetivos claros e educacionais. A ideia é aproveitar o poder motivacional dos jogos para estimular a participação, o engajamento e a persistência dos alunos.</p>
-          
+
           <p><strong>Por que a gamificação funciona?</strong></p>
           <ul>
             <li><strong>Engajamento:</strong> Jogos são naturalmente envolventes. Eles despertam curiosidade, desafiam e recompensam, criando um ciclo positivo de motivação.</li>
@@ -1087,7 +1721,7 @@
             <li><strong>Autonomia:</strong> O aluno tem mais controle sobre seu próprio aprendizado, escolhendo caminhos e estratégias.</li>
             <li><strong>Desafio na medida certa:</strong> Jogos bem projetados oferecem desafios que não são nem muito fáceis (que entediam) nem muito difíceis (que frustram).</li>
           </ul>
-          
+
           <p><strong>Exemplos práticos de gamificação na educação:</strong></p>
           <ul>
             <li><strong>Jogos de tabuleiro adaptados:</strong> Utilizados para trabalhar raciocínio lógico, leitura, interpretação de texto e habilidades sociais. Jogos como Scrabble, Banco Imobiliário e jogos de cartas podem ser adaptados para objetivos educacionais.</li>
@@ -1096,7 +1730,7 @@
             <li><strong>Narrativas interativas:</strong> Criar histórias onde a criança é a protagonista de sua própria jornada de aprendizado, com missões e desafios a serem superados.</li>
             <li><strong>Quizzes e competições:</strong> Transformar revisões de conteúdo em jogos de perguntas e respostas, com pontuação e ranking.</li>
           </ul>
-          
+
           <p><strong>Benefícios da gamificação para o aprendizado:</strong></p>
           <ul>
             <li>Aumento do engajamento e da participação</li>
@@ -1106,9 +1740,9 @@
             <li>Desenvolvimento de habilidades socioemocionais</li>
             <li>Redução da ansiedade em relação ao aprendizado</li>
           </ul>
-          
+
           <p>No <strong>Legado que Ensina</strong>, a gamificação é uma ferramenta central em nosso trabalho. Acreditamos que quando o aprendizado é divertido e desafiador, a criança se engaja de forma mais profunda e significativa. Utilizamos jogos, atividades lúdicas e estratégias gamificadas para potencializar os resultados do acompanhamento psicopedagógico, respeitando sempre o ritmo e as necessidades de cada criança.</p>
-          
+
           <p>Se você quer saber mais sobre como a gamificação pode ajudar seu filho ou aluno, entre em contato conosco. Teremos prazer em conversar sobre as possibilidades e benefícios dessa abordagem inovadora.</p>
         </div>
       </div>
