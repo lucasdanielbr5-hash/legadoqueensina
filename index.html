@@ -4,327 +4,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Legado que Ensina</title>
-<meta name="description" content="Legado que Ensina — psicopedagogia e sistema para psicopedagogos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
 
 body {
     font-family: "DM Sans", sans-serif;
-    color: #1a2a3a;
-    background: #f4f1ea;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    background: #faf8f4;
+    color: #0e2034;
     min-height: 100vh;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* =====================================================
-   DIVISÓRIA CENTRAL (linha fina vertical)
-===================================================== */
-body::after {
-    content: "";
-    position: fixed;
-    top: 12%;
-    bottom: 12%;
-    left: 50%;
-    width: 1px;
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        rgba(45,122,107,.25) 20%,
-        rgba(45,122,107,.25) 80%,
-        transparent 100%
-    );
-    z-index: 10;
-    pointer-events: none;
-}
-
-/* =====================================================
-   LADOS (ambos com o mesmo fundo clássico)
-===================================================== */
-.side {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 70px;
-    position: relative;
-    background: #f4f1ea;
+    padding: 60px 40px;
 }
 
-.side-inner {
-    text-align: center;
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+}
+
+.col {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 460px;
-    width: 100%;
+    text-align: center;
+    padding: 40px 50px;
+    gap: 22px;
+    min-height: 420px;
+    justify-content: center;
 }
 
-/* =====================================================
-   LOGOS
-===================================================== */
+.col:first-child {
+    border-right: 1px solid rgba(14,32,52,.1);
+}
+
 .logo {
     display: block;
     height: auto;
-    margin-bottom: 44px;
-    filter: drop-shadow(0 2px 8px rgba(14,32,52,.08));
-}
-.logo-psico { width: min(300px, 75%); }
-.logo-sistema { width: min(280px, 72%); }
-
-/* =====================================================
-   ORNAMENTO (linha com losango no meio — clássico)
-===================================================== */
-.ornament {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 26px;
-}
-.ornament::before,
-.ornament::after {
-    content: "";
-    width: 50px;
-    height: 1px;
-    background: rgba(45,122,107,.4);
-}
-.ornament span {
-    width: 6px;
-    height: 6px;
-    background: #2d7a6b;
-    transform: rotate(45deg);
+    max-width: 260px;
+    width: 100%;
 }
 
-/* =====================================================
-   TIPOGRAFIA CLÁSSICA
-===================================================== */
-.eyebrow {
-    font-family: "DM Sans", sans-serif;
+.label {
     font-size: 10px;
     font-weight: 500;
-    letter-spacing: .42em;
+    letter-spacing: .38em;
     text-transform: uppercase;
     color: #2d7a6b;
-    margin-bottom: 22px;
 }
 
 .title {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(44px, 5vw, 72px);
+    font-size: clamp(36px, 4vw, 52px);
     font-weight: 400;
-    line-height: 1;
-    letter-spacing: -.015em;
+    line-height: 1.05;
+    letter-spacing: -.01em;
     color: #0e2034;
-    margin-bottom: 28px;
 }
+
 .title em {
     font-style: italic;
     color: #2d7a6b;
-    font-weight: 400;
-}
-
-.title-sistema {
-    font-size: clamp(36px, 4vw, 54px);
-    line-height: 1.05;
-}
-
-.divider-thin {
-    width: 1px;
-    height: 40px;
-    background: rgba(14,32,52,.2);
-    margin-bottom: 28px;
 }
 
 .text {
-    font-family: "DM Sans", sans-serif;
     font-size: 13px;
     font-weight: 300;
-    line-height: 1.95;
+    line-height: 1.85;
     color: #5c6a76;
-    letter-spacing: .01em;
-    max-width: 380px;
+    max-width: 340px;
 }
 
-/* =====================================================
-   BOTÃO CLÁSSICO (outline com hover sutil)
-===================================================== */
-.btn-classic {
+.btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 44px;
-    padding: 17px 38px;
-    background: transparent;
-    border: 1px solid #2d7a6b;
-    color: #2d7a6b;
-    font-family: "DM Sans", sans-serif;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 15px 32px;
+    background: #2d7a6b;
+    color: white;
     font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .28em;
+    font-weight: 500;
+    letter-spacing: .24em;
     text-transform: uppercase;
     text-decoration: none;
-    transition: all .4s cubic-bezier(.4,0,.2,1);
-    position: relative;
-}
-.btn-classic::before {
-    content: "";
-    position: absolute;
-    inset: 4px;
-    border: 1px solid rgba(45,122,107,.2);
-    pointer-events: none;
-    transition: all .4s ease;
-}
-.btn-classic:hover {
-    background: #2d7a6b;
-    color: #f4f1ea;
-    letter-spacing: .32em;
-}
-.btn-classic:hover::before {
-    inset: 2px;
-    border-color: rgba(255,255,255,.3);
+    transition: background .3s ease;
 }
 
-/* =====================================================
-   RODAPÉ SUTIL
-===================================================== */
-.footnote {
-    position: fixed;
-    bottom: 22px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-family: "DM Sans", sans-serif;
-    font-size: 9px;
-    letter-spacing: .32em;
-    text-transform: uppercase;
-    color: rgba(14,32,52,.35);
-    z-index: 10;
-    pointer-events: none;
+.btn:hover {
+    background: #0e2034;
 }
 
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-@media (max-width: 900px) {
-    body {
+@media (max-width: 780px) {
+    body { padding: 40px 24px; }
+    .wrap {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        height: auto;
-        overflow: auto;
+        gap: 0;
     }
-    body::after {
-        top: 50%;
-        bottom: auto;
-        left: 12%;
-        right: 12%;
-        width: auto;
-        height: 1px;
-        background: linear-gradient(
-            to right,
-            transparent 0%,
-            rgba(45,122,107,.25) 20%,
-            rgba(45,122,107,.25) 80%,
-            transparent 100%
-        );
+    .col {
+        padding: 60px 20px;
+        min-height: auto;
+        border-right: none !important;
     }
-    .side {
-        min-height: 100vh;
-        padding: 90px 30px;
+    .col:first-child {
+        border-bottom: 1px solid rgba(14,32,52,.1);
     }
-    .footnote {
-        position: static;
-        padding: 30px 20px;
-        background: #f4f1ea;
-    }
-    .title { font-size: 52px; }
-    .title-sistema { font-size: 42px; }
-}
-
-@media (max-width: 480px) {
-    .logo-psico,
-    .logo-sistema { width: min(240px, 80%); }
-    .title { font-size: 44px; }
-    .title-sistema { font-size: 36px; }
-    .btn-classic {
-        padding: 15px 28px;
-        font-size: 9px;
-        letter-spacing: .22em;
-    }
+    .logo { max-width: 220px; }
 }
 </style>
 </head>
 <body>
 
-<!-- =====================================================
-     LADO ESQUERDO — PSICOPEDAGOGIA
-===================================================== -->
-<section class="side">
+<div class="wrap">
 
-    <div class="side-inner">
+    <!-- LADO ESQUERDO — PSICOPEDAGOGIA -->
+    <div class="col">
 
         <img
-            class="logo logo-psico"
+            class="logo"
             src="https://i.imgur.com/ZhoF1qy.png"
-            alt="Legado que Ensina — Psicopedagogia"
+            alt="Legado que Ensina"
         >
 
-        <div class="ornament"><span></span></div>
-
-        <span class="eyebrow">Psicopedagogia</span>
+        <span class="label">Psicopedagogia</span>
 
         <h1 class="title">Em <em>breve.</em></h1>
 
-        <div class="divider-thin"></div>
-
         <p class="text">
-            Estamos preparando um novo espaço digital para acolher
-            famílias, crianças e adolescentes. Em breve você poderá
-            conhecer nossos atendimentos e agendar online.
+            Estamos preparando um novo espaço digital para
+            acolher famílias, crianças e adolescentes.
         </p>
 
     </div>
 
-</section>
-
-
-<!-- =====================================================
-     LADO DIREITO — SISTEMA
-===================================================== -->
-<section class="side">
-
-    <div class="side-inner">
+    <!-- LADO DIREITO — SISTEMA -->
+    <div class="col">
 
         <img
-            class="logo logo-sistema"
+            class="logo"
             src="https://i.imgur.com/wpdRGvm.png"
             alt="Sistema Legado que Ensina"
         >
 
-        <div class="ornament"><span></span></div>
+        <span class="label">Para psicopedagogos</span>
 
-        <span class="eyebrow">Para psicopedagogos</span>
-
-        <h2 class="title title-sistema">
-            Sistema para<br><em>psicopedagogos.</em>
-        </h2>
-
-        <div class="divider-thin"></div>
+        <h2 class="title">Sistema para <em>psicopedagogos.</em></h2>
 
         <p class="text">
-            Uma plataforma digital para organizar atendimentos,
-            registrar evoluções e centralizar informações clínicas
-            com clareza e elegância.
+            Plataforma digital para organizar atendimentos
+            e acompanhar evoluções clínicas.
         </p>
 
         <a
             href="https://sistema.legadoqueensina.com.br"
-            class="btn-classic"
+            class="btn"
             target="_blank"
             rel="noopener noreferrer"
         >
@@ -334,11 +175,6 @@ body::after {
 
     </div>
 
-</section>
-
-<!-- RODAPÉ -->
-<div class="footnote">
-    Legado que Ensina · MMXXVI
 </div>
 
 </body>
