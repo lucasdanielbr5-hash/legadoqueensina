@@ -1,181 +1,668 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legado que Ensina</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início | Legado que Ensina</title>
+<meta name="description" content="Atendimento psicopedagógico para crianças e adolescentes em Londrina, com possibilidade de videochamada, e sistema digital para professores.">
+<meta name="theme-color" content="#132b35">
+<meta property="og:site_name" content="Legado que Ensina">
+<meta property="og:title" content="Legado que Ensina — Gestão psicopedagógica">
+<meta property="og:description" content="Atendimento psicopedagógico para crianças e adolescentes em Londrina e plataforma digital para professores.">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://i.imgur.com/IzFWJCM.jpeg" type="image/jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+:root{--ink:#132b35;--ink-2:#28444c;--green:#2d7a6b;--green-dark:#205c52;--sage:#dce9df;--sage-2:#edf3ed;--paper:#faf8f3;--white:#fff;--muted:#637176;--line:rgba(19,43,53,.13);--sand:#e9dfcd;--gold:#b28d57;--shadow:0 18px 50px rgba(19,43,53,.08);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--radius:22px;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}img{display:block;max-width:100%}a{color:inherit}button,input,select,textarea{font:inherit}.container{width:min(1160px,calc(100% - 48px));margin-inline:auto}.eyebrow{display:inline-flex;gap:10px;align-items:center;color:var(--green);font-size:.72rem;text-transform:uppercase;letter-spacing:.19em;font-weight:700}.eyebrow:before{content:'';height:1px;width:26px;background:currentColor}.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.025em}.display{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5.4rem);font-weight:500;line-height:.99;letter-spacing:-.04em}.display em,.headline em{font-weight:400;color:var(--green)}.headline{font-family:var(--serif);font-size:clamp(2.25rem,3.7vw,3.7rem);line-height:1.06;font-weight:500;letter-spacing:-.03em}.lead{color:var(--muted);font-size:1.04rem;line-height:1.9;max-width:620px}.small{font-size:.86rem;color:var(--muted)}.section{padding:100px 0}.section-sm{padding:68px 0}.section-head{max-width:730px;margin-bottom:42px}.section-head .headline{margin:14px 0 18px}.section-head.center{text-align:center;margin-inline:auto}.section-head.center .lead{margin-inline:auto}.btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:14px 21px;border-radius:4px;background:var(--green);color:#fff;border:1px solid var(--green);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.07em;transition:.2s ease;cursor:pointer}.btn:hover{background:var(--green-dark);border-color:var(--green-dark);transform:translateY(-1px)}.btn-secondary{color:var(--ink);background:transparent;border-color:var(--line)}.btn-secondary:hover{color:#fff}.btn-light{color:var(--ink);background:#fff;border-color:#fff}.btn-light:hover{background:var(--sage);color:var(--ink);border-color:var(--sage)}.link-arrow{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--green);font-weight:700;font-size:.85rem}.link-arrow:hover{gap:14px}.topbar{background:var(--ink);color:rgba(255,255,255,.86);font-size:.72rem;letter-spacing:.04em}.topbar-inner{display:flex;justify-content:space-between;gap:18px;padding:9px 0}.topbar span{display:flex;align-items:center;gap:8px}.site-header{position:sticky;top:0;z-index:50;background:rgba(250,248,243,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:88px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:220px}.brand-symbol{width:42px;height:42px;display:grid;place-items:center;border-radius:50% 50% 5px 50%;background:var(--green);color:#fff;font-family:var(--serif);font-size:1.65rem;line-height:1}.brand-copy{display:flex;flex-direction:column;line-height:1.05}.brand-name{font-family:var(--serif);font-size:1.35rem;font-weight:700;letter-spacing:-.03em}.brand-sub{margin-top:6px;font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green);font-weight:700}.nav{display:flex;align-items:center;gap:25px}.nav a{text-decoration:none;color:#4f6065;font-size:.78rem;font-weight:600;white-space:nowrap;transition:color .2s}.nav a:hover,.nav a[aria-current=page]{color:var(--green)}.nav a.nav-cta{padding:12px 16px;background:var(--ink);color:#fff;border-radius:4px}.nav a.nav-cta:hover{background:var(--green)}.menu-toggle{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--ink);font-size:1.25rem;cursor:pointer}.hero{position:relative;overflow:hidden;padding:90px 0 76px}.hero:before{content:'';position:absolute;right:-10%;top:-30%;width:60vw;height:60vw;max-width:780px;max-height:780px;background:radial-gradient(circle,rgba(220,233,223,.82),rgba(250,248,243,0) 68%);pointer-events:none}.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:60px;align-items:center;position:relative}.hero-copy{padding:20px 0}.hero-copy .display{margin:22px 0 24px;max-width:680px}.hero-copy .lead{max-width:560px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}.hero-note{display:flex;align-items:center;gap:11px;margin-top:32px;color:var(--muted);font-size:.79rem}.dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none}.hero-art{position:relative;min-height:470px;display:flex;align-items:center;justify-content:center}.hero-card{position:relative;width:min(100%,450px);min-height:440px;border-radius:220px 220px 16px 16px;background:var(--ink);overflow:hidden;padding:42px 38px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;box-shadow:var(--shadow)}.hero-card:after{content:'';position:absolute;inset:16px;border:1px solid rgba(255,255,255,.19);border-radius:210px 210px 9px 9px;pointer-events:none}.hero-card .logo-img{width:min(82%,320px);height:150px;object-fit:contain;position:relative;z-index:1}.hero-card .brand-placeholder{display:none;position:relative;z-index:1;font-family:var(--serif);font-size:2.4rem;line-height:1.05;max-width:290px}.hero-card .brand-placeholder small{display:block;margin-top:14px;font:600 .62rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#bcd5c8}.hero-card .hero-card-text{position:relative;z-index:1;margin-top:28px;font-family:var(--serif);font-size:2rem;line-height:1.12}.hero-card .hero-card-text em{color:#a4d1b8}.floating-note{position:absolute;z-index:3;right:-2px;bottom:36px;display:flex;gap:12px;align-items:center;max-width:235px;padding:16px;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:var(--shadow)}.floating-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--sage);color:var(--green);font-size:1.1rem;flex:none}.floating-note strong{display:block;font-size:.78rem}.floating-note small{display:block;color:var(--muted);font-size:.68rem;margin-top:2px}.trust-row{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.5)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}.trust-item{padding:22px 28px;display:flex;align-items:center;gap:14px;border-right:1px solid var(--line)}.trust-item:first-child{padding-left:0}.trust-item:last-child{border:0}.trust-icon{font-size:1.3rem;color:var(--green)}.trust-item strong{display:block;font-size:.83rem}.trust-item small{display:block;color:var(--muted);font-size:.74rem;margin-top:2px}.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service-card{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.64);transition:transform .25s,box-shadow .25s,border-color .25s}.service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(45,122,107,.35)}.card-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:16px;background:var(--sage-2);font-size:1.45rem;margin-bottom:24px}.service-card h3{font-family:var(--serif);font-size:1.7rem;font-weight:600;line-height:1.1;margin-bottom:12px}.service-card p{color:var(--muted);font-size:.9rem;line-height:1.8;margin-bottom:21px}.split{display:grid;grid-template-columns:.95fr 1.05fr;gap:75px;align-items:center}.visual-panel{position:relative;min-height:430px;background:var(--sage);border-radius:200px 200px 16px 16px;display:flex;align-items:center;justify-content:center;overflow:hidden}.visual-panel:before,.visual-panel:after{content:'';position:absolute;border:1px solid rgba(45,122,107,.18);border-radius:50%;width:72%;aspect-ratio:1}.visual-panel:after{width:50%}.visual-panel-inner{position:relative;z-index:1;text-align:center;max-width:280px;padding:25px}.visual-panel-inner .icon-large{font-size:4rem;display:block;margin-bottom:20px}.visual-panel-inner h3{font-family:var(--serif);font-size:2.2rem;line-height:1.08;font-weight:500}.visual-panel-inner p{font-size:.82rem;color:var(--muted);margin-top:12px}.check-list{display:grid;gap:17px;margin:26px 0 30px}.check-item{display:flex;gap:13px;align-items:flex-start}.check-mark{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--sage);color:var(--green);font-size:.74rem;margin-top:2px}.check-item strong{font-size:.9rem;display:block}.check-item p{font-size:.82rem;color:var(--muted);margin-top:3px;line-height:1.7}.quote-band{background:var(--ink);color:white;padding:72px 0}.quote-grid{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:60px}.quote-mark{font-family:var(--serif);font-size:8rem;line-height:.6;color:#a4d1b8}.quote-text{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,3.1rem);line-height:1.15;font-weight:400;max-width:780px}.quote-text em{color:#a4d1b8}.quote-attrib{font-size:.76rem;color:rgba(255,255,255,.62);margin-top:17px}.cta-panel{position:relative;overflow:hidden;background:var(--sage);border-radius:var(--radius);padding:52px;display:flex;align-items:center;justify-content:space-between;gap:40px}.cta-panel:after{content:'✳';position:absolute;right:22%;top:-56px;color:rgba(45,122,107,.10);font-size:18rem;line-height:1;pointer-events:none}.cta-panel>*{position:relative;z-index:1}.cta-panel h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3.3rem);line-height:1.06;font-weight:500;max-width:620px}.cta-panel p{color:var(--muted);max-width:570px;margin-top:13px;font-size:.9rem}.cta-actions{display:flex;flex-wrap:wrap;gap:10px;flex:none}.page-hero{padding:76px 0 60px;background:linear-gradient(135deg,var(--sage-2),var(--paper) 60%);border-bottom:1px solid var(--line)}.page-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:45px}.page-hero .display{font-size:clamp(3rem,5vw,4.8rem);margin:16px 0 18px}.page-hero-art{padding:25px;display:flex;justify-content:center}.page-hero-badge{width:280px;aspect-ratio:1;border-radius:50%;background:var(--green);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px;box-shadow:0 0 0 18px rgba(45,122,107,.08),0 0 0 38px rgba(45,122,107,.035)}.page-hero-badge .badge-icon{font-size:3rem}.page-hero-badge strong{font-family:var(--serif);font-size:2rem;line-height:1.04;font-weight:500;margin-top:15px}.page-hero-badge span{font-size:.72rem;opacity:.82;margin-top:9px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}.step-card{border-top:1px solid var(--line);padding:22px 8px 0 0;counter-increment:step}.step-card:before{content:'0' counter(step);display:block;font-family:var(--serif);font-size:2.1rem;color:var(--green);margin-bottom:20px}.step-card h3{font-family:var(--serif);font-size:1.55rem;font-weight:600;line-height:1.15;margin-bottom:9px}.step-card p{color:var(--muted);font-size:.83rem;line-height:1.8}.faq{max-width:850px;margin:0 auto}.faq details{border-bottom:1px solid var(--line);padding:19px 0}.faq summary{cursor:pointer;list-style:none;display:flex;gap:18px;justify-content:space-between;align-items:center;font-family:var(--serif);font-size:1.35rem;font-weight:600}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:'+';font:400 1.4rem var(--sans);color:var(--green)}.faq details[open] summary:after{content:'−'}.faq details p{color:var(--muted);font-size:.9rem;line-height:1.85;max-width:760px;padding:12px 35px 0 0}.contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px;align-items:start}.contact-info{background:var(--ink);color:#fff;padding:36px;border-radius:var(--radius)}.contact-info h2{font-family:var(--serif);font-size:2.2rem;font-weight:500;line-height:1.1;margin:15px 0}.contact-info p{color:rgba(255,255,255,.7);font-size:.88rem;line-height:1.8}.contact-method{display:flex;gap:14px;margin-top:25px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15)}.contact-method .icon{font-size:1.2rem;color:#a4d1b8}.contact-method strong{display:block;font-size:.84rem}.contact-method small{color:rgba(255,255,255,.68);font-size:.77rem;display:block;margin-top:3px}.form-card{padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}.form-card h2{font-family:var(--serif);font-size:2rem;font-weight:500;margin-bottom:8px}.form-intro{font-size:.84rem;color:var(--muted);margin-bottom:24px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.75rem;font-weight:700;color:var(--ink-2)}.field input,.field select,.field textarea{width:100%;border:1px solid #dbe1dc;border-radius:5px;background:#fcfcfa;color:var(--ink);padding:12px 13px;outline:none;transition:border-color .2s}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(45,122,107,.09)}.field textarea{min-height:110px;resize:vertical}.form-status{margin-top:14px;font-size:.83rem;color:var(--green);line-height:1.7}.form-note{font-size:.73rem;color:var(--muted);margin-top:13px;line-height:1.65}.system-hero{background:var(--ink);color:#fff;padding:78px 0;overflow:hidden;position:relative}.system-hero:after{content:'';position:absolute;right:-10%;top:-50%;width:60%;aspect-ratio:1;border:1px solid rgba(164,209,184,.22);border-radius:50%;box-shadow:0 0 0 55px rgba(164,209,184,.035),0 0 0 110px rgba(164,209,184,.025)}.system-hero .hero-grid{position:relative;z-index:1}.system-hero .eyebrow{color:#a4d1b8}.system-hero .display{margin:18px 0 22px}.system-hero .lead{color:rgba(255,255,255,.72)}.system-art{min-height:350px;display:grid;place-items:center}.system-mock{width:min(100%,410px);padding:17px;background:#f8faf7;border-radius:13px;box-shadow:0 25px 70px rgba(0,0,0,.23);transform:rotate(2deg)}.mock-top{display:flex;gap:6px;padding:4px 2px 15px}.mock-top i{width:7px;height:7px;border-radius:50%;background:#b5c5b9}.mock-grid{display:grid;grid-template-columns:85px 1fr;gap:10px}.mock-side{background:#e5eee6;border-radius:5px;min-height:185px;padding:10px}.mock-side span{display:block;height:5px;border-radius:5px;background:#aec8b4;margin:11px 0}.mock-side span:first-child{background:var(--green);width:80%}.mock-main{display:grid;gap:10px}.mock-title{height:15px;width:54%;background:#18363b;border-radius:4px;margin:3px 0 5px}.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.mock-stat{height:54px;border-radius:5px;background:#e4ede5;border-top:3px solid var(--green)}.mock-chart{height:80px;border-radius:5px;background:linear-gradient(180deg,#d5e8d7,#f5f8f3);position:relative;overflow:hidden}.mock-chart:after{content:'';position:absolute;inset:20px 8px 10px;background:linear-gradient(150deg,transparent 20%,#4a9987 21% 23%,transparent 24% 34%,#4a9987 35% 37%,transparent 38% 51%,#4a9987 52% 54%,transparent 55%);opacity:.75}.system-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.system-feature{padding:28px;border-radius:var(--radius);border:1px solid var(--line);background:white}.system-feature .card-icon{margin-bottom:20px}.system-feature h3{font-family:var(--serif);font-size:1.65rem;margin-bottom:9px;line-height:1.12}.system-feature p{color:var(--muted);font-size:.84rem;line-height:1.8}.footer{background:#10252d;color:#fff;padding:58px 0 22px}.footer-main{display:grid;grid-template-columns:1.3fr .8fr .9fr;gap:50px;padding-bottom:44px}.footer-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff}.footer-brand .brand-symbol{background:#a4d1b8;color:var(--ink)}.footer-brand .brand-sub{color:#a4d1b8}.footer-desc{max-width:370px;color:rgba(255,255,255,.63);font-size:.82rem;line-height:1.8;margin-top:18px}.footer h3{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;color:#a4d1b8;margin-bottom:18px}.footer-links{display:grid;gap:10px}.footer-links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:.82rem}.footer-links a:hover{color:white}.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding-top:20px;display:flex;gap:20px;align-items:center;justify-content:space-between;color:rgba(255,255,255,.48);font-size:.7rem}.footer-bottom a{color:inherit;text-decoration:none}.notice{border-left:3px solid var(--gold);padding:14px 17px;background:#f3ede2;color:#6b5b46;font-size:.8rem;line-height:1.75;border-radius:0 7px 7px 0;margin-top:18px}.pill{display:inline-flex;padding:7px 10px;border-radius:99px;background:var(--sage);color:var(--green-dark);font-size:.69rem;font-weight:700;letter-spacing:.04em}.legal-small{font-size:.76rem;color:var(--muted);line-height:1.8}.back-top{position:fixed;bottom:20px;right:20px;width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;text-decoration:none;display:grid;place-items:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s;z-index:30}.back-top.show{opacity:1;pointer-events:auto}.mobile-menu-open{overflow:hidden}
+@media(max-width:1020px){.nav{gap:14px}.nav a{font-size:.73rem}.brand{min-width:190px}.hero-grid{gap:34px}.split{gap:40px}.contact-grid{gap:26px}.section{padding:82px 0}}
+@media(max-width:820px){.topbar-inner{justify-content:center;text-align:center}.topbar-inner span:last-child{display:none}.nav-wrap{min-height:76px}.menu-toggle{display:grid;place-items:center}.nav{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:10px 24px 20px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 20px 22px rgba(19,43,53,.06)}.nav.open{display:flex}.nav a{padding:13px 4px;font-size:.86rem;border-bottom:1px solid var(--line)}.nav a.nav-cta{margin-top:10px;text-align:center;border:0;padding:14px}.hero{padding:60px 0}.hero-grid,.page-hero-grid,.split,.quote-grid,.contact-grid{grid-template-columns:1fr}.hero-copy{padding:0}.hero-art{min-height:440px}.hero-card{min-height:410px}.floating-note{right:3%;bottom:20px}.cards-3,.system-feature-grid{grid-template-columns:repeat(2,1fr)}.trust-grid{grid-template-columns:1fr}.trust-item,.trust-item:first-child{padding:16px 0;border-right:0;border-bottom:1px solid var(--line)}.trust-item:last-child{border-bottom:0}.visual-panel{min-height:350px;max-width:470px;margin-inline:auto;width:100%}.quote-grid{gap:15px}.quote-mark{font-size:5rem}.cta-panel{align-items:flex-start;flex-direction:column;padding:36px}.steps{grid-template-columns:repeat(2,1fr);row-gap:30px}.page-hero{padding:60px 0}.page-hero-art{padding:10px 0 35px}.contact-info{order:2}.footer-main{grid-template-columns:1fr 1fr;gap:38px}.footer-main>div:first-child{grid-column:1/-1}}
+@media(max-width:560px){.container{width:min(100% - 34px,1160px)}.brand{min-width:0}.brand-name{font-size:1.18rem}.brand-sub{font-size:.49rem;letter-spacing:.1em}.brand-symbol{width:37px;height:37px}.display{font-size:clamp(2.7rem,13vw,4rem)}.hero{padding:48px 0}.hero-art{min-height:370px}.hero-card{min-height:360px;padding:34px 25px;border-radius:180px 180px 12px 12px}.hero-card:after{inset:12px;border-radius:170px 170px 8px 8px}.hero-card .logo-img{height:100px;width:84%}.hero-card .hero-card-text{font-size:1.7rem;margin-top:18px}.floating-note{max-width:205px;bottom:8px;padding:11px;right:0}.floating-icon{width:36px;height:36px}.section{padding:64px 0}.section-sm{padding:48px 0}.section-head{margin-bottom:28px}.cards-3,.system-feature-grid{grid-template-columns:1fr}.service-card{padding:25px}.page-hero{padding:50px 0 38px}.page-hero .display{font-size:clamp(2.7rem,12vw,3.6rem)}.page-hero-badge{width:225px}.page-hero-badge strong{font-size:1.75rem}.steps{grid-template-columns:1fr}.step-card{padding-top:18px}.step-card:before{margin-bottom:10px}.cta-panel{padding:28px 23px}.cta-actions{width:100%}.cta-actions .btn{width:100%}.form-card,.contact-info{padding:25px 20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.footer-main{grid-template-columns:1fr;gap:28px}.footer-main>div:first-child{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}.system-hero{padding:55px 0}.system-mock{transform:none}.topbar{font-size:.66rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
-body {
-    font-family: "DM Sans", sans-serif;
-    background: #faf8f4;
-    color: #0e2034;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-}
+/* Navegação em arquivo HTML único */
+.site-page[hidden]{display:none!important}
+.site-page{min-height:38vh}
+.nav a[aria-current="page"]{color:var(--green)}
+@media(prefers-reduced-motion:reduce){.route-scroll{scroll-behavior:auto}}
 
-.wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    max-width: 1100px;
-    width: 100%;
-    align-items: center;
-}
 
-.col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 50px;
-    gap: 22px;
-    min-height: 420px;
-    justify-content: center;
-}
+/* Camada dinâmica: orientação de caminhos, microinterações e movimento acessível */
+:root{scroll-padding-top:100px}
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:120;background:transparent;pointer-events:none}.scroll-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#2d7a6b,#b28d57);transition:width .08s linear}
+.skip-link{position:fixed;left:12px;top:-80px;z-index:200;background:var(--ink);color:#fff;padding:12px 18px;border-radius:5px;text-decoration:none}.skip-link:focus{top:12px}
+.journey-section{background:linear-gradient(180deg,rgba(220,233,223,.35),rgba(250,248,243,0));border-block:1px solid rgba(19,43,53,.06)}.journey-shell{max-width:1000px;margin:0 auto;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.78);box-shadow:var(--shadow);overflow:hidden}.journey-choices{display:grid;grid-template-columns:1fr 1fr;background:#f0f3ed;border-bottom:1px solid var(--line)}.journey-tab{appearance:none;display:flex;align-items:center;gap:15px;text-align:left;padding:23px 26px;background:transparent;border:0;border-bottom:3px solid transparent;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s}.journey-tab+.journey-tab{border-left:1px solid var(--line)}.journey-tab.is-active{background:#fff;border-bottom-color:var(--green)}.journey-tab-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--sage);color:var(--green);font-size:1.25rem;flex:none}.journey-tab strong,.journey-tab small{display:block}.journey-tab strong{font-size:.9rem}.journey-tab small{font-size:.75rem;color:var(--muted);margin-top:4px}.journey-arrow{margin-left:auto;color:var(--green);font-size:1.1rem}.journey-panel{padding:34px clamp(20px,4vw,44px) 30px;animation:panelIn .28s ease both}.journey-panel[hidden]{display:none!important}.journey-panel-heading{max-width:670px}.mini-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--green)}.journey-panel h3,.topic-detail h3,.system-explorer-copy h3{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.45rem);line-height:1.1;font-weight:600;margin:9px 0 9px}.journey-panel-heading p{max-width:660px;color:var(--muted);font-size:.88rem;line-height:1.8}.journey-form{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}.journey-form .field label{display:block;margin-bottom:7px;color:var(--ink);font-weight:700;font-size:.76rem}.journey-form select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:#fff;min-height:48px}.journey-bottom{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-top:25px;padding-top:22px;border-top:1px solid var(--line)}.journey-bottom p{color:var(--muted);font-size:.76rem;display:flex;align-items:center;gap:8px}.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--sage);flex:none}.professional-highlights{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.professional-highlights span{padding:9px 13px;border-radius:999px;background:var(--sage-2);border:1px solid rgba(45,122,107,.16);color:var(--green-dark);font-size:.75rem;font-weight:600}
+.topic-section{background:#f3f4ed}.topic-layout{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:center}.topic-copy .headline{margin:15px 0 18px}.topic-help{display:flex;gap:12px;margin-top:26px;padding:17px;border-left:2px solid var(--gold);background:rgba(255,255,255,.55);border-radius:0 9px 9px 0}.topic-help-icon{color:var(--gold);font-size:1.2rem}.topic-help p{color:var(--muted);font-size:.82rem;line-height:1.7}.topic-picker{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(19,43,53,.055)}.topic-options{display:grid}.topic-option{border:0;border-bottom:1px solid var(--line);background:#fff;display:grid;grid-template-columns:35px 1fr 20px;align-items:center;gap:11px;text-align:left;padding:15px 20px;cursor:pointer;color:var(--ink);transition:background .18s}.topic-option span{font-family:var(--serif);font-size:1.2rem;color:#9ba8a2}.topic-option strong{font-size:.82rem;font-weight:600}.topic-option i{font-style:normal;color:#96a29d;transition:transform .2s}.topic-option:hover,.topic-option.is-active{background:#f4f7f1}.topic-option.is-active span,.topic-option.is-active i{color:var(--green)}.topic-option.is-active i{transform:translate(2px,-2px)}.topic-detail{padding:22px 23px 26px;background:linear-gradient(120deg,#f7f8f3,#fff)}.topic-detail h3{font-size:1.8rem}.topic-detail p{font-size:.83rem;color:var(--muted);line-height:1.8;margin:8px 0 18px;min-height:48px}.topic-detail .btn{font-size:.7rem;padding:12px 16px}
+.system-explorer{border-radius:24px;border:1px solid var(--line);background:#fff;overflow:hidden;box-shadow:var(--shadow)}.system-explorer-tabs{display:flex;gap:0;border-bottom:1px solid var(--line);background:#f3f5f0}.system-explorer-tab{padding:17px 23px;background:transparent;border:0;border-bottom:3px solid transparent;color:var(--muted);font-size:.79rem;font-weight:700;cursor:pointer;transition:.2s}.system-explorer-tab:hover{color:var(--green)}.system-explorer-tab.is-active{background:#fff;color:var(--green-dark);border-bottom-color:var(--green)}.system-explorer-content{display:grid;grid-template-columns:.92fr 1.08fr;gap:35px;align-items:center;padding:clamp(24px,4vw,44px)}.system-explorer-copy p{font-size:.91rem;line-height:1.85;color:var(--muted);max-width:480px;margin-bottom:23px}.explorer-visual{min-width:0}.explorer-window{padding:11px;border:1px solid #dae2dc;border-radius:12px;background:#f7f9f6;box-shadow:0 18px 30px rgba(19,43,53,.08);transform:perspective(900px) rotateY(-3deg);transition:transform .3s}.explorer-window:hover{transform:perspective(900px) rotateY(0)}.explorer-window-top{display:flex;align-items:center;gap:5px;padding:3px 3px 12px;border-bottom:1px solid #e2e8e2}.explorer-window-top>span{width:7px;height:7px;border-radius:50%;background:#ced8d0}.explorer-window-top b{font-size:.6rem;font-weight:600;color:#657570;margin-left:8px;white-space:nowrap}.explorer-window-body{display:grid;grid-template-columns:32px 1fr;gap:11px;min-height:220px;padding-top:13px}.explorer-sidebar{background:#e8efe8;border-radius:5px;padding:10px 6px;display:flex;flex-direction:column;gap:12px}.explorer-sidebar i{display:block;height:5px;border-radius:4px;background:#b5c8b9}.explorer-sidebar i:first-child{background:var(--green)}.explorer-canvas{display:flex;flex-direction:column;gap:10px;padding:5px 0}.explorer-line{height:7px;width:48%;background:#d5dfd6;border-radius:5px}.explorer-line.wide{width:70%;height:9px;background:#92b7a2}.explorer-row{display:grid;grid-template-columns:11px 1fr 40px;gap:8px;align-items:center;padding:10px;background:#fff;border:1px solid #e4e9e4;border-radius:5px}.explorer-row i{width:10px;height:10px;background:#a7c9ae;border-radius:3px}.explorer-row span{height:5px;background:#e0e7e0;border-radius:4px}.explorer-row b{height:7px;background:#d8e8db;border-radius:4px}.explorer-chart{height:48px;border-radius:5px;display:flex;align-items:flex-end;gap:7px;padding:7px 12px;background:#e7f0e6}.explorer-chart i{display:block;flex:1;background:#7eaf91;border-radius:3px 3px 0 0;height:45%}.explorer-chart i:nth-child(2){height:70%}.explorer-chart i:nth-child(3){height:56%}.explorer-chart i:nth-child(4){height:86%}.explorer-chart i:nth-child(5){height:64%}.explorer-chart i:nth-child(6){height:93%}.explorer-chart i:nth-child(7){height:76%}.explorer-caption{text-align:center;font-size:.68rem;color:var(--muted);margin-top:12px}
+.faq-search{max-width:850px;margin:0 auto 16px}.faq-search>label{display:block;font-size:.76rem;font-weight:700;margin-bottom:8px}.faq-search-control{display:flex;align-items:center;gap:10px;padding:0 13px;border:1px solid var(--line);border-radius:8px;background:#fff}.faq-search-control>span{font-size:1.2rem;color:var(--green)}.faq-search-control input{width:100%;min-width:0;padding:14px 0;border:0;outline:none;background:transparent;color:var(--ink)}.faq-search-control button{border:0;background:var(--sage);border-radius:5px;padding:6px 9px;font-size:.72rem;color:var(--ink);cursor:pointer}.faq-search-status{font-size:.72rem;color:var(--muted);margin-top:7px}.faq details[hidden]{display:none!important}
+.form-progress{margin-bottom:24px}.form-progress>span:first-child{font-size:.76rem;font-weight:700}.form-progress>span:nth-child(2){float:right;font-size:.7rem;color:var(--muted)}.form-progress-track{height:4px;margin-top:10px;background:#e9eee8;border-radius:5px;overflow:hidden;clear:both}.form-progress-track span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--green),#9fc4a7);transition:width .25s}.form-status{font-size:.82rem;line-height:1.6}.form-status:not(:empty){padding:11px 13px;margin-top:12px;background:var(--sage-2);border-radius:7px;color:var(--green-dark)}
+.reveal-ready [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}.reveal-ready [data-reveal].is-visible{opacity:1;transform:none}.route-enter{animation:routeEnter .35s ease both}@keyframes routeEnter{from{opacity:.45;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes panelIn{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:820px){.topic-layout{grid-template-columns:1fr;gap:28px}.system-explorer-content{grid-template-columns:1fr;gap:26px}.explorer-visual{max-width:550px;width:100%;margin-inline:auto}.journey-bottom{align-items:flex-start;flex-direction:column}.journey-bottom .btn{width:100%}.system-explorer-tabs{overflow-x:auto}.system-explorer-tab{white-space:nowrap;flex:1;padding:15px 14px}.journey-tab{padding:19px 14px;gap:10px}.journey-tab-icon{width:38px;height:38px}.journey-tab small{font-size:.68rem}}
+@media(max-width:560px){.journey-choices{grid-template-columns:1fr}.journey-tab+.journey-tab{border-left:0;border-top:1px solid var(--line)}.journey-panel{padding:25px 18px 22px}.journey-form{grid-template-columns:1fr}.journey-bottom p{align-items:flex-start}.topic-option{padding:14px 15px}.topic-detail{padding:20px 17px}.system-explorer-tab{font-size:.72rem;padding:13px 12px}.system-explorer-content{padding:23px 17px}.explorer-window-body{min-height:190px}.faq summary{font-size:1.15rem}.faq-search-control input{font-size:.83rem}}
+@media(prefers-reduced-motion:reduce){.reveal-ready [data-reveal],.route-enter{opacity:1;transform:none;animation:none;transition:none}}
 
-.col:first-child {
-    border-right: 1px solid rgba(14,32,52,.1);
-}
 
-.logo {
-    display: block;
-    height: auto;
-    max-width: 260px;
-    width: 100%;
-}
+.floating-contact{position:fixed;right:23px;bottom:24px;z-index:45;display:flex;align-items:center;gap:10px;padding:12px 17px;background:var(--green);border:1px solid rgba(255,255,255,.2);box-shadow:0 12px 30px rgba(19,43,53,.18);color:#fff;text-decoration:none;border-radius:999px;font-size:.75rem;font-weight:700;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s,transform .22s,background .2s}.floating-contact span{display:grid;place-items:center;width:25px;height:25px;background:rgba(255,255,255,.16);border-radius:50%;font-size:1rem}.floating-contact strong{white-space:nowrap}.floating-contact.show{opacity:1;transform:none;pointer-events:auto}.floating-contact:hover{background:var(--ink)}.back-top{z-index:46}.btn:focus-visible,.nav a:focus-visible,.journey-tab:focus-visible,.topic-option:focus-visible,.system-explorer-tab:focus-visible,.menu-toggle:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+body.mobile-menu-open .floating-contact{display:none}
+@media(max-width:560px){.floating-contact{right:15px;bottom:16px;padding:10px 13px}.floating-contact strong{font-size:.7rem}}
 
-.label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .38em;
-    text-transform: uppercase;
-    color: #2d7a6b;
-}
-
-.title {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(36px, 4vw, 52px);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -.01em;
-    color: #0e2034;
-}
-
-.title em {
-    font-style: italic;
-    color: #2d7a6b;
-}
-
-.text {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.85;
-    color: #5c6a76;
-    max-width: 340px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 8px;
-    padding: 15px 32px;
-    background: #2d7a6b;
-    color: white;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .24em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background .3s ease;
-}
-
-.btn:hover {
-    background: #0e2034;
-}
-
-@media (max-width: 780px) {
-    body { padding: 40px 24px; }
-    .wrap {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    .col {
-        padding: 60px 20px;
-        min-height: auto;
-        border-right: none !important;
-    }
-    .col:first-child {
-        border-bottom: 1px solid rgba(14,32,52,.1);
-    }
-    .logo { max-width: 220px; }
-}
 </style>
+
+<style id="corporate-mobile-refresh">
+/* Legado que Ensina — direção visual corporativa, tipografia Poppins e responsividade */
+:root{
+  --ink:#162d3b;
+  --ink-2:#243f4c;
+  --green:#287565;
+  --green-dark:#1d5a4e;
+  --sage:#e9f0ec;
+  --sage-2:#f2f6f4;
+  --paper:#ffffff;
+  --white:#ffffff;
+  --muted:#5c6971;
+  --line:#dce3e2;
+  --sand:#eff2ef;
+  --gold:#b18a4f;
+  --shadow:0 8px 24px rgba(22,45,59,.06);
+  --serif:'Poppins',Arial,sans-serif;
+  --sans:'Poppins',Arial,sans-serif;
+  --radius:4px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'Poppins',Arial,sans-serif;background:#fff;color:#172e3c;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input,select,textarea{font-family:'Poppins',Arial,sans-serif}
+img{height:auto}
+.container{width:min(1200px,calc(100% - 64px))}
+/* Linguagem editorial: títulos fortes, sem combinações de fontes decorativas */
+.display,.headline,.serif,.hero-card .hero-card-text,.hero-card .brand-placeholder,.service-card h3,.visual-panel-inner h3,.quote-mark,.quote-text,.cta-panel h2,.page-hero-badge strong,.step-card h3,.contact-info h2,.form-card h2,.system-feature h3{font-family:'Poppins',Arial,sans-serif;letter-spacing:-.045em}
+.display{font-size:clamp(2.6rem,4.4vw,4.25rem);font-weight:600;line-height:1.12;letter-spacing:-.055em;color:#142c3b;max-width:720px}
+.display em,.headline em{font-style:normal;font-weight:600;color:var(--green)}
+.headline{font-size:clamp(1.85rem,3.1vw,2.8rem);line-height:1.2;font-weight:600;letter-spacing:-.045em}
+.lead{color:#576873;font-size:1rem;line-height:1.85;max-width:660px}
+.small{font-size:.84rem;color:var(--muted)}
+.eyebrow{font-size:.68rem;letter-spacing:.12em;font-weight:700;color:var(--green)}
+.eyebrow:before{width:22px;height:2px}
+.section{padding:78px 0}
+.section-sm{padding:52px 0}
+.section-head{max-width:760px;margin-bottom:34px}
+.section-head .headline{margin:10px 0 14px}
+/* Cabeçalho de navegação */
+.topbar{background:#162d3b;color:#f4f7f6;font-size:.68rem;letter-spacing:.01em}
+.topbar-inner{min-height:34px;padding:7px 0;align-items:center}
+.topbar-inner span{gap:8px}
+.site-header{background:rgba(255,255,255,.98);backdrop-filter:none;border-bottom:1px solid #dfe6e4;box-shadow:0 2px 6px rgba(22,45,59,.025)}
+.nav-wrap{min-height:78px;gap:22px}
+.brand{min-width:245px;gap:10px}
+.brand-symbol{width:38px;height:38px;border-radius:3px;background:var(--green);font-family:'Poppins',Arial,sans-serif;font-weight:600;font-size:1.15rem}
+.brand-name{font-family:'Poppins',Arial,sans-serif;font-size:1rem;font-weight:700;letter-spacing:-.04em;line-height:1.2}
+.brand-sub{font-size:.52rem;letter-spacing:.12em;color:#50656e;margin-top:4px;font-weight:600}
+.nav{gap:clamp(12px,1.7vw,24px)}
+.nav a{font-size:.75rem;font-weight:500;color:#3f505a;transition:color .18s ease}
+.nav a:hover,.nav a[aria-current=page]{color:var(--green);text-decoration:underline;text-underline-offset:6px}
+.nav a.nav-cta{padding:11px 15px;background:#162d3b;border:1px solid #162d3b;border-radius:2px;color:#fff;text-decoration:none;font-weight:600}
+.nav a.nav-cta:hover{background:var(--green);border-color:var(--green)}
+.menu-toggle{border-radius:2px;width:42px;height:42px;background:#fff;border-color:#cfd9d7;color:var(--ink)}
+/* Página inicial: hero mais informativo e sem elementos decorativos excessivos */
+.hero{padding:70px 0 54px;overflow:hidden;background:#fff}
+.hero:before{display:none}
+.hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);gap:clamp(34px,5vw,72px)}
+.hero-copy{padding:10px 0}
+.hero-copy .display{margin:17px 0 20px;max-width:690px}
+.hero-copy .lead{max-width:620px}
+.actions{gap:10px;margin-top:25px}
+.btn{padding:13px 19px;border-radius:2px;background:#287565;color:#fff;border:1px solid #287565;font-size:.75rem;font-weight:600;letter-spacing:.01em;line-height:1.45;box-shadow:none;transition:background .16s ease,border-color .16s ease,color .16s ease}
+.btn:hover{background:#1d5a4e;border-color:#1d5a4e;transform:none;box-shadow:none}
+.btn-secondary{background:#fff;color:#203b48;border-color:#cbd7d4}
+.btn-secondary:hover{background:#f1f5f3;color:#162d3b;border-color:#879c96}
+.btn-light{background:#fff;color:#162d3b;border-color:#fff}
+.btn-light:hover{background:#edf3ef;color:#162d3b;border-color:#edf3ef}
+.link-arrow{color:var(--green);font-size:.82rem;font-weight:600}
+.hero-note{margin-top:22px;font-size:.75rem;color:#52656d;line-height:1.6}
+.dot{background:#b18a4f}
+.hero-art{min-height:390px}
+.hero-card{width:min(100%,440px);min-height:390px;border-radius:3px;background:#162d3b;padding:35px 32px 30px;box-shadow:none;text-align:left;align-items:flex-start;justify-content:center;gap:24px}
+.hero-card:after{inset:9px;border:1px solid rgba(255,255,255,.14);border-radius:2px}
+.hero-card .logo-img{width:min(86%,310px);height:130px;object-fit:contain;object-position:left center;align-self:flex-start}
+.hero-card .brand-placeholder{font-size:2rem;line-height:1.1;max-width:280px;font-weight:600}
+.hero-card .brand-placeholder small{font-family:'Poppins',Arial,sans-serif;font-size:.58rem;letter-spacing:.14em;color:#c6ded3}
+.hero-card .hero-card-text{font-size:1.55rem;line-height:1.35;letter-spacing:-.04em;max-width:320px;margin-top:5px;font-weight:500}
+.hero-card .hero-card-text em{font-style:normal;color:#b7d7c8;font-weight:600}
+.hero-card .pill{margin-top:0;align-self:flex-start;background:#e8f0ec;color:#183b3c;border-radius:2px;font-size:.65rem;font-weight:600;letter-spacing:0}
+.floating-note{right:-8px;bottom:18px;max-width:226px;padding:13px 14px;background:#fff;border:1px solid #d8e0de;border-radius:2px;box-shadow:0 5px 15px rgba(22,45,59,.08)}
+.floating-icon{width:34px;height:34px;border-radius:2px;background:#edf3f0;color:var(--green);font-size:.95rem}
+.floating-note strong{font-size:.73rem;font-weight:600}
+.floating-note small{font-size:.65rem;line-height:1.5}
+/* Faixa de informação e grades: retas, legíveis e fáceis de escanear */
+.trust-row{background:#f4f7f5;border-top:1px solid #e0e7e4;border-bottom:1px solid #e0e7e4}
+.trust-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.trust-item{padding:19px 24px;gap:12px;border-color:#d9e2df}
+.trust-item strong{font-size:.79rem;font-weight:600}
+.trust-item small{font-size:.69rem;line-height:1.5}
+.trust-icon{font-size:1.12rem;color:var(--green)}
+.cards-3{gap:16px}
+.service-card,.system-feature{padding:26px 25px;border:1px solid #dbe3e1;border-radius:3px;background:#fff;box-shadow:none;transition:border-color .18s ease,background .18s ease}
+.service-card:hover,.system-feature:hover{transform:none;box-shadow:none;border-color:#8aa99d;background:#fbfcfb}
+.service-card h3,.system-feature h3{font-size:1.1rem;line-height:1.4;font-weight:600;letter-spacing:-.025em;margin-bottom:9px}
+.service-card p,.system-feature p{font-size:.84rem;line-height:1.75;color:#586b73;margin-bottom:17px}
+.card-icon{width:40px;height:40px;border-radius:3px;background:#edf3f0;color:var(--green);font-size:1.1rem;margin-bottom:18px}
+.split{gap:clamp(36px,5vw,70px)}
+.visual-panel{min-height:350px;border-radius:3px;background:#e9f0ec}
+.visual-panel:before,.visual-panel:after{display:none}
+.visual-panel-inner{max-width:340px;padding:32px}
+.visual-panel-inner .icon-large{font-size:3rem;margin-bottom:15px;color:var(--green)}
+.visual-panel-inner h3{font-size:1.55rem;line-height:1.35;font-weight:600;letter-spacing:-.04em}
+.visual-panel-inner p{font-size:.8rem;line-height:1.75;margin-top:10px}
+.check-list{gap:15px;margin:22px 0 27px}
+.check-item{gap:11px}
+.check-mark{border-radius:2px;background:#e9f0ec;color:#287565;width:23px;height:23px}
+.check-item strong{font-size:.84rem;font-weight:600}
+.check-item p{font-size:.79rem;line-height:1.7}
+/* Faixas de destaque e chamadas sem degradê ou decoração ilustrativa exagerada */
+.quote-band{background:#162d3b;padding:56px 0;color:#fff}
+.quote-grid{grid-template-columns:.28fr 1.72fr;gap:30px}
+.quote-mark{font-size:4.5rem;line-height:.8;color:#a9cbbb;font-weight:500}
+.quote-text{font-size:clamp(1.35rem,2.6vw,2rem);line-height:1.45;font-weight:400;letter-spacing:-.035em;max-width:820px}
+.quote-text em{font-style:normal;color:#c4ddcf}
+.quote-attrib{font-size:.72rem;margin-top:13px}
+.cta-panel{background:#eaf1ed;border:1px solid #d9e4df;border-radius:3px;padding:38px 40px;gap:28px;box-shadow:none}
+.cta-panel:after{display:none}
+.cta-panel h2{font-size:clamp(1.55rem,2.5vw,2.4rem);line-height:1.25;font-weight:600;letter-spacing:-.04em;max-width:690px}
+.cta-panel p{font-size:.84rem;line-height:1.75;margin-top:10px}
+.cta-actions{gap:8px}
+/* Cabeçalhos internos padronizados */
+.page-hero{padding:55px 0 45px;background:#f4f7f5;border-bottom:1px solid #dce4e1}
+.page-hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);gap:35px}
+.page-hero .display{font-size:clamp(2.45rem,4.3vw,3.8rem);line-height:1.14;margin:13px 0 16px}
+.page-hero-art{padding:12px;justify-content:flex-end}
+.page-hero-badge{width:min(100%,300px);aspect-ratio:1.04;border-radius:3px;background:#162d3b;color:#fff;padding:27px;box-shadow:none;display:flex;align-items:flex-start;justify-content:center;flex-direction:column}
+.page-hero-badge .badge-icon{width:40px;height:40px;border-radius:3px;background:rgba(255,255,255,.1);font-size:1.15rem;margin-bottom:25px}
+.page-hero-badge strong{font-size:1.45rem;line-height:1.4;font-weight:600;letter-spacing:-.035em}
+.page-hero-badge span:last-child{font-size:.7rem;line-height:1.6;color:#d0dfd7;margin-top:12px}
+/* Etapas e FAQ */
+.steps{gap:14px}
+.step-card{border:1px solid #dbe3e1;border-radius:3px;padding:26px 23px;background:#fff}
+.step-card:before{position:static;display:block;width:30px;height:4px;border-radius:0;background:#287565;margin-bottom:17px;content:''}
+.step-card h3{font-size:1rem;font-weight:600;letter-spacing:-.025em;margin-bottom:8px}
+.step-card p{font-size:.81rem;line-height:1.75;color:#5a6a72}
+.faq details{border:0;border-bottom:1px solid #dce4e1;border-radius:0;background:#fff}
+.faq summary{font-family:'Poppins',Arial,sans-serif;font-size:1rem;line-height:1.45;font-weight:600;padding:20px 36px 20px 0;color:#1b3542}
+.faq summary:after{font-family:'Poppins',Arial,sans-serif;font-size:1.1rem;color:var(--green)}
+.faq details p{font-size:.85rem;line-height:1.8;color:#5a6a72;padding:0 25px 20px 0}
+.faq-search-control{border-radius:2px;border-color:#ccd8d4;box-shadow:none}
+.faq-search-control:focus-within{border-color:#287565;box-shadow:0 0 0 3px rgba(40,117,101,.10)}
+.faq-search-control input{font-family:'Poppins',Arial,sans-serif}
+/* Contato e formulários: claros, acessíveis, sem glassmorphism */
+.contact-grid{gap:24px;align-items:stretch}
+.contact-info{border-radius:3px;padding:32px;background:#162d3b;box-shadow:none}
+.contact-info h2{font-size:1.7rem;line-height:1.3;font-weight:600;letter-spacing:-.04em}
+.contact-info p{font-size:.83rem;line-height:1.8;color:rgba(255,255,255,.78)}
+.contact-method{gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.13)}
+.contact-method .icon{width:33px;height:33px;border-radius:2px;background:rgba(255,255,255,.1);font-size:1rem}
+.contact-method strong{font-size:.78rem;font-weight:600}
+.contact-method small{font-size:.7rem;line-height:1.6;color:rgba(255,255,255,.68)}
+.form-card{border:1px solid #dce4e1;border-radius:3px;padding:32px;background:#fff;box-shadow:none}
+.form-card h2{font-size:1.5rem;font-weight:600;letter-spacing:-.04em}
+.form-intro{font-size:.81rem;line-height:1.7;color:#586b73}
+.form-grid{gap:17px}
+.field{gap:7px}
+.field label{font-size:.76rem;font-weight:600;color:#243d49}
+.field input,.field select,.field textarea{border:1px solid #ccd8d4;border-radius:2px;padding:12px 13px;color:#172e3c;background:#fff;font-size:.83rem;min-height:46px;box-shadow:none}
+.field textarea{min-height:115px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#287565;outline:0;box-shadow:0 0 0 3px rgba(40,117,101,.11)}
+.form-status:not(:empty){padding:12px 14px;border-radius:2px;background:#eff5f1;border-left:3px solid var(--green);font-size:.8rem}
+.form-progress{border-radius:2px;background:#f4f7f5;padding:12px}
+.form-progress>span:first-child{font-size:.72rem;font-weight:600}
+.form-progress>span:nth-child(2){font-size:.68rem}
+.form-progress-track,.form-progress-track span{border-radius:0}
+.form-note,.legal-small{font-size:.72rem;line-height:1.75;color:#66757b}
+.notice{border-radius:2px}
+/* Área do produto para professores: aparência de software institucional */
+.system-hero{background:#162d3b;color:#fff}
+.system-hero:after{display:none}
+.system-hero .display{color:#fff}
+.system-hero .display em{color:#bad7c8}
+.system-hero .lead{color:rgba(255,255,255,.78)}
+.system-art{padding:16px 0}
+.system-mock{border-radius:3px;background:#f8faf9;box-shadow:none;border:1px solid rgba(255,255,255,.2);overflow:hidden}
+.mock-top{border-radius:0;background:#e7efeb}
+.mock-top i{border-radius:50%}
+.mock-grid{border-radius:0}
+.mock-side{background:#1c3d45}
+.mock-side span{border-radius:2px}
+.mock-main{background:#fff}
+.mock-title,.mock-stat,.mock-chart,.mock-line,.explorer-line,.explorer-row i,.explorer-row span,.explorer-row b{border-radius:2px}
+.mock-stat,.system-feature .card-icon{background:#edf3f0}
+.system-feature-grid{gap:14px}
+.system-feature{padding:24px}
+.system-feature .card-icon{width:38px;height:38px;margin-bottom:16px;border-radius:2px}
+.system-explorer{border:1px solid #dce4e1;border-radius:3px;box-shadow:none;background:#fff;overflow:hidden}
+.system-explorer-tabs{background:#f4f7f5;border-bottom:1px solid #dce4e1;gap:0}
+.system-explorer-tab{border-radius:0;background:transparent;color:#4d6068;border-right:1px solid #dce4e1}
+.system-explorer-tab.is-active{background:#fff;color:#1f6b5c;box-shadow:inset 0 -3px 0 #287565}
+.system-explorer-content{gap:30px}
+.explorer-window{border-radius:3px;box-shadow:none;border:1px solid #d8e1de}
+.explorer-window-top{background:#e8efec}
+.explorer-sidebar{background:#1b3a44}
+.explorer-sidebar i,.explorer-row i,.explorer-row span,.explorer-row b,.explorer-chart i{border-radius:2px}
+.explorer-caption{font-size:.69rem;color:#68777d}
+/* Rodapé institucional */
+.footer{background:#162d3b;color:#fff;padding:50px 0 24px}
+.footer-main{gap:44px;padding-bottom:30px}
+.footer-brand .brand-symbol{background:#c0dacf;color:#162d3b;border-radius:2px}
+.footer-brand .brand-name{font-size:.98rem;color:#fff}
+.footer-brand .brand-sub{color:#bad7c8}
+.footer-desc{font-size:.77rem;line-height:1.8;color:rgba(255,255,255,.7);max-width:420px}
+.footer h3{font-family:'Poppins',Arial,sans-serif;font-size:.7rem;letter-spacing:.1em;font-weight:600;color:#bdd8ca;margin-bottom:13px}
+.footer-links{gap:8px}
+.footer-links a{font-size:.76rem;color:rgba(255,255,255,.76)}
+.footer-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.footer-bottom{font-size:.67rem;color:rgba(255,255,255,.58);line-height:1.6}
+/* Elementos flutuantes discretos: não simulam chat automatizado */
+.floating-contact{right:20px;bottom:20px;padding:10px 14px;border-radius:2px;border:1px solid #287565;background:#287565;box-shadow:0 3px 12px rgba(22,45,59,.15);font-size:.71rem}
+.floating-contact span{border-radius:2px;width:22px;height:22px}
+.floating-contact:hover{background:#162d3b;border-color:#162d3b}
+.back-top{border-radius:2px}
+.scroll-progress{height:3px}
+.scroll-progress span{background:#287565}
+/* Evita conteúdo invisível em captura, impressão ou quando a animação é bloqueada */
+.reveal-ready [data-reveal],.reveal-ready [data-reveal].is-visible{opacity:1!important;transform:none!important;filter:none!important}
+.route-enter{animation:corporate-route-enter .18s ease-out both}
+@keyframes corporate-route-enter{from{opacity:.88}to{opacity:1}}
+/* Acessibilidade e foco do teclado */
+:focus-visible{outline:3px solid #ad8550;outline-offset:3px}
+.btn:focus-visible,.nav a:focus-visible,.journey-tab:focus-visible,.topic-option:focus-visible,.system-explorer-tab:focus-visible,.menu-toggle:focus-visible{outline:3px solid #ad8550;outline-offset:3px}
+@media(max-width:1100px){
+  .container{width:min(100% - 48px,1000px)}
+  .nav-wrap{gap:16px}
+  .brand{min-width:210px}
+  .nav{gap:13px}
+  .nav a{font-size:.7rem}
+  .hero-grid{gap:34px}
+  .hero-card{min-height:360px}
+}
+@media(max-width:980px){
+  .topbar-inner span:last-child{display:none}
+  .nav-wrap{min-height:72px}
+  .menu-toggle{display:grid;place-items:center;flex:none}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;padding:12px 24px 20px;background:#fff;border-bottom:1px solid #dce4e1;box-shadow:0 12px 18px rgba(22,45,59,.07);align-items:stretch;gap:0}
+  .nav.open{display:flex;flex-direction:column}
+  .nav a{padding:13px 5px;border-bottom:1px solid #edf1ef;font-size:.82rem}
+  .nav a.nav-cta{margin-top:10px;text-align:center;padding:13px}
+  .hero-grid,.page-hero-grid{grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:28px}
+  .hero-art{min-height:330px}
+  .hero-card{min-height:320px;padding:30px 26px}
+  .hero-card .logo-img{height:105px}
+  .hero-card .hero-card-text{font-size:1.35rem}
+  .floating-note{max-width:205px;right:-6px}
+  .cards-3,.system-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .split{gap:35px}
+  .page-hero-badge{width:100%;max-width:280px}
+  .system-explorer-content{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:700px){
+  html{scroll-padding-top:76px}
+  body{font-size:14px}
+  .container{width:calc(100% - 36px)}
+  .topbar{font-size:.63rem}
+  .topbar-inner{min-height:32px;padding:6px 0}
+  .nav-wrap{min-height:68px}
+  .brand{min-width:0;gap:8px}
+  .brand-symbol{width:34px;height:34px;font-size:1.05rem}
+  .brand-name{font-size:.91rem}
+  .brand-sub{font-size:.47rem;letter-spacing:.085em;margin-top:3px}
+  .hero{padding:44px 0 37px}
+  .hero-grid,.page-hero-grid,.split,.quote-grid,.contact-grid{grid-template-columns:1fr;gap:28px}
+  .hero-copy{padding:0}
+  .display{font-size:clamp(2rem,8.4vw,3.1rem);line-height:1.14;letter-spacing:-.05em}
+  .hero-copy .display{margin:14px 0 15px}
+  .lead{font-size:.91rem;line-height:1.8}
+  .actions{margin-top:21px;gap:9px}
+  .btn{min-height:44px;padding:12px 15px;font-size:.72rem}
+  .hero-note{font-size:.7rem;margin-top:18px}
+  .hero-art{min-height:auto;padding:0 0 12px}
+  .hero-card{width:100%;min-height:275px;padding:28px 26px;gap:14px}
+  .hero-card:after{inset:7px}
+  .hero-card .logo-img{height:90px;width:75%;max-width:250px}
+  .hero-card .hero-card-text{font-size:1.28rem;margin-top:0;max-width:290px}
+  .hero-card .pill{font-size:.59rem;padding:7px 9px;max-width:100%;white-space:normal}
+  .floating-note{right:6px;bottom:-2px;max-width:200px;padding:10px;background:#fff}
+  .floating-note small{font-size:.61rem}
+  .trust-grid{grid-template-columns:1fr}
+  .trust-item,.trust-item:first-child{padding:13px 0;border-right:0;border-bottom:1px solid #dce4e1}
+  .trust-item:last-child{border-bottom:0}
+  .section{padding:54px 0}
+  .section-sm{padding:38px 0}
+  .section-head{margin-bottom:25px}
+  .section-head .headline{margin:9px 0 12px}
+  .headline{font-size:clamp(1.65rem,6.6vw,2.25rem);line-height:1.23}
+  .cards-3,.system-feature-grid{grid-template-columns:1fr;gap:11px}
+  .service-card,.system-feature{padding:21px 20px}
+  .card-icon{width:36px;height:36px;margin-bottom:13px;font-size:1rem}
+  .service-card h3,.system-feature h3{font-size:1rem}
+  .service-card p,.system-feature p{font-size:.81rem}
+  .visual-panel{min-height:260px;border-radius:3px}
+  .visual-panel-inner{padding:24px}
+  .visual-panel-inner h3{font-size:1.35rem}
+  .check-list{gap:13px;margin:19px 0 24px}
+  .quote-band{padding:38px 0}
+  .quote-grid{gap:12px}
+  .quote-mark{font-size:3rem}
+  .quote-text{font-size:1.3rem;line-height:1.5}
+  .cta-panel{padding:25px 21px;display:flex;flex-direction:column;align-items:flex-start;gap:19px}
+  .cta-panel h2{font-size:1.48rem;line-height:1.3}
+  .cta-panel p{font-size:.81rem}
+  .cta-actions{width:100%}
+  .cta-actions .btn{width:100%}
+  .page-hero{padding:39px 0 32px}
+  .page-hero .display{font-size:clamp(2rem,8vw,3rem);line-height:1.16;margin:12px 0 14px}
+  .page-hero-art{padding:0;justify-content:stretch}
+  .page-hero-badge{width:100%;max-width:none;aspect-ratio:auto;min-height:210px;padding:23px}
+  .page-hero-badge .badge-icon{margin-bottom:15px}
+  .page-hero-badge strong{font-size:1.3rem}
+  .steps{grid-template-columns:1fr;gap:10px}
+  .step-card{padding:21px}
+  .faq summary{font-size:.9rem;padding:17px 30px 17px 0}
+  .faq details p{font-size:.8rem;padding-right:0}
+  .contact-info,.form-card{padding:24px 20px}
+  .contact-info h2{font-size:1.45rem}
+  .form-card h2{font-size:1.35rem}
+  .form-grid{grid-template-columns:1fr;gap:14px}
+  .field.full{grid-column:auto}
+  .field input,.field select,.field textarea{font-size:16px;min-height:46px}
+  .form-progress{display:grid;gap:8px}
+  .form-progress>span:nth-child(2){text-align:left}
+  .system-hero{padding:44px 0 35px}
+  .system-hero .hero-grid{grid-template-columns:1fr;gap:25px}
+  .system-art{padding:0}
+  .system-mock{max-width:100%}
+  .system-explorer-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .system-explorer-tab{white-space:normal;min-height:48px;padding:11px 9px;font-size:.7rem}
+  .system-explorer-content{padding:20px 16px}
+  .explorer-window-body{min-height:180px}
+  .footer{padding:37px 0 22px}
+  .footer-main{grid-template-columns:1fr;gap:27px;padding-bottom:24px}
+  .footer-desc{font-size:.76rem}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px;padding-top:15px;font-size:.64rem}
+  .floating-contact{right:12px;bottom:12px;padding:8px 10px;gap:7px;max-width:calc(100vw - 24px)}
+  .floating-contact strong{font-size:.65rem}
+}
+@media(max-width:380px){
+  .container{width:calc(100% - 28px)}
+  .brand-name{font-size:.84rem}
+  .brand-sub{font-size:.42rem}
+  .display{font-size:1.95rem}
+  .actions .btn{width:100%}
+  .hero-card{padding:24px 20px;min-height:255px}
+  .journey-tab{padding:13px 10px}
+  .topic-option{padding:12px}
+  .system-explorer-tab{font-size:.65rem;padding:10px 7px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+
 </head>
-<body>
-
-<div class="wrap">
-
-    <!-- LADO ESQUERDO — PSICOPEDAGOGIA -->
-    <div class="col">
-
-        <img
-            class="logo"
-            src="https://i.imgur.com/ZhoF1qy.png"
-            alt="Legado que Ensina"
-        >
-
-        <span class="label">Atendimento Psicopedagógico</span>
-
-        <h1 class="title">Em <em>breve.</em></h1>
-
-        <p class="text">
-            Estamos preparando um novo espaço  para
-            acolher famílias, crianças e adolescentes.
-        </p>
-
-    </div>
-
-    <!-- LADO DIREITO — SISTEMA -->
-    <div class="col">
-
-        <img
-            class="logo"
-            src="https://i.imgur.com/wpdRGvm.png"
-            alt="Sistema Legado que Ensina"
-        >
-
-        <span class="label">Para psicopedagogos</span>
-
-        <h2 class="title">Sistema para <em>psicopedagogos.</em></h2>
-
-        <p class="text">
-            Plataforma digital para organizar atendimentos
-            e acompanhar evoluções clínicas.
-        </p>
-
-        <a
-            href="https://sistema.legadoqueensina.com.br"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <i class="fas fa-arrow-right"></i>
-            Acessar Sistema
-        </a>
-
-    </div>
-
+<body id="top">
+<div aria-hidden="true" class="scroll-progress"><span id="scroll-progress-bar"></span></div>
+<a class="skip-link" href="#conteudo-principal">Pular para o conteúdo</a>
+<div class="topbar"><div class="container topbar-inner"><span>✦ Atendimento psicopedagógico em Londrina e por videochamada</span><span>Um olhar individual para cada trajetória de aprendizagem</span></div></div>
+<header class="site-header"><div class="container nav-wrap"><a aria-label="Legado que Ensina, início" class="brand" href="#inicio"><span class="brand-symbol">L</span><span class="brand-copy"><span class="brand-name">Legado que Ensina</span><span class="brand-sub">Gestão psicopedagógica</span></span></a><button aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu" class="menu-toggle">☰</button><nav aria-label="Navegação principal" class="nav" id="main-nav"><a data-route-link="inicio" href="#inicio">Início</a><a data-route-link="atendimento" href="#atendimento">Atendimento</a><a data-route-link="como-funciona" href="#como-funciona">Como funciona</a><a data-route-link="sobre" href="#sobre">Sobre</a><a data-route-link="contato" href="#contato">Contato</a><a class="nav-cta" data-route-link="sistema" href="#sistema">Sistema para professores ↗</a></nav></div></header>
+<main id="conteudo-principal">
+<div class="site-page" data-page="inicio" data-title="Início | Legado que Ensina" data-description="Atendimento psicopedagógico para crianças e adolescentes em Londrina, com possibilidade de videochamada, e sistema digital para professores.">
+<section class="hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Aprender é uma trajetória</span><h1 class="display">Cada criança tem um jeito próprio de <em>aprender.</em></h1><p class="lead">A Legado que Ensina acolhe crianças e adolescentes em seus desafios de aprendizagem, com escuta cuidadosa, olhar individual e acompanhamento psicopedagógico.</p><div class="actions"><a class="btn" href="#atendimento">Conheça o atendimento <span>→</span></a><a class="btn btn-secondary" href="#como-funciona">Como funciona</a></div><div class="hero-note"><span class="dot"></span>Atendimento em Londrina, em sala de coworking, e por videochamada quando necessário.</div></div><div class="hero-art"><div class="hero-card"><img alt="Logomarca Legado que Ensina" class="logo-img" data-logo-fallback="" src="https://i.imgur.com/ZhoF1qy.png"/><div class="brand-placeholder">Legado <em>que Ensina</em><small>Gestão psicopedagógica</small></div><p class="hero-card-text">Um espaço de escuta para abrir <em>novos caminhos.</em></p><span class="pill">Cuidado · Aprendizagem · Desenvolvimento</span></div><div class="floating-note"><span class="floating-icon">✦</span><div><strong>Olhar individual</strong><small>Respeito ao tempo e à história de cada criança.</small></div></div></div></div></section><section class="trust-row"><div class="container trust-grid"><div class="trust-item"><span class="trust-icon">⌖</span><div><strong>Londrina — PR</strong><small>Atendimentos em sala de coworking</small></div></div><div class="trust-item"><span class="trust-icon">♡</span><div><strong>Acolhimento individualizado</strong><small>Escuta respeitosa de cada trajetória</small></div></div><div class="trust-item"><span class="trust-icon">⌁</span><div><strong>Possibilidade on-line</strong><small>Videochamada quando necessário</small></div></div></div></section><section class="section"><div class="container"><div class="section-head"><span class="eyebrow">Dois caminhos, o mesmo propósito</span><h2 class="headline">Cuidado para quem aprende.<br/><em>Ferramentas para quem ensina.</em></h2><p class="lead">A Legado que Ensina reúne o atendimento psicopedagógico a famílias e uma ferramenta digital pensada para apoiar a organização do trabalho de professores.</p></div><div class="cards-3"><article class="service-card"><div class="card-icon">♡</div><h3>Atendimento psicopedagógico</h3><p>Um espaço de acolhimento para compreender desafios de aprendizagem e construir, em parceria com a família, próximos passos possíveis.</p><a class="link-arrow" href="#atendimento">Conhecer o atendimento <span>→</span></a></article><article class="service-card"><div class="card-icon">✧</div><h3>Como funciona</h3><p>Conheça as etapas do primeiro contato ao acompanhamento, com comunicação clara e atenção às necessidades de cada criança ou adolescente.</p><a class="link-arrow" href="#como-funciona">Ver as etapas <span>→</span></a></article><article class="service-card"><div class="card-icon">▤</div><h3>Sistema para professores</h3><p>Uma plataforma digital separada do atendimento clínico, feita para ajudar profissionais a organizarem sua rotina psicopedagógica.</p><a class="link-arrow" href="#sistema">Conhecer o sistema <span>→</span></a></article></div></div></section><section class="section section-sm"><div class="container split"><div class="visual-panel"><div class="visual-panel-inner"><span class="icon-large">✿</span><h3>Aprender também é construir confiança.</h3><p>Um processo que respeita a individualidade e valoriza cada avanço.</p></div></div><div><span class="eyebrow">Nosso olhar</span><h2 class="headline" style="margin:15px 0 18px">Mais do que olhar para a dificuldade, buscamos <em>compreender a trajetória.</em></h2><p class="lead">As experiências de aprendizagem não são iguais. Por isso, o acompanhamento começa com escuta, diálogo e compreensão do contexto — sem comparar histórias ou impor um único ritmo.</p><div class="check-list"><div class="check-item"><span class="check-mark">✓</span><div><strong>Escuta e acolhimento</strong><p>Espaço para compartilhar dúvidas, observações e expectativas da família.</p></div></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Planejamento individualizado</strong><p>Os próximos passos são pensados a partir das necessidades observadas e conversadas.</p></div></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Parceria com a família</strong><p>O diálogo ajuda a acompanhar o processo e perceber mudanças no cotidiano.</p></div></div></div><a class="btn btn-secondary" href="#sobre">Conheça a Legado <span>→</span></a></div></div></section><section class="quote-band"><div class="container quote-grid"><div class="quote-mark">“</div><div><p class="quote-text">Cada conquista importa — e cada criança merece um caminho de aprendizagem que faça sentido para <em>sua história.</em></p><p class="quote-attrib">Legado que Ensina · Gestão psicopedagógica</p></div></div></section><section class="section journey-section" aria-labelledby="journey-title">
+<div class="container">
+<div class="section-head center"><span class="eyebrow">Um próximo passo possível</span><h2 class="headline" id="journey-title">O que trouxe você até aqui?</h2><p class="lead">Escolha o caminho que combina com o que você procura. A página sugere por onde começar, sem substituir uma conversa individual.</p></div>
+<div class="journey-shell">
+<div class="journey-choices" role="tablist" aria-label="Escolha seu perfil">
+<button class="journey-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="journey-family" data-journey-tab="family"><span class="journey-tab-icon">♡</span><span><strong>Sou familiar / responsável</strong><small>Quero conversar sobre aprendizagem</small></span><span class="journey-arrow">↗</span></button>
+<button class="journey-tab" type="button" role="tab" aria-selected="false" aria-controls="journey-professional" data-journey-tab="professional"><span class="journey-tab-icon">▤</span><span><strong>Sou professor(a) / profissional</strong><small>Quero conhecer a plataforma</small></span><span class="journey-arrow">↗</span></button>
 </div>
+<div class="journey-panel" id="journey-family" role="tabpanel" data-journey-panel="family">
+<div class="journey-panel-heading"><span class="mini-label">Para famílias</span><h3>Vamos começar pela sua dúvida.</h3><p>Você pode indicar um assunto e a modalidade que gostaria de consultar. A seleção será usada apenas para preparar o contato.</p></div>
+<div class="journey-form"><div class="field"><label for="journey-topic">O que você gostaria de conversar?</label><select id="journey-topic"><option value="Informações sobre atendimento">Quero conhecer o atendimento</option><option value="Leitura e escrita">Leitura e escrita</option><option value="Organização dos estudos">Organização dos estudos</option><option value="Aprendizagem e rotina escolar">Aprendizagem e rotina escolar</option><option value="Orientação para a família">Orientação para a família</option><option value="Disponibilidade de horários">Disponibilidade de horários</option></select></div>
+<div class="field"><label for="journey-mode">Qual modalidade prefere consultar?</label><select id="journey-mode"><option value="A combinar">Ainda não sei / quero conversar</option><option value="Presencial em Londrina">Presencial em Londrina</option><option value="Videochamada (consultar possibilidade)">Videochamada, se for apropriado</option></select></div></div>
+<div class="journey-bottom"><p><span class="status-dot"></span>Sem compromisso: este passo apenas organiza sua solicitação inicial.</p><button class="btn" type="button" id="journey-contact">Preparar meu contato <span>→</span></button></div>
+</div>
+<div class="journey-panel" id="journey-professional" role="tabpanel" data-journey-panel="professional" hidden>
+<div class="journey-panel-heading"><span class="mini-label">Para profissionais</span><h3>Uma área de trabalho separada do atendimento às famílias.</h3><p>Conheça a plataforma digital voltada à organização da rotina psicopedagógica, dos registros e dos compromissos profissionais.</p></div>
+<div class="professional-highlights"><span>Agenda e rotina</span><span>Registros profissionais</span><span>Acompanhamento</span><span>Recursos de apoio</span></div>
+<div class="journey-bottom"><p><span class="status-dot"></span>O acesso acontece no ambiente próprio do sistema.</p><a class="btn" href="#sistema">Conhecer o sistema <span>→</span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section"><div class="container"><div class="cta-panel"><div><span class="eyebrow">Vamos conversar?</span><h2>O primeiro passo pode ser uma conversa tranquila.</h2><p>Conte um pouco sobre o que você está buscando. Vamos orientar sobre as possibilidades de atendimento e esclarecer suas dúvidas.</p></div><div class="cta-actions"><a class="btn" href="#contato">Solicitar informações <span>→</span></a><a class="btn btn-secondary" href="#atendimento">Ver atendimento</a></div></div></div></section>
+</div>
+<div class="site-page" data-page="atendimento" data-title="Atendimento psicopedagógico | Legado que Ensina" data-description="Atendimento psicopedagógico para crianças e adolescentes em Londrina, em sala de coworking, com possibilidade de videochamada quando necessário." hidden>
+<section class="page-hero"><div class="container page-hero-grid"><div><span class="eyebrow">Atendimento psicopedagógico</span><h1 class="display">Um espaço para compreender e apoiar a <em>aprendizagem.</em></h1><p class="lead">Atendimento para crianças e adolescentes, com escuta da família, compreensão das necessidades e acompanhamento construído de forma individual.</p><div class="actions"><a class="btn" href="#contato">Conversar sobre atendimento →</a></div></div><div class="page-hero-art"><div class="page-hero-badge"><span class="badge-icon">♡</span><strong>Escuta que acolhe.<br/>Aprendizagem que floresce.</strong><span>Londrina · Presencial e on-line quando necessário</span></div></div></div></section><section class="section"><div class="container"><div class="section-head"><span class="eyebrow">Como podemos caminhar</span><h2 class="headline">Cada processo começa por entender <em>o que a criança precisa.</em></h2><p class="lead">O trabalho é organizado com atenção à história de cada criança ou adolescente e às observações compartilhadas pela família.</p></div><div class="cards-3"><article class="service-card"><div class="card-icon">◎</div><h3>Escuta inicial</h3><p>Uma conversa para conhecer as preocupações da família, o contexto escolar e as principais dúvidas em relação à aprendizagem.</p></article><article class="service-card"><div class="card-icon">⌕</div><h3>Compreensão das necessidades</h3><p>Observação cuidadosa das necessidades e dos aspectos envolvidos na trajetória de aprendizagem, conforme o plano acordado.</p></article><article class="service-card"><div class="card-icon">✿</div><h3>Acompanhamento</h3><p>Atividades e estratégias pensadas de acordo com os objetivos definidos, com atenção às respostas e aos avanços ao longo do processo.</p></article></div></div></section><section class="section section-sm context-section"><div class="container"><div class="section-head"><span class="eyebrow">Olhar para o contexto</span><h2 class="headline">A aprendizagem acontece em muitas <em>dimensões.</em></h2><p class="lead">Durante a conversa e o acompanhamento, diferentes aspectos podem ser trazidos pela família. Eles ajudam a construir perguntas e objetivos individualizados — sem conclusões antecipadas ou comparação entre crianças.</p></div><div class="cards-3"><article class="service-card context-card"><div class="card-icon">Aa</div><h3>Experiências com leitura e escrita</h3><p>Observações sobre a relação com letras, palavras, leitura, escrita e as atividades propostas no contexto escolar.</p><span class="context-index">01 / escuta</span></article><article class="service-card context-card"><div class="card-icon">◷</div><h3>Rotina e organização</h3><p>Como são vividas as tarefas, a organização dos estudos, os momentos de aprendizagem e o apoio disponível no cotidiano.</p><span class="context-index">02 / cotidiano</span></article><article class="service-card context-card"><div class="card-icon">⌂</div><h3>Contextos e parceria</h3><p>O que a família percebe, as experiências escolares e as informações relevantes que possam ser compartilhadas com cuidado.</p><span class="context-index">03 / parceria</span></article></div><p class="legal-small" style="margin-top:20px">Estes são exemplos de temas para conversa, não uma lista diagnóstica nem uma promessa de resultado. Cada acompanhamento depende da necessidade e do contexto.</p></div></section><section class="section section-sm"><div class="container split"><div><span class="eyebrow">Modalidades</span><h2 class="headline" style="margin:15px 0 18px">Presença e flexibilidade, com o cuidado como ponto de partida.</h2><p class="lead">Os atendimentos são realizados em Londrina, em sala de coworking. Quando necessário e apropriado ao caso, também existe a possibilidade de atendimento por videochamada, a ser combinada previamente.</p><div class="check-list"><div class="check-item"><span class="check-mark">✓</span><div><strong>Presencial em Londrina</strong><p>O endereço e os detalhes de acesso à sala são informados no agendamento.</p></div></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Videochamada quando necessário</strong><p>A modalidade é combinada previamente, considerando a necessidade e as condições do atendimento.</p></div></div><div class="check-item"><span class="check-mark">✓</span><div><strong>Diálogo com a família</strong><p>As informações e os próximos passos são conversados com clareza.</p></div></div></div><a class="btn" href="#contato">Consultar possibilidades →</a></div><div class="visual-panel"><div class="visual-panel-inner"><span class="icon-large">⌂</span><h3>Um ambiente preparado para acolher.</h3><p>Atendimentos presenciais em Londrina, em espaço de coworking, mediante agendamento.</p></div></div></div></section><section class="section topic-section" aria-labelledby="topic-title">
+<div class="container topic-layout">
+<div class="topic-copy"><span class="eyebrow">Ponto de partida</span><h2 class="headline" id="topic-title">Cada família chega com <em>perguntas diferentes.</em></h2><p class="lead">Selecione um assunto que gostaria de trazer para a primeira conversa. Não é um teste nem uma avaliação; é apenas uma maneira de organizar sua solicitação.</p><div class="topic-help"><span class="topic-help-icon">✦</span><p>Você não precisa chegar com tudo definido. Podemos começar pela dúvida que parece mais importante hoje.</p></div></div>
+<div class="topic-picker"><div class="topic-options" role="group" aria-label="Assuntos para conversar">
+<button type="button" class="topic-option is-active" data-topic="Informações sobre atendimento" data-topic-description="Conheça a proposta do atendimento, as possibilidades e como funciona o primeiro contato."><span>01</span><strong>Conhecer o atendimento</strong><i>↗</i></button>
+<button type="button" class="topic-option" data-topic="Leitura e escrita" data-topic-description="Conversar sobre observações relacionadas à leitura, à escrita e às experiências de aprendizagem, sem antecipar conclusões."><span>02</span><strong>Leitura e escrita</strong><i>↗</i></button>
+<button type="button" class="topic-option" data-topic="Organização dos estudos" data-topic-description="Falar sobre hábitos, organização da rotina escolar e estratégias possíveis para a realidade da família."><span>03</span><strong>Organização dos estudos</strong><i>↗</i></button>
+<button type="button" class="topic-option" data-topic="Aprendizagem e rotina escolar" data-topic-description="Compartilhar dúvidas sobre a experiência escolar e compreender que informações podem ajudar na conversa inicial."><span>04</span><strong>Rotina escolar e aprendizagem</strong><i>↗</i></button>
+<button type="button" class="topic-option" data-topic="Orientação para a família" data-topic-description="Organizar perguntas e observações para conversar sobre formas de apoiar a criança no cotidiano."><span>05</span><strong>Orientação para a família</strong><i>↗</i></button>
+</div><div class="topic-detail" aria-live="polite"><span class="mini-label">Assunto selecionado</span><h3 id="topic-detail-title">Conhecer o atendimento</h3><p id="topic-detail-description">Conheça a proposta do atendimento, as possibilidades e como funciona o primeiro contato.</p><button class="btn" type="button" id="topic-contact">Conversar sobre este assunto →</button></div></div>
+</div>
+</section>
+<section class="section"><div class="container"><div class="cta-panel"><div><span class="eyebrow">Vamos conversar</span><h2>Quer entender qual é o próximo passo para sua família?</h2><p>Envie uma solicitação de informações para conversarmos sobre suas dúvidas e as possibilidades de atendimento.</p></div><div class="cta-actions"><a class="btn" href="#contato">Falar com a Legado →</a></div></div></div></section>
+</div>
+<div class="site-page" data-page="como-funciona" data-title="Como funciona | Legado que Ensina" data-description="Conheça as etapas do atendimento psicopedagógico da Legado que Ensina, do primeiro contato ao acompanhamento." hidden>
+<section class="page-hero"><div class="container page-hero-grid"><div><span class="eyebrow">Um processo com clareza</span><h1 class="display">Cada etapa respeita o tempo e a história de <em>quem aprende.</em></h1><p class="lead">Entenda como acontece o caminho desde a primeira conversa até a construção do acompanhamento psicopedagógico.</p></div><div class="page-hero-art"><div class="page-hero-badge"><span class="badge-icon">⌁</span><strong>Diálogo.<br/>Compreensão.<br/>Planejamento.</strong><span>Etapas conversadas com a família</span></div></div></div></section><section class="section"><div class="container"><div class="section-head"><span class="eyebrow">Passo a passo</span><h2 class="headline">Um percurso organizado, sem fórmulas prontas.</h2><p class="lead">As etapas ajudam a dar clareza ao processo. O percurso real pode variar conforme as necessidades e os acordos definidos com a família.</p></div><div class="steps"><article class="step-card"><h3>Primeiro contato</h3><p>A família compartilha suas dúvidas iniciais e recebe orientações sobre o atendimento e as modalidades disponíveis.</p></article><article class="step-card"><h3>Escuta e contexto</h3><p>Conversamos sobre a história da criança ou adolescente, as observações da família e as questões relacionadas à aprendizagem.</p></article><article class="step-card"><h3>Planejamento</h3><p>Os objetivos e os próximos passos são definidos com clareza, respeitando as necessidades identificadas e o contexto.</p></article><article class="step-card"><h3>Acompanhamento</h3><p>O processo é acompanhado e revisto conforme as respostas observadas e as conversas realizadas ao longo do caminho.</p></article></div></div></section><section class="section section-sm"><div class="container split"><div class="visual-panel"><div class="visual-panel-inner"><span class="icon-large">✧</span><h3>Família e profissional em diálogo.</h3><p>Transparência sobre objetivos, observações e próximos passos.</p></div></div><div><span class="eyebrow">Uma parceria</span><h2 class="headline" style="margin:15px 0 18px">A família participa da construção do caminho.</h2><p class="lead">O compartilhamento de informações sobre o cotidiano e a experiência escolar contribui para compreender a criança de forma mais ampla. As orientações são conversadas e adaptadas ao contexto de cada família.</p><div class="notice">O primeiro contato não substitui uma avaliação ou atendimento profissional. Ele serve para entender a demanda inicial e explicar as possibilidades e os limites do serviço.</div></div></div></section><section class="section"><div class="container"><div class="section-head center"><span class="eyebrow">Dúvidas frequentes</span><h2 class="headline">Antes de começar</h2><p class="lead">Algumas respostas para ajudar sua família a dar o primeiro passo.</p></div><div class="faq-search"><label for="faq-search-input">Encontre uma resposta</label><div class="faq-search-control"><span aria-hidden="true">⌕</span><input id="faq-search-input" type="search" placeholder="Ex.: videochamada, coworking, primeiro contato" autocomplete="off"><button type="button" id="faq-search-clear" aria-label="Limpar busca" hidden>Limpar</button></div><p class="faq-search-status" id="faq-search-status" aria-live="polite">Exibindo todas as perguntas.</p></div><div class="faq"><details><summary>Onde os atendimentos acontecem?</summary><p>Em Londrina, em sala de coworking, mediante agendamento. Os detalhes de localização e acesso são combinados antes do atendimento.</p></details><details><summary>É possível fazer por videochamada?</summary><p>Sim, quando necessário e apropriado ao caso. A possibilidade é conversada previamente com a família.</p></details><details><summary>Como saber qual atendimento é indicado?</summary><p>O primeiro contato ajuda a compreender a necessidade apresentada e esclarecer quais são as possibilidades. O encaminhamento é discutido com transparência, sem prometer resultados específicos.</p></details><details><summary>O que devo informar no primeiro contato?</summary><p>Você pode compartilhar a idade da criança ou adolescente, suas principais dúvidas e um meio seguro para retorno. Evite enviar informações sensíveis ou documentos pessoais nesse formulário inicial.</p></details></div></div></section>
+</div>
+<div class="site-page" data-page="sobre" data-title="Sobre | Legado que Ensina" data-description="Conheça a proposta da Legado que Ensina e seu olhar individual para cada trajetória de aprendizagem." hidden>
+<section class="page-hero"><div class="container page-hero-grid"><div><span class="eyebrow">Sobre a Legado que Ensina</span><h1 class="display">Cuidado, escuta e respeito às muitas formas de <em>aprender.</em></h1><p class="lead">A Legado que Ensina nasce da ideia de que cada trajetória tem sua história e merece ser compreendida com atenção, responsabilidade e sensibilidade.</p></div><div class="page-hero-art"><div class="page-hero-badge"><span class="badge-icon">✿</span><strong>Um olhar<br/>para cada trajetória.</strong><span>Gestão psicopedagógica</span></div></div></div></section><section class="section"><div class="container split"><div><span class="eyebrow">Nossa proposta</span><h2 class="headline" style="margin:15px 0 18px">Criar espaço para perguntas, possibilidades e avanços.</h2><p class="lead">A prática se organiza a partir da escuta e da compreensão dos contextos em que a aprendizagem acontece. O diálogo com a família ajuda a construir objetivos realistas e a acompanhar cada etapa com clareza.</p><p class="lead" style="margin-top:15px">A Legado também desenvolve uma ferramenta digital para professores, com uma proposta distinta do serviço de atendimento: apoiar a organização da rotina profissional por meio de uma plataforma própria.</p></div><div class="visual-panel"><div class="visual-panel-inner"><span class="icon-large">❋</span><h3>Conhecer antes de concluir.</h3><p>Uma prática que valoriza a escuta, o contexto e a singularidade.</p></div></div></div></section><section class="section section-sm"><div class="container"><div class="section-head center"><span class="eyebrow">Nossos princípios</span><h2 class="headline">O que orienta nosso trabalho</h2></div><div class="cards-3"><article class="service-card"><div class="card-icon">♡</div><h3>Acolhimento</h3><p>Escutar sem julgamentos e levar a sério as preocupações apresentadas por crianças, adolescentes e suas famílias.</p></article><article class="service-card"><div class="card-icon">◎</div><h3>Individualidade</h3><p>Considerar a história, as necessidades e as respostas de cada pessoa, sem comparar trajetórias.</p></article><article class="service-card"><div class="card-icon">✧</div><h3>Responsabilidade</h3><p>Combinar objetivos e próximos passos de maneira transparente, respeitando os limites de cada modalidade.</p></article></div></div></section><section class="section"><div class="container"><div class="cta-panel"><div><span class="eyebrow">Conheça nosso trabalho</span><h2>Um primeiro contato pode abrir espaço para novas possibilidades.</h2><p>Entre em contato para esclarecer suas dúvidas sobre atendimento psicopedagógico.</p></div><div class="cta-actions"><a class="btn" href="#contato">Entrar em contato →</a></div></div></div></section>
+</div>
+<div class="site-page" data-page="contato" data-title="Contato | Legado que Ensina" data-description="Entre em contato com a Legado que Ensina para tirar dúvidas sobre atendimento psicopedagógico em Londrina ou por videochamada." hidden>
+<section class="page-hero"><div class="container"><span class="eyebrow">Contato</span><h1 class="display" style="max-width:850px;margin:16px 0 18px">Vamos começar com uma <em>conversa.</em></h1><p class="lead">Conte brevemente o que você precisa. Este primeiro contato ajuda a orientar sobre as possibilidades de atendimento e os próximos passos.</p></div></section><section class="section"><div class="container contact-grid"><aside class="contact-info"><span class="eyebrow" style="color:#a4d1b8">Estamos por aqui</span><h2>Um contato cuidadoso, no seu tempo.</h2><p>Os atendimentos psicopedagógicos acontecem em Londrina, em sala de coworking, com possibilidade de videochamada quando necessário e previamente combinada.</p><div class="contact-method"><span class="icon">⌖</span><div><strong>Local de atendimento</strong><small>Londrina, Paraná · sala de coworking</small></div></div><div class="contact-method"><span class="icon">⌁</span><div><strong>Modalidade on-line</strong><small>Por videochamada, quando necessário</small></div></div><div class="contact-method"><span class="icon">♡</span><div><strong>Primeira conversa</strong><small>Compartilhe apenas o necessário para solicitar informações</small></div></div><div class="notice" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);border-left-color:#a4d1b8">Por privacidade, não envie laudos, documentos, informações médicas ou detalhes muito pessoais pelo formulário inicial.</div></aside><div class="form-card"><h2>Solicite informações</h2><p class="form-intro">Preencha os campos abaixo. O formulário prepara uma mensagem de contato; ele não armazena nem transmite os dados por conta própria.</p><form id="contact-form"><div class="form-progress"><span>Solicitação de informações</span><span id="form-progress-label">0% preenchido</span><div class="form-progress-track"><span id="form-progress-bar"></span></div></div><div class="form-grid"><div class="field"><label for="name">Nome do responsável *</label><input autocomplete="name" id="name" maxlength="120" name="name" placeholder="Como podemos chamar você?" required=""/></div><div class="field"><label for="contact">Telefone ou e-mail para retorno *</label><input id="contact" maxlength="160" name="contact" placeholder="Seu melhor contato" autocomplete="email" inputmode="text" required=""/></div><div class="field"><label for="age">Idade da criança/adolescente</label><input id="age" maxlength="40" name="age" placeholder="Ex.: 8 anos"/></div><div class="field"><label for="mode">Modalidade de preferência</label><select id="mode" name="mode"><option value="">Selecione</option><option>Presencial em Londrina</option><option>Videochamada (consultar possibilidade)</option><option>A combinar</option></select></div><div class="field full"><label for="topic">Assunto</label><select id="topic" name="topic"><option>Informações sobre atendimento</option><option>Leitura e escrita</option><option>Organização dos estudos</option><option>Aprendizagem e rotina escolar</option><option>Orientação para a família</option><option>Dúvidas sobre aprendizagem</option><option>Disponibilidade de horários</option><option>Atendimento por videochamada</option><option>Outro assunto</option></select></div><div class="field full"><label for="message">Mensagem (opcional)</label><textarea id="message" maxlength="1200" name="message" placeholder="Conte brevemente o que você gostaria de saber."></textarea></div><div class="field full"><button class="btn" type="submit">Preparar mensagem →</button><p class="form-note">Ao preencher, você autoriza o uso dessas informações apenas para preparar o contato solicitado. Evite compartilhar dados sensíveis.</p><p aria-live="polite" class="form-status" id="form-status" role="status"></p><textarea aria-label="Mensagem de contato preparada" hidden="" id="prepared-message" readonly="" style="margin-top:12px;min-height:180px"></textarea><button class="btn btn-secondary" hidden="" id="copy-message" style="margin-top:10px" type="button">Copiar mensagem</button></div></div></form></div></div></section>
+</div>
+<div class="site-page" data-page="sistema" data-title="Sistema para professores | Legado que Ensina" data-description="Conheça o sistema digital Legado que Ensina para professores e profissionais da área psicopedagógica." hidden>
+<section class="system-hero"><div class="container hero-grid"><div><span class="eyebrow">Uma ferramenta para profissionais</span><h1 class="display">Mais organização para o trabalho de quem <em>ensina.</em></h1><p class="lead">Conheça a plataforma digital Legado que Ensina, desenvolvida para apoiar professores e profissionais na organização da rotina psicopedagógica.</p><div class="actions"><a class="btn btn-light" href="https://sistema.legadoqueensina.com.br" rel="noopener noreferrer" target="_blank">Acessar o sistema ↗</a><a class="btn" href="#contato" style="background:transparent;border-color:rgba(255,255,255,.35);color:#fff">Solicitar informações</a></div></div><div class="system-art"><div aria-label="Ilustração conceitual de painel de gestão" class="system-mock"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-grid"><div class="mock-side"><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="mock-main"><div class="mock-title"></div><div class="mock-stats"><div class="mock-stat"></div><div class="mock-stat"></div><div class="mock-stat"></div></div><div class="mock-chart"></div><div class="mock-stats"><div class="mock-stat"></div><div class="mock-stat"></div><div class="mock-stat"></div></div></div></div></div></div></div></section><section class="section"><div class="container"><div class="section-head"><span class="eyebrow">Feito para a rotina profissional</span><h2 class="headline">Um espaço digital para centralizar o trabalho.</h2><p class="lead">A plataforma tem um propósito diferente do atendimento à família: oferecer recursos para organizar informações e atividades da rotina profissional.</p></div><div class="system-feature-grid"><article class="system-feature"><div class="card-icon">▦</div><h3>Visão organizada</h3><p>Uma área de trabalho para consultar informações importantes e apoiar a organização do dia a dia.</p></article><article class="system-feature"><div class="card-icon">◷</div><h3>Rotina e agenda</h3><p>Recursos voltados à organização dos compromissos e do planejamento do trabalho.</p></article><article class="system-feature"><div class="card-icon">▤</div><h3>Registros profissionais</h3><p>Um ambiente digital para estruturar registros e acompanhar informações relacionadas ao trabalho.</p></article><article class="system-feature"><div class="card-icon">↗</div><h3>Acompanhamento</h3><p>Ferramentas para apoiar a consulta e a organização do histórico de trabalho profissional.</p></article><article class="system-feature"><div class="card-icon">⌘</div><h3>Recursos de apoio</h3><p>Um espaço de trabalho que pode reunir funcionalidades e materiais úteis para a prática psicopedagógica.</p></article><article class="system-feature"><div class="card-icon">🔒</div><h3>Acesso individual</h3><p>O acesso à plataforma acontece pela página do sistema. Utilize suas próprias credenciais e mantenha-as em segurança.</p></article></div><p class="legal-small" style="margin-top:23px">As funcionalidades disponíveis dependem da versão e do plano liberado para cada conta. A ilustração desta página é conceitual, não uma captura de tela real.</p></div></section><section class="section system-explorer-section" aria-labelledby="system-explorer-title">
+<div class="container">
+<div class="section-head"><span class="eyebrow">Explore a proposta</span><h2 class="headline" id="system-explorer-title">Um ambiente para apoiar diferentes partes da rotina.</h2><p class="lead">Selecione um tema para ver como ele se conecta à organização do trabalho profissional. Os recursos disponíveis podem variar conforme a versão e as permissões da conta.</p></div>
+<div class="system-explorer"><div class="system-explorer-tabs" role="tablist" aria-label="Temas da plataforma">
+<button type="button" class="system-explorer-tab is-active" role="tab" aria-selected="true" data-system-tab="agenda">Agenda</button><button type="button" class="system-explorer-tab" role="tab" aria-selected="false" data-system-tab="registros">Registros</button><button type="button" class="system-explorer-tab" role="tab" aria-selected="false" data-system-tab="evolucao">Acompanhamento</button><button type="button" class="system-explorer-tab" role="tab" aria-selected="false" data-system-tab="recursos">Recursos</button>
+</div><div class="system-explorer-content"><div class="system-explorer-copy"><span class="mini-label" id="system-explorer-kicker">Rotina organizada</span><h3 id="system-explorer-heading">Compromissos com uma visão mais clara.</h3><p id="system-explorer-description">Uma área pensada para apoiar a consulta de compromissos e o planejamento da rotina, sem misturar a plataforma profissional com as páginas públicas de atendimento.</p><a class="link-arrow" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener noreferrer">Acessar o sistema <span>↗</span></a></div><div class="explorer-visual" aria-hidden="true"><div class="explorer-window"><div class="explorer-window-top"><span></span><span></span><span></span><b id="explorer-window-title">Agenda profissional</b></div><div class="explorer-window-body"><div class="explorer-sidebar"><i></i><i></i><i></i><i></i></div><div class="explorer-canvas"><div class="explorer-line wide"></div><div class="explorer-line"></div><div class="explorer-row"><i></i><span></span><b></b></div><div class="explorer-row"><i></i><span></span><b></b></div><div class="explorer-row"><i></i><span></span><b></b></div><div class="explorer-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div></div><p class="explorer-caption">Ilustração conceitual da experiência digital</p></div></div></div>
+</div>
+</section>
+<section class="section section-sm"><div class="container"><div class="cta-panel"><div><span class="eyebrow">Acesse a plataforma</span><h2>Entre no sistema e conheça o seu ambiente de trabalho.</h2><p>A área de sistema é independente das páginas públicas de atendimento psicopedagógico.</p></div><div class="cta-actions"><a class="btn" href="https://sistema.legadoqueensina.com.br" rel="noopener noreferrer" target="_blank">Abrir sistema ↗</a></div></div></div></section>
+</div>
+</main>
+<footer class="footer"><div class="container"><div class="footer-main"><div><a class="footer-brand" href="#inicio"><span class="brand-symbol">L</span><span class="brand-copy"><span class="brand-name">Legado que Ensina</span><span class="brand-sub">Gestão psicopedagógica</span></span></a><p class="footer-desc">Um espaço de cuidado, escuta e acompanhamento da aprendizagem de crianças e adolescentes — com atendimento em Londrina e possibilidade de videochamada quando necessário.</p></div><div><h3>Explore</h3><div class="footer-links"><a href="#atendimento">Atendimento psicopedagógico</a><a href="#como-funciona">Como funciona</a><a href="#sobre">Sobre a Legado</a><a href="#contato">Contato</a></div></div><div><h3>Para profissionais</h3><div class="footer-links"><a href="#sistema">Sistema para professores</a><a href="https://sistema.legadoqueensina.com.br" rel="noopener noreferrer" target="_blank">Acessar plataforma ↗</a><a href="#contato">Solicitar informações</a></div></div></div><div class="footer-bottom"><span>© <span data-year=""></span> Legado que Ensina. Todos os direitos reservados.</span><span>Atendimento em Londrina · Modalidade on-line quando necessário</span></div></div></footer>
+<a class="floating-contact" href="#contato" aria-label="Ir para contato"><span>↗</span><strong>Vamos conversar</strong></a>
+<a aria-label="Voltar ao topo" class="back-top" href="#top">↑</a>
+<script>
+window.LEGADO_SITE_CONFIG = {
+  // Configure um canal oficial antes de publicar. Informe somente dígitos no WhatsApp com DDI e DDD.
+  whatsappNumber: "",
+  contactEmail: ""
+};
+</script>
+<script>
+(function(){
+  'use strict';
+  const routes=['inicio','atendimento','como-funciona','sobre','contato','sistema'];
+  const descriptions={
+    'inicio':'Atendimento psicopedagógico para crianças e adolescentes em Londrina, com possibilidade de videochamada, e sistema digital para professores.',
+    'atendimento':'Atendimento psicopedagógico para crianças e adolescentes em Londrina, em sala de coworking, com possibilidade de videochamada quando necessário.',
+    'como-funciona':'Conheça as etapas do atendimento psicopedagógico da Legado que Ensina, do primeiro contato ao acompanhamento.',
+    'sobre':'Conheça a proposta da Legado que Ensina e seu olhar individual para cada trajetória de aprendizagem.',
+    'contato':'Entre em contato com a Legado que Ensina para tirar dúvidas sobre atendimento psicopedagógico em Londrina ou por videochamada.',
+    'sistema':'Conheça o sistema digital Legado que Ensina para professores e profissionais da área psicopedagógica.'
+  };
+  const pageTitles={
+    'inicio':'Início | Legado que Ensina',
+    'atendimento':'Atendimento psicopedagógico | Legado que Ensina',
+    'como-funciona':'Como funciona | Legado que Ensina',
+    'sobre':'Sobre | Legado que Ensina',
+    'contato':'Contato | Legado que Ensina',
+    'sistema':'Sistema para professores | Legado que Ensina'
+  };
+  const toggle=document.querySelector('.menu-toggle');
+  const nav=document.querySelector('.nav');
+  function routeFromHash(){
+    const candidate=(window.location.hash||'').slice(1);
+    return routes.includes(candidate)?candidate:'inicio';
+  }
+  function showRoute(route,scroll){
+    if(!routes.includes(route)) route='inicio';
+    document.querySelectorAll('.site-page').forEach(function(page){page.hidden=page.dataset.page!==route; if(page.dataset.page===route){page.classList.remove('route-enter'); void page.offsetWidth; page.classList.add('route-enter');}});
+    if(route==='contato' && typeof prefillContactForm==='function') prefillContactForm();
+    document.querySelectorAll('[data-route-link]').forEach(function(link){
+      if(link.dataset.routeLink===route) link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
+    });
+    document.title=pageTitles[route]||pageTitles.inicio;
+    const description=document.querySelector('meta[name="description"]');
+    if(description) description.setAttribute('content',descriptions[route]||descriptions.inicio);
+    if(nav) nav.classList.remove('open');
+    if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu');}
+    document.body.classList.remove('mobile-menu-open');
+    if(scroll){window.scrollTo({top:0,behavior:window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
+  }
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      const open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');
+      document.body.classList.toggle('mobile-menu-open',open);
+    });
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu');document.body.classList.remove('mobile-menu-open');});});
+  }
+  window.addEventListener('hashchange',function(){showRoute(routeFromHash(),true);});
+  // Botão de voltar ao topo mantém a página atual selecionada.
+  const back=document.querySelector('.back-top');
+  if(back){
+    back.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+    window.addEventListener('scroll',function(){back.classList.toggle('show',window.scrollY>450);},{passive:true});
+  }
+  document.querySelectorAll('[data-year]').forEach(function(n){n.textContent=new Date().getFullYear();});
+  document.querySelectorAll('[data-logo-fallback]').forEach(function(img){img.addEventListener('error',function(){const fallback=img.parentElement.querySelector('.brand-placeholder');if(fallback)fallback.style.display='block';img.style.display='none';});});
 
+  const form=document.querySelector('#contact-form');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(!form.reportValidity()) return;
+      const data=new FormData(form);
+      const name=String(data.get('name')||'').trim();
+      const contact=String(data.get('contact')||'').trim();
+      const age=String(data.get('age')||'').trim();
+      const mode=String(data.get('mode')||'').trim();
+      const topic=String(data.get('topic')||'').trim();
+      const message=String(data.get('message')||'').trim();
+      const summary='Olá! Gostaria de informações sobre atendimento psicopedagógico.\n\nResponsável: '+name+'\nContato para retorno: '+contact+'\nIdade da criança/adolescente: '+(age||'Não informado')+'\nModalidade de preferência: '+(mode||'A combinar')+'\nAssunto: '+(topic||'Informações gerais')+'\nMensagem: '+(message||'Sem mensagem adicional');
+      const status=document.querySelector('#form-status');
+      const config=window.LEGADO_SITE_CONFIG||{whatsappNumber:'',contactEmail:''};
+      if(config.whatsappNumber){
+        const url='https://wa.me/'+String(config.whatsappNumber).replace(/\D/g,'')+'?text='+encodeURIComponent(summary);
+        window.open(url,'_blank','noopener,noreferrer');
+        status.textContent='A mensagem foi preparada para envio pelo WhatsApp. Confira o texto e conclua o envio na conversa.';
+      } else if(config.contactEmail){
+        const url='mailto:'+config.contactEmail+'?subject='+encodeURIComponent('Solicitação de informações — Legado que Ensina')+'&body='+encodeURIComponent(summary);
+        window.location.href=url;
+        status.textContent='Seu aplicativo de e-mail foi aberto com a solicitação preenchida.';
+      } else {
+        status.textContent='A mensagem foi preparada, mas o canal de recebimento ainda não está configurado. Copie o texto abaixo para enviá-lo.';
+        const result=document.querySelector('#prepared-message');
+        if(result){result.hidden=false;result.value=summary;result.focus();result.select();}
+        const copy=document.querySelector('#copy-message');if(copy)copy.hidden=false;
+      }
+    });
+  }
+  const copy=document.querySelector('#copy-message');
+  if(copy){copy.addEventListener('click',async function(){const ta=document.querySelector('#prepared-message');const status=document.querySelector('#form-status');try{await navigator.clipboard.writeText(ta.value);status.textContent='Mensagem copiada. Cole-a no canal de contato da clínica.';}catch(err){ta.focus();ta.select();status.textContent='Selecione e copie a mensagem exibida.';}});}
+  // Orientador da página inicial: alterna caminhos e prepara um contato com dados mínimos.
+  const journeyTabs=Array.from(document.querySelectorAll('[data-journey-tab]'));
+  const journeyPanels=Array.from(document.querySelectorAll('[data-journey-panel]'));
+  journeyTabs.forEach(function(tab){tab.addEventListener('click',function(){
+    const target=tab.dataset.journeyTab;
+    journeyTabs.forEach(function(t){const active=t===tab;t.classList.toggle('is-active',active);t.setAttribute('aria-selected',String(active));});
+    journeyPanels.forEach(function(panel){panel.hidden=panel.dataset.journeyPanel!==target;});
+  });});
+  function prepareContact(payload){
+    window.LEGADO_PREFILL=payload||{};
+    window.location.hash='contato';
+    showRoute('contato',true);
+    window.setTimeout(function(){prefillContactForm();},80);
+  }
+  const journeyContact=document.querySelector('#journey-contact');
+  if(journeyContact)journeyContact.addEventListener('click',function(){
+    const topic=document.querySelector('#journey-topic');const mode=document.querySelector('#journey-mode');
+    prepareContact({topic:topic?topic.value:'Informações sobre atendimento',mode:mode?mode.value:'A combinar',message:'Gostaria de conversar sobre: '+(topic?topic.value:'Informações sobre atendimento')+'. Modalidade de preferência: '+(mode?mode.value:'A combinar')+'.'});
+  });
+  const topicOptions=Array.from(document.querySelectorAll('[data-topic]'));
+  const topicTitle=document.querySelector('#topic-detail-title');const topicDescription=document.querySelector('#topic-detail-description');
+  let selectedTopic={topic:'Informações sobre atendimento',description:'Conheça a proposta do atendimento, as possibilidades e como funciona o primeiro contato.'};
+  topicOptions.forEach(function(button){button.addEventListener('click',function(){
+    topicOptions.forEach(function(item){const active=item===button;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',String(active));});
+    selectedTopic={topic:button.dataset.topic,description:button.dataset.topicDescription};
+    if(topicTitle)topicTitle.textContent=button.querySelector('strong').textContent;
+    if(topicDescription)topicDescription.textContent=selectedTopic.description;
+  });button.setAttribute('aria-pressed',String(button.classList.contains('is-active')));});
+  const topicContact=document.querySelector('#topic-contact');
+  if(topicContact)topicContact.addEventListener('click',function(){prepareContact({topic:selectedTopic.topic,message:'Gostaria de conversar sobre: '+selectedTopic.topic+'. '+selectedTopic.description});});
+
+  // Tabs conceituais na apresentação da plataforma.
+  const systemViews={
+    agenda:{kicker:'Rotina organizada',heading:'Compromissos com uma visão mais clara.',description:'Uma área pensada para apoiar a consulta de compromissos e o planejamento da rotina, sem misturar a plataforma profissional com as páginas públicas de atendimento.',title:'Agenda profissional'},
+    registros:{kicker:'Informação estruturada',heading:'Registros que ajudam a contextualizar o trabalho.',description:'Um ambiente digital para organizar informações profissionais e consultar os registros pertinentes à rotina, de acordo com as permissões disponíveis na conta.',title:'Registros profissionais'},
+    evolucao:{kicker:'Olhar para o processo',heading:'Acompanhar informações ao longo do tempo.',description:'Recursos de acompanhamento podem apoiar a consulta do histórico e a organização das observações profissionais. O conteúdo exibido depende dos dados registrados.',title:'Acompanhamento'},
+    recursos:{kicker:'Apoio à prática',heading:'Materiais e ferramentas no mesmo ambiente.',description:'A plataforma reúne recursos voltados à organização da rotina profissional. Consulte o sistema para conhecer as opções liberadas para seu perfil e plano.',title:'Recursos de apoio'}
+  };
+  const systemTabs=Array.from(document.querySelectorAll('[data-system-tab]'));
+  systemTabs.forEach(function(tab){tab.addEventListener('click',function(){
+    const data=systemViews[tab.dataset.systemTab];if(!data)return;
+    systemTabs.forEach(function(item){const active=item===tab;item.classList.toggle('is-active',active);item.setAttribute('aria-selected',String(active));});
+    const values=[['system-explorer-kicker',data.kicker],['system-explorer-heading',data.heading],['system-explorer-description',data.description],['explorer-window-title',data.title]];
+    values.forEach(function(pair){const node=document.getElementById(pair[0]);if(node)node.textContent=pair[1];});
+    const chart=document.querySelector('.explorer-chart');if(chart){chart.style.opacity=tab.dataset.systemTab==='agenda'?'.55':'1';chart.style.transform=tab.dataset.systemTab==='registros'?'scaleY(.75)':tab.dataset.systemTab==='evolucao'?'scaleY(1)':'scaleY(.6)';}
+  });});
+
+  // Busca simples nas perguntas frequentes.
+  const faqInput=document.querySelector('#faq-search-input');const faqClear=document.querySelector('#faq-search-clear');
+  const faqStatus=document.querySelector('#faq-search-status');const faqItems=Array.from(document.querySelectorAll('.faq details'));
+  function filterFaq(){if(!faqInput)return;const query=faqInput.value.trim().toLocaleLowerCase('pt-BR');let count=0;
+    faqItems.forEach(function(item){const match=!query||item.textContent.toLocaleLowerCase('pt-BR').includes(query);item.hidden=!match;if(match)count++;});
+    if(faqClear)faqClear.hidden=!query;if(faqStatus)faqStatus.textContent=query?(count+' pergunta(s) encontrada(s).'):'Exibindo todas as perguntas.';
+  }
+  if(faqInput)faqInput.addEventListener('input',filterFaq);if(faqClear)faqClear.addEventListener('click',function(){faqInput.value='';filterFaq();faqInput.focus();});
+
+  // Preenchimento vindo dos atalhos, sem guardar dados pessoais no navegador.
+  function prefillContactForm(){
+    const payload=window.LEGADO_PREFILL;if(!payload)return;
+    const topic=document.querySelector('#topic');const mode=document.querySelector('#mode');const message=document.querySelector('#message');
+    if(topic&&payload.topic){const match=Array.from(topic.options).find(function(option){return option.value===payload.topic||option.textContent===payload.topic;});if(match)topic.value=match.value;else{const option=Array.from(topic.options).find(function(opt){return opt.textContent==='Outro assunto';});if(option)topic.value=option.value;}}
+    if(mode&&payload.mode){const match=Array.from(mode.options).find(function(option){return option.value===payload.mode||option.textContent===payload.mode;});if(match)mode.value=match.value;}
+    if(message&&payload.message)message.value=payload.message;
+    updateFormProgress();window.LEGADO_PREFILL=null;
+  }
+
+  // Indicador de preenchimento do formulário, sem enviar dados ao servidor.
+  const contactForm=document.querySelector('#contact-form');
+  function updateFormProgress(){if(!contactForm)return;const controls=Array.from(contactForm.querySelectorAll('input:not([type=hidden]),select,textarea')).filter(function(el){return el.id!=='prepared-message';});
+    const filled=controls.filter(function(el){return String(el.value||'').trim()!=='';}).length;const percent=controls.length?Math.round(filled/controls.length*100):0;
+    const label=document.querySelector('#form-progress-label');const bar=document.querySelector('#form-progress-bar');if(label)label.textContent=percent+'% preenchido';if(bar)bar.style.width=percent+'%';}
+  if(contactForm){contactForm.addEventListener('input',updateFormProgress);contactForm.addEventListener('change',updateFormProgress);updateFormProgress();}
+
+  // Animação de entrada leve e barra de leitura, respeitando redução de movimento.
+  const reducedMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reducedMotion&&'IntersectionObserver' in window){
+    document.body.classList.add('reveal-ready');
+    document.querySelectorAll('.site-page section,.service-card,.system-feature,.step-card,.topic-picker,.journey-shell,.system-explorer').forEach(function(el){el.setAttribute('data-reveal','');});
+    const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});},{threshold:.12,rootMargin:'0px 0px -24px 0px'});
+    document.querySelectorAll('[data-reveal]').forEach(function(el){observer.observe(el);});
+  }
+  const progressBar=document.querySelector('#scroll-progress-bar');let scrollTick=false;
+  function updateScrollProgress(){if(!progressBar)return;const doc=document.documentElement;const max=doc.scrollHeight-window.innerHeight;const value=max>0?(window.scrollY/max)*100:0;progressBar.style.width=Math.min(100,Math.max(0,value))+'%';scrollTick=false;}
+  window.addEventListener('scroll',function(){if(!scrollTick){window.requestAnimationFrame(updateScrollProgress);scrollTick=true;}},{passive:true});window.addEventListener('resize',updateScrollProgress);updateScrollProgress();
+  const floatingContact=document.querySelector('.floating-contact');function updateFloatingContact(){if(floatingContact)floatingContact.classList.toggle('show',window.scrollY>500);}
+  window.addEventListener('scroll',updateFloatingContact,{passive:true});updateFloatingContact();
+
+  showRoute(routeFromHash(),false);
+})();
+</script>
 </body>
 </html>
