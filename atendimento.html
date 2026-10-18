@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#123d70">
   <meta name="description" content="Solicite informações sobre atendimento psicopedagógico para alunos e famílias.">
-  <title>Conheça o Atendimento | Legado que Ensina</title>
+  <title>Atendimento psicopedagógico | Legado que Ensina</title>
   <link rel="icon" href="https://i.imgur.com/EyR1xzD.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,15 +71,19 @@
     .arrow { width: 15px; height: 15px; flex: 0 0 auto; }
 
 
-    /* Faixa mensal de conscientização */
+    /* Faixa mensal de conscientização: atualiza automaticamente e passa em movimento contínuo */
     .campaign-bar { --campaign-bg:#fde8ef; --campaign-ink:#78354e; --campaign-accent:#bb4770; background:var(--campaign-bg); color:var(--campaign-ink); border-bottom:1px solid rgba(30,50,80,.06); }
-    .campaign-inner { min-height:44px; display:flex; align-items:center; justify-content:center; gap:10px; padding:7px 0; text-align:center; }
+    .campaign-inner { min-height:44px; display:flex; align-items:center; justify-content:flex-start; gap:10px; padding:7px 0; text-align:left; }
     .campaign-symbol { display:grid; flex:0 0 auto; place-items:center; width:27px; height:27px; border:1px solid currentColor; border-radius:50%; font-size:14px; }
-    .campaign-copy { display:flex; align-items:baseline; justify-content:center; flex-wrap:wrap; gap:5px 9px; font-size:10px; line-height:1.45; }
+    .campaign-window { flex:1 1 auto; min-width:0; overflow:hidden; }
+    .campaign-track { display:flex; align-items:center; width:max-content; animation:campaign-marquee 31s linear infinite; will-change:transform; }
+    .campaign-copy { display:flex; flex:0 0 auto; align-items:baseline; justify-content:flex-start; flex-wrap:nowrap; gap:5px 9px; padding-right:76px; white-space:nowrap; font-size:10px; line-height:1.45; }
     .campaign-copy strong { color:var(--campaign-accent); font-size:11px; font-weight:700; }
     .campaign-copy span { color:var(--campaign-ink); }
     .campaign-period { font-size:9px; font-weight:600; letter-spacing:.07em; text-transform:uppercase; }
-    @media(max-width:520px) { .campaign-inner { gap:7px; padding:8px 0; } .campaign-copy { display:block; text-align:left; font-size:9px; } .campaign-copy strong { display:inline; font-size:10px; } .campaign-period { display:none; } .campaign-symbol { width:24px; height:24px; } }
+    .campaign-window:hover .campaign-track { animation-play-state:paused; }
+    @keyframes campaign-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    @media(max-width:520px) { .campaign-inner { gap:7px; padding:8px 0; } .campaign-copy { gap:5px 7px; padding-right:48px; font-size:9px; } .campaign-copy strong { font-size:10px; } .campaign-period { display:none; } .campaign-symbol { width:24px; height:24px; } .campaign-track { animation-duration:25s; } }
 
     /* História, propósito e valores */
     .story-intro { max-width:840px; margin:0 auto 36px; text-align:center; }
@@ -442,7 +446,12 @@
 <div class="campaign-bar" id="campaignBar" role="region" aria-label="Campanha de conscientização do mês" style="--campaign-bg:#fde8ef;--campaign-ink:#78354e;--campaign-accent:#bb4770">
     <div class="container campaign-inner">
       <span class="campaign-symbol" id="campaignSymbol" aria-hidden="true">♡</span>
-      <div class="campaign-copy"><span class="campaign-period" id="campaignPeriod">Campanha do mês</span><strong id="campaignTitle">Outubro Rosa</strong><span id="campaignMessage">Prevenção também é cuidado. Converse com um profissional de saúde e mantenha seus exames em dia.</span></div>
+      <div class="campaign-window">
+        <div class="campaign-track" id="campaignTrack">
+          <div class="campaign-copy"><span class="campaign-period" id="campaignPeriod">Campanha do mês</span><strong id="campaignTitle">Campanha atual</strong><span id="campaignMessage">Informação, prevenção e acolhimento fazem diferença.</span></div>
+          <div class="campaign-copy campaign-copy-clone" aria-hidden="true"><span class="campaign-period">Campanha do mês</span><strong class="campaign-title-clone">Campanha atual</strong><span class="campaign-message-clone">Informação, prevenção e acolhimento fazem diferença.</span></div>
+        </div>
+      </div>
     </div>
   </div>
   <header class="site-header" id="inicio">
@@ -458,7 +467,7 @@
           <div class="dropdown-menu" id="solutionsMenu">
             <a href="atendimento.html">Atendimento para alunos<span>Conte como podemos ajudar</span></a>
             <a href="sistema.html">Para professores<span>Recursos para organizar a rotina</span></a>
-            <a href="sistema.html#recursos">Ferramentas do sistema<span>Conheça os módulos e benefícios</span></a>
+            <a href="sistema.html#recursos">Ferramentas do sistema<span>Veja módulos e benefícios</span></a>
           </div>
         </div>
         <a href="sistema.html">O sistema</a>
@@ -473,7 +482,7 @@
 <section class="request-section section" id="solicitacao" aria-labelledby="request-title">
       <div class="container request-layout">
         <div class="request-intro reveal">
-          <p class="section-kicker">Conheça o atendimento</p>
+          <p class="section-kicker">Atendimento psicopedagógico</p>
           <h2 id="request-title">Vamos entender como podemos ajudar.</h2>
           <p>Preencha seus dados e conte um pouco sobre o que você ou sua família estão buscando. Nossa equipe receberá sua solicitação pelo WhatsApp.</p>
           <div class="request-points">
@@ -498,7 +507,7 @@
     </section>
 
     
-<section class="closing"><div class="container closing-inner"><div class="closing-copy"><p class="section-kicker">Conheça também</p><h2>Uma proposta que cuida de quem aprende e apoia quem ensina.</h2><p>Saiba mais sobre a história do Legado que Ensina ou conheça o sistema criado para professores e psicopedagogos.</p></div><div class="closing-actions"><a class="btn btn-light" href="historia.html">Nossa história</a><a class="btn btn-primary" href="sistema.html">Conheça o sistema</a></div></div></section>
+<section class="closing"><div class="container closing-inner"><div class="closing-copy"><p class="section-kicker">Duas frentes, o mesmo propósito</p><h2>Uma proposta que cuida de quem aprende e apoia quem ensina.</h2><p>A história da marca e a plataforma para professores fazem parte de uma mesma proposta de valorização da educação.</p></div><div class="closing-actions"><a class="btn btn-light" href="historia.html">Nossa história</a></div></div></section>
 </main>
 <footer class="footer">
     <div class="container">
@@ -579,18 +588,28 @@
   ];
   const campaignBar = document.getElementById('campaignBar');
   if (campaignBar) {
-    const c = campaigns[new Date().getMonth()];
-    campaignBar.style.setProperty('--campaign-bg', c.bg);
-    campaignBar.style.setProperty('--campaign-ink', c.ink);
-    campaignBar.style.setProperty('--campaign-accent', c.accent);
-    const title = document.getElementById('campaignTitle');
-    const symbol = document.getElementById('campaignSymbol');
-    const message = document.getElementById('campaignMessage');
-    const period = document.getElementById('campaignPeriod');
-    if (title) title.textContent = c.title;
-    if (symbol) symbol.textContent = c.symbol;
-    if (message) message.textContent = c.message;
-    if (period) period.textContent = 'Campanha do mês';
+    let appliedMonth = -1;
+    function applyMonthlyCampaign() {
+      const monthIndex = new Date().getMonth();
+      if (monthIndex === appliedMonth) return;
+      appliedMonth = monthIndex;
+      const c = campaigns[monthIndex];
+      campaignBar.style.setProperty('--campaign-bg', c.bg);
+      campaignBar.style.setProperty('--campaign-ink', c.ink);
+      campaignBar.style.setProperty('--campaign-accent', c.accent);
+      const title = document.getElementById('campaignTitle');
+      const symbol = document.getElementById('campaignSymbol');
+      const message = document.getElementById('campaignMessage');
+      const period = document.getElementById('campaignPeriod');
+      if (title) title.textContent = c.title;
+      if (symbol) symbol.textContent = c.symbol;
+      if (message) message.textContent = c.message;
+      if (period) period.textContent = 'Campanha do mês';
+      document.querySelectorAll('.campaign-title-clone').forEach(function (node) { node.textContent = c.title; });
+      document.querySelectorAll('.campaign-message-clone').forEach(function (node) { node.textContent = c.message; });
+    }
+    applyMonthlyCampaign();
+    window.setInterval(applyMonthlyCampaign, 60000);
   }
 
   const requestForm = document.getElementById('requestForm');
