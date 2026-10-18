@@ -105,10 +105,22 @@
     .hero-photo { position: absolute; inset: 0; overflow: hidden; border-radius: 190px 0 0 190px; }
     .hero-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(245,249,253,.35), transparent 35%, rgba(21,45,73,.03)); }
     .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 51% center; }
-    .hero-note { position: absolute; right: max(30px, calc((100vw - var(--content)) / 2 + 12px)); top: 66px; width: 165px; padding: 15px 0 15px 17px; border-left: 2px solid var(--blue); color: var(--navy); font-size: 12px; font-weight: 500; line-height: 1.65; z-index: 3; }
-    .hero-note small { display: block; margin-top: 10px; color: var(--muted); font-size: 9px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-note { position: absolute; right: max(30px, calc((100vw - var(--content)) / 2 + 12px)); top: 66px; width: 190px; padding: 15px 16px; border-left: 2px solid #fff; border-radius: 0 12px 12px 0; background: rgba(12, 46, 86, .48); color: #fff; font-size: 12px; font-weight: 500; line-height: 1.65; text-shadow: 0 1px 5px rgba(0,0,0,.28); z-index: 3; backdrop-filter: blur(4px); }
+    .hero-note small { display: block; margin-top: 10px; color: #fff; opacity: .9; font-size: 9px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
     .trust-line { display: flex; align-items: center; gap: 9px; margin-top: 30px; color: #62758f; font-size: 10px; }
     .trust-line svg { width: 17px; height: 17px; color: var(--blue); }
+
+
+    .history-section { background: #fff; border-top: 1px solid #f0f4f8; border-bottom: 1px solid #f0f4f8; }
+    .history-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: clamp(35px, 7vw, 100px); align-items: center; }
+    .history-symbol { position: relative; display: grid; width: min(100%, 340px); aspect-ratio: 1; place-items: center; margin-inline: auto; border: 1px solid #e2ebf5; border-radius: 48% 52% 45% 55%; background: radial-gradient(circle at 40% 35%, #fff 0, #f0f6fd 60%, #e1edf9 100%); color: var(--navy); }
+    .history-symbol::before, .history-symbol::after { content: ''; position: absolute; width: 70%; height: 70%; border: 1px solid rgba(36,93,160,.16); border-radius: 50%; }
+    .history-symbol::after { width: 47%; height: 47%; }
+    .history-symbol span { position: relative; z-index: 1; font-size: clamp(3rem, 7vw, 5.8rem); font-weight: 700; letter-spacing: -.09em; }
+    .history-symbol i { position: absolute; width: 15px; height: 15px; right: 18%; top: 20%; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 9px rgba(246,173,39,.15); }
+    .history-copy h2 { max-width: 650px; }
+    .history-copy p:not(.section-kicker) { max-width: 690px; }
+    .history-copy .btn { margin-top: 8px; }
 
     /* Duas frentes */
     .pathways { padding: 34px 0 86px; }
@@ -211,9 +223,10 @@
     .footer-links span { color: #c4cfdd; }
     .copyright { padding-top: 15px; border-top: 1px solid #edf1f6; color: #8494a9; font-size: 9px; text-align: center; }
     .privacy-note { max-width: 760px; margin: 14px auto 0; text-align: center; color: #98a6b7; font-size: 9px; }
-    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 15; display: grid; width: 50px; height: 50px; place-items: center; border: 2px solid #fff; border-radius: 50%; background: #237c65; color: #fff; box-shadow: 0 8px 24px rgba(20,70,66,.23); transition: transform .2s; }
+    .whatsapp-float { position: fixed; right: 22px; bottom: 22px; z-index: 15; display: grid; width: 56px; height: 56px; place-items: center; border: 2px solid #fff; border-radius: 50%; background: #fff; box-shadow: 0 8px 24px rgba(20,70,66,.23); transition: transform .2s; }
     .whatsapp-float:hover { transform: translateY(-3px); }
-    .whatsapp-float svg { width: 23px; height: 23px; }
+    .whatsapp-float img { width: 34px; height: 34px; object-fit: contain; }
+    .whatsapp-icon { width: 19px; height: 19px; object-fit: contain; flex: 0 0 auto; }
     .reveal { opacity: 1; transform: none; }
     .js-motion .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
     .js-motion .reveal.is-visible { opacity: 1; transform: translateY(0); }
@@ -249,6 +262,8 @@
       .nav-drop.open .dropdown-menu { display: block; }
       .nav-drop:hover .dropdown-menu { display: none; }
       .nav-drop.open:hover .dropdown-menu { display: block; }
+      .history-grid { grid-template-columns: 1fr; gap: 28px; }
+      .history-symbol { width: min(68%, 235px); }
       .hero-grid { grid-template-columns: 1fr; gap: 0; }
       .hero-copy { padding: 55px 0 31px; }
       h1 { max-width: 620px; font-size: clamp(2.25rem, 8vw, 3.5rem); }
@@ -256,7 +271,7 @@
       .hero-visual { min-height: 340px; height: 340px; margin: 0 -18px; }
       .hero-photo { border-radius: 130px 0 0 0; }
       .hero-photo img { object-position: center 42%; }
-      .hero-note { top: 23px; right: 22px; width: 145px; padding-left: 12px; font-size: 10px; background: rgba(255,255,255,.8); backdrop-filter: blur(6px); }
+      .hero-note { top: 23px; right: 22px; width: 165px; padding: 12px; color: #fff; background: rgba(12,46,86,.72); backdrop-filter: blur(6px); }
       .trust-line { margin-top: 22px; }
       .pathways { padding: 25px 0 65px; }
       .pathway-grid { grid-template-columns: 1fr; gap: 16px; }
@@ -293,7 +308,7 @@
       .hero-copy h1 { font-size: 2.25rem; }
       .hero-actions { gap: 14px; }
       .hero-visual { min-height: 285px; height: 285px; }
-      .hero-note { width: 122px; font-size: 9px; right: 15px; }
+      .hero-note { width: 142px; font-size: 9px; right: 15px; }
       .pathway-card { grid-template-columns: 1fr 110px; min-height: 260px; }
       .pathway-content { padding: 18px 0 18px 17px; }
       .icon-bubble { width: 37px; height: 37px; margin-bottom: 12px; }
@@ -346,7 +361,7 @@
       </a>
       <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
-        <a href="#sobre">Sobre</a>
+        <a href="#historia">Nossa história</a>
         <div class="nav-drop" id="solutionsDrop">
           <button type="button" aria-expanded="false" aria-controls="solutionsMenu">Soluções <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
           <div class="dropdown-menu" id="solutionsMenu">
@@ -354,10 +369,10 @@
             <a href="#professores">Para professores<span>Recursos para organizar a rotina</span></a>
           </div>
         </div>
-        <a href="#sistema">O sistema</a>
+        <a href="sistema.html">O sistema</a>
         <a href="#contato">Contato</a>
       </nav>
-      <a class="btn btn-primary header-cta" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener noreferrer">Acessar o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-primary header-cta" href="sistema.html">Acessar o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </header>
@@ -370,8 +385,8 @@
           <h1 id="hero-title">Cada história de aprendizagem merece <em>atenção e cuidado.</em></h1>
           <p class="lead">Um espaço dedicado ao desenvolvimento dos alunos e uma plataforma criada para ajudar professores e psicopedagogos a organizar sua prática com mais clareza.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#sistema">Conheça o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn btn-text" href="#sobre">Conheça o Legado <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-primary" href="sistema.html">Conheça o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn-text" href="#historia">Conheça o Legado <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
           <div class="trust-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3 19 6v5c0 4.6-2.9 7.7-7 10-4.1-2.3-7-5.4-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg> Uma abordagem que valoriza cada etapa do desenvolvimento.</div>
         </div>
@@ -390,7 +405,7 @@
             <p class="pathway-label">Para o aluno e sua família</p>
             <h3>Acompanhamento individualizado e atento</h3>
             <p>Um olhar cuidadoso para as necessidades de aprendizagem, respeitando o ritmo, as potencialidades e a história de cada aluno.</p>
-            <a class="card-link" href="#contato">Conheça o atendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="card-link" href="atendimento.html">Conheça o atendimento <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
           <div class="pathway-image"><img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=700&q=80" alt="Criança explorando materiais durante uma atividade" loading="lazy"></div>
         </article>
@@ -400,10 +415,25 @@
             <p class="pathway-label">Para professores e psicopedagogos</p>
             <h3>Mais organização para sua prática</h3>
             <p>Centralize alunos, agenda, avaliações, atividades, registros e financeiro em um único ambiente de trabalho.</p>
-            <a class="card-link" href="#sistema">Explore o sistema <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="card-link" href="sistema.html">Explore o sistema <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
           <div class="pathway-image"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="Profissional trabalhando em um ambiente organizado" loading="lazy"></div>
         </article>
+      </div>
+    </section>
+
+
+    <section class="history-section section" id="historia" aria-labelledby="history-title">
+      <div class="container history-grid">
+        <div class="history-symbol" aria-hidden="true"><span>LE</span><i></i></div>
+        <div class="history-copy reveal">
+          <p class="section-kicker">Nossa história</p>
+          <h2 id="history-title">Um legado que começa quando a aprendizagem é vista de verdade.</h2>
+          <p>O Legado que Ensina conecta duas partes essenciais do desenvolvimento: o cuidado individual com cada aluno e a organização de quem acompanha esse processo todos os dias.</p>
+          <p>A proposta é oferecer um espaço de acolhimento e acompanhamento psicopedagógico e, ao mesmo tempo, ferramentas digitais para que professores e profissionais possam organizar sua rotina com mais clareza, consistência e tempo para o que importa.</p>
+          <p>Mais do que reunir informações, queremos apoiar relações de aprendizagem construídas com atenção, parceria e respeito à trajetória de cada pessoa.</p>
+          <a class="btn btn-primary" href="atendimento.html">Fale conosco <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
     </section>
 
@@ -421,7 +451,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/><path d="m7 12 3 3 7-7" stroke="#fff"/></svg>Financeiro e documentos profissionais</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/><path d="m7 12 3 3 7-7" stroke="#fff"/></svg>Acesso on-line em computador, tablet e celular</li>
           </ul>
-          <a class="btn btn-primary" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener noreferrer">Acessar o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-primary" href="sistema.html">Acessar o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
 
         <div class="system-visual reveal" aria-label="Ilustração de demonstração do painel em computador e celular">
@@ -471,7 +501,7 @@
       <div class="container closing-inner">
         <div class="closing-copy"><p class="section-kicker">Pronto para começar?</p><h2>Seu trabalho transforma histórias. Vamos fortalecer esse caminho.</h2></div>
         <p>Conheça o Legado que Ensina e descubra uma maneira mais organizada de cuidar do acompanhamento psicopedagógico e da sua rotina profissional.</p>
-        <a class="btn btn-light" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener noreferrer">Acessar o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-light" href="sistema.html">Acessar o sistema <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </section>
   </main>
@@ -482,7 +512,7 @@
         <a href="#inicio" aria-label="Voltar ao início"><img class="footer-logo" src="https://i.imgur.com/D2WGUlJ.png" alt="Legado que Ensina — Gestão psicopedagógica" loading="lazy" onerror="this.onerror=null;this.src='https://i.imgur.com/5wYEiPo.png'"></a>
         <div class="contact-items">
           <a class="contact-item" href="mailto:contato@legadoqueensina.com.br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>contato@legadoqueensina.com.br</a>
-          <a class="contact-item" href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Legado%20que%20Ensina." target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 11.5a8.3 8.3 0 0 1-12.3 7.3L3 20l1.3-4.8A8.4 8.4 0 1 1 20.5 11.5Z"/><path d="M8.5 8.2c.4-.8.8-.7 1.1-.7h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.7 1.1 1.4 1.8 1.8.3.2.5.2.7 0l.8-.9c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1-.2-2.2-.8-3.4-1.8-1.1-.9-2-2.2-2.3-3.2-.3-.8-.1-1.6.3-2.3Z"/></svg>(43) 92003-6581</a>
+          <a class="contact-item" href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Legado%20que%20Ensina." target="_blank" rel="noopener noreferrer"><img class="whatsapp-icon" src="https://i.imgur.com/AvqfNmF.png" alt="">(43) 92003-6581</a>
           <span class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Londrina – PR</span>
         </div>
         <div class="footer-links"><a href="mailto:contato@legadoqueensina.com.br?subject=Termos%20de%20uso">Termos de uso</a><span>|</span><a href="mailto:contato@legadoqueensina.com.br?subject=Privacidade">Privacidade</a><span>|</span><a href="https://wa.me/5543920036581" target="_blank" rel="noopener noreferrer">Suporte</a></div>
@@ -492,7 +522,7 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20conhecer%20o%20Legado%20que%20Ensina." target="_blank" rel="noopener noreferrer" aria-label="Fale com o Legado que Ensina pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.3 8.3 0 0 1-12.3 7.3L3 20l1.3-4.8A8.4 8.4 0 1 1 20.5 11.5Z"/><path d="M8.5 8.2c.4-.8.8-.7 1.1-.7h.5c.2 0 .4.1.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .7.4.7 1.1 1.4 1.8 1.8.3.2.5.2.7 0l.8-.9c.2-.2.4-.3.7-.2l1.7.8c.3.1.4.3.4.5 0 .4-.2 1.1-.7 1.5-.5.5-1.2.7-2 .5-1-.2-2.2-.8-3.4-1.8-1.1-.9-2-2.2-2.3-3.2-.3-.8-.1-1.6.3-2.3Z"/></svg></a>
+  <a class="whatsapp-float" href="https://wa.me/5543920036581?text=Olá!%20Gostaria%20de%20conhecer%20o%20Legado%20que%20Ensina." target="_blank" rel="noopener noreferrer" aria-label="Fale com o Legado que Ensina pelo WhatsApp"><img src="https://i.imgur.com/AvqfNmF.png" alt=""></a>
 
   <script>
     (function () {
