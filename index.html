@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10283f">
-<meta name="description" content="Legado que Ensina: acompanhamento psicopedagógico humanizado, conteúdos sobre aprendizagem e tecnologia para psicopedagogos.">
+<meta name="theme-color" content="#0067a8">
+<meta name="description" content="Legado que Ensina: acompanhamento psicopedagógico, informações para famílias e tecnologia para profissionais da aprendizagem.">
+<meta property="og:title" content="Legado que Ensina — Aprender hoje. Transformar sempre.">
+<meta property="og:description" content="Acompanhamento psicopedagógico, conteúdos e tecnologia para apoiar quem aprende e quem ensina.">
+<meta property="og:type" content="website">
 <title>Legado que Ensina | Aprender hoje, transformar sempre</title>
 <style>
 
@@ -126,11 +129,234 @@ body{font-family:Arial,Helvetica,sans-serif}
 @keyframes pageIn{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
+
+/* ── Editorial redesign: Legado que Ensina ─────────────────────────── */
+:root{--navy:#10283f;--green:#005caa;--green-dark:#064b88;--cream:#f3f6f8;--paper:#fff;--ink:#152d41;--muted:#607382;--line:#dce5ec;--gold:#f05252;--shadow:0 20px 60px rgba(13,42,66,.12);--red:#e74747;--blue:#0067a8;--sky:#e9f5fb}
+body{font-family:Arial,Helvetica,sans-serif;background:#f6f8fa;color:#172d40;line-height:1.62;font-size:15px}
+::selection{background:#c8e7f7;color:#10283f}
+a{transition:color .18s,background .18s,border-color .18s,transform .18s}
+.news-strip{background:#10283f;color:#fff;position:relative;z-index:110}
+.news-strip-inner{max-width:1360px;margin:auto;min-height:34px;padding:0 34px;display:flex;align-items:center;gap:18px;font-size:10px;letter-spacing:.08em}
+.news-strip-label{display:flex;align-items:center;gap:8px;font-weight:800;color:#fff;white-space:nowrap}
+.news-strip-label i{display:block;width:7px;height:7px;border-radius:50%;background:#ef5350;box-shadow:0 0 0 4px rgba(239,83,80,.14)}
+.news-strip-message{color:#bdcad4;letter-spacing:.015em;font-size:11px;flex:1}
+.news-strip-inner>a{color:#fff;font-weight:800;white-space:nowrap;font-size:9px}
+.news-strip-inner>a b{color:#f36b6b;font-size:14px;margin-left:5px}
+.site-header{background:rgba(255,255,255,.98);backdrop-filter:blur(12px);border-bottom:1px solid #dfe6ec;box-shadow:0 4px 18px rgba(16,40,63,.035)}
+.header-inner{max-width:1360px;min-height:82px;padding:0 34px;gap:26px}
+.brand{gap:11px;min-width:245px}
+.brand-mark{width:43px;height:43px;border-radius:3px;background:#0067a8;display:flex;align-items:center;justify-content:center;gap:1px;font-size:18px;letter-spacing:-2px;box-shadow:4px 4px 0 #d9eef8}
+.brand-mark span:first-child{color:#fff}.brand-mark span:last-child{color:#bdeaff;margin-top:7px}
+.brand-copy strong{font-size:13px;letter-spacing:.045em;font-weight:900;color:#10283f;line-height:1.25}
+.brand-copy strong i{font-style:normal;color:#0067a8}
+.brand-copy small{font-size:8px;letter-spacing:.09em;color:#6f808d;margin-top:4px;font-weight:700}
+.nav{gap:1px}
+.nav-link{font-size:12px;padding:12px 10px;border-radius:2px;color:#294355;font-weight:700}
+.nav-link:hover,.nav-link:focus-visible{background:#eaf5fb;color:#005caa}
+.nav-link .chev{color:#c74343}
+.dropdown,.submenu{border:1px solid #dce5ec;border-radius:2px;box-shadow:0 18px 45px rgba(16,40,63,.15);padding:7px;background:#fff}
+.dropdown a{font-size:12px;border-radius:1px;padding:11px 12px}
+.dropdown a:hover{background:#eef7fb;color:#005caa}
+.header-cta{background:#0067a8;color:#fff;border-radius:2px;padding:13px 15px;font-size:10px;letter-spacing:.02em;text-transform:uppercase;display:flex;gap:12px;align-items:center}
+.header-cta span{font-size:16px;color:#bdeaff}
+.header-cta:hover{background:#10283f;color:#fff}
+.mobile-toggle{border-radius:2px;font-size:12px;font-weight:700}
+main{min-height:65vh}
+/* Shared page template design */
+.breadcrumbs{max-width:1240px;padding:22px 30px 0;color:#758693;font-size:11px}
+.breadcrumbs a{font-weight:700;color:#0067a8}
+.breadcrumbs a:hover{text-decoration:underline}
+.page-hero{max-width:1240px;padding:58px 30px 68px;position:relative}
+.page-hero:after{content:"";display:block;width:58px;height:5px;background:#e74747;margin-top:36px}
+.kicker,.section-overline{color:#0067a8;font-size:10px;letter-spacing:.16em;font-weight:800}
+.kicker:before{background:#e74747;height:3px;width:20px}
+h1,h2,h3{color:#10283f}
+h1{font-size:clamp(42px,5.2vw,68px);line-height:1.04;letter-spacing:-.04em;font-weight:800}
+h1 em,h2 em{color:#0067a8;font-style:normal}
+.page-hero h1{font-size:clamp(40px,5vw,62px);max-width:970px;line-height:1.06;margin:22px 0 20px}
+.hero-intro{color:#506776;font-size:17px;line-height:1.8}
+.page-hero .hero-intro{max-width:800px}
+.actions{gap:12px;margin-top:32px}
+.btn{background:#0067a8;border-radius:2px;font-size:11px;letter-spacing:.03em;padding:15px 18px}
+.btn:hover{background:#10283f;transform:translateY(-1px)}
+.btn.secondary{border:1px solid #b5c5d0;background:#fff;color:#10283f}
+.btn.secondary:hover{color:#0067a8;border-color:#0067a8;background:#eff8fc}
+.section{padding:72px 30px}
+.section.white{background:#fff}
+.section-inner{max-width:1180px}
+.section-head{padding-bottom:20px;border-bottom:1px solid #dfe7ed;margin-bottom:28px}
+.section-head h2{font-size:clamp(29px,3vw,42px);letter-spacing:-.035em;margin-top:9px}
+.section-head p{font-size:14px;line-height:1.75;color:#657987}
+.card-grid{gap:0;border-top:1px solid #dce5ec;border-left:1px solid #dce5ec}
+.feature-card,.white .feature-card{min-height:245px;border:0;border-right:1px solid #dce5ec;border-bottom:1px solid #dce5ec;border-radius:0;padding:30px;background:#fff;box-shadow:none}
+.feature-card:hover{transform:none;background:#f1f8fb;border-color:#dce5ec;box-shadow:inset 0 4px 0 #0067a8}
+.card-index{font-size:9px;color:#0067a8;letter-spacing:.14em}
+.feature-card h3{font-size:21px;line-height:1.24;margin:22px 0 10px;letter-spacing:-.02em}
+.feature-card p{font-size:14px;color:#627785;line-height:1.8;margin-bottom:24px}
+.card-link{font-size:10px;color:#0067a8;letter-spacing:.07em;text-transform:uppercase}
+.band{background:#10283f;position:relative;overflow:hidden;padding:60px 30px}
+.band:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.09);border-radius:50%;right:-130px;top:-210px;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.025)}
+.band-inner{max-width:1180px;position:relative;z-index:1}
+.band h2{font-size:clamp(28px,3.3vw,42px);letter-spacing:-.03em;color:#fff}
+.band p{font-size:14px;line-height:1.75;color:#c2d3de}
+.band .btn{background:#f05252;color:#fff;border:0}
+.band .btn:hover{background:#fff;color:#10283f}
+.info-layout{gap:65px}
+.info-aside{border-left:4px solid #e74747;padding-left:24px}
+.info-aside strong{font-size:16px}
+.info-aside p{font-size:14px;line-height:1.8}
+.prose h2{font-size:30px}
+.prose p,.prose li{font-size:15px;color:#526a7a}
+.notice{border-left:4px solid #0067a8;background:#eaf5fb;color:#274b62}
+.contact-box{border:1px solid #dce5ec;padding:30px;box-shadow:0 16px 40px rgba(16,40,63,.055)}
+.contact-box label{color:#10283f;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+.contact-box input,.contact-box select,.contact-box textarea{border-radius:2px;border-color:#cbd8e0;padding:13px;font-size:14px}
+.contact-box input:focus,.contact-box select:focus,.contact-box textarea:focus{outline:2px solid #b6e3fa;border-color:#0067a8}
+.site-footer{background:#091c2d;padding:56px 30px 23px;border-top:5px solid #0067a8}
+.footer-inner{max-width:1180px}
+.footer-top{gap:42px;padding-bottom:42px}
+.footer-brand{font-size:17px;letter-spacing:.02em}
+.footer-brand span{color:#b4d5e8;font-size:9px;letter-spacing:.12em}
+.footer-copy{font-size:13px;line-height:1.8;color:#adbfcb}
+.footer-col h3{color:#77c5ed;font-size:10px;letter-spacing:.13em}
+.footer-col a{font-size:13px;color:#c5d2da}
+.footer-col a:hover{color:#fff;text-decoration:underline}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:11px;color:#9aafbd}
+:focus-visible{outline:3px solid #ed6565;outline-offset:3px}
+/* Homepage editorial composition */
+.home-edition{background:#fff}
+.home-edition .edition-line{max-width:1300px;margin:auto;padding:24px 34px 16px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e1e8ee;color:#70828e;font-size:9px;font-weight:800;letter-spacing:.15em}
+.lead-grid{max-width:1300px;margin:auto;padding:34px;display:grid;grid-template-columns:1fr 1.03fr;gap:44px;align-items:stretch}
+.lead-copy{padding:30px 5px 26px 0;display:flex;flex-direction:column;align-items:flex-start}
+.lead-kicker{display:flex;align-items:center;gap:10px;color:#0067a8;font-size:10px;letter-spacing:.16em;font-weight:800}
+.kicker-mark{width:28px;height:3px;background:#e74747;display:inline-block}
+.lead-copy h1{font-size:clamp(46px,5.5vw,76px);max-width:660px;margin:26px 0 23px;line-height:.99;letter-spacing:-.055em}
+.lead-copy h1 em{display:block;color:#0067a8;font-style:normal}
+.lead-deck{max-width:570px;font-size:17px;line-height:1.85;color:#506878}
+.lead-actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:31px}
+.primary-link{background:#0067a8;color:#fff;padding:15px 18px;font-size:11px;font-weight:800;letter-spacing:.025em;text-transform:uppercase;display:inline-flex;align-items:center;gap:22px;border-radius:2px}
+.primary-link:hover{background:#10283f;transform:translateY(-2px)}
+.primary-link span{font-size:17px;color:#b8e7ff}
+.quiet-link{font-size:11px;font-weight:800;color:#10283f;text-transform:uppercase;letter-spacing:.045em;border-bottom:1px solid #cdd9e1;padding:12px 0}
+.quiet-link:hover{color:#0067a8;border-color:#0067a8}
+.quiet-link span{color:#e74747;margin-left:8px;font-size:16px}
+.lead-byline{margin-top:auto;padding-top:42px;display:flex;align-items:center;gap:12px;color:#7b8b96;font-size:9px;font-weight:800;letter-spacing:.1em}
+.byline-rule{width:36px;height:2px;background:#e74747;flex-shrink:0}
+.lead-visual{min-height:525px;position:relative;overflow:hidden;background-color:#d6e8f1;background-image:linear-gradient(180deg,rgba(7,39,63,.02) 10%,rgba(7,39,63,.1) 45%,rgba(7,39,63,.86) 100%),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1300&q=85');background-size:cover;background-position:center;isolation:isolate}
+.lead-visual:before{content:"";position:absolute;inset:0;border:12px solid rgba(255,255,255,.28);z-index:0;pointer-events:none}
+.lead-image-wash{position:absolute;top:0;left:0;width:100%;height:8px;background:#e74747;z-index:1}
+.image-caption{position:absolute;bottom:29px;left:31px;right:32px;display:flex;align-items:flex-start;gap:15px;color:#fff;z-index:2}
+.caption-number{font-size:37px;line-height:1;font-weight:800;letter-spacing:-.05em;color:#8ed8ff}
+.image-caption b{display:block;font-size:11px;letter-spacing:.13em;margin:2px 0 8px}
+.image-caption small{display:block;font-size:13px;color:#d6e6ee;max-width:330px;line-height:1.6}
+.visual-stamp{position:absolute;right:28px;top:28px;background:#fff;color:#10283f;display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:9px;font-weight:900;letter-spacing:.13em;box-shadow:0 5px 15px rgba(16,40,63,.12);z-index:2}
+.visual-stamp b{color:#e74747;font-size:18px}
+.editorial-ribbon{background:#0067a8;color:#fff}
+.ribbon-inner{max-width:1300px;margin:auto;min-height:76px;padding:16px 34px;display:flex;align-items:center;gap:22px}
+.ribbon-label{color:#bce8ff;font-size:10px;letter-spacing:.16em;font-weight:900;white-space:nowrap}
+.ribbon-inner p{font-size:13px;font-weight:600;line-height:1.5;flex:1}
+.ribbon-inner>a{font-size:9px;letter-spacing:.1em;font-weight:900;white-space:nowrap;border-left:1px solid rgba(255,255,255,.28);padding-left:22px}
+.ribbon-inner>a b{font-size:16px;margin-left:8px;color:#bce8ff}
+.story-section{padding:88px 34px 78px;background:#f5f8fa}
+.content-shell{max-width:1232px;margin:0 auto}
+.section-mast{display:grid;grid-template-columns:1.05fr .55fr;align-items:end;gap:50px;margin-bottom:32px}
+.section-overline{display:block;font-size:9px;color:#0067a8;letter-spacing:.17em;margin-bottom:13px}
+.section-mast h2,.principles-top h2,.mission-heading h2,.contact-banner h2{font-size:clamp(34px,4vw,49px);letter-spacing:-.045em;line-height:1.04;margin:0}
+.section-mast h2 em,.principles-top h2 em,.mission-heading h2 em,.contact-banner h2 em{font-style:normal;color:#0067a8}
+.section-mast>p{font-size:14px;line-height:1.8;color:#647987;max-width:405px;padding-bottom:4px}
+.story-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;border:1px solid #dce5ec;background:#fff}
+.story-card{min-width:0;display:flex;flex-direction:column;border-right:1px solid #dce5ec;color:inherit;background:#fff}
+.story-card:last-child{border-right:0}
+.story-card:hover{background:#fafdff;box-shadow:inset 0 4px #0067a8}
+.story-image{height:190px;position:relative;background-color:#c8dbe7;background-size:cover;background-position:center;overflow:hidden}
+.story-card-large .story-image{height:230px}
+.story-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,40,63,.5),transparent 60%)}
+.story-image-one{background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=950&q=80')}
+.story-image-two{background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80')}
+.story-image-three{background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80')}
+.story-tag{position:absolute;bottom:14px;left:17px;padding:7px 9px;background:#0067a8;color:#fff;font-size:8px;letter-spacing:.13em;font-weight:900;z-index:1}
+.story-body{padding:22px 22px 24px;display:flex;flex-direction:column;align-items:flex-start;flex:1}
+.story-meta{font-size:8px;letter-spacing:.12em;color:#71828e;font-weight:900}
+.story-body h3{font-size:clamp(18px,1.75vw,23px);line-height:1.2;letter-spacing:-.025em;margin:13px 0 12px}
+.story-body p{font-size:13px;line-height:1.75;color:#647987;margin-bottom:22px}
+.story-read{margin-top:auto;color:#0067a8;font-size:9px;letter-spacing:.1em;font-weight:900}
+.story-read b{font-size:15px;margin-left:8px;color:#e74747}
+.section-end-link{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:21px;margin-top:20px;border-top:1px solid #d6e1e8}
+.section-end-link>span{font-size:9px;font-weight:900;letter-spacing:.13em;color:#81919b}
+.section-end-link>a{font-size:12px;font-weight:800;color:#0067a8}
+.section-end-link>a b{font-size:16px;margin-left:9px;color:#e74747}
+.mission-section{background:#10283f;color:#fff;padding:86px 34px 92px;position:relative;overflow:hidden}
+.mission-section:before{content:"";position:absolute;width:550px;height:550px;border:1px solid rgba(160,215,242,.12);border-radius:50%;right:-220px;top:-260px;box-shadow:0 0 0 55px rgba(160,215,242,.025),0 0 0 110px rgba(160,215,242,.025)}
+.mission-shell{position:relative;z-index:1}
+.mission-heading{display:grid;grid-template-columns:1fr .65fr;column-gap:50px;align-items:end;margin-bottom:37px}
+.light-overline{color:#8bd3f5}
+.mission-heading .section-overline{grid-column:1/-1}
+.mission-heading h2{color:#fff;grid-column:1;grid-row:2}
+.mission-heading h2 em{color:#89d5f6}
+.mission-heading>p{grid-column:2;grid-row:2;font-size:14px;line-height:1.85;color:#c0d2dd;max-width:430px;margin:0 0 3px}
+.mission-panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.mission-panel{background:#fff;color:#10283f;min-width:0;display:flex;flex-direction:column;overflow:hidden}
+.mission-panel-care{background:#eaf6fb}
+.mission-panel-tech{background:#f1f5f7}
+.mission-panel-top{display:flex;justify-content:space-between;align-items:center;padding:19px 23px 0;color:#557083;font-size:9px;letter-spacing:.13em;font-weight:900}
+.panel-symbol{font-size:20px;color:#e74747}
+.panel-illustration{height:205px;position:relative;overflow:hidden;display:flex;justify-content:center;align-items:center}
+.illustration-care{background:linear-gradient(135deg,#eaf6fb 0%,#d3eaf6 100%)}
+.illustration-circle{position:absolute;width:180px;height:180px;border:1px solid rgba(0,103,168,.26);border-radius:50%;top:0;left:calc(50% - 90px);box-shadow:0 0 0 25px rgba(0,103,168,.035),0 0 0 55px rgba(0,103,168,.025)}
+.illustration-book{position:relative;width:160px;height:94px;border-radius:3px 3px 10px 3px;background:linear-gradient(90deg,#fff 0 48%,#bfdfee 49% 51%,#fff 52%);box-shadow:0 13px 22px rgba(0,58,95,.14);transform:rotate(-6deg);border-bottom:7px solid #0067a8}
+.illustration-book:before,.illustration-book:after{content:"";position:absolute;left:16px;right:19px;height:3px;background:#b5d4e4;top:24px;box-shadow:0 13px #b5d4e4,0 26px #b5d4e4}
+.illustration-book:after{left:88px;right:12px;background:#e74747;opacity:.7}
+.illustration-sun{position:absolute;width:28px;height:28px;background:#e74747;right:calc(50% - 115px);top:43px;border-radius:50%;box-shadow:0 0 0 8px rgba(231,71,71,.12)}
+.illustration-tech{background:linear-gradient(145deg,#e8eff4,#dbe5ec)}
+.dashboard-mini{width:230px;height:132px;background:#fff;box-shadow:0 20px 30px rgba(16,40,63,.12);border:1px solid #c9d8e1;padding:14px;position:relative;z-index:2;transform:rotate(-3deg)}
+.mini-bar{height:9px;width:60%;background:#0067a8;margin-bottom:11px}
+.mini-line{height:4px;width:85%;background:#e3ebf0;margin-bottom:5px;box-shadow:0 8px #e3ebf0}
+.mini-lines{display:flex;gap:7px;margin-top:20px}.mini-lines i{height:22px;display:block;background:#d5eaf4;flex:1}.mini-lines i:nth-child(2){background:#98d4f0}.mini-lines i:nth-child(3){background:#e74747;opacity:.75}
+.mini-chart{position:absolute;right:17px;top:17px;height:50px;display:flex;align-items:end;gap:4px}.mini-chart i{display:block;width:8px;background:#88cde9;height:15px}.mini-chart i:nth-child(2){height:27px}.mini-chart i:nth-child(3){height:35px;background:#0067a8}.mini-chart i:nth-child(4){height:23px}.mini-chart i:nth-child(5){height:43px;background:#e74747}
+.tech-orbit{position:absolute;border:1px solid rgba(0,103,168,.22);border-radius:50%;width:260px;height:120px;transform:rotate(-22deg)}
+.orbit-one{left:calc(50% - 130px);top:40px}.orbit-two{left:calc(50% - 130px);top:40px;transform:rotate(28deg)}
+.mission-panel-bottom{padding:25px 27px 28px;flex:1;display:flex;flex-direction:column;align-items:flex-start}
+.mission-panel-bottom h3{font-size:25px;letter-spacing:-.03em;margin-bottom:10px}
+.mission-panel-bottom p{font-size:13px;line-height:1.8;color:#5f7482;max-width:440px;margin-bottom:21px}
+.mission-panel-bottom a{font-size:10px;font-weight:900;color:#0067a8;letter-spacing:.055em;text-transform:uppercase;margin-top:auto}
+.mission-panel-bottom a b{margin-left:10px;color:#e74747;font-size:16px}
+.principles-section{background:#fff;padding:83px 34px 90px}
+.principles-top{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-bottom:42px}
+.principles-top h2{font-size:clamp(34px,4vw,49px)}
+.outline-link{border:1px solid #c8d8e2;padding:14px 16px;font-size:10px;font-weight:900;color:#0067a8;white-space:nowrap;text-transform:uppercase;letter-spacing:.04em}
+.outline-link b{font-size:16px;color:#e74747;margin-left:11px}
+.outline-link:hover{background:#eaf6fb;border-color:#0067a8}
+.principles-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #dce5ec;border-bottom:1px solid #dce5ec}
+.principles-grid article{padding:24px 22px 27px 0;margin-right:22px;border-right:1px solid #dce5ec}
+.principles-grid article:last-child{margin:0;padding-right:0;border:0}
+.principle-index{font-size:11px;font-weight:900;color:#e74747;letter-spacing:.1em}
+.principles-grid h3{font-size:18px;margin:26px 0 10px;letter-spacing:-.015em}
+.principles-grid p{font-size:13px;line-height:1.8;color:#617886}
+.contact-banner{background:#0067a8;color:#fff;padding:72px 34px;overflow:hidden;position:relative}
+.contact-banner-inner{max-width:1232px;margin:auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;z-index:1}
+.contact-banner h2{color:#fff;font-size:clamp(38px,4.5vw,56px)}
+.contact-banner h2 em{color:#bdeaff}
+.contact-banner p{font-size:14px;line-height:1.8;color:#d0e9f7;max-width:560px;margin-top:17px}
+.contact-banner .section-overline{color:#bdeaff}
+.contact-banner-actions{display:flex;flex-direction:column;gap:12px;min-width:230px}
+.banner-main-link,.banner-secondary-link{display:flex;align-items:center;justify-content:space-between;padding:17px 19px;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.banner-main-link{background:#fff;color:#10283f}
+.banner-main-link:hover{background:#e74747;color:#fff}
+.banner-main-link span{font-size:19px}
+.banner-secondary-link{border:1px solid rgba(255,255,255,.4);color:#fff}
+.banner-secondary-link:hover{background:rgba(255,255,255,.1)}
+.banner-secondary-link span{font-size:18px;color:#bdeaff}
+.banner-watermark{position:absolute;right:220px;bottom:-105px;color:rgba(255,255,255,.055);font-weight:900;font-size:300px;letter-spacing:-.12em;pointer-events:none;line-height:1}
+@media(max-width:1100px){.header-inner{gap:12px}.brand{min-width:205px}.brand-copy small{letter-spacing:.04em}.nav-link{padding:10px 7px;font-size:11px}.header-cta{padding:12px}.lead-grid{gap:30px}.lead-copy h1{font-size:clamp(44px,5vw,64px)}}
+@media(max-width:850px){.news-strip-inner{padding:0 20px}.news-strip-message{display:none}.news-strip-inner{justify-content:space-between}.header-inner{padding:0 20px;min-height:72px}.brand{min-width:0}.brand-mark{width:39px;height:39px}.mobile-toggle{display:block}.nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px 22px;align-items:stretch;flex-direction:column;gap:2px;max-height:78vh;overflow:auto}.nav.mobile-open{display:flex}.nav-group{width:100%}.nav-link{width:100%;justify-content:space-between;padding:13px 10px;font-size:12px}.dropdown{position:static;box-shadow:none;border:0;border-left:2px solid #c8dce8;border-radius:0;margin:0 0 8px 10px;padding:2px 5px;min-width:0}.nav-group.open .dropdown{display:block}.submenu{position:static;box-shadow:none;border:0;border-left:2px solid #dbe8ef;border-radius:0;margin-left:12px;min-width:0}.subgroup:hover .submenu{display:block}.header-cta{display:none}.home-edition .edition-line{padding:18px 22px 13px}.lead-grid{grid-template-columns:1fr;padding:28px 22px 32px;gap:28px}.lead-copy{padding:13px 0 0}.lead-copy h1{font-size:clamp(44px,8vw,66px);max-width:700px}.lead-visual{min-height:380px}.lead-byline{margin-top:30px;padding-top:28px}.ribbon-inner{padding:20px 22px;gap:14px;flex-wrap:wrap}.ribbon-inner p{flex-basis:calc(100% - 130px)}.ribbon-inner>a{border:0;padding-left:0;width:100%}.story-section,.mission-section,.principles-section,.contact-banner{padding-left:22px;padding-right:22px}.section-mast{grid-template-columns:1fr;gap:17px}.section-mast>p{max-width:620px}.story-grid{grid-template-columns:1fr 1fr}.story-card-large{grid-column:1/-1;border-bottom:1px solid #dce5ec}.story-card:nth-child(2){border-right:1px solid #dce5ec}.story-card:last-child{border-top:0}.story-card-large .story-image{height:250px}.story-card:not(.story-card-large) .story-image{height:165px}.mission-heading{grid-template-columns:1fr;gap:18px}.mission-heading h2,.mission-heading>p{grid-column:1;grid-row:auto}.mission-heading>p{max-width:650px}.mission-panels{gap:14px}.principles-top{align-items:flex-start;flex-direction:column}.principles-grid{grid-template-columns:1fr 1fr}.principles-grid article:nth-child(2){border-right:0;margin-right:0;padding-right:0}.principles-grid article:nth-child(3),.principles-grid article:nth-child(4){border-top:1px solid #dce5ec}.principles-grid article:nth-child(4){border-right:0;margin-right:0;padding-right:0}.contact-banner-inner{grid-template-columns:1fr;gap:27px}.contact-banner-actions{flex-direction:row;min-width:0;max-width:500px;width:100%}.contact-banner-actions>a{flex:1;gap:10px}.banner-watermark{right:0}.hero{grid-template-columns:1fr;padding:54px 22px}.hero-visual{min-height:300px}.visual-panel{min-height:310px}.visual-quote{margin-top:44px}.page-hero{padding:40px 22px 54px}.breadcrumbs{padding-left:22px;padding-right:22px}.section{padding:55px 22px}.section-head{display:block}.section-head p{margin-top:12px}.card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-top{grid-template-columns:repeat(2,minmax(0,1fr))}.info-layout{grid-template-columns:1fr;gap:28px}.band-inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.news-strip-inner{min-height:32px;padding:0 16px}.news-strip-label{font-size:9px}.news-strip-inner>a{font-size:8px}.header-inner{padding:0 16px}.brand-mark{width:36px;height:36px}.brand-copy strong{font-size:11px}.brand-copy small{font-size:7px;letter-spacing:.025em}.home-edition .edition-line{padding:17px 16px 12px;gap:12px}.edition-line span{font-size:7px;letter-spacing:.09em}.edition-line span:last-child{text-align:right}.lead-grid{padding:25px 16px 28px;gap:23px}.lead-copy h1{font-size:43px;line-height:1.02;margin:20px 0}.lead-deck{font-size:15px;line-height:1.75}.lead-actions{align-items:flex-start;flex-direction:column;gap:12px}.primary-link{width:100%;justify-content:space-between}.quiet-link{padding:8px 0}.lead-byline{font-size:7px;letter-spacing:.07em;line-height:1.6}.lead-visual{min-height:310px}.image-caption{left:20px;right:18px;bottom:20px;gap:10px}.caption-number{font-size:31px}.image-caption b{font-size:9px}.image-caption small{font-size:11px}.visual-stamp{top:18px;right:18px;padding:9px;font-size:8px}.ribbon-inner{padding:17px 16px}.ribbon-label{font-size:9px}.ribbon-inner p{font-size:12px;flex-basis:calc(100% - 105px)}.ribbon-inner>a{font-size:8px}.story-section,.mission-section,.principles-section,.contact-banner{padding:52px 16px}.section-mast h2,.principles-top h2{font-size:35px}.section-mast>p{font-size:13px}.story-grid{grid-template-columns:1fr}.story-card,.story-card:nth-child(2),.story-card:last-child{border-right:0;border-bottom:1px solid #dce5ec}.story-card:last-child{border-bottom:0}.story-card-large{grid-column:auto}.story-image,.story-card-large .story-image{height:195px}.story-body{padding:19px 18px 22px}.story-body h3{font-size:21px}.section-end-link{align-items:flex-start;flex-direction:column}.mission-heading h2{font-size:34px}.mission-panels{grid-template-columns:1fr}.panel-illustration{height:185px}.mission-panel-bottom{padding:23px 21px}.mission-panel-bottom h3{font-size:23px}.principles-top{margin-bottom:28px}.outline-link{white-space:normal}.principles-grid{grid-template-columns:1fr}.principles-grid article,.principles-grid article:nth-child(2),.principles-grid article:nth-child(4){border-right:0;border-bottom:1px solid #dce5ec;margin:0;padding:20px 0}.principles-grid article:last-child{border-bottom:0}.principles-grid h3{margin:12px 0 7px}.contact-banner h2{font-size:39px}.contact-banner-actions{flex-direction:column}.banner-main-link,.banner-secondary-link{width:100%}.breadcrumbs{padding:16px 16px 0;font-size:10px}.page-hero{padding:33px 16px 45px}.page-hero h1{font-size:37px;line-height:1.07}.page-hero .hero-intro{font-size:14px}.page-hero:after{margin-top:28px}.section{padding:45px 16px}.section-head h2{font-size:29px}.card-grid{grid-template-columns:1fr}.feature-card,.white .feature-card{min-height:185px;padding:23px}.feature-card h3{margin:18px 0 9px}.band{padding:43px 16px}.band-inner{gap:22px}.band h2{font-size:28px}.band .btn{width:100%}.footer-top{grid-template-columns:1fr;gap:26px}.footer-bottom{flex-direction:column}.actions .btn{width:100%}.contact-box{padding:21px}}
+
 </style>
 </head>
 <body>
-<a class="skip" href="#conteudo">Pular para o conteúdo</a><div class="topline"></div>
-<header class="site-header"><div class="header-inner"><a class="brand" href="#/" aria-label="Legado que Ensina — página inicial"><span class="brand-mark">LQ</span><span class="brand-copy"><strong>Legado que Ensina</strong><small>Aprender • Transformar</small></span></a><button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰ Menu</button><nav class="nav" aria-label="Navegação principal"><div class="nav-group"><a class="nav-link" href="#/psicopedagogia">Psicopedagogia <span class="chev">▾</span></a><div class="dropdown"><a href="#/psicopedagogia">Visão geral</a><div class="subgroup"><a href="#/psicopedagogia/servicos" aria-expanded="false">Serviços</a><div class="submenu"><a href="#/psicopedagogia/servicos">Ver todos: Serviços</a><a href="#/psicopedagogia/servicos">Todos os serviços</a><a href="#/psicopedagogia/servicos/avaliacao">Avaliação psicopedagógica</a><a href="#/psicopedagogia/servicos/intervencao">Intervenção psicopedagógica</a><a href="#/psicopedagogia/servicos/alfabetizacao">Alfabetização e escrita</a><a href="#/psicopedagogia/servicos/orientacao-familiar">Orientação familiar</a></div></div><div class="subgroup"><a href="#/psicopedagogia/modalidades" aria-expanded="false">Modalidades</a><div class="submenu"><a href="#/psicopedagogia/modalidades">Ver todos: Modalidades</a><a href="#/psicopedagogia/modalidades/presencial">Presencial</a><a href="#/psicopedagogia/modalidades/online">Online</a><a href="#/psicopedagogia/modalidades/domiciliar">Domiciliar</a></div></div><div class="subgroup"><a href="#/psicopedagogia/publico" aria-expanded="false">Público atendido</a><div class="submenu"><a href="#/psicopedagogia/publico">Ver todos: Público atendido</a><a href="#/psicopedagogia/publico/criancas">Crianças</a><a href="#/psicopedagogia/publico/dificuldades">Dificuldades de aprendizagem</a><a href="#/psicopedagogia/publico/familias">Orientações para famílias</a></div></div></div></div><div class="nav-group"><a class="nav-link" href="#/sistema">Sistema <span class="chev">▾</span></a><div class="dropdown"><a href="#/sistema">Visão geral</a><div class="subgroup"><a href="#/sistema/recursos" aria-expanded="false">Recursos</a><div class="submenu"><a href="#/sistema/recursos">Ver todos: Recursos</a><a href="#/sistema/recursos/estudantes">Estudantes e prontuários</a><a href="#/sistema/recursos/agenda">Agenda e atendimentos</a><a href="#/sistema/recursos/relatorios">Relatórios e evolução</a><a href="#/sistema/recursos/financeiro">Gestão financeira</a></div></div><div class="subgroup"><a href="#/sistema/seguranca" aria-expanded="false">Segurança e privacidade</a><div class="submenu"><a href="#/sistema/seguranca">Ver todos: Segurança e privacidade</a><a href="#/sistema/seguranca/privacidade">Privacidade e dados</a><a href="#/sistema/seguranca/boas-praticas">Boas práticas</a></div></div><div class="subgroup"><a href="#/sistema/planos" aria-expanded="false">Planos e acesso</a><div class="submenu"><a href="#/sistema/planos">Ver todos: Planos e acesso</a><a href="#/sistema/planos/individual">Plano individual</a><a href="#/sistema/planos/equipe">Acesso para equipe</a><a href="#/sistema/planos/condicoes">Condições comerciais</a></div></div></div></div><div class="nav-group"><a class="nav-link" href="#/conteudos">Conteúdos <span class="chev">▾</span></a><div class="dropdown"><a href="#/conteudos">Visão geral</a><div class="subgroup"><a href="#/conteudos" aria-expanded="false">Aprendizagem</a><div class="submenu"><a href="#/conteudos">Ver todos: Aprendizagem</a><a href="#/conteudos/aprendizagem/alfabetizacao">Alfabetização</a><a href="#/conteudos/aprendizagem/rotina-de-estudos">Rotina de estudos</a><a href="#/conteudos/aprendizagem/dificuldades">Dificuldades de aprendizagem</a></div></div></div></div><a class="nav-link" href="#/sobre">Sobre</a><a class="nav-link" href="#/contato">Contato</a></nav><a class="header-cta" href="#/contato">Fale conosco ↗</a></div></header>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="news-strip"><div class="news-strip-inner"><span class="news-strip-label"><i></i> LEGADO EM FOCO</span><span class="news-strip-message">Aprendizagem, acolhimento e caminhos possíveis para cada história.</span><a href="#/conteudos">VER CONTEÚDOS <b>↗</b></a></div></div>
+<header class="site-header"><div class="header-inner"><a class="brand" href="#/" aria-label="Legado que Ensina — página inicial"><span class="brand-mark" aria-hidden="true"><span>L</span><span>Q</span></span><span class="brand-copy"><strong>LEGADO <i>QUE ENSINA</i></strong><small>APRENDER HOJE. TRANSFORMAR SEMPRE.</small></span></a><button class="mobile-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰ Menu</button><nav class="nav" aria-label="Navegação principal"><div class="nav-group"><a class="nav-link" href="#/psicopedagogia">Psicopedagogia <span class="chev">▾</span></a><div class="dropdown"><a href="#/psicopedagogia">Visão geral</a><div class="subgroup"><a href="#/psicopedagogia/servicos" aria-expanded="false">Serviços</a><div class="submenu"><a href="#/psicopedagogia/servicos">Ver todos: Serviços</a><a href="#/psicopedagogia/servicos">Todos os serviços</a><a href="#/psicopedagogia/servicos/avaliacao">Avaliação psicopedagógica</a><a href="#/psicopedagogia/servicos/intervencao">Intervenção psicopedagógica</a><a href="#/psicopedagogia/servicos/alfabetizacao">Alfabetização e escrita</a><a href="#/psicopedagogia/servicos/orientacao-familiar">Orientação familiar</a></div></div><div class="subgroup"><a href="#/psicopedagogia/modalidades" aria-expanded="false">Modalidades</a><div class="submenu"><a href="#/psicopedagogia/modalidades">Ver todos: Modalidades</a><a href="#/psicopedagogia/modalidades/presencial">Presencial</a><a href="#/psicopedagogia/modalidades/online">Online</a><a href="#/psicopedagogia/modalidades/domiciliar">Domiciliar</a></div></div><div class="subgroup"><a href="#/psicopedagogia/publico" aria-expanded="false">Público atendido</a><div class="submenu"><a href="#/psicopedagogia/publico">Ver todos: Público atendido</a><a href="#/psicopedagogia/publico/criancas">Crianças</a><a href="#/psicopedagogia/publico/dificuldades">Dificuldades de aprendizagem</a><a href="#/psicopedagogia/publico/familias">Orientações para famílias</a></div></div></div></div><div class="nav-group"><a class="nav-link" href="#/sistema">Sistema <span class="chev">▾</span></a><div class="dropdown"><a href="#/sistema">Visão geral</a><div class="subgroup"><a href="#/sistema/recursos" aria-expanded="false">Recursos</a><div class="submenu"><a href="#/sistema/recursos">Ver todos: Recursos</a><a href="#/sistema/recursos/estudantes">Estudantes e prontuários</a><a href="#/sistema/recursos/agenda">Agenda e atendimentos</a><a href="#/sistema/recursos/relatorios">Relatórios e evolução</a><a href="#/sistema/recursos/financeiro">Gestão financeira</a></div></div><div class="subgroup"><a href="#/sistema/seguranca" aria-expanded="false">Segurança e privacidade</a><div class="submenu"><a href="#/sistema/seguranca">Ver todos: Segurança e privacidade</a><a href="#/sistema/seguranca/privacidade">Privacidade e dados</a><a href="#/sistema/seguranca/boas-praticas">Boas práticas</a></div></div><div class="subgroup"><a href="#/sistema/planos" aria-expanded="false">Planos e acesso</a><div class="submenu"><a href="#/sistema/planos">Ver todos: Planos e acesso</a><a href="#/sistema/planos/individual">Plano individual</a><a href="#/sistema/planos/equipe">Acesso para equipe</a><a href="#/sistema/planos/condicoes">Condições comerciais</a></div></div></div></div><div class="nav-group"><a class="nav-link" href="#/conteudos">Conteúdos <span class="chev">▾</span></a><div class="dropdown"><a href="#/conteudos">Visão geral</a><div class="subgroup"><a href="#/conteudos" aria-expanded="false">Aprendizagem</a><div class="submenu"><a href="#/conteudos">Ver todos: Aprendizagem</a><a href="#/conteudos/aprendizagem/alfabetizacao">Alfabetização</a><a href="#/conteudos/aprendizagem/rotina-de-estudos">Rotina de estudos</a><a href="#/conteudos/aprendizagem/dificuldades">Dificuldades de aprendizagem</a></div></div></div></div><a class="nav-link" href="#/sobre">Sobre</a><a class="nav-link" href="#/contato">Contato</a></nav><a class="header-cta" href="#/contato">Fale com a equipe <span>↗</span></a></div></header>
 <main id="conteudo" tabindex="-1" aria-live="polite"></main>
 <footer class="site-footer"><div class="footer-inner"><div class="footer-top">
 <div><div class="footer-brand">Legado que Ensina<span>Aprender hoje, transformar sempre</span></div><p class="footer-copy">Acompanhamento psicopedagógico e tecnologia para apoiar quem aprende e quem ensina.</p></div>
@@ -144,7 +370,47 @@ body{font-family:Arial,Helvetica,sans-serif}
 <template data-route="/conteudos/aprendizagem/dificuldades" data-title="Como observar dificuldades de aprendizagem | Legado que Ensina"><div class="breadcrumbs"><a href="#/">Início</a><span>›</span><a href="#/">Conteúdos</a><span>›</span><span>Como observar dificuldades de aprendizagem</span></div><section class="page-hero"><div class="kicker">CONTEÚDOS • APRENDIZAGEM</div><h1>Observar com cuidado é diferente de <em>rotular.</em></h1><p class="hero-intro">Dificuldades persistentes podem aparecer de formas diferentes. Registrar situações concretas e conversar com a escola ajuda a compreender o contexto e decidir quais apoios buscar.</p><div class="actions"><a class="btn" href="#/psicopedagogia/servicos/avaliacao">Conhecer avaliação <span>→</span></a><a class="btn secondary" href="#/conteudos">Ver todos os conteúdos</a></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>O que observar</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Frequência</h3><p>Em quais tarefas e situações a dificuldade aparece?</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Contexto</h3><p>O que facilita ou dificulta a participação?</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Diálogo</h3><p>Compartilhe observações com a escola e profissionais envolvidos.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
 <template data-route="/conteudos/aprendizagem/rotina-de-estudos" data-title="Como organizar a rotina de estudos | Legado que Ensina"><div class="breadcrumbs"><a href="#/">Início</a><span>›</span><a href="#/">Conteúdos</a><span>›</span><span>Como organizar a rotina de estudos</span></div><section class="page-hero"><div class="kicker">CONTEÚDOS • ROTINA</div><h1>Uma rotina útil precisa caber na <em>vida real.</em></h1><p class="hero-intro">Horários previsíveis, pausas e objetivos pequenos podem ajudar a tornar os estudos mais organizados e menos desgastantes.</p><div class="actions"><a class="btn" href="#/psicopedagogia/servicos/orientacao-familiar">Conhecer orientação familiar <span>→</span></a><a class="btn secondary" href="#/conteudos">Ver todos os conteúdos</a></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Comece com passos simples</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Defina um horário</h3><p>Prefira um período consistente e compatível com a rotina.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Divida as tarefas</h3><p>Transforme atividades grandes em etapas menores.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Inclua pausas</h3><p>Observe sinais de cansaço e ajuste o plano.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
 <template data-route="/conteudos" data-title="Conteúdos sobre aprendizagem | Legado que Ensina"><div class="breadcrumbs"><a href="#/">Início</a><span>›</span><span>Conteúdos sobre aprendizagem</span></div><section class="page-hero"><div class="kicker">BIBLIOTECA DE CONTEÚDOS</div><h1>Informação clara para apoiar quem <em>aprende.</em></h1><p class="hero-intro">Materiais introdutórios para famílias e profissionais sobre aprendizagem, desenvolvimento, alfabetização e rotina de estudos.</p><div class="actions"><a class="btn" href="#/contato">Falar com a equipe <span>→</span></a><a class="btn secondary" href="#/psicopedagogia">Conhecer acompanhamento</a></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Explore por tema</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Alfabetização</h3><p>Ideias e conceitos sobre leitura e escrita.</p><a class="card-link" href="#/conteudos/aprendizagem/alfabetizacao">Explorar <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Rotina de estudos</h3><p>Como organizar o tempo e apoiar a autonomia.</p><a class="card-link" href="#/conteudos/aprendizagem/rotina-de-estudos">Explorar <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Dificuldades de aprendizagem</h3><p>Informações para compreender desafios sem rótulos.</p><a class="card-link" href="#/conteudos/aprendizagem/dificuldades">Explorar <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
-<template data-route="/" data-title="Legado que Ensina | Aprender hoje, transformar sempre | Legado que Ensina"><section class="hero"><div><div class="kicker">EDUCAÇÃO • DESENVOLVIMENTO • TECNOLOGIA</div><h1>Cada aprendizagem abre <em>novos caminhos.</em></h1><p class="hero-intro">Um projeto que une acompanhamento psicopedagógico humanizado e tecnologia para apoiar quem aprende e quem ensina.</p><div class="actions"><a class="btn" href="#/psicopedagogia">Conheça o acompanhamento <span>→</span></a><a class="btn secondary" href="#/sistema">Conheça o sistema</a></div></div><div class="hero-visual"><div class="visual-panel"><div class="visual-top"><span class="visual-chip">Legado que Ensina</span><span class="visual-number">01 — 02</span></div><div class="visual-quote">Aprender hoje.<br/><span>Transformar</span><br/>sempre.</div><div class="visual-bottom"><span>EDUCAÇÃO &amp; DESENVOLVIMENTO</span><span>DESDE A ESCUTA</span></div><div class="visual-orb"></div></div></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Duas frentes. Um propósito.</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Acompanhamento psicopedagógico</h3><p>Um olhar individual para compreender necessidades, desenvolver habilidades e construir caminhos possíveis.</p><a class="card-link" href="#/psicopedagogia">Descubra o atendimento <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Sistema para psicopedagogos</h3><p>Organização de atendimentos, registros e acompanhamento da evolução em uma plataforma digital.</p><a class="card-link" href="#/sistema">Conheça a plataforma <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Conteúdos para aprender</h3><p>Informações e orientações para famílias e profissionais sobre aprendizagem e desenvolvimento.</p><a class="card-link" href="#/conteudos">Explorar conteúdos <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
+<template data-route="/" data-title="Legado que Ensina | Aprender hoje, transformar sempre">
+<section class="home-edition" aria-label="Apresentação do Legado que Ensina">
+  <div class="edition-line"><span>EDUCAÇÃO &amp; DESENVOLVIMENTO</span><span>UM PROJETO PARA QUEM APRENDE E QUEM ENSINA</span></div>
+  <div class="lead-grid">
+    <div class="lead-copy">
+      <div class="lead-kicker"><span class="kicker-mark"></span> NOSSO PROPÓSITO</div>
+      <h1>Aprender muda o caminho. <em>O apoio muda tudo.</em></h1>
+      <p class="lead-deck">Cada pessoa aprende de um jeito. O Legado que Ensina une acompanhamento psicopedagógico, informação acessível e tecnologia para apoiar famílias e profissionais.</p>
+      <div class="lead-actions"><a class="primary-link" href="#/psicopedagogia">Conheça o acompanhamento <span>↗</span></a><a class="quiet-link" href="#/sobre">Nossa história <span>→</span></a></div>
+      <div class="lead-byline"><span class="byline-rule"></span><span>ESCUTA ATENTA. ESTRATÉGIAS INDIVIDUAIS. EVOLUÇÃO CONTÍNUA.</span></div>
+    </div>
+    <div class="lead-visual" role="img" aria-label="Ambiente de aprendizagem iluminado, com livros e materiais escolares">
+      <div class="lead-image-wash"></div><div class="image-caption"><span class="caption-number">01</span><span><b>APRENDER É UM PROCESSO</b><small>Respeitar o ritmo também faz parte do caminho.</small></span></div>
+      <div class="visual-stamp"><span>LEGADO</span><b>+</b><span>FUTURO</span></div>
+    </div>
+  </div>
+</section>
+<section class="editorial-ribbon"><div class="ribbon-inner"><span class="ribbon-label">EM FOCO</span><p>Informação clara para famílias. Organização e apoio para quem trabalha com aprendizagem.</p><a href="#/contato">CONHEÇA O PROJETO <b>→</b></a></div></section>
+<section class="story-section">
+  <div class="content-shell">
+    <div class="section-mast"><div><span class="section-overline">IDEIAS QUE FAZEM DIFERENÇA</span><h2>Entender a aprendizagem<br><em>é o primeiro passo.</em></h2></div><p>Conteúdos para observar com mais clareza, apoiar com mais confiança e encontrar próximos passos possíveis.</p></div>
+    <div class="story-grid">
+      <a class="story-card story-card-large" href="#/conteudos/aprendizagem/dificuldades"><div class="story-image story-image-one"><span class="story-tag">APRENDIZAGEM</span></div><div class="story-body"><span class="story-meta">PARA FAMÍLIAS · LEITURA ESSENCIAL</span><h3>Quando aprender fica difícil, o que observar antes de tirar conclusões?</h3><p>Perceber situações, reconhecer avanços e conversar com a escola ajuda a construir um olhar mais completo.</p><span class="story-read">LER CONTEÚDO <b>↗</b></span></div></a>
+      <a class="story-card" href="#/conteudos/aprendizagem/alfabetizacao"><div class="story-image story-image-two"><span class="story-tag">ALFABETIZAÇÃO</span></div><div class="story-body"><span class="story-meta">LEITURA · ESCRITA · COTIDIANO</span><h3>Pequenas experiências que aproximam a criança das palavras</h3><p>O contato com histórias, sons e textos pode nascer em momentos simples da rotina.</p><span class="story-read">DESCOBRIR <b>↗</b></span></div></a>
+      <a class="story-card" href="#/conteudos/aprendizagem/rotina-de-estudos"><div class="story-image story-image-three"><span class="story-tag">ROTINA DE ESTUDOS</span></div><div class="story-body"><span class="story-meta">ORGANIZAÇÃO · AUTONOMIA</span><h3>Uma rotina de estudos que respeita a vida real</h3><p>Planejamento possível, objetivos pequenos e pausas bem pensadas fazem diferença.</p><span class="story-read">VER ORIENTAÇÕES <b>↗</b></span></div></a>
+    </div>
+    <div class="section-end-link"><span>MAIS ORIENTAÇÕES E CONTEÚDOS</span><a href="#/conteudos">Explorar a biblioteca de conteúdos <b>→</b></a></div>
+  </div>
+</section>
+<section class="mission-section">
+  <div class="content-shell mission-shell">
+    <div class="mission-heading"><span class="section-overline light-overline">UM PROPÓSITO, DUAS FRENTES</span><h2>Mais apoio para quem aprende.<br><em>Mais estrutura para quem ensina.</em></h2><p>O Legado que Ensina conecta o acompanhamento educacional com ferramentas e informação para fortalecer a prática profissional.</p></div>
+    <div class="mission-panels">
+      <article class="mission-panel mission-panel-care"><div class="mission-panel-top"><span>01 / ACOMPANHAMENTO</span><span class="panel-symbol">↗</span></div><div class="panel-illustration illustration-care"><span class="illustration-circle"></span><span class="illustration-book"></span><span class="illustration-sun"></span></div><div class="mission-panel-bottom"><h3>Psicopedagogia</h3><p>Acompanhamento individualizado para compreender desafios, fortalecer habilidades e apoiar a autonomia.</p><a href="#/psicopedagogia">Conhecer os serviços <b>→</b></a></div></article>
+      <article class="mission-panel mission-panel-tech"><div class="mission-panel-top"><span>02 / TECNOLOGIA</span><span class="panel-symbol">↗</span></div><div class="panel-illustration illustration-tech"><div class="dashboard-mini"><div class="mini-bar"></div><div class="mini-line"></div><div class="mini-lines"><i></i><i></i><i></i></div><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i></div></div><span class="tech-orbit orbit-one"></span><span class="tech-orbit orbit-two"></span></div><div class="mission-panel-bottom"><h3>Sistema para psicopedagogos</h3><p>Uma plataforma digital para organizar atendimentos, registros e acompanhamento da evolução.</p><a href="https://sistema.legadoqueensina.com.br">Conhecer a plataforma <b>↗</b></a></div></article>
+    </div>
+  </div>
+</section>
+<section class="principles-section"><div class="content-shell"><div class="principles-top"><div><span class="section-overline">O QUE ORIENTA NOSSO TRABALHO</span><h2>Cuidado que se traduz<br>em <em>ações concretas.</em></h2></div><a class="outline-link" href="#/sobre">Saiba mais sobre o projeto <b>→</b></a></div><div class="principles-grid"><article><span class="principle-index">01</span><h3>Olhar individual</h3><p>Respeitar a história, o contexto e o ritmo de cada estudante.</p></article><article><span class="principle-index">02</span><h3>Orientação clara</h3><p>Compartilhar informações que ajudem a tomar decisões com mais segurança.</p></article><article><span class="principle-index">03</span><h3>Organização útil</h3><p>Transformar registros, planejamento e acompanhamento em processos mais consistentes.</p></article><article><span class="principle-index">04</span><h3>Desenvolvimento contínuo</h3><p>Observar avanços, ajustar estratégias e seguir aprendendo ao longo do caminho.</p></article></div></div></section>
+<section class="contact-banner"><div class="contact-banner-inner"><div><span class="section-overline light-overline">O PRÓXIMO PASSO COMEÇA AQUI</span><h2>Vamos conversar sobre<br><em>o que você precisa?</em></h2><p>Conheça as possibilidades de atendimento, tire dúvidas sobre a plataforma ou fale conosco sobre parcerias.</p></div><div class="contact-banner-actions"><a href="#/contato" class="banner-main-link">Entre em contato <span>↗</span></a><a href="#/sistema" class="banner-secondary-link">Explorar o sistema <span>→</span></a></div><div class="banner-watermark" aria-hidden="true">LE</div></div></section>
+</template>
 <template data-route="/psicopedagogia" data-title="Acompanhamento psicopedagógico | Legado que Ensina"><div class="breadcrumbs"><a href="#/">Início</a><span>›</span><span>Acompanhamento psicopedagógico</span></div><section class="page-hero"><div class="kicker">ATENDIMENTO PSICOPEDAGÓGICO</div><h1>Aprender no próprio ritmo, <em>com apoio e propósito.</em></h1><p class="hero-intro">Acompanhamento individualizado para compreender dificuldades de aprendizagem, fortalecer habilidades e apoiar a autonomia de crianças e adolescentes.</p><div class="actions"><a class="btn" href="#/psicopedagogia/servicos">Ver serviços <span>→</span></a><a class="btn secondary" href="#/contato">Falar sobre atendimento</a></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Como podemos ajudar</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Avaliação psicopedagógica</h3><p>Compreensão das estratégias, habilidades e desafios envolvidos no processo de aprendizagem.</p><a class="card-link" href="#/psicopedagogia/servicos/avaliacao">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Intervenção psicopedagógica</h3><p>Atividades planejadas conforme as necessidades e os objetivos de cada estudante.</p><a class="card-link" href="#/psicopedagogia/servicos/intervencao">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Alfabetização e escrita</h3><p>Apoio ao desenvolvimento da leitura, escrita e consciência sobre a linguagem.</p><a class="card-link" href="#/psicopedagogia/servicos/alfabetizacao">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">004 / EM FOCO</span><h3>Orientação às famílias</h3><p>Conversas e estratégias para apoiar a aprendizagem também no cotidiano familiar.</p><a class="card-link" href="#/psicopedagogia/servicos/orientacao-familiar">Saiba mais <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
 <template data-route="/psicopedagogia/modalidades/domiciliar" data-title="Atendimento domiciliar | Legado que Ensina"><div class="breadcrumbs"><a href="#/">Início</a><span>›</span><a href="#/">Psicopedagogia</a><span>›</span><a href="#/">Modalidades</a><span>›</span><span>Atendimento domiciliar</span></div><section class="page-hero"><div class="kicker">MODALIDADES • DOMICILIAR</div><h1>A aprendizagem perto da rotina da <em>família.</em></h1><p class="hero-intro">O atendimento domiciliar pode ser considerado conforme a região, a disponibilidade e os objetivos do acompanhamento. Consulte as condições antes de agendar.</p><div class="actions"><a class="btn" href="#/contato">Consultar região e horários <span>→</span></a><a class="btn secondary" href="#/">Ver modalidades</a></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Alinhamento prévio</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Região atendida</h3><p>Confirme se o endereço está dentro da área disponível.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Espaço de atividade</h3><p>Reserve um local adequado para a participação do estudante.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Organização de agenda</h3><p>Horário e condições são confirmados individualmente.</p><a class="card-link" href="#/contato">Saiba mais <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
 <template data-route="/psicopedagogia/modalidades" data-title="Modalidades de atendimento | Legado que Ensina"><div class="breadcrumbs"><a href="#/">Início</a><span>›</span><a href="#/">Psicopedagogia</a><span>›</span><span>Modalidades de atendimento</span></div><section class="page-hero"><div class="kicker">COMO FUNCIONA</div><h1>Um formato que se adapta à <em>sua rotina.</em></h1><p class="hero-intro">As possibilidades de atendimento são combinadas conforme a necessidade, a disponibilidade e as condições de cada família.</p><div class="actions"><a class="btn" href="#/contato">Consultar disponibilidade <span>→</span></a><a class="btn secondary" href="#/psicopedagogia/servicos">Conhecer serviços</a></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Modalidades</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Presencial</h3><p>Encontros presenciais em espaço de atendimento previamente combinado.</p><a class="card-link" href="#/psicopedagogia/modalidades/presencial">Ver detalhes <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Online</h3><p>Atendimento remoto quando adequado aos objetivos e à faixa etária.</p><a class="card-link" href="#/psicopedagogia/modalidades/online">Ver detalhes <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Domiciliar</h3><p>Possibilidade de atendimento em domicílio mediante consulta de disponibilidade.</p><a class="card-link" href="#/psicopedagogia/modalidades/domiciliar">Ver detalhes <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="#/contato">Entre em contato →</a></div></section></template>
