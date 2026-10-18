@@ -85,6 +85,17 @@
     @keyframes campaign-marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
     @media(max-width:520px) { .campaign-inner { gap:7px; padding:8px 0; } .campaign-copy { gap:5px 7px; padding-right:48px; font-size:9px; } .campaign-copy strong { font-size:10px; } .campaign-period { display:none; } .campaign-symbol { width:24px; height:24px; } .campaign-track { animation-duration:25s; } }
 
+    /* Apresentação breve da história na página inicial */
+    .story-teaser-grid { display:grid; grid-template-columns:minmax(220px,.7fr) minmax(0,1.3fr); align-items:center; gap:clamp(34px,7vw,90px); max-width:1000px; margin:0 auto; }
+    .story-teaser-visual { padding:10px 0; }
+    .story-teaser-visual .history-symbol { width:min(100%,275px); }
+    .story-teaser-copy h2 { max-width:700px; margin-bottom:20px; }
+    .story-teaser-copy p:not(.section-kicker) { max-width:680px; margin-bottom:14px; line-height:1.9; }
+    .story-more-link { display:inline-flex; align-items:center; gap:9px; margin-top:7px; color:var(--navy); font-size:12px; font-weight:600; border-bottom:1px solid #b7cbe2; padding-bottom:5px; transition:color .2s,border-color .2s; }
+    .story-more-link svg { width:16px; height:16px; transition:transform .2s; }
+    .story-more-link:hover { color:var(--blue); border-color:var(--blue); }
+    .story-more-link:hover svg { transform:translateX(3px); }
+
     /* História, propósito e valores */
     .story-intro { max-width:840px; margin:0 auto 36px; text-align:center; }
     .story-intro h2 { margin-bottom:12px; }
@@ -292,6 +303,11 @@
     .whatsapp-float img { width: 34px; height: 34px; object-fit: contain; }
     .whatsapp-icon { width: 19px; height: 19px; object-fit: contain; flex: 0 0 auto; }
 
+    @media (max-width:790px) {
+      .story-teaser-grid { grid-template-columns:1fr; gap:20px; }
+      .story-teaser-visual .history-symbol { width:min(48%,210px); }
+      .story-teaser-visual .story-aside-note { max-width:360px; margin-top:12px; }
+    }
     @media (max-width:790px) {
       .story-layout { grid-template-columns:1fr; gap:25px; }
       .story-aside .history-symbol { width:min(55%,220px); }
@@ -520,32 +536,19 @@
     </section>
 
 
-    <section class="history-section section" id="historia" aria-labelledby="history-title">
+    <section class="history-section section history-teaser-section" id="historia" aria-labelledby="history-title">
       <div class="container">
-        <div class="story-intro reveal">
-          <p class="section-kicker">Nossa história · Nosso propósito</p>
-          <h2 id="history-title">Legado que Ensina</h2>
-          <p class="lead" style="margin:0 auto">Uma sementinha do bem, cultivada com afeto, conhecimento e respeito por cada forma de aprender.</p>
-        </div>
-        <div class="story-layout">
-          <aside class="story-aside reveal" aria-label="Símbolo do Legado que Ensina">
+        <div class="story-teaser-grid">
+          <div class="story-teaser-visual reveal" aria-label="Símbolo do Legado que Ensina">
             <div class="history-symbol" aria-hidden="true"><span>LE</span><i></i></div>
-            <p class="story-aside-note">Cada pessoa é uma semente única, com seu próprio tempo, suas potencialidades e sua maneira de florescer.</p>
-          </aside>
-          <div class="story-copy reveal">
-            <p>Mudar o mundo começa com o ato singelo de <strong>plantar uma sementinha do bem</strong>. A iniciativa <strong>Legado que Ensina</strong> nasceu exatamente assim: como um grãozinho de amor depositado na terra, regado pelo desejo profundo de ver vidas florescerem. O próprio nome deste projeto é uma <strong>homenagem tripla e afetuosa</strong>: a cada aluno que, com seu jeito único de ser, deixou uma marca eterna em nosso caminhar; aos professores mentores que com generosidade nos ensinaram a cultivar os primeiros saberes; e, de forma muito especial, aos educadores que trazem na bagagem o amor pelo ensino e caminham lado a lado conosco nessa jornada.</p>
-            <p>A vivência diária com o aprendizado nos trouxe uma certeza que transborda o coração: <strong>cada ser humano é uma semente única</strong>. Algumas precisam de mais tempo, outras de um solo mais fofo, mas todas, sem exceção, trazem em si o potencial infinito de dar frutos. Foi esse respeito absoluto ao ritmo da vida que nos guiou até a <strong>Psicopedagogia</strong> — uma ciência que, para nós, funciona como o olhar atento do jardineiro, que une o conhecimento técnico à sensibilidade do afeto para entender e acolher as diferentes formas de aprender.</p>
-            <p>E foi para fazer essas sementes brotarem que um sonho maior ganhou forma. Para garantir que cada aluno receba o cuidado exato que necessita e, ao mesmo tempo, para <strong>criar um espaço onde a prática pedagógica possa se fortalecer e se expandir, nós criamos o nosso próprio sistema</strong>.</p>
-            <p>Esse sistema não é uma ferramenta fria ou tecnológica; ele é a terra fértil onde o nosso propósito cria raízes. Ele foi desenvolvido com muito carinho para ser o meio pelo qual <strong>atendemos e acompanhamos cada aluno em sua singularidade</strong>, e a ferramenta que <strong>apoia e potencializa o trabalho dos professores, valorizando sua caminhada e abrindo novos caminhos para exercerem sua vocação</strong>.</p>
-            <p>Hoje, o <strong>Legado que Ensina</strong> é um ciclo vivo de esperança. Acreditamos que a educação só se transforma quando cuidamos de quem ensina e de quem aprende. Ao oferecermos a ferramenta certa para o professor caminhar com segurança e o acolhimento necessário para o aluno evoluir, espalhamos juntos um legado de bem que vai atravessar gerações.</p>
+            <p class="story-aside-note">Cada pessoa tem seu próprio tempo e sua própria maneira de florescer.</p>
           </div>
-        </div>
-        <div class="cultivamos reveal">
-          <div class="cultivamos-heading"><p class="section-kicker">🌱 O que cultivamos aqui</p><h3>Princípios que orientam cada passo</h3></div>
-          <div class="cultivamos-grid">
-            <article class="cultivo-card"><span class="cultivo-number">01</span><h4>Olhar de Afeto</h4><p>Enxergar cada aluno em sua essência, regando seu potencial e respeitando o seu próprio tempo de brotar.</p></article>
-            <article class="cultivo-card"><span class="cultivo-number">02</span><h4>Valorização da Caminhada</h4><p>Ser o espaço de acolhimento onde professores encontram as ferramentas ideais para exercer a sua vocação com autonomia e propósito.</p></article>
-            <article class="cultivo-card"><span class="cultivo-number">03</span><h4>Ciência com Sensibilidade</h4><p>Usar a psicopedagogia e o nosso sistema para criar pontes humanas, provando que o verdadeiro aprendizado nasce do cuidado e da dedicação.</p></article>
+          <div class="story-teaser-copy reveal">
+            <p class="section-kicker">Nossa história · Nosso propósito</p>
+            <h2 id="history-title">Uma semente de cuidado que cresceu para transformar a educação.</h2>
+            <p>O Legado que Ensina nasceu do desejo de ver vidas florescerem por meio da educação, respeitando a singularidade de cada aluno e valorizando quem ensina.</p>
+            <p>Unimos o olhar atento da Psicopedagogia a ferramentas que apoiam professores e educadores, porque acreditamos que a aprendizagem se fortalece quando há acolhimento, conhecimento e cuidado.</p>
+            <a class="story-more-link" href="historia.html">Leia nossa história completa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
       </div>
