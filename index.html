@@ -1,181 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legado que Ensina</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: "DM Sans", sans-serif;
-    background: #faf8f4;
-    color: #0e2034;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 40px;
-}
-
-.wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    max-width: 1100px;
-    width: 100%;
-    align-items: center;
-}
-
-.col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 40px 50px;
-    gap: 22px;
-    min-height: 420px;
-    justify-content: center;
-}
-
-.col:first-child {
-    border-right: 1px solid rgba(14,32,52,.1);
-}
-
-.logo {
-    display: block;
-    height: auto;
-    max-width: 260px;
-    width: 100%;
-}
-
-.label {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .38em;
-    text-transform: uppercase;
-    color: #2d7a6b;
-}
-
-.title {
-    font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(36px, 4vw, 52px);
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -.01em;
-    color: #0e2034;
-}
-
-.title em {
-    font-style: italic;
-    color: #2d7a6b;
-}
-
-.text {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.85;
-    color: #5c6a76;
-    max-width: 340px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 8px;
-    padding: 15px 32px;
-    background: #2d7a6b;
-    color: white;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: .24em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background .3s ease;
-}
-
-.btn:hover {
-    background: #0e2034;
-}
-
-@media (max-width: 780px) {
-    body { padding: 40px 24px; }
-    .wrap {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-    .col {
-        padding: 60px 20px;
-        min-height: auto;
-        border-right: none !important;
-    }
-    .col:first-child {
-        border-bottom: 1px solid rgba(14,32,52,.1);
-    }
-    .logo { max-width: 220px; }
-}
-</style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10283f">
+<meta name="description" content="Um projeto que une acompanhamento psicopedagógico humanizado e tecnologia para apoiar quem aprende e quem ensina.">
+<title>Legado que Ensina | Aprender hoje, transformar sempre | Legado que Ensina</title>
+<link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-
-<div class="wrap">
-
-    <!-- LADO ESQUERDO — PSICOPEDAGOGIA -->
-    <div class="col">
-
-        <img
-            class="logo"
-            src="https://i.imgur.com/ZhoF1qy.png"
-            alt="Legado que Ensina"
-        >
-
-        <span class="label">Atendimento Psicopedagógico</span>
-
-        <h1 class="title">Em <em>breve.</em></h1>
-
-        <p class="text">
-            Estamos preparando um novo espaço  para
-            acolher famílias, crianças e adolescentes.
-        </p>
-
+<body><a class="skip" href="#conteudo">Pular para o conteúdo</a><div class="topline"></div>
+<header class="site-header"><div class="header-inner"><a class="brand" href="index.html" aria-label="Legado que Ensina — página inicial"><span class="brand-mark">LQ</span><span class="brand-copy"><strong>Legado que Ensina</strong><small>Aprender • Transformar</small></span></a><button class="mobile-toggle" aria-label="Abrir menu" aria-expanded="false">☰ Menu</button><nav class="nav" aria-label="Navegação principal">
+    <div class="nav-group"><a class="nav-link" href="psicopedagogia/index.html">Psicopedagogia <span class="chev">▾</span></a>
+      <div class="dropdown">
+        <a href="psicopedagogia/index.html">Visão geral</a>
+        <div class="subgroup"><a href="psicopedagogia/servicos/index.html">Serviços</a><div class="submenu">
+          <a href="psicopedagogia/servicos/avaliacao.html">Avaliação psicopedagógica</a>
+          <a href="psicopedagogia/servicos/intervencao.html">Intervenção psicopedagógica</a>
+          <a href="psicopedagogia/servicos/alfabetizacao.html">Alfabetização e escrita</a>
+          <a href="psicopedagogia/servicos/orientacao-familiar.html">Orientação familiar</a>
+        </div></div>
+        <div class="subgroup"><a href="psicopedagogia/modalidades/index.html">Modalidades</a><div class="submenu">
+          <a href="psicopedagogia/modalidades/presencial.html">Presencial</a>
+          <a href="psicopedagogia/modalidades/online.html">Online</a>
+          <a href="psicopedagogia/modalidades/domiciliar.html">Domiciliar</a>
+        </div></div>
+        <a href="psicopedagogia/publico/index.html">Público atendido</a>
+        <a href="psicopedagogia/publico/familias.html">Orientações para famílias</a>
+      </div>
     </div>
-
-    <!-- LADO DIREITO — SISTEMA -->
-    <div class="col">
-
-        <img
-            class="logo"
-            src="https://i.imgur.com/wpdRGvm.png"
-            alt="Sistema Legado que Ensina"
-        >
-
-        <span class="label">Para psicopedagogos</span>
-
-        <h2 class="title">Sistema para <em>psicopedagogos.</em></h2>
-
-        <p class="text">
-            Plataforma digital para organizar atendimentos
-            e acompanhar evoluções clínicas.
-        </p>
-
-        <a
-            href="https://sistema.legadoqueensina.com.br"
-            class="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <i class="fas fa-arrow-right"></i>
-            Acessar Sistema
-        </a>
-
+    <div class="nav-group"><a class="nav-link" href="sistema/index.html">Sistema <span class="chev">▾</span></a>
+      <div class="dropdown">
+        <a href="sistema/index.html">Visão geral</a>
+        <div class="subgroup"><a href="sistema/recursos/index.html">Recursos</a><div class="submenu">
+          <a href="sistema/recursos/estudantes.html">Estudantes e prontuários</a>
+          <a href="sistema/recursos/agenda.html">Agenda e atendimentos</a>
+          <a href="sistema/recursos/relatorios.html">Relatórios e evolução</a>
+          <a href="sistema/recursos/financeiro.html">Gestão financeira</a>
+        </div></div>
+        <div class="subgroup"><a href="sistema/seguranca/index.html">Segurança e privacidade</a><div class="submenu">
+          <a href="sistema/seguranca/privacidade.html">Privacidade e dados</a>
+          <a href="sistema/seguranca/boas-praticas.html">Boas práticas</a>
+        </div></div>
+        <div class="subgroup"><a href="sistema/planos/index.html">Planos e acesso</a><div class="submenu">
+          <a href="sistema/planos/individual.html">Individual</a>
+          <a href="sistema/planos/equipe.html">Equipe</a>
+          <a href="sistema/planos/condicoes.html">Condições comerciais</a>
+        </div></div>
+        <a href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener noreferrer">Entrar na plataforma ↗</a>
+      </div>
     </div>
-
-</div>
-
-</body>
-</html>
+    <div class="nav-group"><a class="nav-link" href="conteudos/index.html">Conteúdos <span class="chev">▾</span></a>
+      <div class="dropdown"><a href="conteudos/index.html">Todos os conteúdos</a>
+      <div class="subgroup"><a href="conteudos/index.html">Aprendizagem</a><div class="submenu">
+        <a href="conteudos/aprendizagem/alfabetizacao.html">Alfabetização</a>
+        <a href="conteudos/aprendizagem/rotina-de-estudos.html">Rotina de estudos</a>
+        <a href="conteudos/aprendizagem/dificuldades.html">Dificuldades de aprendizagem</a>
+      </div></div></div>
+    </div>
+    <a class="nav-link" href="sobre/index.html">Sobre</a>
+    <a class="nav-link" href="contato/index.html">Contato</a>
+    </nav><a class="header-cta" href="contato/index.html">Fale conosco ↗</a></div></header>
+<main id="conteudo"><section class="hero"><div><div class="kicker">EDUCAÇÃO • DESENVOLVIMENTO • TECNOLOGIA</div><h1>Cada aprendizagem abre <em>novos caminhos.</em></h1><p class="hero-intro">Um projeto que une acompanhamento psicopedagógico humanizado e tecnologia para apoiar quem aprende e quem ensina.</p><div class="actions"><a class="btn" href="psicopedagogia/index.html">Conheça o acompanhamento <span>→</span></a><a class="btn secondary" href="sistema/index.html">Conheça o sistema</a></div></div><div class="hero-visual"><div class="visual-panel"><div class="visual-top"><span class="visual-chip">Legado que Ensina</span><span class="visual-number">01 — 02</span></div><div class="visual-quote">Aprender hoje.<br><span>Transformar</span><br>sempre.</div><div class="visual-bottom"><span>EDUCAÇÃO & DESENVOLVIMENTO</span><span>DESDE A ESCUTA</span></div><div class="visual-orb"></div></div></div></section><section class="section white"><div class="section-inner"><div class="section-head"><div><div class="kicker">EXPLORE</div><h2>Duas frentes. Um propósito.</h2></div><p>Conheça as áreas do Legado que Ensina e encontre as informações mais relevantes para sua necessidade.</p></div><div class="card-grid"><article class="feature-card"><span class="card-index">001 / EM FOCO</span><h3>Acompanhamento psicopedagógico</h3><p>Um olhar individual para compreender necessidades, desenvolver habilidades e construir caminhos possíveis.</p><a class="card-link" href="psicopedagogia/index.html">Descubra o atendimento <span>→</span></a></article><article class="feature-card"><span class="card-index">002 / EM FOCO</span><h3>Sistema para psicopedagogos</h3><p>Organização de atendimentos, registros e acompanhamento da evolução em uma plataforma digital.</p><a class="card-link" href="sistema/index.html">Conheça a plataforma <span>→</span></a></article><article class="feature-card"><span class="card-index">003 / EM FOCO</span><h3>Conteúdos para aprender</h3><p>Informações e orientações para famílias e profissionais sobre aprendizagem e desenvolvimento.</p><a class="card-link" href="conteudos/index.html">Explorar conteúdos <span>→</span></a></article></div></div></section><section class="band"><div class="band-inner"><div><h2>Vamos construir o próximo passo juntos?</h2><p>Fale com o Legado que Ensina para esclarecer dúvidas e conhecer as possibilidades.</p></div><a class="btn" href="contato/index.html">Entre em contato →</a></div></section></main><footer class="site-footer"><div class="footer-inner"><div class="footer-top"><div><div class="footer-brand">Legado que Ensina<span>Aprender hoje, transformar sempre</span></div><p class="footer-copy">Acompanhamento psicopedagógico e tecnologia para apoiar quem aprende e quem ensina.</p></div><div class="footer-col"><h3>Psicopedagogia</h3><a href="psicopedagogia/index.html">Visão geral</a><a href="psicopedagogia/servicos/index.html">Serviços</a><a href="psicopedagogia/modalidades/index.html">Modalidades</a><a href="psicopedagogia/publico/index.html">Público atendido</a></div><div class="footer-col"><h3>Sistema</h3><a href="sistema/index.html">Visão geral</a><a href="sistema/recursos/index.html">Recursos</a><a href="sistema/seguranca/index.html">Segurança e privacidade</a><a href="sistema/planos/index.html">Planos e acesso</a></div><div class="footer-col"><h3>Institucional</h3><a href="sobre/index.html">Sobre</a><a href="conteudos/index.html">Conteúdos</a><a href="contato/index.html">Contato</a><a href="mailto:contact@legadoqueensina.com.br">E-mail</a></div></div><div class="footer-bottom"><span>© 2026 Legado que Ensina. Todos os direitos reservados.</span><span>Conteúdo informativo. Serviços e recursos sujeitos à confirmação.</span></div></div></footer><script src="assets/site.js"></script></body></html>
