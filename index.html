@@ -4,824 +4,705 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#123d70">
+<meta name="description" content="O Legado que Ensina conecta famílias a profissionais da Psicopedagogia e oferece um sistema de gestão para psicopedagogos.">
 <title>Legado que Ensina - Aprender hoje, transformar sempre!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#123d70;
+  --navy-deep:#0b2d53;
+  --blue:#245da0;
+  --blue-mid:#3f76b4;
+  --blue-pale:#eaf1f8;
+  --gold:#f6ad27;
+  --gold-pale:#fff4df;
+  --teal:#2c7d82;
+  --ink:#1e2e41;
+  --muted:#637184;
+  --line:#e3e9f0;
+  --paper:#ffffff;
+  --canvas:#f6f8fb;
+  --shadow:0 18px 55px rgba(16,48,82,.10);
+  --shadow-sm:0 8px 24px rgba(16,48,82,.08);
+  --radius:22px;
+  --max:1220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:106px}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Poppins',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
+.section{padding:88px 0}
+.section-soft{background:var(--canvas)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--blue);font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:700}
+.eyebrow:before{content:"";width:24px;height:2px;background:var(--gold);border-radius:3px}
+.section-heading{max-width:700px;margin-bottom:38px}
+.section-heading h2{margin:12px 0;color:var(--navy-deep);font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.04em;font-weight:700}
+.section-heading p{margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+.section-heading.center{text-align:center;margin-inline:auto}
+.section-heading.center .eyebrow:before{display:none}
+.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 21px;border:1px solid transparent;border-radius:999px;font-size:12px;font-weight:700;transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 9px 22px rgba(18,61,112,.18)}
+.btn-primary:hover{background:var(--navy-deep)}
+.btn-gold{background:var(--gold);color:var(--navy-deep);box-shadow:0 9px 22px rgba(246,173,39,.2)}
+.btn-gold:hover{background:#f3a416}
+.btn-outline{border-color:#b8c9dc;color:var(--navy);background:#fff}
+.btn-outline:hover{background:var(--blue-pale);border-color:#8eabc9}
+.btn-white{background:#fff;color:var(--navy)}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.topbar{height:36px;background:var(--navy-deep);color:#eaf1f8;font-size:10px}
+.topbar .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.topbar-note,.topbar-contact{display:flex;align-items:center;gap:20px}
+.topbar-note span,.topbar-contact a{display:inline-flex;align-items:center;gap:8px}
+.topbar-dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+.header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(18,61,112,.08)}
+.nav{height:82px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;min-width:255px}
+.brand img{width:58px;height:58px;object-fit:contain;object-position:center}
+.brand-copy strong{display:block;color:var(--navy);font-size:17px;line-height:1.15;font-weight:700;letter-spacing:-.035em}
+.brand-copy small{display:block;margin-top:4px;color:#718096;font-size:9px;font-weight:500;letter-spacing:.035em}
+.navlinks{display:flex;align-items:center;gap:24px;margin-left:auto}
+.navlinks a{position:relative;padding:10px 0;color:#43536a;font-size:11px;font-weight:600;white-space:nowrap}
+.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:2px;background:var(--gold);transition:right .2s ease}
+.navlinks a:hover{color:var(--navy)}.navlinks a:hover:after{right:0}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.nav-actions .btn{min-height:40px;padding:9px 14px;font-size:10px;white-space:nowrap}
+.menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--navy)}
+.menu-toggle svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(108deg,#f5f8fc 0%,#edf3f9 54%,#fff7e9 100%)}
+.hero:before{content:"";position:absolute;width:560px;height:560px;right:-210px;top:-290px;border:1px solid rgba(36,93,160,.10);border-radius:50%;box-shadow:0 0 0 42px rgba(36,93,160,.025),0 0 0 84px rgba(36,93,160,.02)}
+.hero:after{content:"";position:absolute;width:310px;height:310px;left:-200px;bottom:-220px;border-radius:50%;background:rgba(246,173,39,.10)}
+.hero-inner{position:relative;z-index:1}
+.slides{position:relative;min-height:560px}
+.slide{display:none;min-height:560px;align-items:center;padding:55px 0 82px}
+.slide.active{display:flex;animation:slideIn .5s ease both}
+@keyframes slideIn{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero-grid{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.hero-copy{max-width:570px}
+.hero-label{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid #cddbeb;border-radius:999px;background:rgba(255,255,255,.82);color:var(--navy);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+.hero-label i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero h1{margin:20px 0 18px;color:var(--navy-deep);font-size:clamp(42px,5vw,64px);line-height:1.04;letter-spacing:-.055em;font-weight:700}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero-copy>p{max-width:520px;margin:0;color:#5b6a7d;font-size:14px;line-height:1.9}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:27px}
+.hero-assurance{display:flex;flex-wrap:wrap;gap:18px;margin-top:26px;color:#53647a;font-size:10px;font-weight:600}
+.hero-assurance span{display:flex;align-items:center;gap:8px}
+.hero-assurance b{display:grid;place-items:center;width:21px;height:21px;border-radius:50%;background:#fff0d3;color:#a36b06;font-size:11px}
+.hero-visual{position:relative;min-width:0}
+.hero-photo{width:100%;height:405px;object-fit:cover;object-position:center 42%;border-radius:30px 110px 30px 30px;box-shadow:var(--shadow)}
+.photo-caption{position:absolute;left:-22px;bottom:22px;max-width:245px;padding:15px 18px;border:1px solid #fff;border-radius:14px;background:#fffffff2;box-shadow:var(--shadow-sm)}
+.photo-caption strong{display:block;color:var(--navy);font-size:12px}
+.photo-caption span{display:block;margin-top:3px;color:var(--muted);font-size:9px;line-height:1.6}
+.hero-system{position:relative;padding:21px;border:1px solid #d9e3ef;border-radius:24px;background:#fff;box-shadow:var(--shadow);transform:rotate(.5deg)}
+.system-top{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--line);color:var(--navy);font-size:11px;font-weight:700}
+.system-pill{padding:5px 9px;border-radius:30px;background:#e9f3eb;color:#3e7a58;font-size:8px;font-weight:700}
+.system-body{display:grid;grid-template-columns:100px 1fr;gap:13px;padding-top:14px}
+.system-side{padding:8px;border-radius:12px;background:#f2f5f9}
+.system-side span{display:block;padding:8px 6px;border-radius:7px;color:#738094;font-size:8px;font-weight:600}
+.system-side span:first-child{background:#e1eaf5;color:var(--navy)}
+.system-main h3{margin:1px 0 4px;color:var(--navy);font-size:14px}
+.system-main>small{color:#8894a3;font-size:8px}
+.system-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.system-kpis div{padding:11px 9px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.system-kpis small{display:block;color:#8491a1;font-size:7px}
+.system-kpis strong{display:block;margin-top:5px;color:var(--navy);font-size:17px}
+.system-schedule{margin-top:10px;padding:12px;border:1px solid var(--line);border-radius:11px}
+.system-schedule strong{display:block;margin-bottom:8px;color:var(--navy);font-size:9px}
+.fake-row{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-top:1px solid #eef2f6;color:#6c7b8e;font-size:8px}
+.fake-row b{color:#3e7a58;font-size:8px}
+.call-visual{position:relative;overflow:hidden;border-radius:28px;background:#dfe8f0;box-shadow:var(--shadow)}
+.call-visual img{width:100%;height:395px;object-fit:cover}
+.call-overlay{position:absolute;left:16px;right:16px;bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 15px;border:1px solid #ffffff80;border-radius:14px;background:rgba(11,45,83,.86);color:white;backdrop-filter:blur(8px)}
+.call-overlay strong{font-size:10px}.call-overlay span{font-size:8px;color:#dbe6f1}
+.slide-controls{position:absolute;left:0;bottom:25px;display:flex;align-items:center;gap:8px;z-index:3}
+.slide-dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#bdcbd9;transition:width .2s ease,background .2s ease}
+.slide-dot.active{width:26px;border-radius:10px;background:var(--navy)}
+.slide-arrow{display:grid;place-items:center;width:32px;height:32px;border:1px solid #cbd8e5;border-radius:50%;background:#fff;color:var(--navy)}
+.slide-arrow svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+/* shared purpose */
+.purpose{padding:24px 0 86px}
+.purpose-head{display:flex;align-items:end;justify-content:space-between;gap:22px;margin-bottom:24px}
+.purpose-head h2{margin:8px 0 0;color:var(--navy-deep);font-size:clamp(24px,3vw,34px);line-height:1.15;letter-spacing:-.04em}
+.purpose-head p{max-width:420px;margin:0;color:var(--muted);font-size:11px;line-height:1.8}
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.audience-card{position:relative;overflow:hidden;min-height:260px;padding:27px 30px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:var(--shadow-sm)}
+.audience-card.family{background:linear-gradient(130deg,#f0f5fb,#fff 76%)}
+.audience-card.pro{background:linear-gradient(130deg,#fff8e9,#fff 76%)}
+.audience-card:after{content:"";position:absolute;right:-75px;bottom:-118px;width:220px;height:220px;border:1px solid rgba(18,61,112,.10);border-radius:50%;box-shadow:0 0 0 24px rgba(18,61,112,.025),0 0 0 48px rgba(18,61,112,.02)}
+.audience-top{display:flex;align-items:center;gap:13px}
+.audience-index{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:#dce8f4;color:var(--navy);font-size:11px;font-weight:700}
+.pro .audience-index{background:#ffedc9;color:#8b5b07}
+.audience-card h3{margin:18px 0 8px;color:var(--navy-deep);font-size:23px;line-height:1.2;letter-spacing:-.035em}
+.audience-card p{max-width:500px;margin:0;color:#5e6d80;font-size:11px;line-height:1.8}
+.audience-points{display:flex;flex-wrap:wrap;gap:8px 16px;margin:17px 0 20px;color:#526278;font-size:9px;font-weight:600}
+.audience-points span:before{content:"";display:inline-block;width:5px;height:5px;margin:0 7px 1px 0;border-radius:50%;background:var(--gold)}
+.audience-card .btn{position:relative;z-index:1;min-height:40px;padding:10px 16px;font-size:10px}
+/* family flow */
+.family-section{background:var(--canvas)}
+.family-layout{display:grid;grid-template-columns:1fr .95fr;gap:58px;align-items:start}
+.family-copy h2{margin:12px 0 12px;color:var(--navy-deep);font-size:clamp(32px,4vw,46px);line-height:1.08;letter-spacing:-.045em}
+.family-copy>p{max-width:570px;margin:0;color:var(--muted);font-size:13px;line-height:1.9}
+.steps{display:grid;gap:0;margin-top:28px}
+.step{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid #e2e8ef}
+.step:last-child{border-bottom:0}
+.step-number{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;background:#dfeaf5;color:var(--navy);font-size:11px;font-weight:700}
+.step h3{margin:0 0 4px;color:var(--navy);font-size:12px}
+.step p{margin:0;color:var(--muted);font-size:10px;line-height:1.7}
+.request-card{padding:25px;border:1px solid #dfe7f0;border-radius:20px;background:#fff;box-shadow:var(--shadow-sm)}
+.request-card h3{margin:0 0 5px;color:var(--navy);font-size:18px;letter-spacing:-.03em}
+.request-card>p{margin:0 0 18px;color:var(--muted);font-size:10px;line-height:1.7}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{color:#43556b;font-size:9px;font-weight:700}
+.field input,.field select,.field textarea{width:100%;min-width:0;min-height:41px;padding:10px 11px;border:1px solid #dce4ed;border-radius:9px;outline:none;background:white;color:var(--ink);font-size:10px}
+.field textarea{min-height:84px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#7294b8;box-shadow:0 0 0 3px rgba(36,93,160,.09)}
+.request-card .btn{width:100%;margin-top:14px}
+.privacy-note{margin:10px 0 0;color:#8792a0;font-size:8px;line-height:1.6}
+/* network */
+.network-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.network-copy h2{margin:12px 0;color:var(--navy-deep);font-size:clamp(32px,4vw,44px);line-height:1.08;letter-spacing:-.045em}
+.network-copy p{color:var(--muted);font-size:12px;line-height:1.9}
+.region-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:20px 0 22px}
+.region-list span{display:flex;align-items:center;gap:9px;color:#4c5e73;font-size:10px;font-weight:600}
+.region-list i{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:var(--blue-pale);color:var(--navy);font-size:9px;font-style:normal;font-weight:700}
+.map-card{position:relative;min-height:420px;padding:24px;border:1px solid #dfe7f0;border-radius:24px;background:linear-gradient(145deg,#f7fafd,#fff 58%,#fff8e9);box-shadow:var(--shadow-sm)}
+.map-title{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--navy);font-size:11px;font-weight:700}
+.map-title small{color:#8a96a5;font-size:8px;font-weight:500}
+.map-art{position:relative;width:min(100%,510px);height:330px;margin:15px auto 0}
+.map-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.66;filter:grayscale(1) sepia(.13) hue-rotate(175deg) saturate(1.3)}
+.map-pin{position:absolute;display:grid;place-items:center;width:52px;height:52px;border:3px solid #fff;border-radius:50%;background:#fff;box-shadow:0 5px 17px rgba(14,52,93,.17)}
+.map-pin img{width:100%;height:100%;object-fit:contain;border-radius:50%;padding:3px}
+.pin-n{left:49%;top:10%}.pin-ne{left:72%;top:35%}.pin-co{left:49%;top:42%}.pin-se{left:61%;top:67%}.pin-s{left:48%;top:83%}
+.map-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:7px}
+.map-legend span{padding:6px 9px;border:1px solid #e0e7ef;border-radius:999px;background:#fff;color:#68778a;font-size:8px;font-weight:600}
+/* professional system */
+.professional{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+.professional:before{content:"";position:absolute;top:-250px;right:-100px;width:500px;height:500px;border:1px solid rgba(255,255,255,.09);border-radius:50%;box-shadow:0 0 0 45px rgba(255,255,255,.025),0 0 0 90px rgba(255,255,255,.018)}
+.prof-layout{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.prof-copy h2{margin:12px 0;color:white;font-size:clamp(32px,4vw,45px);line-height:1.08;letter-spacing:-.045em}
+.prof-copy>p{max-width:540px;color:#d7e2ed;font-size:12px;line-height:1.9}
+.prof-features{display:grid;grid-template-columns:1fr 1fr;gap:15px 20px;margin:25px 0 27px}
+.prof-feature{display:flex;align-items:flex-start;gap:10px;color:#f0f5fa;font-size:10px;font-weight:600;line-height:1.55}
+.prof-feature b{display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.12);color:#ffd889;font-size:10px}
+.prof-actions{display:flex;flex-wrap:wrap;gap:10px}
+.prof-preview{padding:18px;border:1px solid rgba(255,255,255,.17);border-radius:22px;background:#f9fbfd;color:var(--ink);box-shadow:0 28px 70px rgba(0,0,0,.23);transform:rotate(.4deg)}
+.preview-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:13px;border-bottom:1px solid var(--line)}
+.preview-brand{display:flex;align-items:center;gap:8px;color:var(--navy);font-size:10px;font-weight:700}
+.preview-brand img{width:27px;height:27px;object-fit:contain}
+.preview-head small{color:#8190a1;font-size:8px}
+.preview-content{display:grid;grid-template-columns:88px 1fr;gap:12px;padding-top:13px}
+.preview-nav{padding:7px;border-radius:10px;background:#edf2f7}
+.preview-nav span{display:block;padding:7px 6px;border-radius:6px;color:#738196;font-size:7px;font-weight:600}
+.preview-nav span:first-child{background:#dce7f2;color:var(--navy)}
+.preview-main h3{margin:2px 0;color:var(--navy);font-size:13px}
+.preview-main>small{color:#8b98a7;font-size:7px}
+.preview-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.preview-kpis div{padding:10px 8px;border:1px solid var(--line);border-radius:8px;background:white}
+.preview-kpis small{display:block;color:#8693a2;font-size:6px}
+.preview-kpis strong{display:block;margin-top:4px;color:var(--navy);font-size:14px}
+.preview-table{margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:9px;background:white}
+.preview-table strong{display:block;margin-bottom:6px;color:var(--navy);font-size:8px}
+.preview-row{display:flex;justify-content:space-between;gap:8px;padding:6px 0;border-top:1px solid #edf1f5;color:#748296;font-size:7px}
+.preview-row b{color:#2f7a5b}
+/* online support */
+.online-layout{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.online-photo-wrap{position:relative}
+.online-photo{width:100%;height:365px;object-fit:cover;border-radius:22px 70px 22px 22px;box-shadow:var(--shadow)}
+.online-badge{position:absolute;right:-18px;bottom:20px;padding:14px 17px;border-radius:13px;background:#fff;box-shadow:var(--shadow-sm);color:var(--navy);font-size:10px;font-weight:700}
+.online-badge small{display:block;margin-top:3px;color:var(--muted);font-size:8px;font-weight:500}
+.online-copy h2{margin:12px 0;color:var(--navy-deep);font-size:clamp(30px,4vw,42px);line-height:1.1;letter-spacing:-.04em}
+.online-copy p{color:var(--muted);font-size:12px;line-height:1.9}
+.online-points{display:grid;gap:10px;margin:22px 0}
+.online-points div{display:flex;align-items:flex-start;gap:10px;color:#516176;font-size:10px;font-weight:600}
+.online-points i{display:grid;place-items:center;flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--gold-pale);color:#a26b09;font-size:9px;font-style:normal}
+/* FAQ and contact */
+.faq-layout{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px}
+.faq-intro h2{margin:12px 0;color:var(--navy-deep);font-size:clamp(29px,3.5vw,39px);line-height:1.12;letter-spacing:-.04em}
+.faq-intro p{color:var(--muted);font-size:11px;line-height:1.8}
+.faq-list{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{display:flex;width:100%;align-items:center;justify-content:space-between;gap:14px;padding:17px 0;border:0;background:transparent;color:var(--navy);text-align:left;font-size:11px;font-weight:700}
+.faq-q span:last-child{display:grid;place-items:center;width:25px;height:25px;border:1px solid var(--line);border-radius:50%;color:var(--blue);font-size:15px;transition:transform .2s ease}
+.faq-a{display:none;padding:0 40px 16px 0;color:var(--muted);font-size:10px;line-height:1.8}
+.faq-item.open .faq-a{display:block}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+.contact-band{padding:34px 0;background:var(--gold-pale)}
+.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.contact-inner h2{margin:0 0 5px;color:var(--navy-deep);font-size:clamp(22px,3vw,30px);letter-spacing:-.035em}
+.contact-inner p{margin:0;color:#6d6b66;font-size:10px;line-height:1.7}
+.footer{padding:48px 0 0;background:#092747;color:#e9f0f7}
+.footer-grid{display:grid;grid-template-columns:1.3fr .7fr .9fr;gap:45px;padding-bottom:32px}
+.footer-brand{display:flex;align-items:center;gap:11px}
+.footer-brand img{width:54px;height:54px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}
+.footer-brand strong{display:block;color:#fff;font-size:15px}
+.footer-brand small{display:block;color:#b6c8da;font-size:8px}
+.footer-desc{max-width:390px;margin:15px 0 0;color:#c0d0df;font-size:10px;line-height:1.8}
+.footer-col h4{margin:3px 0 13px;color:#fff;font-size:10px}
+.footer-col a,.footer-col p{display:block;margin:8px 0;color:#c3d1df;font-size:9px}
+.footer-col a:hover{color:#ffd889}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.13)}
+.footer-bottom .container{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#afc0d0;font-size:8px}
+.toast{position:fixed;right:18px;bottom:18px;z-index:80;max-width:min(350px,calc(100vw - 36px));padding:13px 16px;border-radius:12px;background:var(--navy-deep);color:#fff;font-size:10px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}
+.toast.show{opacity:1;transform:none}
+@media(max-width:1100px){.navlinks{gap:15px}.brand{min-width:215px}.nav-actions .btn-outline{display:none}.hero-grid{gap:32px}.network-layout,.prof-layout,.online-layout{gap:35px}}
+@media(max-width:860px){.container{width:min(var(--max),calc(100% - 36px))}.section{padding:68px 0}.nav{height:72px}.brand{min-width:0}.brand img{width:50px;height:50px}.brand-copy strong{font-size:15px}.navlinks{display:none;position:absolute;top:72px;left:0;right:0;padding:10px 20px 18px;background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px 2px;border-bottom:1px solid #edf1f5}.navlinks a:after{display:none}.nav-actions{margin-left:auto}.nav-actions .btn-outline{display:none}.nav-actions .btn-primary{min-height:38px;padding:8px 12px}.menu-toggle{display:grid;place-items:center}.hero-grid{grid-template-columns:1fr;gap:28px}.slide,.slides{min-height:unset}.slide{padding:42px 0 82px}.hero-copy{max-width:720px}.hero h1{font-size:clamp(40px,7.5vw,58px)}.hero-visual{max-width:680px;width:100%;margin:auto}.hero-photo{height:360px}.system-preview{max-width:650px}.purpose-head{align-items:flex-start;flex-direction:column}.purpose-head p{max-width:620px}.family-layout,.network-layout,.prof-layout,.online-layout,.faq-layout{grid-template-columns:1fr;gap:32px}.map-card{max-width:700px;width:100%;margin:auto}.prof-preview{max-width:700px;width:100%;margin:auto}.online-photo-wrap{max-width:690px;width:100%;margin:auto}.online-photo{height:340px}.online-badge{right:12px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand-block{grid-column:1/-1}}
+@media(max-width:580px){.container{width:calc(100% - 30px)}.topbar{height:auto;min-height:32px}.topbar .container{min-height:32px;justify-content:center}.topbar-contact{display:none}.topbar-note{font-size:8px}.nav{height:68px;gap:10px}.brand{gap:7px}.brand img{width:43px;height:43px}.brand-copy strong{font-size:13px}.brand-copy small{font-size:7px}.navlinks{top:68px}.nav-actions .btn-primary{display:none}.menu-toggle{width:39px;height:39px}.hero h1{font-size:clamp(37px,10vw,47px)}.hero-copy>p{font-size:12px}.hero-actions{display:grid;grid-template-columns:1fr;gap:8px}.hero-actions .btn{width:100%}.hero-assurance{gap:9px 14px;font-size:8px}.hero-photo{height:270px;border-radius:20px 65px 20px 20px}.photo-caption{left:9px;bottom:10px;max-width:205px;padding:10px 12px}.photo-caption strong{font-size:10px}.photo-caption span{font-size:8px}.slides{min-height:unset}.slide{padding:34px 0 76px}.slide-controls{bottom:20px}.system-body{grid-template-columns:70px 1fr;gap:8px}.system-side span{font-size:6px;padding:7px 4px}.system-kpis{gap:5px}.system-kpis div{padding:8px 6px}.system-kpis strong{font-size:13px}.system-schedule{padding:8px}.purpose{padding:22px 0 58px}.purpose-head h2{font-size:26px}.audience-grid{grid-template-columns:1fr}.audience-card{min-height:0;padding:22px 20px}.audience-card h3{font-size:20px}.audience-card p{font-size:10px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.request-card{padding:19px}.map-card{min-height:350px;padding:15px}.map-art{height:270px}.map-pin{width:42px;height:42px;border-width:2px}.region-list{gap:9px}.region-list span{font-size:9px}.prof-features{grid-template-columns:1fr;gap:11px}.prof-copy h2{font-size:34px}.prof-actions{display:grid}.prof-actions .btn{width:100%}.preview-content{grid-template-columns:68px 1fr;gap:7px}.preview-nav span{font-size:6px;padding:7px 4px}.preview-main h3{font-size:11px}.preview-kpis strong{font-size:11px}.online-photo{height:250px;border-radius:18px 48px 18px 18px}.online-badge{right:8px;bottom:10px;padding:10px 12px}.online-copy h2{font-size:32px}.contact-inner{align-items:flex-start;flex-direction:column}.contact-inner .btn{width:100%}.footer-grid{grid-template-columns:1fr;gap:23px}.footer-brand-block{grid-column:auto}.footer-bottom .container{padding:12px 0;align-items:flex-start;flex-direction:column}.section-heading h2{font-size:31px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Full-screen photographic carousel */
+.hero.hero-full{position:relative;width:100%;height:calc(100svh - 118px);min-height:630px;max-height:900px;overflow:hidden;background:#0b2d53;color:#fff;isolation:isolate}
+.hero-full .slides{position:relative;width:100%;height:100%;min-height:0;overflow:hidden}
+.hero-full .slide{position:absolute;inset:0;display:none;align-items:center;width:100%;height:100%;min-height:0;padding:0;overflow:hidden;isolation:isolate;background:#123d70}
+.hero-full .slide.active{display:flex;animation:heroSlideIn .75s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroSlideIn{from{opacity:.3}to{opacity:1}}
+.hero-full .slide::before{content:"";position:absolute;z-index:-2;inset:-18px;background-image:var(--slide-image);background-size:cover;background-position:center 44%;background-repeat:no-repeat;filter:blur(5px) saturate(1.12) brightness(.86);transform:scale(1.055)}
+.hero-full .slide::after{content:"";position:absolute;z-index:-1;inset:0;background:var(--slide-overlay),linear-gradient(0deg,rgba(5,26,49,.45) 0%,transparent 40%,rgba(5,26,49,.12) 100%)}
+.hero-full .slide-02::before{background-position:58% center}
+.hero-full .slide-03::before{background-position:center 48%}
+.hero-full .slide-04::before{background-position:62% 44%}
+.hero-full .slide-05::before{background-position:center 50%}
+.hero-full .slide-inner{position:relative;z-index:2;display:flex;align-items:center;width:min(1280px,calc(100% - 64px));height:100%;max-width:1280px;margin:0 auto;padding:38px 0 94px}
+.hero-full .slide-copy{width:min(760px,67%);max-width:760px;color:#fff;position:relative;z-index:3}
+.hero-full .hero-kicker{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid rgba(255,255,255,.38);border-radius:999px;background:rgba(255,255,255,.13);color:#fff;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;backdrop-filter:blur(12px)}
+.hero-full .hero-kicker i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(246,173,39,.18)}
+.hero-full .slide-overline{margin:28px 0 10px;color:#f7c861;font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.hero-full h1{max-width:800px;margin:0 0 18px;color:#fff;font-size:clamp(46px,5.65vw,78px);line-height:1.035;font-weight:700;letter-spacing:-.06em;text-shadow:0 3px 28px rgba(0,0,0,.16)}
+.hero-full h1 em{color:#ffc34d;font-style:normal}
+.hero-full .slide-copy>p:not(.slide-overline){max-width:640px;margin:0;color:rgba(255,255,255,.91);font-size:clamp(13px,1.15vw,16px);line-height:1.85;font-weight:400;text-shadow:0 2px 12px rgba(0,0,0,.18)}
+.hero-full .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-full .hero-actions .btn{min-height:50px;padding:13px 22px;font-size:12px}
+.hero-full .btn-primary{background:var(--gold);border-color:var(--gold);color:#173b60;box-shadow:0 12px 30px rgba(0,0,0,.16)}
+.hero-full .btn-primary:hover{background:#ffd16b;border-color:#ffd16b;color:#12345a}
+.hero-full .btn-outline{border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.10);color:#fff;backdrop-filter:blur(8px)}
+.hero-full .btn-outline:hover{background:rgba(255,255,255,.2);border-color:#fff;color:#fff}
+.hero-full .hero-assurance{display:flex;flex-wrap:wrap;gap:12px 23px;margin-top:25px;color:rgba(255,255,255,.88);font-size:10px;font-weight:600}
+.hero-full .hero-assurance span{display:flex;align-items:center;gap:8px}
+.hero-full .hero-assurance b{display:grid;place-items:center;width:25px;height:25px;border:1px solid rgba(255,255,255,.32);border-radius:50%;background:rgba(255,255,255,.12);color:#ffd16b;font-size:8px}
+.hero-full .slide-glass-note{position:absolute;right:4px;bottom:124px;display:grid;gap:7px;width:275px;padding:18px 20px;border:1px solid rgba(255,255,255,.32);border-radius:17px;background:rgba(8,36,65,.34);box-shadow:0 18px 50px rgba(0,0,0,.12);backdrop-filter:blur(16px);color:#fff}
+.hero-full .slide-glass-note span{color:#ffd16b;font-size:8px;font-weight:800;letter-spacing:.16em}
+.hero-full .slide-glass-note strong{font-size:14px;line-height:1.4;letter-spacing:-.02em}
+.hero-full .slide-glass-note small{color:rgba(255,255,255,.78);font-size:9px;line-height:1.6}
+.hero-arrows{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:0 23px;pointer-events:none}
+.hero-full .hero-arrow{display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(7,34,64,.28);color:#fff;backdrop-filter:blur(8px);pointer-events:auto;transition:background .2s,transform .2s}
+.hero-full .hero-arrow:hover{background:rgba(255,255,255,.2);transform:scale(1.06)}
+.hero-full .hero-arrow svg{width:18px;height:18px}
+.hero-bottom{position:absolute;z-index:6;left:50%;bottom:24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:15px;width:min(1280px,calc(100% - 64px));max-width:1280px;transform:translateX(-50%);pointer-events:none}
+.hero-bottom-label{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.72);font-size:8px;font-weight:700;letter-spacing:.13em}
+.hero-bottom-label strong{color:#fff;font-size:12px;letter-spacing:0}
+.hero-bottom-label i{font-style:normal;color:rgba(255,255,255,.45)}
+.hero-bottom-hint{justify-self:end;color:rgba(255,255,255,.66);font-size:8px;font-weight:700;letter-spacing:.12em}
+.hero-full .slide-controls{position:static;display:flex;align-items:center;justify-content:center;gap:9px;pointer-events:auto}
+.hero-full .slide-dot{width:8px;height:8px;border:1px solid rgba(255,255,255,.7);border-radius:50%;background:rgba(255,255,255,.28);transition:width .25s,background .25s,border-color .25s}
+.hero-full .slide-dot.active{width:28px;border-color:var(--gold);border-radius:999px;background:var(--gold)}
+.hero-full .slide-dot:focus-visible,.hero-full .hero-arrow:focus-visible{outline:3px solid #ffd16b;outline-offset:4px}
+@media(max-width:860px){.hero.hero-full{height:calc(100svh - 104px);min-height:650px;max-height:none}.hero-full .slide-inner{width:min(100% - 44px,720px);padding:38px 0 108px}.hero-full .slide-copy{width:min(100%,680px)}.hero-full h1{font-size:clamp(42px,7.4vw,64px)}.hero-full .slide-glass-note{right:0;bottom:108px;width:230px;padding:13px 15px}.hero-bottom{width:calc(100% - 44px);bottom:19px}.hero-bottom-hint{display:none}.hero-bottom{grid-template-columns:auto 1fr auto}.hero-arrows{padding:0 12px}.hero-full .hero-arrow{width:38px;height:38px}}
+@media(max-width:580px){.hero.hero-full{height:calc(100svh - 100px);min-height:690px}.hero-full .slide::before{filter:blur(4px) saturate(1.05) brightness(.78);background-position:61% center}.hero-full .slide::after{background:var(--slide-overlay),linear-gradient(0deg,rgba(5,25,48,.68) 0%,rgba(5,25,48,.08) 80%)}.hero-full .slide-inner{width:calc(100% - 38px);padding:38px 0 122px;align-items:center}.hero-full .slide-copy{width:100%;max-width:none}.hero-full .hero-kicker{font-size:8px;padding:8px 11px}.hero-full .slide-overline{margin:22px 0 8px;font-size:8px}.hero-full h1{max-width:100%;font-size:clamp(37px,10vw,48px);line-height:1.06;margin-bottom:14px}.hero-full .slide-copy>p:not(.slide-overline){font-size:12px;line-height:1.72;max-width:100%}.hero-full .hero-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:21px}.hero-full .hero-actions .btn{width:100%;min-height:46px;padding:11px 14px;font-size:10px}.hero-full .hero-assurance{gap:9px 13px;margin-top:17px;font-size:8px}.hero-full .hero-assurance b{width:21px;height:21px;font-size:7px}.hero-full .slide-glass-note{display:none}.hero-arrows{align-items:flex-end;justify-content:flex-end;gap:7px;bottom:18px;top:auto;padding:0 18px}.hero-full .hero-arrow{width:33px;height:33px}.hero-full .hero-arrow svg{width:14px;height:14px}.hero-bottom{left:18px;right:18px;bottom:22px;width:auto;transform:none;grid-template-columns:auto 1fr;gap:12px}.hero-bottom-label{font-size:7px}.hero-bottom-label strong{font-size:10px}.hero-full .slide-controls{gap:7px}.hero-full .slide-dot{width:7px;height:7px}.hero-full .slide-dot.active{width:21px}}
+@media(max-width:380px){.hero-full h1{font-size:35px}.hero-full .slide-inner{width:calc(100% - 32px)}.hero-full .hero-assurance{font-size:7px}.hero-bottom{left:15px;right:15px}}
+@media(prefers-reduced-motion:reduce){.hero-full .slide.active{animation:none}.hero-full .slide-dot,.hero-full .hero-arrow{transition:none}}
+
+
+/* Mobile/tablet hardening: keep the full-bleed carousel readable and prevent overflow */
+@media (max-width: 860px){
+  html{scroll-padding-top:82px}
+  .container{width:min(100% - 36px,var(--max))}
+  .hero-full .slide-inner{min-width:0}
+  .hero-full .slide-copy{min-width:0}
+  .audience-card,.panel,.map-card,.request-card,.prof-preview,.online-photo-wrap{min-width:0;max-width:100%}
+  .family-layout,.network-layout,.prof-layout,.online-layout,.faq-layout{min-width:0}
+}
+@media (max-width: 600px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  body{font-size:14px}
+  img,svg,video,canvas{max-width:100%}
+  .container{width:calc(100% - 28px);max-width:none}
+  .topbar{height:auto;min-height:32px}
+  .topbar .container{min-height:32px;justify-content:center;padding:5px 0}
+  .topbar-note{max-width:100%;font-size:8px;text-align:center;line-height:1.35}
+  .topbar-contact{display:none}
+  .header{position:sticky;top:0}
+  .nav{height:66px;min-height:66px;gap:8px}
+  .brand{min-width:0;max-width:calc(100% - 52px);flex:1;gap:7px}
+  .brand img{width:42px;height:42px;flex:0 0 42px}
+  .brand-copy{min-width:0}
+  .brand-copy strong{font-size:clamp(12px,3.55vw,14px);line-height:1.12;white-space:normal}
+  .brand-copy small{margin-top:3px;font-size:7px;line-height:1.25;letter-spacing:0}
+  .nav-actions{display:none}
+  .menu-toggle{display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px}
+  .navlinks{position:absolute;top:66px;left:0;right:0;z-index:100;display:none;max-height:calc(100svh - 112px);overflow-y:auto;overscroll-behavior:contain;padding:8px 17px 15px;background:rgba(255,255,255,.985);border:1px solid var(--line);border-top:0;border-radius:0 0 16px 16px;box-shadow:0 18px 35px rgba(15,44,75,.14);flex-direction:column;align-items:stretch;gap:0}
+  .navlinks.open{display:flex}
+  .navlinks a{display:flex;align-items:center;min-height:45px;padding:11px 3px;border-bottom:1px solid #edf1f5;font-size:12px;white-space:normal}
+  .navlinks a:last-child{border-bottom:0}
+  .navlinks a:after{display:none}
+  .hero.hero-full{height:auto;min-height:0;max-height:none}
+  .hero-full .slides{height:max(680px,calc(100svh - 98px));min-height:680px}
+  .hero-full .slide{height:100%;min-height:0}
+  .hero-full .slide::before{inset:-14px;background-size:cover;background-position:66% center;filter:blur(4px) saturate(1.06) brightness(.72);transform:scale(1.045)}
+  .hero-full .slide::after{background:var(--slide-overlay),linear-gradient(180deg,rgba(4,24,47,.30) 0%,rgba(4,24,47,.38) 32%,rgba(4,24,47,.78) 100%)}
+  .hero-full .slide-inner{width:calc(100% - 34px);height:100%;min-height:0;align-items:center;padding:30px 0 105px}
+  .hero-full .slide-copy{width:100%;max-width:100%;padding:0;}
+  .hero-full .hero-kicker{max-width:100%;padding:8px 11px;font-size:8px;letter-spacing:.08em;white-space:normal;line-height:1.35}
+  .hero-full .slide-overline{margin:20px 0 8px;font-size:8px;letter-spacing:.16em;line-height:1.5}
+  .hero-full h1{max-width:100%;margin:0 0 15px;font-size:clamp(34px,9.2vw,46px);line-height:1.08;letter-spacing:-.05em;overflow-wrap:normal;hyphens:auto}
+  .hero-full .slide-copy>p:not(.slide-overline){max-width:100%;font-size:12px;line-height:1.72}
+  .hero-full .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;margin-top:21px}
+  .hero-full .hero-actions .btn{width:100%;min-width:0;min-height:46px;padding:11px 14px;font-size:10px;line-height:1.35;white-space:normal;text-align:center}
+  .hero-full .hero-assurance{display:grid;grid-template-columns:1fr;gap:8px;margin-top:16px;font-size:8px;line-height:1.4}
+  .hero-full .hero-assurance span{min-width:0}
+  .hero-full .hero-assurance b{width:21px;height:21px;flex:0 0 21px;font-size:7px}
+  .hero-full .slide-glass-note{display:none}
+  .hero-arrows{display:none}
+  .hero-full .hero-bottom{left:17px;right:17px;bottom:calc(14px + env(safe-area-inset-bottom));width:auto;max-width:none;transform:none;grid-template-columns:auto minmax(0,1fr);gap:10px}
+  .hero-bottom-label{gap:5px;font-size:7px;white-space:nowrap}
+  .hero-bottom-label strong{font-size:10px}
+  .hero-full .slide-controls{min-width:0;justify-content:center;gap:6px}
+  .hero-full .slide-dot{width:7px;height:7px;flex:0 0 auto}
+  .hero-full .slide-dot.active{width:20px}
+  .section{padding:56px 0}
+  .section-heading{margin-bottom:25px}
+  .section-heading h2{font-size:clamp(27px,7.5vw,34px);line-height:1.14}
+  .section-heading p{font-size:12px;line-height:1.75}
+  .purpose{padding:27px 0 55px}
+  .purpose-head{display:block;margin-bottom:19px}
+  .purpose-head h2{font-size:27px}
+  .purpose-head p{margin-top:10px;font-size:11px;line-height:1.7}
+  .audience-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+  .audience-card{min-height:0;padding:21px 19px;border-radius:17px}
+  .audience-card h3{margin:14px 0 8px;font-size:20px;line-height:1.22}
+  .audience-card p{font-size:11px;line-height:1.7}
+  .audience-points{gap:7px 12px;margin:13px 0 16px;font-size:9px}
+  .audience-card .btn{width:100%;white-space:normal}
+  .family-layout,.network-layout,.prof-layout,.online-layout,.faq-layout{grid-template-columns:minmax(0,1fr);gap:25px}
+  .family-copy h2,.network-copy h2,.prof-copy h2,.online-copy h2{font-size:clamp(29px,8vw,36px);line-height:1.12}
+  .family-copy>p,.network-copy>p,.prof-copy>p,.online-copy>p{font-size:12px;line-height:1.75}
+  .steps{gap:0}
+  .step{grid-template-columns:36px minmax(0,1fr);gap:11px;padding:14px 0}
+  .step-number{width:34px;height:34px}
+  .request-card{width:100%;padding:18px;border-radius:17px}
+  .form-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+  .field,.field.full{grid-column:auto;min-width:0}
+  .field input,.field select,.field textarea{width:100%;min-width:0;min-height:44px;font-size:16px}
+  .field textarea{min-height:100px}
+  .request-card .btn{width:100%}
+  .map-card{width:100%;min-height:0;padding:14px;border-radius:17px}
+  .map-art{width:100%;height:auto;min-height:220px;max-height:290px}
+  .map-pin{width:36px;height:36px}
+  .region-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .region-list span{min-width:0;font-size:9px}
+  .prof-features{grid-template-columns:minmax(0,1fr);gap:9px}
+  .prof-feature{min-width:0;padding:13px}
+  .prof-actions{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+  .prof-actions .btn{width:100%;white-space:normal}
+  .prof-preview{width:100%;padding:12px;transform:none}
+  .preview-content{grid-template-columns:62px minmax(0,1fr);gap:7px}
+  .preview-nav{min-width:0;padding:6px 4px}
+  .preview-nav span{font-size:6px;padding:7px 3px;overflow-wrap:anywhere}
+  .preview-main{min-width:0}
+  .preview-main h3{font-size:11px;overflow-wrap:anywhere}
+  .preview-kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
+  .preview-kpis>div{min-width:0;padding:7px 5px}
+  .preview-kpis strong{font-size:11px}
+  .online-photo-wrap{width:100%;min-width:0}
+  .online-photo{width:100%;height:230px;border-radius:17px 42px 17px 17px;object-fit:cover}
+  .online-badge{right:8px;bottom:9px;max-width:calc(100% - 18px);padding:10px 12px;font-size:9px}
+  .online-points>div{grid-template-columns:30px minmax(0,1fr);gap:9px;font-size:10px}
+  .faq-intro h2{font-size:29px}
+  .faq-q{font-size:11px;line-height:1.5}
+  .faq-a{font-size:10px;line-height:1.7}
+  .contact-inner{align-items:stretch;flex-direction:column;gap:15px}
+  .contact-inner .btn{width:100%;white-space:normal}
+  .footer-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+  .footer-brand-block{grid-column:auto}
+  .footer-bottom .container{align-items:flex-start;flex-direction:column;gap:6px;padding:13px 0}
+}
+@media (max-width: 360px){
+  .container{width:calc(100% - 24px)}
+  .brand img{width:38px;height:38px;flex-basis:38px}
+  .brand-copy strong{font-size:12px}
+  .hero-full .slides{height:max(700px,calc(100svh - 98px));min-height:700px}
+  .hero-full .slide-inner{width:calc(100% - 28px)}
+  .hero-full h1{font-size:33px}
+  .hero-bottom{left:14px;right:14px;gap:7px}
+  .hero-bottom-label{font-size:6px}
+  .hero-full .slide-controls{gap:5px}
+}
+@media (orientation:landscape) and (max-width: 900px){
+  .hero-full .slides{height:max(560px,calc(100svh - 96px));min-height:560px}
+  .hero-full .slide-inner{padding:28px 0 84px}
+  .hero-full h1{font-size:clamp(31px,6vw,46px)}
+  .hero-full .slide-copy>p:not(.slide-overline){font-size:11px;max-width:560px}
+  .hero-full .hero-assurance{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-full .hero-actions{display:flex;flex-wrap:wrap}
+}
+
+
+/* Ajustes de leitura para telas baixas: evita cortar os slides 4 e 5 */
+.map-status-note{margin:13px 2px 0;padding:11px 13px;border-left:3px solid var(--gold);border-radius:0 9px 9px 0;background:#f4f7fb;color:#56677b;font-size:10px;line-height:1.65}
+.map-status-note strong{color:var(--navy)}
+@media (min-width:861px) and (max-height:820px){
+  .hero.hero-full{height:auto;min-height:640px;max-height:none}
+  .hero-full .slides{height:max(640px,calc(100svh - 118px));min-height:640px}
+  .hero-full .slide-inner{padding:25px 0 78px}
+  .hero-full .slide-copy{width:min(690px,68%);max-width:690px}
+  .hero-full .hero-kicker{padding:7px 12px;font-size:9px}
+  .hero-full .slide-overline{margin:17px 0 7px;font-size:9px}
+  .hero-full h1{font-size:clamp(43px,4.2vw,58px);line-height:1.04;margin-bottom:12px}
+  .hero-full .slide-copy>p:not(.slide-overline){font-size:13px;line-height:1.65}
+  .hero-full .hero-actions{margin-top:19px;gap:9px}
+  .hero-full .hero-actions .btn{min-height:44px;padding:11px 17px;font-size:11px}
+  .hero-full .hero-assurance{margin-top:14px;font-size:9px}
+  .hero-full .slide-glass-note{bottom:92px;width:245px;padding:13px 15px}
+  .hero-bottom{bottom:14px}
+}
+@media (min-width:861px) and (max-height:700px){
+  .hero.hero-full{min-height:610px}
+  .hero-full .slides{height:max(610px,calc(100svh - 118px));min-height:610px}
+  .hero-full .slide-inner{padding:20px 0 68px}
+  .hero-full .slide-copy{width:min(650px,66%)}
+  .hero-full .hero-kicker{padding:6px 10px;font-size:8px}
+  .hero-full .slide-overline{margin:13px 0 6px;font-size:8px}
+  .hero-full h1{font-size:clamp(39px,3.8vw,51px);line-height:1.02;margin-bottom:9px}
+  .hero-full .slide-copy>p:not(.slide-overline){font-size:12px;line-height:1.55}
+  .hero-full .hero-actions{margin-top:14px}
+  .hero-full .hero-actions .btn{min-height:40px;padding:9px 14px;font-size:10px}
+  .hero-full .hero-assurance{margin-top:10px;font-size:8px}
+  .hero-full .slide-glass-note{bottom:80px;width:225px;padding:11px 13px}
+  .hero-full .slide-glass-note strong{font-size:12px}
+  .hero-full .slide-glass-note small{font-size:8px}
+}
+@media (max-width:600px){
+  .map-status-note{font-size:9px;line-height:1.6;padding:10px 11px}
+}
+@media (min-width:861px) and (min-height:821px){
+  .hero-full .slide-05 .slide-copy{width:min(700px,64%);max-width:700px}
+  .hero-full .slide-05 h1{font-size:clamp(48px,4.8vw,64px);line-height:1.04;margin-bottom:13px}
+  .hero-full .slide-05 .slide-overline{margin:20px 0 8px}
+  .hero-full .slide-05 .slide-copy>p:not(.slide-overline){font-size:14px;line-height:1.7}
+  .hero-full .slide-05 .hero-actions{margin-top:22px}
+  .hero-full .slide-05 .hero-assurance{margin-top:17px}
+}
+
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9066376650011986"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-<noscript>Ative o JavaScript para visualizar o portal Legado que Ensina.</noscript>
+<div class="topbar"><div class="container"><div class="topbar-note"><span class="topbar-dot"></span><span>Psicopedagogia, conexão e tecnologia para a aprendizagem</span></div><div class="topbar-contact"><a href="https://wa.me/5543920036581" target="_blank" rel="noopener">WhatsApp: (43) 92003-6581</a><a href="mailto:contato@legadoqueensina.com.br">contato@legadoqueensina.com.br</a></div></div></div>
+<header class="header"><div class="container nav">
+  <a class="brand" href="#inicio" aria-label="Legado que Ensina — início"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Logomarca original Legado que Ensina"><span class="brand-copy"><strong>Legado que Ensina</strong><small>Aprender hoje, transformar sempre</small></span></a>
+  <nav class="navlinks" id="navlinks" aria-label="Navegação principal"><a href="#inicio">Início</a><a href="#familias">Para famílias</a><a href="#rede">Nossa rede</a><a href="#profissionais">Para psicopedagogos</a><a href="#como-funciona">Como funciona</a><a href="#contato">Contato</a></nav>
+  <div class="nav-actions"><a class="btn btn-outline" href="#familias">Encontrar profissional</a><a class="btn btn-primary" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener">Acessar sistema</a></div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<main id="inicio">
+<section class="hero hero-full" aria-label="Destaques do Legado que Ensina">
+  <div class="slides" id="heroSlides" aria-roledescription="carrossel">
+    <article class="slide slide-01 active" aria-hidden="false" style="--slide-image:url('https://images.pexels.com/photos/8923039/pexels-photo-8923039.jpeg?auto=compress&cs=tinysrgb&w=2200');--slide-overlay:linear-gradient(90deg,rgba(7,35,69,.92) 0%,rgba(13,54,91,.82) 43%,rgba(7,35,69,.25) 100%);">
+      <div class="slide-inner container">
+        <div class="slide-copy">
+          <span class="hero-kicker"><i></i> Duas frentes. Um mesmo propósito.</span>
+          <p class="slide-overline">LEGADO QUE ENSINA</p>
+          <h1>Cada criança é única.<br><em>Seu processo de aprendizagem também.</em></h1>
+          <p>Um portal que aproxima famílias de psicopedagogos e oferece aos profissionais tecnologia para organizar, acompanhar e fortalecer sua prática.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#familias">Encontrar um psicopedagogo <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="#profissionais">Conhecer o sistema <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          </div>
+          <div class="hero-assurance"><span><b>01</b> Acolhimento às famílias</span><span><b>02</b> Gestão para profissionais</span></div>
+        </div>
+        <div class="slide-glass-note"><span>UM SÓ PORTAL</span><strong>Famílias <i>+</i> Psicopedagogos</strong><small>Conexão, cuidado e organização em um mesmo lugar.</small></div>
+      </div>
+    </article>
+
+    <article class="slide slide-02" aria-hidden="true" style="--slide-image:url('https://images.pexels.com/photos/5905921/pexels-photo-5905921.jpeg?auto=compress&cs=tinysrgb&w=2200');--slide-overlay:linear-gradient(90deg,rgba(5,55,68,.94) 0%,rgba(10,80,88,.82) 45%,rgba(7,44,58,.25) 100%);">
+      <div class="slide-inner container">
+        <div class="slide-copy">
+          <span class="hero-kicker"><i></i> Para famílias · Nossa rede em construção</span>
+          <p class="slide-overline">UM PASSO DE CADA VEZ</p>
+          <h1>Encontrar apoio para aprender pode ser <em>mais simples.</em></h1>
+          <p>Conte o que sua família procura. Estamos ampliando nossa rede de psicopedagogos em diferentes regiões do Brasil para aproximar famílias e profissionais com orientação e cuidado.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#familias">Solicitar orientação <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="#rede">Conhecer nossa rede</a>
+          </div>
+          <div class="hero-assurance"><span><b>01</b> Escuta e acolhimento</span><span><b>02</b> Profissionais em diferentes regiões</span></div>
+        </div>
+        <div class="slide-glass-note"><span>PARA QUEM CUIDA</span><strong>Uma jornada com orientação</strong><small>Presencial ou online, conforme a atuação de cada profissional.</small></div>
+      </div>
+    </article>
+
+    <article class="slide slide-03" aria-hidden="true" style="--slide-image:url('https://cdn.shopify.com/s/files/1/0893/4912/8476/files/videocall.webp?v=1746589820');--slide-overlay:linear-gradient(90deg,rgba(12,43,83,.94) 0%,rgba(20,67,103,.82) 44%,rgba(14,49,78,.28) 100%);">
+      <div class="slide-inner container">
+        <div class="slide-copy">
+          <span class="hero-kicker"><i></i> Atendimento presencial e online</span>
+          <p class="slide-overline">APRENDIZAGEM SEM DISTÂNCIAS</p>
+          <h1>Novos caminhos para acompanhar <em>cada aprendizagem.</em></h1>
+          <p>Conheça modalidades de atendimento e possibilidades de acompanhamento que respeitam as necessidades da família e a forma de trabalho do psicopedagogo.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#como-funciona">Ver como funciona <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="#contato">Conversar com a equipe</a>
+          </div>
+          <div class="hero-assurance"><span><b>01</b> Modalidades combinadas com o profissional</span><span><b>02</b> Orientação em cada etapa</span></div>
+        </div>
+        <div class="slide-glass-note"><span>CONEXÃO QUE APROXIMA</span><strong>Aprender também pode acontecer online</strong><small>Combinando recursos, presença e acompanhamento.</small></div>
+      </div>
+    </article>
+
+    <article class="slide slide-04" aria-hidden="true" style="--slide-image:url('https://images.pexels.com/photos/5303516/pexels-photo-5303516.jpeg?auto=compress&cs=tinysrgb&w=2200');--slide-overlay:linear-gradient(90deg,rgba(8,37,75,.95) 0%,rgba(17,65,111,.82) 47%,rgba(8,37,75,.22) 100%);">
+      <div class="slide-inner container">
+        <div class="slide-copy">
+          <span class="hero-kicker"><i></i> Para psicopedagogos</span>
+          <p class="slide-overline">MAIS GESTÃO PARA SUA PRÁTICA</p>
+          <h1>Organize seu trabalho.<br><em>Ganhe espaço para cuidar.</em></h1>
+          <p>Tenha alunos e prontuários, agenda, atendimentos, avaliações, intervenções, relatórios, documentos e financeiro reunidos em um só sistema, pensado para a rotina da Psicopedagogia.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#profissionais">Conhecer o sistema <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener">Acessar o sistema</a>
+          </div>
+          <div class="hero-assurance"><span><b>01</b> Gestão integrada</span><span><b>02</b> Registros organizados</span></div>
+        </div>
+        <div class="slide-glass-note"><span>GESTÃO PSICOPEDAGÓGICA</span><strong>Da agenda ao relatório, tudo conectado</strong><small>Mais clareza para acompanhar alunos e organizar sua rotina profissional.</small></div>
+      </div>
+    </article>
+
+    <article class="slide slide-05" aria-hidden="true" style="--slide-image:url('https://images.pexels.com/photos/8055142/pexels-photo-8055142.jpeg?auto=compress&cs=tinysrgb&w=2200');--slide-overlay:linear-gradient(90deg,rgba(7,39,74,.95) 0%,rgba(12,70,103,.84) 46%,rgba(11,55,80,.30) 100%);">
+      <div class="slide-inner container">
+        <div class="slide-copy">
+          <span class="hero-kicker"><i></i> Famílias e psicopedagogos · Rede em expansão</span>
+          <p class="slide-overline">CONEXÕES QUE TRANSFORMAM</p>
+          <h1>Uma rede em construção para aproximar <em>quem aprende e quem ensina.</em></h1>
+          <p>Estamos ampliando a presença do Legado que Ensina pelo Brasil. A família informa o que procura, e nossa equipe orienta sobre as possibilidades de contato conforme a região e a disponibilidade dos profissionais.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#familias">Quero encontrar um profissional <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn btn-outline" href="#profissionais">Quero fazer parte da rede</a>
+          </div>
+          <div class="hero-assurance"><span><b>01</b> Rede em expansão</span><span><b>02</b> Atendimento presencial e online conforme disponibilidade</span></div>
+        </div>
+        <div class="slide-glass-note"><span>NOSSA REDE</span><strong>Uma conexão que cresce com propósito</strong><small>Disponibilidade por região em construção. Fale com nossa equipe para conhecer as possibilidades.</small></div>
+      </div>
+    </article>
+
+    <div class="hero-arrows" aria-label="Navegar pelos destaques">
+      <button class="slide-arrow hero-arrow" id="prevSlide" aria-label="Slide anterior"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+      <button class="slide-arrow hero-arrow" id="nextSlide" aria-label="Próximo slide"><svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+    </div>
+    <div class="hero-bottom container">
+      <div class="hero-bottom-label"><span>DESTAQUES</span><strong id="slideCurrent">01</strong><i>/</i><span id="slideTotal">05</span></div>
+      <div class="slide-controls" aria-label="Escolher destaque">
+        <button class="slide-dot active" data-slide="0" aria-label="Ir para slide 1" aria-current="true"></button>
+        <button class="slide-dot" data-slide="1" aria-label="Ir para slide 2"></button>
+        <button class="slide-dot" data-slide="2" aria-label="Ir para slide 3"></button>
+        <button class="slide-dot" data-slide="3" aria-label="Ir para slide 4"></button>
+        <button class="slide-dot" data-slide="4" aria-label="Ir para slide 5"></button>
+      </div>
+      <span class="hero-bottom-hint">DESLIZE OU USE AS SETAS</span>
+    </div>
+  </div>
+</section>
+
+<section class="purpose"><div class="container"><div class="purpose-head"><div><span class="eyebrow">Um portal, duas possibilidades</span><h2>O que você veio buscar?</h2></div><p>O Legado que Ensina foi pensado para aproximar quem precisa de acompanhamento e quem trabalha diariamente para transformar a aprendizagem.</p></div><div class="audience-grid">
+  <article class="audience-card family"><div class="audience-top"><span class="audience-index">01</span><span class="eyebrow">Para famílias</span></div><h3>Encontre um psicopedagogo para acompanhar sua família.</h3><p>Conte um pouco sobre sua necessidade e conheça as possibilidades de atendimento psicopedagógico, presencial ou online.</p><div class="audience-points"><span>Orientação inicial</span><span>Rede de profissionais</span><span>Atendimento individualizado</span></div><a class="btn btn-primary" href="#familias">Quero encontrar atendimento <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+  <article class="audience-card pro"><div class="audience-top"><span class="audience-index">02</span><span class="eyebrow">Para psicopedagogos</span></div><h3>Tenha um sistema que acompanha sua prática profissional.</h3><p>Organize alunos, prontuários, agenda, avaliações, intervenções, relatórios e financeiro em um ambiente desenvolvido para sua rotina.</p><div class="audience-points"><span>Gestão integrada</span><span>Materiais de apoio</span><span>Mais organização</span></div><a class="btn btn-gold" href="#profissionais">Quero conhecer o sistema <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></article>
+</div></div></section>
+
+<section class="section family-section" id="familias"><div class="container"><div class="family-layout"><div class="family-copy"><span class="eyebrow">Para famílias</span><h2>Um cuidado que começa com escuta e acolhimento.</h2><p>Quando surgem dúvidas ou dificuldades no processo de aprendizagem, encontrar orientação faz diferença. O Legado que Ensina ajuda sua família a iniciar essa busca e conhecer possibilidades de acompanhamento psicopedagógico.</p><div class="steps"><div class="step"><span class="step-number">01</span><div><h3>Conte o que sua família precisa</h3><p>Compartilhe as informações iniciais sobre a criança, a cidade e o tipo de atendimento que procura.</p></div></div><div class="step"><span class="step-number">02</span><div><h3>Conheça as possibilidades</h3><p>Nossa equipe orienta o contato conforme a disponibilidade de profissionais e a modalidade desejada.</p></div></div><div class="step"><span class="step-number">03</span><div><h3>Converse e combine o atendimento</h3><p>O profissional apresenta sua forma de trabalho, esclarece dúvidas e combina os próximos passos diretamente com a família.</p></div></div></div></div>
+<div class="request-card"><h3>Conte como podemos ajudar</h3><p>Preencha os dados iniciais. Nossa equipe poderá entrar em contato para entender sua necessidade.</p><form id="familyForm"><div class="form-grid"><div class="field"><label for="familyName">Nome completo</label><input id="familyName" name="name" autocomplete="name" required placeholder="Seu nome"></div><div class="field"><label for="familyPhone">Telefone / WhatsApp</label><input id="familyPhone" name="phone" autocomplete="tel" required placeholder="(00) 00000-0000"></div><div class="field"><label for="familyEmail">E-mail</label><input id="familyEmail" name="email" type="email" autocomplete="email" placeholder="voce@email.com"></div><div class="field"><label for="familyCity">Cidade / Estado</label><input id="familyCity" name="city" required placeholder="Sua cidade - UF"></div><div class="field"><label for="familyMode">Modalidade desejada</label><select id="familyMode" name="mode"><option value="Ainda não sei">Ainda não sei</option><option value="Presencial">Presencial</option><option value="Online">Online</option><option value="Tenho interesse nas duas">Tenho interesse nas duas</option></select></div><div class="field"><label for="familyFor">Atendimento para</label><select id="familyFor" name="for"><option value="Criança">Criança</option><option value="Adolescente">Adolescente</option><option value="Adulto">Adulto</option><option value="Orientação para familiar">Orientação para familiar</option></select></div><div class="field full"><label for="familyNeed">O que você está buscando?</label><textarea id="familyNeed" name="need" placeholder="Conte brevemente sobre sua necessidade ou dúvida."></textarea></div></div><button class="btn btn-primary" type="submit">Enviar solicitação pelo WhatsApp <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button><p class="privacy-note">As informações serão utilizadas para responder à sua solicitação. O envio abre uma conversa no WhatsApp para você revisar e encaminhar a mensagem.</p></form></div></div></div></section>
+
+<section class="section" id="rede"><div class="container"><div class="network-layout"><div class="network-copy"><span class="eyebrow">Nossa rede</span><h2>Uma rede que aproxima profissionais e famílias em todo o Brasil.</h2><p>O Legado que Ensina busca facilitar o contato entre famílias e psicopedagogos, considerando a região, a modalidade de atendimento e as necessidades de cada pessoa.</p><div class="region-list"><span><i>N</i> Norte</span><span><i>NE</i> Nordeste</span><span><i>CO</i> Centro-Oeste</span><span><i>SE</i> Sudeste</span><span><i>S</i> Sul</span></div><a class="btn btn-primary" href="#familias">Solicitar orientação para encontrar profissional</a></div><div class="map-card"><div class="map-title"><span>Conexões pelo Brasil</span><small>Representação ilustrativa da rede</small></div><div class="map-art"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Brazil_states.svg/960px-Brazil_states.svg.png" alt="Mapa do Brasil dividido por estados"><span class="map-pin pin-n"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Legado que Ensina"></span><span class="map-pin pin-ne"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Legado que Ensina"></span><span class="map-pin pin-co"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Legado que Ensina"></span><span class="map-pin pin-se"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Legado que Ensina"></span><span class="map-pin pin-s"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Legado que Ensina"></span></div><div class="map-legend"><span>Presencial, conforme disponibilidade</span><span>Atendimento online</span><span>Conexão com profissionais</span></div><p class="map-status-note"><strong>Rede em construção:</strong> estamos ampliando nossa conexão com psicopedagogos em todo o Brasil. A presença dos marcadores é ilustrativa e não representa profissionais já cadastrados em cada região.</p></div></div></div></div></section>
+
+<section class="section professional" id="profissionais"><div class="container"><div class="prof-layout"><div class="prof-copy"><span class="eyebrow" style="color:#f7ca70">Para psicopedagogos</span><h2>Sua prática merece uma gestão à altura do seu trabalho.</h2><p>O sistema Legado que Ensina foi pensado para apoiar a rotina de psicopedagogos e profissionais da aprendizagem. Reúna informações, organize processos e acompanhe a trajetória dos alunos em um só ambiente.</p><div class="prof-features"><div class="prof-feature"><b>01</b><span>Alunos, dados e prontuários organizados</span></div><div class="prof-feature"><b>02</b><span>Agenda e registro de atendimentos</span></div><div class="prof-feature"><b>03</b><span>Avaliações e histórico de aplicação</span></div><div class="prof-feature"><b>04</b><span>Biblioteca de intervenções e planejamento</span></div><div class="prof-feature"><b>05</b><span>Relatórios, documentos e evolução</span></div><div class="prof-feature"><b>06</b><span>Financeiro e recibos</span></div></div><div class="prof-actions"><a class="btn btn-gold" href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener">Acessar o sistema <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="btn btn-white" href="https://wa.me/5543920036581?text=Ol%C3%A1!%20Quero%20conhecer%20o%20sistema%20Legado%20que%20Ensina%20e%20as%20op%C3%A7%C3%B5es%20de%20assinatura." target="_blank" rel="noopener">Conhecer planos e adesão</a></div></div>
+<div class="prof-preview"><div class="preview-head"><div class="preview-brand"><img src="https://i.imgur.com/D2WGUlJ.png" alt=""><span>Legado que Ensina</span></div><small>Prévia ilustrativa do sistema</small></div><div class="preview-content"><aside class="preview-nav"><span>Visão geral</span><span>Alunos</span><span>Agenda</span><span>Avaliações</span><span>Intervenções</span><span>Financeiro</span><span>Documentos</span></aside><div class="preview-main"><h3>Visão clínica</h3><small>Organização da rotina profissional</small><div class="preview-kpis"><div><small>Alunos ativos</small><strong>24</strong></div><div><small>Hoje</small><strong>05</strong></div><div><small>Registros</small><strong>18</strong></div></div><div class="preview-table"><strong>Agenda de atendimentos</strong><div class="preview-row"><span>09:00 · Atendimento</span><b>Confirmado</b></div><div class="preview-row"><span>10:30 · Avaliação</span><b>Agendado</b></div><div class="preview-row"><span>14:00 · Devolutiva</span><b>Agendado</b></div></div></div></div></div></div></div></section>
+
+<section class="section section-soft" id="como-funciona"><div class="container"><div class="online-layout"><div class="online-photo-wrap"><img class="online-photo" src="https://www.ew-installatietechniek.nl/cms/multimedia/000873187jk10u1y/14%2001.jpg" alt="Mãe e criança acompanhando uma orientação educacional online em um computador"><div class="online-badge">Presencial e online<small>Modalidades conforme o profissional</small></div></div><div class="online-copy"><span class="eyebrow">Como funciona</span><h2>Conexão, orientação e acompanhamento em cada etapa.</h2><p>Famílias e profissionais chegam ao Legado que Ensina por caminhos diferentes, mas compartilham o mesmo propósito: favorecer uma jornada de aprendizagem mais acolhedora e organizada.</p><div class="online-points"><div><i>1</i><span>A família apresenta sua necessidade e recebe orientação sobre os próximos passos.</span></div><div><i>2</i><span>O contato com o profissional permite alinhar modalidade, disponibilidade e forma de trabalho.</span></div><div><i>3</i><span>O psicopedagogo organiza sua rotina e seus registros com apoio do sistema de gestão.</span></div></div><a class="btn btn-outline" href="#contato">Fale com a equipe</a></div></div></div></section>
+
+<section class="section" id="duvidas"><div class="container"><div class="faq-layout"><div class="faq-intro"><span class="eyebrow">Dúvidas frequentes</span><h2>Informação clara para começar com segurança.</h2><p>Veja algumas respostas sobre a conexão com profissionais e o sistema de gestão do Legado que Ensina.</p></div><div class="faq-list">
+<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>O Legado que Ensina realiza diretamente os atendimentos?</span><span>+</span></button><div class="faq-a">O portal facilita a conexão entre famílias e profissionais independentes. A contratação, os horários e as condições do acompanhamento são alinhados diretamente com o psicopedagogo.</div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Como posso solicitar um psicopedagogo?</span><span>+</span></button><div class="faq-a">Preencha o formulário para famílias nesta página. Nossa equipe poderá entender sua necessidade e orientar sobre as possibilidades de contato com profissionais, conforme disponibilidade e região.</div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>O atendimento pode ser online?</span><span>+</span></button><div class="faq-a">A modalidade depende da atuação e da disponibilidade de cada profissional. Ao solicitar atendimento, informe se prefere presencial, online ou se tem interesse nas duas possibilidades.</div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>O que o sistema oferece aos psicopedagogos?</span><span>+</span></button><div class="faq-a">O sistema reúne recursos de gestão de alunos e prontuários, agenda, atendimentos, avaliações, intervenções, relatórios, documentos e financeiro. Os detalhes de acesso e assinatura podem ser consultados com a equipe.</div></div>
+<div class="faq-item"><button class="faq-q" aria-expanded="false"><span>Como faço para conhecer os planos do sistema?</span><span>+</span></button><div class="faq-a">Utilize o botão “Conhecer planos e adesão” na área de profissionais para conversar com a equipe e receber informações atualizadas sobre as opções disponíveis.</div></div>
+</div></div></div></section>
+
+<section class="contact-band" id="contato"><div class="container contact-inner"><div><h2>Vamos conversar sobre o próximo passo?</h2><p>Seja para encontrar atendimento ou conhecer o sistema, nossa equipe pode orientar você.</p></div><a class="btn btn-primary" href="https://wa.me/5543920036581?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Legado%20que%20Ensina." target="_blank" rel="noopener">Falar com o Legado <svg viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand-block"><div class="footer-brand"><img src="https://i.imgur.com/D2WGUlJ.png" alt="Logomarca Legado que Ensina"><span><strong>Legado que Ensina</strong><small>Aprender hoje, transformar sempre</small></span></div><p class="footer-desc">Um portal que conecta famílias a profissionais da Psicopedagogia e oferece tecnologia para apoiar a organização da prática profissional.</p></div><div class="footer-col"><h4>Navegue</h4><a href="#familias">Para famílias</a><a href="#rede">Nossa rede</a><a href="#profissionais">Para psicopedagogos</a><a href="#duvidas">Dúvidas frequentes</a></div><div class="footer-col"><h4>Contato</h4><a href="https://wa.me/5543920036581" target="_blank" rel="noopener">WhatsApp: (43) 92003-6581</a><a href="mailto:contato@legadoqueensina.com.br">contato@legadoqueensina.com.br</a><a href="https://sistema.legadoqueensina.com.br" target="_blank" rel="noopener">Acessar sistema</a><p>Atendimentos realizados por profissionais independentes.</p></div></div></div><div class="footer-bottom"><div class="container"><span>© <span id="year"></span> Legado que Ensina. Todos os direitos reservados.</span><span>Conexões que valorizam a aprendizagem.</span></div></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
-(function(){
-  "use strict";
-  var encoded = [
-  "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"
-  ].join("");
-  var bytes = atob(encoded);
-  var key = "LegadoQueEnsina-2026";
-  var decoded = new Uint8Array(bytes.length);
-  for (var i = 0; i < bytes.length; i++) {
-    decoded[i] = bytes.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+(() => {
+  const menu = document.getElementById('menuToggle');
+  const links = document.getElementById('navlinks');
+  if (menu && links) {
+    menu.addEventListener('click', () => {
+      const opened = links.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(opened));
+      menu.setAttribute('aria-label', opened ? 'Fechar menu' : 'Abrir menu');
+    });
+    links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      links.classList.remove('open'); menu.setAttribute('aria-expanded','false'); menu.setAttribute('aria-label','Abrir menu');
+    }));
+    document.addEventListener('click', event => {
+      if (!links.contains(event.target) && !menu.contains(event.target)) {
+        links.classList.remove('open'); menu.setAttribute('aria-expanded','false');
+      }
+    });
   }
-  var html = new TextDecoder("utf-8").decode(decoded);
-  document.open();
-  document.write(html);
-  document.close();
+
+  const root = document.getElementById('heroSlides');
+  if (root) {
+    const slides = Array.from(root.querySelectorAll('.slide'));
+    const dots = Array.from(root.querySelectorAll('.slide-dot'));
+    const prev = document.getElementById('prevSlide');
+    const next = document.getElementById('nextSlide');
+    const currentLabel = document.getElementById('slideCurrent');
+    const totalLabel = document.getElementById('slideTotal');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let active = 0, timer = null, touchX = 0;
+    if (totalLabel) totalLabel.textContent = String(slides.length).padStart(2, '0');
+    function show(index) {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {slide.classList.toggle('active', i === active); slide.setAttribute('aria-hidden', i === active ? 'false' : 'true');});
+      dots.forEach((dot, i) => {dot.classList.toggle('active', i === active); if(i === active) dot.setAttribute('aria-current','true'); else dot.removeAttribute('aria-current');});
+      if (currentLabel) currentLabel.textContent = String(active + 1).padStart(2, '0');
+    }
+    function stop(){if(timer){clearInterval(timer);timer=null;}}
+    function start(){stop();if(!reduced && !document.hidden)timer=setInterval(()=>show(active+1),7000);}
+    dots.forEach(dot=>dot.addEventListener('click',()=>{show(Number(dot.dataset.slide)||0);start();}));
+    if(prev)prev.addEventListener('click',()=>{show(active-1);start();});
+    if(next)next.addEventListener('click',()=>{show(active+1);start();});
+    root.addEventListener('focusin',stop);root.addEventListener('focusout',start);
+    root.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX;stop();},{passive:true});
+    root.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)show(active+(dx<0?1:-1));start();},{passive:true});
+    root.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){show(active-1);start();}else if(e.key==='ArrowRight'){show(active+1);start();}});
+    document.addEventListener('visibilitychange',()=>document.hidden?stop():start());start();
+  }
+
+  document.querySelectorAll('.faq-q').forEach(button=>button.addEventListener('click',()=>{
+    const item=button.closest('.faq-item');const open=item.classList.toggle('open');button.setAttribute('aria-expanded',String(open));
+  }));
+  const form=document.getElementById('familyForm');
+  if(form)form.addEventListener('submit',event=>{
+    event.preventDefault();if(!form.reportValidity())return;
+    const data=new FormData(form);
+    const message=[
+      'Olá! Gostaria de solicitar orientação para encontrar atendimento psicopedagógico.',
+      `Nome: ${data.get('name')}`,
+      `Telefone: ${data.get('phone')}`,
+      `E-mail: ${data.get('email')||'Não informado'}`,
+      `Cidade/Estado: ${data.get('city')}`,
+      `Atendimento para: ${data.get('for')}`,
+      `Modalidade: ${data.get('mode')}`,
+      `O que procura: ${data.get('need')||'Não informado'}`
+    ].join('\n');
+    window.open('https://wa.me/5543920036581?text='+encodeURIComponent(message),'_blank','noopener');
+  });
+  const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
 })();
 </script>
 </body>
